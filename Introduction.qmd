@@ -1,0 +1,16 @@
+---
+title: "Group 2 Blog"
+author: "Dynamic Group 2"
+date: "9/7/2024"
+---
+
+# Welcome to Group 2's Blog
+
+This book is dedicated to showcasing the work of **Group 2**, a dynamic team of dedicated students from the **Visualization** class at the prestigious **Oral Roberts University**, Oklahoma, under the guidance of **Dr. V**. Here, you'll find weekly Quarto documents and exciting projects as they explore the world of **data visualization**.
+
+## Group Members
+
+1.  **Abigail Tako**
+2.  **Caleb Pena**
+3.  **Derrick Baruga**
+4.  **Toluwanimi Olufawo**
