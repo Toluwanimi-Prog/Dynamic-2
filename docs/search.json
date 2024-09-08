@@ -22,131 +22,111 @@
   {
     "objectID": "Introduction.html",
     "href": "Introduction.html",
-    "title": "1  Group 2 Booklet",
+    "title": "1  Introduction",
     "section": "",
     "text": "2 Welcome to Group 2’s Booklet\nThis book is dedicated to showcasing the work of Group 2, a dynamic team of dedicated students from the Visualization class at the prestigious Oral Roberts University, Oklahoma, under the guidance of Dr. V. Here, you’ll find weekly Quarto documents and exciting projects as they explore the world of data visualization.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Group 2 Booklet</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   },
   {
     "objectID": "Introduction.html#group-members",
     "href": "Introduction.html#group-members",
-    "title": "1  Group 2 Booklet",
+    "title": "1  Introduction",
     "section": "2.1 Group Members",
     "text": "2.1 Group Members\n\nAbigail Tako\nCaleb Pena\nDerrick Baruga\nToluwanimi Olufawo",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Group 2 Booklet</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "Baruga Main.html",
+    "href": "Baruga Main.html",
+    "title": "2  Derrick Baruga",
+    "section": "",
+    "text": "3 Derrick Baruga’s Page\nThis page contains all of Baruga’s submissions organized into different sections.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Derrick Baruga</span>"
+    ]
+  },
+  {
+    "objectID": "Baruga Main.html#section",
+    "href": "Baruga Main.html#section",
+    "title": "2  Derrick Baruga",
+    "section": "3.1 ",
+    "text": "3.1",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Derrick Baruga</span>"
+    ]
+  },
+  {
+    "objectID": "Baruga Main.html#submissions",
+    "href": "Baruga Main.html#submissions",
+    "title": "2  Derrick Baruga",
+    "section": "4.1 Submissions",
+    "text": "4.1 Submissions\n\nWeek 1: BARUGA 083124\nMidterm Project: Baruga\nAirquality Project\nSummary\n\nBack to Main Page",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Derrick Baruga</span>"
     ]
   },
   {
     "objectID": "Week2_EXCEL_TAKO.html",
     "href": "Week2_EXCEL_TAKO.html",
-    "title": "2  Abigail Tako Week2 Excel PivotTable + Chart",
+    "title": "3  Abigail Tako Week2 Excel PivotTable + Chart",
     "section": "",
-    "text": "2.1 Histogram\nIn week 2, data sets that I am using is air quality data set. After cleaning the data set explained below, select all the data and insert the histogram chart to create the visualization of the data. The variables for the histogram chart is only the ozone. From the histogram, it shows the distribution of the ozone, most of the ozone are 1 to 25 ppm.\nclean data\nFirst, from the data, we are going to clean the data, by removing those that are have the value NA or not available.\n1. Select all the data, and search for the filter.\n2. Then, it will appear the drop down menu for each column, select the drop down menu on the first column which is Ozone\n3. Select NA. To remove it, select all from the row that has NA until the bottom and select delete rows 6-151.\n4. Select the drop down menu on column Ozone, select all and apply, it will give back the table, however there’s no NA anymore on the Ozone.\nLooking at the data, there still some NA on the column B for Solar.R. Repeat the way just like before. Next, to make it earlier to read the data, sort the day and month to be in order. Select the column for month, click the sort from smallest to largest, do the same for day.",
+    "text": "3.1 Histogram\nIn week 2, data sets that I am using is air quality data set. After cleaning the data set explained below, select all the data and insert the histogram chart to create the visualization of the data. The variables for the histogram chart is only the ozone. From the histogram, it shows the distribution of the ozone, most of the ozone are 1 to 25 ppm.\nclean data\nFirst, from the data, we are going to clean the data, by removing those that are have the value NA or not available.\n1. Select all the data, and search for the filter.\n2. Then, it will appear the drop down menu for each column, select the drop down menu on the first column which is Ozone\n3. Select NA. To remove it, select all from the row that has NA until the bottom and select delete rows 6-151.\n4. Select the drop down menu on column Ozone, select all and apply, it will give back the table, however there’s no NA anymore on the Ozone.\nLooking at the data, there still some NA on the column B for Solar.R. Repeat the way just like before. Next, to make it earlier to read the data, sort the day and month to be in order. Select the column for month, click the sort from smallest to largest, do the same for day.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako Week2 Excel PivotTable + Chart</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Abigail Tako Week2 Excel PivotTable + Chart</span>"
     ]
   },
   {
     "objectID": "Week2_EXCEL_TAKO.html#scatter-plot",
     "href": "Week2_EXCEL_TAKO.html#scatter-plot",
-    "title": "2  Abigail Tako Week2 Excel PivotTable + Chart",
-    "section": "2.2 Scatter plot",
-    "text": "2.2 Scatter plot\nUsing the air quality data sets, click on column A(ozone) and D (temperature) to show the correlation between both of them. After clicking on both column, I’m going to insert the scatter plot. The scatter plot shows a relationship between Ozone levels (y-axis) and Temperature (x-axis). The general trend indicates a positive correlation: as the temperature increases, the ozone level tends to increase as well.",
+    "title": "3  Abigail Tako Week2 Excel PivotTable + Chart",
+    "section": "3.2 Scatter plot",
+    "text": "3.2 Scatter plot\nUsing the air quality data sets, click on column A(ozone) and D (temperature) to show the correlation between both of them. After clicking on both column, I’m going to insert the scatter plot. The scatter plot shows a relationship between Ozone levels (y-axis) and Temperature (x-axis). The general trend indicates a positive correlation: as the temperature increases, the ozone level tends to increase as well.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako Week2 Excel PivotTable + Chart</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Abigail Tako Week2 Excel PivotTable + Chart</span>"
     ]
   },
   {
     "objectID": "Week2_EXCEL_TAKO.html#pivot-table-chart",
     "href": "Week2_EXCEL_TAKO.html#pivot-table-chart",
-    "title": "2  Abigail Tako Week2 Excel PivotTable + Chart",
-    "section": "2.3 Pivot Table & Chart",
-    "text": "2.3 Pivot Table & Chart\nTo make a pivot table and chart, first select all the data, and click insert. On the let corner, it will appear the pivot menu, press that and select the create own pivot table. I select and drag ozone, temperature, Solar. R, and Wind to the value, for the row I’ll put only the month. Then, I change the value field settings to average, this is to provide the average of ozone, temperature, Solar. R, and Wind monthly. After doing the pivot table, select that pivot table and insert the pivot chart to create the visualization.\n\nFrom the pivot table and chart above, it shows that ozone levels appear to increase with higher temperature and solar radiation but decrease with higher wind speeds.\nNext, I’m going to provide another pivot table, that shows the average of ozone, temperature, Solar. R, and Wind daily from day 1 to 31. To do that, select again the first table, the one that was cleaned, then again select the pivot table and choose the create own pivot table.\nI select and drag ozone, temperature, Solar. R, and Wind to the value, for the row I’ll put only the day. Then, I change the value field settings to average, this is to provide the average of ozone, temperature, Solar. R, and Wind per day.\nNow, I’m going to add the pivot chart from that new pivot table. I choose two charts, from those two I can create conclusion and better visualizations.\nFrom the chart presented below, the average daily of Temperature and Wind each have a positive correlation, however not with the average daily of Solar. R and the Ozone. Also, on day 15 it shows the lowest average of ozone and solar. r.\n\nThird, I’m going to make another pivot table that can show more detailed on each month per day.I’m going to choose to present the 5th month, so I’m going to press the drop down menu from the column “month” and select only the 5. Next, the table will only provide the information from month 5, day 1-31 and the sum of ozone, wind, temp, and solar.r.\n\nFrom the chart, we can see that, on day 30 from the 5th month, it shows the highest sum of ozone.",
+    "title": "3  Abigail Tako Week2 Excel PivotTable + Chart",
+    "section": "3.3 Pivot Table & Chart",
+    "text": "3.3 Pivot Table & Chart\nTo make a pivot table and chart, first select all the data, and click insert. On the let corner, it will appear the pivot menu, press that and select the create own pivot table. I select and drag ozone, temperature, Solar. R, and Wind to the value, for the row I’ll put only the month. Then, I change the value field settings to average, this is to provide the average of ozone, temperature, Solar. R, and Wind monthly. After doing the pivot table, select that pivot table and insert the pivot chart to create the visualization.\n\nFrom the pivot table and chart above, it shows that ozone levels appear to increase with higher temperature and solar radiation but decrease with higher wind speeds.\nNext, I’m going to provide another pivot table, that shows the average of ozone, temperature, Solar. R, and Wind daily from day 1 to 31. To do that, select again the first table, the one that was cleaned, then again select the pivot table and choose the create own pivot table.\nI select and drag ozone, temperature, Solar. R, and Wind to the value, for the row I’ll put only the day. Then, I change the value field settings to average, this is to provide the average of ozone, temperature, Solar. R, and Wind per day.\nNow, I’m going to add the pivot chart from that new pivot table. I choose two charts, from those two I can create conclusion and better visualizations.\nFrom the chart presented below, the average daily of Temperature and Wind each have a positive correlation, however not with the average daily of Solar. R and the Ozone. Also, on day 15 it shows the lowest average of ozone and solar. r.\n\nThird, I’m going to make another pivot table that can show more detailed on each month per day.I’m going to choose to present the 5th month, so I’m going to press the drop down menu from the column “month” and select only the 5. Next, the table will only provide the information from month 5, day 1-31 and the sum of ozone, wind, temp, and solar.r.\n\nFrom the chart, we can see that, on day 30 from the 5th month, it shows the highest sum of ozone.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako Week2 Excel PivotTable + Chart</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Abigail Tako Week2 Excel PivotTable + Chart</span>"
     ]
   },
   {
     "objectID": "Week2_EXCEL_TAKO.html#individual-project",
     "href": "Week2_EXCEL_TAKO.html#individual-project",
-    "title": "2  Abigail Tako Week2 Excel PivotTable + Chart",
-    "section": "2.4 Individual Project",
-    "text": "2.4 Individual Project\nFirst, the source that I chose is National Transportation Library (NTL) Data. There are lots of data sets from NTL, which can be access through https://ntl.bts.gov/ntl. Then, I chose the Highway safety and click on the motor vehicle safety data.\nI’m interested in this one, because it is critical to understand trends in road safety, which is a major public concern. The data that I collect is from this link https://www.bts.gov/content/motor-vehicle-safety-data. Those data was calculated by U.S. Department of Transportation, Bureau of Transportation Statistics. https://www.bts.gov/topics/national-transportation-statistics\nI need to rearrange the table to make it more clear, so I transpose the from row to column.\nThe variables that I’m using are the year, injured, crashes, and also vehicle. Those are the key variables that can be useful for my analysis and visualizations.\n1. Select the row and copy, then click transpose from row to column.\n2. Next, select the table that has been transpose to insert the histogram and scatter plot.\n\nFrom the histogram, we can look at the vehicle distribution.\nFrom the scatter plot, we can see the correlation of each crashes, injured, and vehicle yearly, and those three are very similar, so it shows that each have weak correlation coefficient values, which means that there is little to no linear relationship between those variable.\nNext is to make the pivot table, insert the pivot table and I’m going to make the year and the percentage of fatalities. Then, insert the pivot chart.\n\nFrom the pivot chart, it shows that there is a minimum fatalities percentage on the year 2011. The percentage of fatalities in that year reached its lowest point compared to other years in the data set. This suggests that fewer fatalities, as a proportion of the total relevant incidents or events, occurred in 2011 than in other years.\nI add another pivot table regarding the crashes versus the percentage of fatalities.\n\nAt first, my hypothesis was the higher number of crashes, the higher the percentage of fatalities would be. However, looking at the chart it is not true.\nThe lowest percentage of fatalities was when there were 5,377,289 crashes. The highest percentage of fatalities was when there were 6,159,350.",
+    "title": "3  Abigail Tako Week2 Excel PivotTable + Chart",
+    "section": "3.4 Individual Project",
+    "text": "3.4 Individual Project\nFirst, the source that I chose is National Transportation Library (NTL) Data. There are lots of data sets from NTL, which can be access through https://ntl.bts.gov/ntl. Then, I chose the Highway safety and click on the motor vehicle safety data.\nI’m interested in this one, because it is critical to understand trends in road safety, which is a major public concern. The data that I collect is from this link https://www.bts.gov/content/motor-vehicle-safety-data. Those data was calculated by U.S. Department of Transportation, Bureau of Transportation Statistics. https://www.bts.gov/topics/national-transportation-statistics\nI need to rearrange the table to make it more clear, so I transpose the from row to column.\nThe variables that I’m using are the year, injured, crashes, and also vehicle. Those are the key variables that can be useful for my analysis and visualizations.\n1. Select the row and copy, then click transpose from row to column.\n2. Next, select the table that has been transpose to insert the histogram and scatter plot.\n\nFrom the histogram, we can look at the vehicle distribution.\nFrom the scatter plot, we can see the correlation of each crashes, injured, and vehicle yearly, and those three are very similar, so it shows that each have weak correlation coefficient values, which means that there is little to no linear relationship between those variable.\nNext is to make the pivot table, insert the pivot table and I’m going to make the year and the percentage of fatalities. Then, insert the pivot chart.\n\nFrom the pivot chart, it shows that there is a minimum fatalities percentage on the year 2011. The percentage of fatalities in that year reached its lowest point compared to other years in the data set. This suggests that fewer fatalities, as a proportion of the total relevant incidents or events, occurred in 2011 than in other years.\nI add another pivot table regarding the crashes versus the percentage of fatalities.\n\nAt first, my hypothesis was the higher number of crashes, the higher the percentage of fatalities would be. However, looking at the chart it is not true.\nThe lowest percentage of fatalities was when there were 5,377,289 crashes. The highest percentage of fatalities was when there were 6,159,350.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako Week2 Excel PivotTable + Chart</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Abigail Tako Week2 Excel PivotTable + Chart</span>"
     ]
   },
   {
     "objectID": "Week2_EXCEL_TAKO.html#conclusion-from-individual-project",
     "href": "Week2_EXCEL_TAKO.html#conclusion-from-individual-project",
-    "title": "2  Abigail Tako Week2 Excel PivotTable + Chart",
-    "section": "2.5 Conclusion from Individual Project",
-    "text": "2.5 Conclusion from Individual Project\nI take data from National Transportation Library (NTL) data that was accessed through https://ntl.bts.gov/ntl. For my analysis, I focused on key variables like the number of accidents, percentage of fatalities, and safety interventions over the years. One of the significant findings was the noticeable decrease in the percentage of fatalities, with a minimum observed in 2011. This suggests that factors such as improved vehicle safety features, stricter traffic laws, and public awareness campaigns during that period may have contributed to reducing fatalities.\nOverall, this project highlights the importance of continuous monitoring and improvement of road safety measures. Analyzing such data can guide future strategies for reducing accidents and saving lives on the road.",
+    "title": "3  Abigail Tako Week2 Excel PivotTable + Chart",
+    "section": "3.5 Conclusion from Individual Project",
+    "text": "3.5 Conclusion from Individual Project\nI take data from National Transportation Library (NTL) data that was accessed through https://ntl.bts.gov/ntl. For my analysis, I focused on key variables like the number of accidents, percentage of fatalities, and safety interventions over the years. One of the significant findings was the noticeable decrease in the percentage of fatalities, with a minimum observed in 2011. This suggests that factors such as improved vehicle safety features, stricter traffic laws, and public awareness campaigns during that period may have contributed to reducing fatalities.\nOverall, this project highlights the importance of continuous monitoring and improvement of road safety measures. Analyzing such data can guide future strategies for reducing accidents and saving lives on the road.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako Week2 Excel PivotTable + Chart</span>"
-    ]
-  },
-  {
-    "objectID": "VIZ_excel-basics_baruga_083124.html",
-    "href": "VIZ_excel-basics_baruga_083124.html",
-    "title": "3  Week_1_BARUGA_083124",
-    "section": "",
-    "text": "3.1 Introduction to Excel\nMicrosoft Excel is a crucial tool for data management, analysis, and visualization. In this exercise, I explored its basic functionalities, including logging in, creating files, using fundamental functions, and generating visualizations. Each step highlighted how Excel can effectively handle a wide range of data tasks.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week_1_BARUGA_083124</span>"
-    ]
-  },
-  {
-    "objectID": "VIZ_excel-basics_baruga_083124.html#basics-of-excel",
-    "href": "VIZ_excel-basics_baruga_083124.html#basics-of-excel",
-    "title": "3  Week_1_BARUGA_083124",
-    "section": "3.2 Basics of Excel",
-    "text": "3.2 Basics of Excel\n\n3.2.1 What is Excel?\nExcel is a versatile spreadsheet tool used for organizing, formatting, and analyzing data. Accessing Excel Online via OneDrive enabled me to work seamlessly from anywhere, benefiting from automatic cloud storage and file management. Renaming files and easy access through OneDrive demonstrated the advantages of cloud-based storage.\n\n\n3.2.2 Mastering Excel’s Structure\nUnderstanding Excel’s structure—cells (individual data units), columns (vertical divisions), and rows (horizontal divisions)—was crucial for data management. Proper data entry ensures Excel adjusts layouts automatically, which helps maintain data organization and readiness for analysis.\n\n\n3.2.3 Applying Basic Functions\n\nSUM: =SUM(A1:A10)\nExplanation: Adds a range of numbers quickly, useful for total calculations like sales.\nAVERAGE: =AVERAGE(B1:B10)\nExplanation: Computes the mean, aiding in trend analysis and comparisons.\nMAX: =MAX(C1:C10)\nExplanation: Finds the highest value, helpful for identifying peak figures.\nMIN: =MIN(D1:D10)\nExplanation: Determines the lowest value, useful for assessing minimums in data.\n\n\n\n3.2.4 Creating Visualizations\n\nNB Dataset chosen: economics_ggplot2.csv\n\nI explored various charts in Excel:\n\nScatter Plots: pce vs pop\n\nUseful for visualizing relationships between variables.\n\n\nThere is somewhat of a positive correlation between pce (Personal Consumption Expenditures) and pop (Population), which might mean when the population goes up, personal consumption expenditures also rise. This makes sense as more people means more spending overall.\nLine Plots: psavert vs uempmed\n\nIdeal for displaying trends over time.\n\n\nChanges in the personal savings rate (psavert) does seem to be affect by changes in the median duration of unemployment (uempmed) but the pattern is not very consistent. The evidence is not strong enough to make a conclusion as there is a contradiction by the fact that the highest median duration of unemployment sees some of the lowest personal savings rate.\nBar Charts: Unemployment Rate (unemploy) by Year\n\nGreat for comparing different categories.\n\n\nThe graph suggests that unemployment has been fluctuating significantly over time. The recent sharp peak followed by a drop could indicate a period of economic downturn or crisis that caused a spike in unemployment, which was then followed by a rapid recovery or improvement in the job market. This pattern may reflect temporary economic disruptions, policy changes, or external events impacting employment levels.\nPie Charts:\n\nEffective for illustrating proportions within a whole.\n\n\nThe pie chart shows that the data has a high degree of variability with no dominant category. This chart indicates that the median duration of unemployment is spread across many different values, making it difficult to see any clear patterns or trends. The tiny slices make it hard to interpret or draw meaningful conclusions, which may suggest that another type of chart (a histogram or box plot) would be more suitable for visualizing this data.\nHistograms:\n\nShows the distribution of data.\n\n\nThis shows that most unemployment rates are around an average (8000), but there are some periods or regions with much higher rates. The right skew shows that high unemployment is rare but can be quite severe.\n\n\n\n3.2.5 Handling NA Values\n\nMy dataset doesn’t contain any NAs, but I learned that handling them in Excel involves using the Filter tool to exclude rows with missing values, or using functions like IFERROR or ISNA to replace or highlight them. This process ensures that any data analysis remains accurate and that missing data doesn’t skew results.\n\n\n\n3.2.6 Applying Learning Through Visualization\nI compared different visualizations using a class dataset. Scatter plots effectively showed relationships, line plots illustrated trends, and bar charts compared categories. Selecting the right visualization is crucial for accurate data representation.\n\n\n3.2.7 Conclusion\nThis exercise enhanced my skills in Excel, from basic data entry and functions to advanced visualization and data cleaning. These capabilities are essential for effective data manipulation and interpretation in future analysis tasks.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Week_1_BARUGA_083124</span>"
-    ]
-  },
-  {
-    "objectID": "Midterm_Project_Baruga.html",
-    "href": "Midterm_Project_Baruga.html",
-    "title": "4  Midterm_Project_Baruga",
-    "section": "",
-    "text": "4.0.1 Context of the Dataset\n\nTitle: Warehouse and Retail Sales\nLink: Download the CSV dataset\n\nThe Warehouse and Retail Sales dataset provides a comprehensive view of sales activities in Montgomery County, Maryland, by capturing data from various warehouse and retail operations. This dataset was collected through a combination of direct reporting from businesses, automated sales tracking systems, and regional sales surveys. The data encompasses a range of sales metrics, including volume and product categories, to offer insights into business performance across different types of establishments.\nThe dataset includes the following variables:\n\nRow Labels: Categories or identifiers used to organize and classify the sales data.\nBEER: Sales volume for beer products.\nDUNNAGE: Sales volume for dunnage products, which are materials used to protect goods during transportation.\nKEGS: Sales volume for kegs, typically used for storing and transporting beverages.\nLIQUOR: Sales volume for liquor products.\nNON-ALCOHOL: Sales volume for non-alcoholic beverages.\nREF: Sales volume for refrigeration supplies or products.\nSTR_SUPPLIES: Sales volume for store supplies, which may include various retail essentials.\nWINE: Sales volume for wine products.\nGrand Total: The total sales volume across all categories combined.\n\n\n\n4.0.2 Data Cleaning and Preparation\n\nImport the Data: I downloaded and loaded the CSV file into Excel.\nCheck for Missing Values: My preferred method for handling NAs is by highlighting them and deselecting them using the filter tool for each column as I feel most thorough by doing that. Using the following steps “Select the entire dataset, go to Home &gt; Conditional Formatting &gt; Highlight Cells Rules &gt; Blanks to highlight all blank cells.”\nData Formatting: Formated any columns that need specific data types (such as dates as date format, numbers as currency or percentage).\n\n\nSpecifically I used the =TEXTJOIN(“-”, TRUE, A2, B2) function to join column one (YYYY) and column two (MM) into a new column called TIME\n\n\n\n\n4.0.3 Visualization\nPivot Tables YT link: https://www.youtube.com/watch?v=qu-AK0Hv0b4\n\nPivot tables are a powerful and user friendly (drag and drop) summary statistic/visualisation tool that I used to get an intial feel of my data.\n\nHere are the findings:\nWarehouse Sales/Expenses of Beverages Over Time (2017 - 2020)\n\n\nOverall Sales: BEER has the highest sales, followed by WINE, while DUNNAGE, REF, and STR_SUPPLIES have negative or minimal sales, which makes sense as refers to materials used to protect goods during shipping and handling, such as packing materials or cushioning, and as such is an expense to the business leading to its negative output on revenue.\nMonthly Trends: BEER sales vary significantly, with large peaks and drops. WINE sales are more stable but still show some fluctuation. KEGS and LIQUOR show positive but lower sales.\n\nHistogram of Warehouse Sales/Expenses of Beverages Over Time\n\n\nHere is a histogram representation of the aforementioned summary pivot tables. There appears to be a disporportionate amount of BEER bought for warehouses. But that could be due to the fact that beers are sold in packs and so single unit quantity has skyrocketed in order to make a “12 pack” that will later count as one unit sold at retail.\n\nRetail Sales of Beverages Over Time (2017 - 2020)\n\n\nProduct Types: Includes Beer, Liquor, Wine, Non-Alcoholic beverages, and others, with substantial sales figures for Beer, Liquor, and Wine.\nSales Trends: Liquor leads with $802,691.43 in total sales, followed by Wine ($746,498.59) and Beer ($574,220.53). Recent months show higher sales for Beer and Wine.\nLow Sales Categories: Items like Dunnage and Kegs have negligible or zero sales.\nOverall Total: Total sales across all products amount to $2,160,899.37, highlighting overall retail activity.\n\nHistogram of Retail Sales of Beverages Over Time\n\n\nOnce we come to the retail side of things we see that WINE and LIQUOR are clear best sellers. It is shown hower that LIQUOR has begun to overtake WINE in retail sales.\n\n\n\n4.0.4 Summary\nFrom the “Warehouse and Retail Sales” dataset, I found that Beer leads in warehouse sales, with notable fluctuations due to bulk packaging, while Wine and Liquor have more stable sales. Retail sales show Liquor as the top seller, recently surpassing Wine, with Beer also performing strongly but declining. The histograms illustrate high Beer volume in warehouses and a shift in retail dominance from Wine to Liquor. Next, I will analyze seasonal trends, create advanced visualizations for deeper insights, and finalize the report with comprehensive findings and recommendations.",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Midterm_Project_Baruga</span>"
-    ]
-  },
-  {
-    "objectID": "Week2_Excel_PivotTable_Chart_Baruga.html",
-    "href": "Week2_Excel_PivotTable_Chart_Baruga.html",
-    "title": "5  Airquality",
-    "section": "",
-    "text": "5.1 Cleaning The Data\nI used Excel to clean the data by removing all rows with NA values and performed an exploratory analysis to identify patterns, trends, and potential relationships between these variables over the specified months and days.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Airquality</span>"
-    ]
-  },
-  {
-    "objectID": "Week2_Excel_PivotTable_Chart_Baruga.html#cleaning-the-data",
-    "href": "Week2_Excel_PivotTable_Chart_Baruga.html#cleaning-the-data",
-    "title": "5  Airquality",
-    "section": "",
-    "text": "5.1.1 Ozone Histogram\n\nThe Ozone histogram has its highest values on the left and then curbs off to the right, it indicates a right-skewed distribution.\nThis means:\n\nMost ozone values are low, with a few much higher values creating a long tail on the right.\nThe skewness could result from natural variability, pollution events, or weather conditions affecting ozone levels.\n\n\n\n5.1.2 Scatter Plot Ozone vs Temperature\n\n\nA scatter plot of ozone (x-axis) vs. temperature (y-axis) with a slight positive correlation means that higher ozone levels tend to be associated with higher temperatures. However, the relationship is weak, suggesting other factors (like wind, humidity, or pollution) also affect ozone levels and temperature.\n\n\n\n5.1.3 Pivot Table Average Ozones Per Day & Month (Redacted)\n\n\nThe pivot table presents daily sums for multiple variables (Temperature, Wind, Solar Radiation, and Ozone) over several months (May to September). The days with the highest ozone averages are Day 25 in May (with an Ozone value of 5-65) and July (with an Ozone value of 7-74), with other notable days being Day 29 and Day 30 in May. The months with the highest ozone levels are May, which shows several days with high averages, and July, particularly on Days 25 and 29.\n\n\n\n5.1.4 Pivot Chart Average Ozones Per Day & Month\n\n\n\n5.1.5 Pivot Table of Variation in Solar Radiation and Temperature\n\nThe pivot chart provide a visual representation of how these variables change over time. The histogram shows day-to-day variations in ozone levels, with the highest concentrations occurring in the summer months. Notably, there is a pronounced peak around July 25th, indicating exceptionally high ozone levels on that day. May and July both have elevated levels, with smaller peaks around May 29th and 30th, but July 25th stands out as the most significant. Overall, the chart confirms that ozone levels are highest in July, particularly around the 25th.\n\n\n\nThe pivot table shows daily sums for Solar Radiation and Temperature over a month. There is noticeable daily variation, with high values on days like 18, 19, and 29, indicating intense sunlight and warmer temperatures, and lower values on days like 23 and 27, reflecting cooler conditions. The grand totals summarize the entire month, with 20,513 for Solar Radiation and 8,635 for Temperature. Overall, the table captures daily fluctuations in weather conditions.\n\n\n\n5.1.6 Pivot Chart of Pivot Chart of Variation in Solar Radiation and Temperature\n\n\nThe bar chart shows daily sums of Solar Radiation (blue) and Temperature (orange) over 31 days. High Solar Radiation is notable on days like 9, 13, 16, 18, 19, and 29, with values exceeding 1,000. Temperature values are generally lower, mostly below 400, with higher values on days like 9 and 18. There are significant day-to-day variations, with some days showing high Solar Radiation but lower temperatures (e.g., Day 13). The chart captures daily fluctuations and highlights days with extreme values.\n\n\n\n5.1.7 Pivot Table\n\n\nThe pivot table displays the average temperature (Average of Temp) and ozone levels (Average of Ozone) for days labeled 5 to 9, showing average temperatures ranging from 66.46 to 83.88, with the highest temperatures recorded on days 7 and 8. Ozone levels vary significantly, from a low of 24.13 on Day 5 to a high of 60.00 on Day 8. Overall, the average temperature for the period is 77.79, and the average ozone level is 42.10, reflecting moderate temperatures with variable ozone levels across these days and highlighting daily fluctuations in both metrics.\n\n\n\n5.1.8 Pivot Chart\n\n\nThe bar chart illustrates the average temperature (in blue) and average ozone levels (in orange) for days 5 to 9, showing that temperatures remain relatively high throughout, ranging from around 66 on Day 5 to approximately 84 on Days 7 and 8. Ozone levels start low on Day 5 (around 24), rise significantly by Days 7 and 8 (around 59-60), and then decrease slightly on Day 9 (around 31). The chart suggests a potential correlation between higher temperatures and elevated ozone levels, as Days 7 and 8, which have the highest temperatures, also show the highest average ozone levels, indicating noticeable variability over the period.",
-    "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Airquality</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Abigail Tako Week2 Excel PivotTable + Chart</span>"
     ]
   },
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "6  Summary",
+    "title": "4  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary</span>"
     ]
   }
 ]

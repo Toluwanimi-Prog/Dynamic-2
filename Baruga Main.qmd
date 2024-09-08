@@ -1,0 +1,20 @@
+---
+title: "Derrick Baruga"
+---
+
+# Derrick Baruga's Page
+
+This page contains all of Baruga's submissions organized into different sections.
+
+## 
+
+#  Baruga's Work
+
+## Submissions
+
+1.  [Week 1: BARUGA 083124](week1_baruga_083124.qmd)
+2.  [Midterm Project: Baruga](midterm_project_baruga.qmd)
+3.  [Airquality Project](airquality.qmd)
+4.  [Summary](summary.qmd)
+
+[Back to Main Page](introduction.qmd)

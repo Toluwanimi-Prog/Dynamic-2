@@ -9,10 +9,8 @@ book:
   chapters:
     - index.qmd
     - Introduction.qmd
+    - Baruga Main.qmd
     - Week2_EXCEL_TAKO.qmd
-    - VIZ_excel-basics_baruga_083124.qmd
-    - Midterm_Project_Baruga.qmd
-    - Week2_Excel_PivotTable_Chart_Baruga.qmd
     - summary.qmd
     - references.qmd
 
