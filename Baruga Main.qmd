@@ -7,6 +7,17 @@ title: "Derrick Baruga"
 This page contains all of Baruga's submissions organized into different sections.
 
 ## Baruga's Submissions
+1. [Week 1: BARUGA 083124](submissions/week1_baruga_083124.html)
+2. [Week 2: Excel Pivot Table + Chart](submissions/week2_excel_pivottable_chart_baruga.html)
+3. [Midterm Project: Baruga](submissions/midterm_project_baruga.html)
+4. [Airquality Project](submissions/airquality.html)
+5. [Updated Week 1: Midterm Project](submissions/updated_week1_midterm_project.html)
+6. [Summary](submissions/summary.html)
+
+[Back to Main Page](introduction.html)
+
+
+## Baruga's Submissions Downloadable Versions
 
 1. [Week 1: BARUGA 083124](submissions/week1_baruga_083124.qmd)
 2. [Week 2: Excel Pivot Table + Chart](submissions/week2_excel_pivottable_chart_baruga.qmd)
