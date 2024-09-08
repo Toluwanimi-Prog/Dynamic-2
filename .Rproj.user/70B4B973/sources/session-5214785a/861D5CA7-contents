@@ -1,0 +1,91 @@
+---
+title: "Week_1_BARUGA_083124"
+subtitle: "Excel unit"
+format: html
+---
+
+## Introduction to Excel
+
+Microsoft Excel is a crucial tool for data management, analysis, and visualization. In this exercise, I explored its basic functionalities, including logging in, creating files, using fundamental functions, and generating visualizations. Each step highlighted how Excel can effectively handle a wide range of data tasks.
+
+## Basics of Excel
+
+### What is Excel?
+
+Excel is a versatile spreadsheet tool used for organizing, formatting, and analyzing data. Accessing Excel Online via OneDrive enabled me to work seamlessly from anywhere, benefiting from automatic cloud storage and file management. Renaming files and easy access through OneDrive demonstrated the advantages of cloud-based storage.
+
+### Mastering Excel's Structure
+
+Understanding Excel's structure---cells ***(individual data units)***, columns ***(vertical divisions)***, and rows ***(horizontal divisions)***---was crucial for data management. Proper data entry ensures Excel adjusts layouts automatically, which helps maintain data organization and readiness for analysis.
+
+### Applying Basic Functions
+
+-   **`SUM`**: `=SUM(A1:A10)`\
+    **Explanation**: Adds a range of numbers quickly, useful for total calculations like sales.
+
+-   **`AVERAGE`**: `=AVERAGE(B1:B10)`\
+    **Explanation**: Computes the mean, aiding in trend analysis and comparisons.
+
+-   **`MAX`**: `=MAX(C1:C10)`\
+    **Explanation**: Finds the highest value, helpful for identifying peak figures.
+
+-   **`MIN`**: `=MIN(D1:D10)`\
+    **Explanation**: Determines the lowest value, useful for assessing minimums in data.
+
+### Creating Visualizations
+
+-   **NB** Dataset chosen: economics_ggplot2.csv
+
+I explored various charts in Excel:
+
+-   **Scatter Plots**: ***pce vs pop***
+
+Useful for visualizing relationships between variables.
+
+![](Screenshot%202024-08-31%20at%203.48.21%20PM.png)
+
+-   There is somewhat of a positive correlation between pce (Personal Consumption Expenditures) and pop (Population), which might mean when the population goes up, personal consumption expenditures also rise. This makes sense as more people means more spending overall.
+
+-   **Line Plots**: ***psavert vs uempmed***
+
+Ideal for displaying trends over time.
+
+![](Screenshot%202024-08-31%20at%204.00.15%20PM.png)
+
+-   Changes in the personal savings rate (psavert) does seem to be affect by changes in the median duration of unemployment (uempmed) but the pattern is not very consistent. The evidence is not strong enough to make a conclusion as there is a contradiction by the fact that the highest median duration of unemployment sees some of the lowest personal savings rate.
+
+-   **Bar Charts**: ***Unemployment Rate (unemploy) by Year***
+
+Great for comparing different categories.
+
+![](Screenshot%202024-08-31%20at%206.19.56%20PM.png)
+
+-   The graph suggests that unemployment has been fluctuating significantly over time. The recent sharp peak followed by a drop could indicate a period of economic downturn or crisis that caused a spike in unemployment, which was then followed by a rapid recovery or improvement in the job market. This pattern may reflect temporary economic disruptions, policy changes, or external events impacting employment levels.
+
+-   **Pie Charts**:
+
+Effective for illustrating proportions within a whole.
+
+![](Screenshot%202024-08-31%20at%2010.38.36%20PM.png)
+
+-   The pie chart shows that the data has a high degree of variability with no dominant category. This chart indicates that the median duration of unemployment is spread across many different values, making it difficult to see any clear patterns or trends. The tiny slices make it hard to interpret or draw meaningful conclusions, which may suggest that another type of chart (a histogram or box plot) would be more suitable for visualizing this data.
+
+-   **Histograms**:
+
+Shows the distribution of data.
+
+![](Screenshot%202024-08-31%20at%204.15.30%20PM.png)
+
+-   This shows that most unemployment rates are around an average (8000), but there are some periods or regions with much higher rates. The right skew shows that high unemployment is rare but can be quite severe.
+
+### Handling NA Values
+
+-   My dataset doesn’t contain any NAs, but I learned that handling them in Excel involves using the **Filter** tool to exclude rows with missing values, or using functions like `IFERROR` or `ISNA` to replace or highlight them. This process ensures that any data analysis remains accurate and that missing data doesn't skew results.
+
+### Applying Learning Through Visualization
+
+I compared different visualizations using a class dataset. Scatter plots effectively showed relationships, line plots illustrated trends, and bar charts compared categories. Selecting the right visualization is crucial for accurate data representation.
+
+### Conclusion
+
+This exercise enhanced my skills in Excel, from basic data entry and functions to advanced visualization and data cleaning. These capabilities are essential for effective data manipulation and interpretation in future analysis tasks.
