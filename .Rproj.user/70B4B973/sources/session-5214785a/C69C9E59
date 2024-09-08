@@ -3,7 +3,7 @@
     "path": "C:/Users/toluf/OneDrive/Desktop/Dynamic 2/Baruga Main.qmd",
     "project_path": "Baruga Main.qmd",
     "type": "quarto_markdown",
-    "hash": "1765341392",
+    "hash": "2725686472",
     "contents": "",
     "dirty": false,
     "created": 1725836355026.0,
@@ -17,16 +17,16 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "cursorPosition": "7,0",
-        "scrollLine": "0",
-        "rmdVisualModeLocation": "56:0"
+        "cursorPosition": "16,0",
+        "scrollLine": "1",
+        "rmdVisualModeLocation": "267:0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1725837265,
+    "lastKnownWriteTime": 1725838440,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1725837265969,
+    "last_content_update": 1725838440527,
     "read_only": false,
     "read_only_alternatives": []
 }
