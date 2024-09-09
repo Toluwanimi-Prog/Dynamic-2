@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Abigail Tako">
+
+<title>Abigail Tako Week2 Excel PivotTable + Chart</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Week2_EXCEL_TAKO_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Week2_EXCEL_TAKO_files/libs/quarto-html/quarto.js"></script>
+<script src="Week2_EXCEL_TAKO_files/libs/quarto-html/popper.min.js"></script>
+<script src="Week2_EXCEL_TAKO_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Week2_EXCEL_TAKO_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Week2_EXCEL_TAKO_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Week2_EXCEL_TAKO_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Week2_EXCEL_TAKO_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Week2_EXCEL_TAKO_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Week2_EXCEL_TAKO_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Abigail Tako Week2 Excel PivotTable + Chart</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Abigail Tako </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="histogram" class="level2">
+<h2 class="anchored" data-anchor-id="histogram">Histogram</h2>
+<p>In week 2, data sets that I am using is air quality data set. After cleaning the data set explained below, select all the data and insert the histogram chart to create the visualization of the data. The variables for the histogram chart is only the ozone. From the histogram, it shows the distribution of the ozone, most of the ozone are 1 to 25 ppm.</p>
+<p><img src="/Users/abigailtako/Documents/FALL%202024/Visualizations/Week%202_excelPivot_tako/histogramozone.png" class="img-fluid"></p>
+<p><strong>clean data</strong></p>
+<p>First, from the data, we are going to clean the data, by removing those that are have the value NA or not available.</p>
+<p>1. Select all the data, and search for the filter.</p>
+<p>2. Then, it will appear the drop down menu for each column, select the drop down menu on the first column which is Ozone</p>
+<p>3. Select NA. To remove it, select all from the row that has NA until the bottom and select delete rows 6-151.</p>
+<p>4. Select the drop down menu on column Ozone, select all and apply, it will give back the table, however there’s no NA anymore on the Ozone.</p>
+<p>Looking at the data, there still some NA on the column B for Solar.R. Repeat the way just like before. Next, to make it earlier to read the data, sort the day and month to be in order. Select the column for month, click the sort from smallest to largest, do the same for day.</p>
+</section>
+<section id="scatter-plot" class="level2">
+<h2 class="anchored" data-anchor-id="scatter-plot">Scatter plot</h2>
+<p>Using the air quality data sets, click on column A(ozone) and D (temperature) to show the correlation between both of them. After clicking on both column, I’m going to insert the scatter plot. The scatter plot shows a relationship between Ozone levels (y-axis) and Temperature (x-axis). The general trend indicates a positive correlation: as the temperature increases, the ozone level tends to increase as well.</p>
+<p><img src="/Users/abigailtako/Documents/FALL%202024/Visualizations/Week%202_excelPivot_tako/scatterplotozone.png" class="img-fluid"></p>
+</section>
+<section id="pivot-table-chart" class="level2">
+<h2 class="anchored" data-anchor-id="pivot-table-chart">Pivot Table &amp; Chart</h2>
+<p>To make a pivot table and chart, first select all the data, and click insert. On the let corner, it will appear the pivot menu, press that and select the create own pivot table. I select and drag ozone, temperature, Solar. R, and Wind to the value, for the row I’ll put only the month. Then, I change the value field settings to average, this is to provide the average of ozone, temperature, Solar. R, and Wind monthly. After doing the pivot table, select that pivot table and insert the pivot chart to create the visualization.</p>
+<p><img src="/Users/abigailtako/Documents/FALL%202024/Visualizations/Week%202_excelPivot_tako/pivot1.png" class="img-fluid"></p>
+<p>From the pivot table and chart above, it shows that ozone levels appear to increase with higher temperature and solar radiation but decrease with higher wind speeds.</p>
+<p>Next, I’m going to provide another pivot table, that shows the average of ozone, temperature, Solar. R, and Wind daily from day 1 to 31. To do that, select again the first table, the one that was cleaned, then again select the pivot table and choose the create own pivot table.</p>
+<p>I select and drag ozone, temperature, Solar. R, and Wind to the value, for the row I’ll put only the day. Then, I change the value field settings to average, this is to provide the average of ozone, temperature, Solar. R, and Wind per day.</p>
+<p>Now, I’m going to add the pivot chart from that new pivot table. I choose two charts, from those two I can create conclusion and better visualizations.</p>
+<p>From the chart presented below, the average daily of Temperature and Wind each have a positive correlation, however not with the average daily of Solar. R and the Ozone. Also, on day 15 it shows the lowest average of ozone and solar. r.</p>
+<p><img src="/Users/abigailtako/Documents/FALL%202024/Visualizations/Week%202_excelPivot_tako/pivot2.png" class="img-fluid"></p>
+<p>Third, I’m going to make another pivot table that can show more detailed on each month per day.I’m going to choose to present the 5th month, so I’m going to press the drop down menu from the column “month” and select only the 5. Next, the table will only provide the information from month 5, day 1-31 and the sum of ozone, wind, temp, and solar.r.</p>
+<p><img src="/Users/abigailtako/Documents/FALL%202024/Visualizations/Week%202_excelPivot_tako/pivot3.png" class="img-fluid"></p>
+<p>From the chart, we can see that, on day 30 from the 5th month, it shows the highest sum of ozone.</p>
+</section>
+<section id="individual-project" class="level2">
+<h2 class="anchored" data-anchor-id="individual-project">Individual Project</h2>
+<p>First, the source that I chose is National Transportation Library (NTL) Data. There are lots of data sets from NTL, which can be access through <a href="https://ntl.bts.gov/ntl" class="uri">https://ntl.bts.gov/ntl</a>. Then, I chose the Highway safety and click on the motor vehicle safety data.</p>
+<p>I’m interested in this one, because it is critical to understand trends in road safety, which is a major public concern. The data that I collect is from this link <a href="https://www.bts.gov/content/motor-vehicle-safety-data" class="uri">https://www.bts.gov/content/motor-vehicle-safety-data</a>. Those data was calculated by U.S. Department of Transportation, Bureau of Transportation Statistics. <a href="https://www.bts.gov/topics/national-transportation-statistics" class="uri">https://www.bts.gov/topics/national-transportation-statistics</a></p>
+<p>I need to rearrange the table to make it more clear, so I transpose the from row to column.</p>
+<p>The variables that I’m using are the year, injured, crashes, and also vehicle. Those are the key variables that can be useful for my analysis and visualizations.</p>
+<p>1. Select the row and copy, then click transpose from row to column.</p>
+<p>2. Next, select the table that has been transpose to insert the histogram and scatter plot.</p>
+<p><img src="/Users/abigailtako/Documents/FALL%202024/Visualizations/Week%202_excelPivot_tako/histo&amp;scatterproject.png" class="img-fluid"></p>
+<p>From the histogram, we can look at the vehicle distribution.</p>
+<p>From the scatter plot, we can see the correlation of each crashes, injured, and vehicle yearly, and those three are very similar, so it shows that each have weak correlation coefficient values, which means that there is little to no linear relationship between those variable.</p>
+<p>Next is to make the pivot table, insert the pivot table and I’m going to make the year and the percentage of fatalities. Then, insert the pivot chart.</p>
+<p><img src="/Users/abigailtako/Documents/FALL%202024/Visualizations/Week%202_excelPivot_tako/pivot1project.png" class="img-fluid"></p>
+<p>From the pivot chart, it shows that there is a minimum fatalities percentage on the year 2011. The percentage of fatalities in that year reached its lowest point compared to other years in the data set. This suggests that fewer fatalities, as a proportion of the total relevant incidents or events, occurred in 2011 than in other years.</p>
+<p>I add another pivot table regarding the crashes versus the percentage of fatalities.</p>
+<p><img src="/Users/abigailtako/Documents/FALL%202024/Visualizations/Week%202_excelPivot_tako/pivot2project.png" class="img-fluid"></p>
+<p>At first, my hypothesis was the higher number of crashes, the higher the percentage of fatalities would be. However, looking at the chart it is not true.</p>
+<p>The lowest percentage of fatalities was when there were 5,377,289 crashes. The highest percentage of fatalities was when there were 6,159,350.</p>
+</section>
+<section id="conclusion-from-individual-project" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-from-individual-project">Conclusion from Individual Project</h2>
+<p>I take data from National Transportation Library (NTL) data that was accessed through <a href="https://ntl.bts.gov/ntl" class="uri">https://ntl.bts.gov/ntl</a>. For my analysis, I focused on key variables like the number of accidents, percentage of fatalities, and safety interventions over the years. One of the significant findings was the noticeable decrease in the percentage of fatalities, with a minimum observed in 2011. This suggests that factors such as improved vehicle safety features, stricter traffic laws, and public awareness campaigns during that period may have contributed to reducing fatalities.</p>
+<p>Overall, this project highlights the importance of continuous monitoring and improvement of road safety measures. Analyzing such data can guide future strategies for reducing accidents and saving lives on the road.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
