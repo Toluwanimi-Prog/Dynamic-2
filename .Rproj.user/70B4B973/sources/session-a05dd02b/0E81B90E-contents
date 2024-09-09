@@ -9,8 +9,8 @@ book:
   chapters:
     - index.qmd
     - Introduction.qmd
-    - Baruga Main.qmd
-    - Tako Main files.qmd
+    - Baruga_Main.qmd
+    - Tako_Main_files.qmd
     - summary.qmd
     - references.qmd
 

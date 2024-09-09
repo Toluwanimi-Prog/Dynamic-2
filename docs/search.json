@@ -1,7 +1,47 @@
 [
   {
-    "objectID": "Baruga Main.html",
-    "href": "Baruga Main.html",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Dynamic Group 2",
+    "section": "",
+    "text": "Preface",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#intoduction",
+    "href": "index.html#intoduction",
+    "title": "Dynamic Group 2",
+    "section": "Intoduction",
+    "text": "Intoduction\nHello and Welcome!\nThis book is dedicated to showcasing the work of Group 2, a dynamic team of dedicated students from the Visualization class at the prestigious Oral Roberts University, Oklahoma, under the guidance of Dr. V. Here, you’ll find weekly Quarto documents and exciting projects as they explore the world of data visualization.\nThe Members of the Group 2 are\n\nAbigail Tako\nCaleb Pena\nDerrick Baruga\nToluwanimi Olufawo\n\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "Introduction.html",
+    "href": "Introduction.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "2 Welcome to Group 2’s Booklet\nThis book is dedicated to showcasing the work of Group 2, a dynamic team of dedicated students from the Visualization class at the prestigious Oral Roberts University, Oklahoma, under the guidance of Dr. V. Here, you’ll find weekly Quarto documents and exciting projects as they explore the world of data visualization.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "Introduction.html#group-members",
+    "href": "Introduction.html#group-members",
+    "title": "1  Introduction",
+    "section": "2.1 Group Members",
+    "text": "2.1 Group Members\n\nAbigail Tako\nCaleb Pena\nDerrick Baruga\nToluwanimi Olufawo",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "Baruga_Main.html",
+    "href": "Baruga_Main.html",
     "title": "2  Derrick Baruga",
     "section": "",
     "text": "3 Derrick Baruga’s Page\nThis page contains all of Baruga’s submissions organized into different sections.",
@@ -10,8 +50,8 @@
     ]
   },
   {
-    "objectID": "Baruga Main.html#barugas-submissions",
-    "href": "Baruga Main.html#barugas-submissions",
+    "objectID": "Baruga_Main.html#barugas-submissions",
+    "href": "Baruga_Main.html#barugas-submissions",
     "title": "2  Derrick Baruga",
     "section": "3.1 Baruga’s Submissions",
     "text": "3.1 Baruga’s Submissions\n\nWeek 1: BARUGA 083124\nWeek 2: Excel Pivot Table + Chart\nMidterm Project: Baruga\nAirquality Project\nUpdated Week 1: Midterm Project\nSummary\n\nBack to Main Page",
@@ -20,13 +60,43 @@
     ]
   },
   {
-    "objectID": "Baruga Main.html#barugas-submissions-downloadable-versions",
-    "href": "Baruga Main.html#barugas-submissions-downloadable-versions",
+    "objectID": "Baruga_Main.html#barugas-submissions-downloadable-versions",
+    "href": "Baruga_Main.html#barugas-submissions-downloadable-versions",
     "title": "2  Derrick Baruga",
     "section": "3.2 Baruga’s Submissions Downloadable Versions",
     "text": "3.2 Baruga’s Submissions Downloadable Versions\n\nWeek 1: BARUGA 083124\nWeek 2: Excel Pivot Table + Chart\nMidterm Project: Baruga\nAirquality Project\nUpdated Week 1: Midterm Project\nSummary\n\nBack to Main Page",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Derrick Baruga</span>"
+    ]
+  },
+  {
+    "objectID": "Tako_Main_files.html",
+    "href": "Tako_Main_files.html",
+    "title": "3  Abigail Tako",
+    "section": "",
+    "text": "4 Abigail Tako’s Page\nThis page contains all of Tako’s submissions organized into different sections.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Abigail Tako</span>"
+    ]
+  },
+  {
+    "objectID": "Tako_Main_files.html#takos-submissions",
+    "href": "Tako_Main_files.html#takos-submissions",
+    "title": "3  Abigail Tako",
+    "section": "4.1 Tako’s Submissions",
+    "text": "4.1 Tako’s Submissions\n\nWeek 2: Excel Pivot Table + Chart\n\nBack to Main Page",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Abigail Tako</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "4  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary</span>"
     ]
   }
 ]

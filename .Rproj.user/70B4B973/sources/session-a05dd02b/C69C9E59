@@ -1,7 +1,7 @@
 {
     "id": "C69C9E59",
-    "path": "C:/Users/toluf/OneDrive/Desktop/Dynamic 2/Baruga Main.qmd",
-    "project_path": "Baruga Main.qmd",
+    "path": "C:/Users/toluf/OneDrive/Desktop/Dynamic 2/Baruga_Main.qmd",
+    "project_path": "Baruga_Main.qmd",
     "type": "quarto_markdown",
     "hash": "1886807924",
     "contents": "",
@@ -22,11 +22,11 @@
         "rmdVisualModeLocation": "267:0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1725840571,
+    "lastKnownWriteTime": 1725841529,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1725840571305,
+    "last_content_update": 1725841529689,
     "read_only": false,
     "read_only_alternatives": []
 }
