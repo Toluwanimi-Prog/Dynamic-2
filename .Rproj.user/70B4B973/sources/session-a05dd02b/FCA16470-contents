@@ -7,15 +7,17 @@ This page contains all of Toluwanimi Olufawo submissions this semester organized
 ### Week 1
 
 ### Week 2
- <summary>Click to expand Week 2</summary>
+
+<summary>Click to expand Week 2</summary>
+
 I am using the air-quality dataset, which contains air quality measurements collected from May to September. This dataset includes:
 
-- **Ozone**
-- **Solar.R** (solar radiation)
-- **Wind** (wind speed in mph)
-- **Temp** (temperature in Fahrenheit)
-- **Month** (May to September)
-- **Day** (1 to 31)
+-   **Ozone**
+-   **Solar.R** (solar radiation)
+-   **Wind** (wind speed in mph)
+-   **Temp** (temperature in Fahrenheit)
+-   **Month** (May to September)
+-   **Day** (1 to 31)
 
 **Data Cleaning Process**
 
@@ -53,17 +55,20 @@ Ozone levels peak on days 7 and 8, correlating with higher temperatures, showing
 
 ### Week 3
 
-
 ## Friday
+
 ### Week 1
+
 ### Week 2
+
 ### Week 3
 
 ## Midterm Project
+
 ### Week 1
+
 ### Week 2
+
 ### Week 3
-
-
 
 [Back to Main Page](introduction.html)

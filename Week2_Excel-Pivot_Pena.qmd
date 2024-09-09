@@ -20,17 +20,17 @@ Month (Numeric) - Months from May to September
 
 Day (Numeric) - Days of the months ranging from 1 to 31
 
-I am using Excel to clean the data, which removes all the rows which have N/A values, and I did an exploration analysis.
+I am using Excel to clean the data, which removes all the rows which have N/A values, and I did an exploration analysis. 
 
 ### Ozone vs Temperature Histogram
 
-This histogram represents the amount of temperature values calculated within each border of values of ozone. For example, in the range of ozone level between 1 and 25, there were 49 temperature values recorded.
+This histogram represents the amount of temperature values calculated within each border of values of ozone. For example, in the range of ozone level between 1 and 25, there were 49 temperature values recorded. 
 
 ![](Hist_Ozone_Pena.png)
 
 ### Ozone vs Temperature Scatter Plot
 
-This scatter plot displays the correlation between the ozone levels and the temperature values recorded within these five months. As the ozone level increased, so did the temperature value, with one outlier.
+This scatter plot displays the correlation between the ozone levels and the temperature values recorded within these five months. As the ozone level increased, so did the temperature value, with one outlier. 
 
 ![](Scat_Oz_Temp_Pena.png)
 
@@ -46,6 +46,9 @@ This PivotTable displays the average temperature values for each day of each mon
 
 ![](PivotTable2_Average_Temp_Pena.png)
 
+
+
+
 # Friday, September 6, 2024
 
 Using the same airquality datasets, I worked on creating PivotCharts from previous and new PivotTables comparing different values and variables.
@@ -60,7 +63,7 @@ This pivot table produced this chart. These are the average values of each varia
 
 ### PivotChart2 - Average Ozone Values by 'Temp'
 
-This pivot table produced this chart. This PivotChart displays the average ozone values for each temperature value that was recorded. As the temperature values increase, the average values for the ozone can be seen to also increase in a correlated way.
+This pivot table produced this chart. This PivotChart displays the average ozone values for each temperature value that was recorded. As the temperature values increase, the average values for the ozone can be seen to also increase in a correlated way. 
 
 ![](PivotTable2_AverageOzoneByTemp_Pena.png)
 
@@ -88,21 +91,21 @@ Temperature (Numerical) - Oceanographic, temperature data collected from a 50 m 
 
 Oxygen (Numerical) - Oceanographic, oxygen data collected from a 50 m water depth.
 
-Northern Copepod Biomass (Numerical) - Copepod community data collected from from vertical net samples on the northern area
+Northern Copepod Biomass (Numerical) - Copepod community data collected from from vertical net samples on the northern area 
 
-Southern Copepod Biomass (Numerical) - Copepod community data collected from from vertical net samples on the southern area
+Southern Copepod Biomass (Numerical) - Copepod community data collected from from vertical net samples on the southern area 
 
 ### Visualizations
 
-The descriptive statistics of all the water temperatures sampled throughout the 28 years. The average temperature of all collective 28 years is 8.75 ºC. The lowest temperature recorded of all 28 years is 6.92 ºC and the highest temperature recorded from all 28 years is 14.65 ºC.
+The descriptive statistics of all the water temperatures sampled throughout the 28 years. The average temperature of all collective 28 years is 8.75 ºC. The lowest temperature recorded of all 28 years is 6.92 ºC and the highest temperature recorded from all 28 years is 14.65 ºC. 
 
 ![](TemperatureStats.png)
 
-The peak temperatures of the water during the winter have a higher average than the peak temperatures of the water during the summer.
+The peak temperatures of the water during the winter have a higher average than the peak temperatures of the water during the summer. 
 
 ![](TemperatureData.png)
 
-Through the dot plot, the average of the temperatures is 8.75 ºC as most of the dot population is visible there.
+Through the dot plot, the average of the temperatures is 8.75 ºC as most of the dot population is visible there. 
 
 ![](TemperatureAverage.png)
 
