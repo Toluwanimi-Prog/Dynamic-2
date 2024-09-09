@@ -9,8 +9,15 @@ book:
   chapters:
     - index.qmd
     - Introduction.qmd
-    - Baruga_Main.qmd
     - Tako_Main_files.qmd
+    - Caleb_Main.qmd
+    - Baruga_Main.qmd
+    - Toluwanimi_Main.qmd 
+    - Week2_Excel_PivotTable_Chart_Olufawo.qmd
+    - Week2_Excel-Pivot_Pena.qmd
+    - Week2_Excel_PivotTable_Chart_Baruga.qmd
+    - Week2_EXCEL_TAKO.qmd 
+    
     - summary.qmd
     - references.qmd
 

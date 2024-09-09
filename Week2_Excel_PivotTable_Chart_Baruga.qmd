@@ -1,7 +1,7 @@
 ---
 title: "Airquality"
 author: "Derrick Baruga"
-#format: html
+format: html
 ---
 
 I am using the air-quality dataset, which contains air quality measurements collected over several months, specifically from May to September. The dataset includes the following variables: **Ozone**, **Solar.R** (solar radiation), **Wind** (wind speed in miles per hour), **Temp** (temperature in degrees Fahrenheit), **Month** (ranging from 5 for May to 9 for September), and **Day** (ranging from 1 to 31).

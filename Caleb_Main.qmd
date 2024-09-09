@@ -1,0 +1,15 @@
+
+---
+title: "Caleb Pena"
+---
+
+# Caleb Pena's Page
+
+This page contains all of Pena's submissions organized into different sections.
+
+##  Pena's Submissions
+2. [Week 2: Excel Pivot Table + Chart](Week2_Excel-Pivot_Pena.qmd)
+6. [Summary](summary.qmd)
+
+
+[Back to Main Page](introduction.html)
