@@ -80,8 +80,8 @@
     ]
   },
   {
-    "objectID": "Caleb_MaIn.html",
-    "href": "Caleb_MaIn.html",
+    "objectID": "Caleb_Main.html",
+    "href": "Caleb_Main.html",
     "title": "3  Caleb Pena",
     "section": "",
     "text": "3.1 Wednesday",
@@ -90,8 +90,8 @@
     ]
   },
   {
-    "objectID": "Caleb_MaIn.html#wednesday",
-    "href": "Caleb_MaIn.html#wednesday",
+    "objectID": "Caleb_Main.html#wednesday",
+    "href": "Caleb_Main.html#wednesday",
     "title": "3  Caleb Pena",
     "section": "",
     "text": "3.1.1 Week 1\n\n\n3.1.2 Week 2\nWednesday, September 4, 2024\nI am using the airquality dataset, which is a collection of data collected from 153 observations based on 6 different variables. These variables include:\nOzone (Numeric) - Mean ozone in parts per billion from 1300 to 1500 hours at Roosevelt Island\nSolar R (Numeric) - Solar radiation in Langleys in the frequency band 4000–7700 Angstroms from 0800 to 1200 hours at Central Park\nWind (Numeric) - Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport\nTemp (Numeric) - Maximum daily temperature in degrees Fahrenheit at La Guardia Airport\nMonth (Numeric) - Months from May to September\nDay (Numeric) - Days of the months ranging from 1 to 31\nI am using Excel to clean the data, which removes all the rows which have N/A values, and I did an exploration analysis.\nOzone vs Temperature Histogram\nThis histogram represents the amount of temperature values calculated within each border of values of ozone. For example, in the range of ozone level between 1 and 25, there were 49 temperature values recorded.\n\nOzone vs Temperature Scatter Plot\nThis scatter plot displays the correlation between the ozone levels and the temperature values recorded within these five months. As the ozone level increased, so did the temperature value, with one outlier.\n\nMy First PivotTable\nThis PivotTable displays the average values of each variable for each of the five months.\n\nMy Second PivotTable\nThis PivotTable displays the average temperature values for each day of each month.\n\n\n\n3.1.3 Week 3",
@@ -100,8 +100,8 @@
     ]
   },
   {
-    "objectID": "Caleb_MaIn.html#friday",
-    "href": "Caleb_MaIn.html#friday",
+    "objectID": "Caleb_Main.html#friday",
+    "href": "Caleb_Main.html#friday",
     "title": "3  Caleb Pena",
     "section": "3.2 Friday",
     "text": "3.2 Friday\n\n3.2.1 Week 1\n\n\n3.2.2 Week 2\nFriday, September 6, 2024\nUsing the same airquality datasets, I worked on creating PivotCharts from previous and new PivotTables comparing different values and variables.\nPivotChart1 - Average Variable Values by ‘Month’\nThis pivot table produced this chart. These are the average values of each variables for each of the five months. The PivotChart shows the comparison between each of the variables and how each one increases or decreases throughout the five months.\n\n\nPivotChart2 - Average Ozone Values by ‘Temp’\nThis pivot table produced this chart. This PivotChart displays the average ozone values for each temperature value that was recorded. As the temperature values increase, the average values for the ozone can be seen to also increase in a correlated way.\n\n\nPivotChart3 - Average Temp and Ozone Values by ‘Wind’\nThis pivot table produced this chart. This PivotChart displays the average values of both temperature and ozone for each wind value recorded. From the chart, it is evident that as the wind values increase, the average values for temperature seem to slightly decrease and the average values for the ozone levels seem to greatly decrease.\n\n\nNewport Oregon Oceanographic Temperature Dataset\nStarting off in the year 1996, a group of NOAA Fisheries and Oregon State University Scientists sampled the Newport Hydrographic Line fortnightly to understand changing ocean conditions. The various variable data was collected from a station located 5 miles off the coast of Newport, Oregon. The scientists sampled and collected data regarding seven different variables:\nDay (Numerical) - The specific day of the month in which the data was sampled.\nMonth (Numerical) - The specific month of the year in which the data was sampled.\nYear (Numerical) - The specific year in which the data was sampled.\nTemperature (Numerical) - Oceanographic, temperature data collected from a 50 m water depth.\nOxygen (Numerical) - Oceanographic, oxygen data collected from a 50 m water depth.\nNorthern Copepod Biomass (Numerical) - Copepod community data collected from from vertical net samples on the northern area\nSouthern Copepod Biomass (Numerical) - Copepod community data collected from from vertical net samples on the southern area\nVisualizations\nThe descriptive statistics of all the water temperatures sampled throughout the 28 years. The average temperature of all collective 28 years is 8.75 ºC. The lowest temperature recorded of all 28 years is 6.92 ºC and the highest temperature recorded from all 28 years is 14.65 ºC.\n\nThe peak temperatures of the water during the winter have a higher average than the peak temperatures of the water during the summer.\n\nThrough the dot plot, the average of the temperatures is 8.75 ºC as most of the dot population is visible there.\n\nThe average temperatures of all collective 28 years gathered within each month. During the summer months, the averages are lower. During the winter months, the averages are higher.\n ### Week 3",
@@ -110,8 +110,8 @@
     ]
   },
   {
-    "objectID": "Caleb_MaIn.html#midterm-project",
-    "href": "Caleb_MaIn.html#midterm-project",
+    "objectID": "Caleb_Main.html#midterm-project",
+    "href": "Caleb_Main.html#midterm-project",
     "title": "3  Caleb Pena",
     "section": "3.3 Midterm Project",
     "text": "3.3 Midterm Project\n\n3.3.1 Week 1\n\n\n3.3.2 Week 2\n\n\n3.3.3 Week 3\nBack to Main Page",
