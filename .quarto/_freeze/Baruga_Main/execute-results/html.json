@@ -1,0 +1,17 @@
+{
+  "hash": "5f38724ee555ea9da3dce7bc17c7e64b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Baruga\n\nakjhkdjsahkjhdsafkjhfd\n\n## Wednesday Week 1\n\nkjhsdkjhfdkjhdfkjshd\n\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(pressure)\n```\n\n::: {.cell-output-display}\n![](Baruga_Main_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n\n## Friday Week 1\n\nslkdjflskjdf\n\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(iris)\n```\n\n::: {.cell-output-display}\n![](Baruga_Main_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\n### subsection of friday",
+    "supporting": [
+      "Baruga_Main_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

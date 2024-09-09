@@ -1,15 +1,69 @@
+# Toluwanimi Olufawo
 
----
-title: "Toluwanimi Olufawo"
----
+This page contains all of Toluwanimi Olufawo submissions this semester organized into different sections.
 
-# Toluwanimi Olufawo's Page
+## Wednesday
 
-This page contains all of Olufawo's submissions organized into different sections.
+### Week 1
 
-## OLufawo's Submissions
-2. [Week 2: Excel Pivot Table + Chart](Week2_Excel_PivotTable_Chart_Olufawo.qmd)
-6. [Summary](summary.qmd)
+### Week 2
+ <summary>Click to expand Week 2</summary>
+I am using the air-quality dataset, which contains air quality measurements collected from May to September. This dataset includes:
+
+- **Ozone**
+- **Solar.R** (solar radiation)
+- **Wind** (wind speed in mph)
+- **Temp** (temperature in Fahrenheit)
+- **Month** (May to September)
+- **Day** (1 to 31)
+
+**Data Cleaning Process**
+
+I cleaned the dataset using Excel by removing rows with missing values (NA) and performed exploratory analysis to reveal patterns and trends in ozone levels and other variables.
+
+**Ozone Histogram**
+
+![](hist_ozone_toluwanimi.png)
+
+The Ozone distribution shows a right-skewed pattern, indicating that most values are low, with a few high outliers. This could reflect variations in weather or pollution.
+
+**Scatter Plot: Ozone vs Temperature**
+
+![](scatter_ozone_vs_temp_toluwanimi.png)
+
+There is a weak positive correlation between ozone and temperature, suggesting that higher temperatures tend to coincide with higher ozone levels, though other factors like wind or pollution likely contribute.
+
+**Average Ozone Per Day & Month**
+
+![](pivot4_table_toluwanimi.png)
+
+The highest ozone averages occur on May 25th and July 25th, with notable peaks also on May 29th and July 30th. July generally exhibits higher ozone levels, especially around the end of the month.
+
+**Solar Radiation and Temperature Variations**
+
+![](pivot1_chart_toluwanimi.png)
+
+The chart reveals daily variations in solar radiation and temperature, peaking around days 18, 19, and 29. Both solar radiation and temperature are higher on these days, pointing to intense sunlight and warmth during these periods.
+
+**Daily Averages of Temperature and Ozone**
+
+![](pivot2_chart_toluwanimi.png)
+
+Ozone levels peak on days 7 and 8, correlating with higher temperatures, showing that warmer days generally have higher ozone values, although this trend doesn't apply across all days.
+
+### Week 3
+
+
+## Friday
+### Week 1
+### Week 2
+### Week 3
+
+## Midterm Project
+### Week 1
+### Week 2
+### Week 3
+
 
 
 [Back to Main Page](introduction.html)
