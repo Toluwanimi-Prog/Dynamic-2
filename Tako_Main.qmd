@@ -58,25 +58,6 @@ Third, I'm going to make another pivot table that can show more detailed on each
 
 From the chart, we can see that, on day 30 from the 5th month, it shows the highest sum of ozone.
 
-**Individual Project**
-
-\*\* Who collected the data\*\*
-
-The source that I chose is National Transportation Library (NTL) Data. There are lots of data sets from NTL, which can be access through <https://ntl.bts.gov/ntl>. Data set that I chose is motor vehicle safety. This data set is collected by U.S. Department of Transportation, National Highway Traffic Safety Administration, National Center for Statistics and Analysis, and Fatality Analysis Reporting System (FARS) Database. I'm interested in this one, because it is critical to understand trends in road safety, which is a major public concern. The data that I collect is from this link <https://www.bts.gov/content/motor-vehicle-safety-data>.
-
-**Purpose**
-
-Monitoring the trends in motor vehicle safety in the U.S., including fatalities, injuries, and crashes. It serves to assess the effectiveness of safety regulations, technology advancements, and policy interventions over time. From the visualizations, it can improve the safety measures and highlight the effectiveness of road safety interventions over the years, making it highly valuable for assessing long-term changes in traffic-related fatalities and injuries.
-
-**Variables**
-
--   Fatalities - total number of deaths from motor vehicle crashes
-
--   Injured persons - total number of people injured in motor vehicle accidents
-
--   Crashes - total number of motor vehicle crashes
-
--   Vehicles miles traveled - total number of miles driven by vehicles
 
 ### Week 3
 
@@ -85,6 +66,32 @@ Monitoring the trends in motor vehicle safety in the U.S., including fatalities,
 ### Week 1
 
 ### Week 2
+
+
+
+**Pivot Table & Chart**
+
+To make a pivot table and chart, first select all the data, and click insert. On the let corner, it will appear the pivot menu, press that and select the create own pivot table. I select and drag ozone, temperature, Solar. R, and Wind to the value, for the row I'll put only the month. Then, I change the value field settings to average, this is to provide the average of ozone, temperature, Solar. R, and Wind monthly. After doing the pivot table, select that pivot table and insert the pivot chart to create the visualization.
+
+![](./pivot1.png)
+
+From the pivot table and chart above, it shows that ozone levels appear to increase with higher temperature and solar radiation but decrease with higher wind speeds.
+
+Next, I'm going to provide another pivot table, that shows the average of ozone, temperature, Solar. R, and Wind daily from day 1 to 31. To do that, select again the first table, the one that was cleaned, then again select the pivot table and choose the create own pivot table.
+
+I select and drag ozone, temperature, Solar. R, and Wind to the value, for the row I'll put only the day. Then, I change the value field settings to average, this is to provide the average of ozone, temperature, Solar. R, and Wind per day.
+
+Now, I'm going to add the pivot chart from that new pivot table. I choose two charts, from those two I can create conclusion and better visualizations.
+
+From the chart presented below, the average daily of Temperature and Wind each have a positive correlation, however not with the average daily of Solar. R and the Ozone. Also, on day 15 it shows the lowest average of ozone and solar. r.
+
+![](./pivot2.png)
+
+Third, I'm going to make another pivot table that can show more detailed on each month per day.I'm going to choose to present the 5th month, so I'm going to press the drop down menu from the column "month" and select only the 5. Next, the table will only provide the information from month 5, day 1-31 and the sum of ozone, wind, temp, and solar.r.
+
+![](./pivot3.png)
+
+From the chart, we can see that, on day 30 from the 5th month, it shows the highest sum of ozone.
 
 **Histogram**
 
@@ -112,33 +119,19 @@ Using the air quality data sets, click on column A(ozone) and D (temperature) to
 
 ![](./scatterplotozone.png)
 
-**Pivot Table & Chart**
+### Week 3
 
-To make a pivot table and chart, first select all the data, and click insert. On the let corner, it will appear the pivot menu, press that and select the create own pivot table. I select and drag ozone, temperature, Solar. R, and Wind to the value, for the row I'll put only the month. Then, I change the value field settings to average, this is to provide the average of ozone, temperature, Solar. R, and Wind monthly. After doing the pivot table, select that pivot table and insert the pivot chart to create the visualization.
+[Back to Main Page](introduction.html)
 
-![](./pivot1.png)
 
-From the pivot table and chart above, it shows that ozone levels appear to increase with higher temperature and solar radiation but decrease with higher wind speeds.
+## Midterm Project
 
-Next, I'm going to provide another pivot table, that shows the average of ozone, temperature, Solar. R, and Wind daily from day 1 to 31. To do that, select again the first table, the one that was cleaned, then again select the pivot table and choose the create own pivot table.
+### Week 1
 
-I select and drag ozone, temperature, Solar. R, and Wind to the value, for the row I'll put only the day. Then, I change the value field settings to average, this is to provide the average of ozone, temperature, Solar. R, and Wind per day.
-
-Now, I'm going to add the pivot chart from that new pivot table. I choose two charts, from those two I can create conclusion and better visualizations.
-
-From the chart presented below, the average daily of Temperature and Wind each have a positive correlation, however not with the average daily of Solar. R and the Ozone. Also, on day 15 it shows the lowest average of ozone and solar. r.
-
-![](./pivot2.png)
-
-Third, I'm going to make another pivot table that can show more detailed on each month per day.I'm going to choose to present the 5th month, so I'm going to press the drop down menu from the column "month" and select only the 5. Next, the table will only provide the information from month 5, day 1-31 and the sum of ozone, wind, temp, and solar.r.
-
-![](./pivot3.png)
-
-From the chart, we can see that, on day 30 from the 5th month, it shows the highest sum of ozone.
-
+### Week 2
 **Individual Project**
 
-**Who collected the data**
+\*\* Who collected the data\*\*
 
 The source that I chose is National Transportation Library (NTL) Data. There are lots of data sets from NTL, which can be access through <https://ntl.bts.gov/ntl>. Data set that I chose is motor vehicle safety. This data set is collected by U.S. Department of Transportation, National Highway Traffic Safety Administration, National Center for Statistics and Analysis, and Fatality Analysis Reporting System (FARS) Database. I'm interested in this one, because it is critical to understand trends in road safety, which is a major public concern. The data that I collect is from this link <https://www.bts.gov/content/motor-vehicle-safety-data>.
 
@@ -158,12 +151,3 @@ Monitoring the trends in motor vehicle safety in the U.S., including fatalities,
 
 ### Week 3
 
-## Midterm Project
-
-### Week 1
-
-### Week 2
-
-### Week 3
-
-[Back to Main Page](introduction.html)
