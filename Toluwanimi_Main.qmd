@@ -2,6 +2,12 @@
 
 This page contains all of Toluwanimi Olufawo submissions this semester organized into different sections.
 
+## Monday
+
+### Week 1
+
+### Week 2
+
 ## Wednesday
 
 ### Week 1
@@ -12,11 +18,11 @@ This page contains all of Toluwanimi Olufawo submissions this semester organized
 
 **September 4 2024**
 
-During class today, we learnt about how to create pivot tables using exceland how best to properly present our data to convey the iformation we found accurately.
+During class today, we learnt about how to create pivot tables using excel and how best to properly present our data to convey the information we found accurately.
 
 **Data Description/Selection**
 
-I am using the air-quality dataset, which contains air quality measurements collected from May to September 1973  in New York united states of America. This dataset includes:
+I am using the air-quality dataset, which contains air quality measurements collected from May to September 1973 in New York united states of America. This dataset includes:
 
 -   **Ozone**
 -   **Solar.R** (solar radiation)
@@ -33,10 +39,31 @@ The data were sourced from the New York State Department of Conservation (for oz
 
 I cleaned the dataset using Excel by removing rows with missing values (NA) and performed exploratory analysis to reveal patterns and trends in ozone levels and other variables.
 
-**Variables to be evaluated**
-In this dataset,i will be using the Temperature and ozone 
+**Variables to be evaluated** In this dataset,i will be using the Temperature and ozone
 
+**Ozone Histogram**
 
+![](hist_ozone_toluwanimi.png)
+
+The Ozone distribution shows a right-skewed pattern, indicating that most values are low, with a few high outliers. This could reflect variations in weather or pollution.
+
+**Scatter Plot: Ozone vs Temperature**
+
+![](scatter_ozone_vs_temp_toluwanimi.png)
+
+There is a weak positive correlation between ozone and temperature, suggesting that higher temperatures tend to coincide with higher ozone levels, though other factors like wind or pollution likely contribute.
+
+**Average Ozone Per Day & Month**
+
+![](pivot4_table_toluwanimi.png)
+
+The highest ozone averages occur on May 25th and July 25th, with notable peaks also on May 29th and July 30th. July generally exhibits higher ozone levels, especially around the end of the month.
+
+**Solar Radiation and Temperature Variations**
+
+![](pivot1_chart_toluwanimi.png)
+
+The chart reveals daily variations in solar radiation and temperature, peaking around days 18, 19, and 29. Both solar radiation and temperature are higher on these days, pointing to intense sunlight and warmth during these periods.
 
 ### Week 3
 

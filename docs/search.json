@@ -134,7 +134,17 @@
     "href": "Toluwanimi_Main.html",
     "title": "5  Toluwanimi Olufawo",
     "section": "",
-    "text": "5.1 Wednesday",
+    "text": "5.1 Monday",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Toluwanimi Olufawo</span>"
+    ]
+  },
+  {
+    "objectID": "Toluwanimi_Main.html#monday",
+    "href": "Toluwanimi_Main.html#monday",
+    "title": "5  Toluwanimi Olufawo",
+    "section": "",
+    "text": "5.1.1 Week 1\n\n\n5.1.2 Week 2",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Toluwanimi Olufawo</span>"
     ]
@@ -143,8 +153,8 @@
     "objectID": "Toluwanimi_Main.html#wednesday",
     "href": "Toluwanimi_Main.html#wednesday",
     "title": "5  Toluwanimi Olufawo",
-    "section": "",
-    "text": "5.1.1 Week 1\n\n\n5.1.2 Week 2\n\nClick to expand Week 2\n\nSeptember 4 2024\nDuring class today, we learnt about how to create pivot tables using exceland how best to properly present our data to convey the iformation we found accurately.\nData Description/Selection\nI am using the air-quality dataset, which contains air quality measurements collected from May to September 1973 in New York united states of America. This dataset includes:\n\nOzone\nSolar.R (solar radiation)\nWind (wind speed in mph)\nTemp (temperature in Fahrenheit)\nMonth (May to September)\nDay (1 to 31)\n\nSource\nThe data were sourced from the New York State Department of Conservation (for ozone data) and the National Weather Service (for meteorological data).\nData Cleaning Process\nI cleaned the dataset using Excel by removing rows with missing values (NA) and performed exploratory analysis to reveal patterns and trends in ozone levels and other variables.\nVariables to be evaluated In this dataset,i will be using the Temperature and ozone\n\n\n5.1.3 Week 3",
+    "section": "5.2 Wednesday",
+    "text": "5.2 Wednesday\n\n5.2.1 Week 1\n\n\n5.2.2 Week 2\n\nClick to expand Week 2\n\nSeptember 4 2024\nDuring class today, we learnt about how to create pivot tables using excel and how best to properly present our data to convey the information we found accurately.\nData Description/Selection\nI am using the air-quality dataset, which contains air quality measurements collected from May to September 1973 in New York united states of America. This dataset includes:\n\nOzone\nSolar.R (solar radiation)\nWind (wind speed in mph)\nTemp (temperature in Fahrenheit)\nMonth (May to September)\nDay (1 to 31)\n\nSource\nThe data were sourced from the New York State Department of Conservation (for ozone data) and the National Weather Service (for meteorological data).\nData Cleaning Process\nI cleaned the dataset using Excel by removing rows with missing values (NA) and performed exploratory analysis to reveal patterns and trends in ozone levels and other variables.\nVariables to be evaluated In this dataset,i will be using the Temperature and ozone\nOzone Histogram\n\nThe Ozone distribution shows a right-skewed pattern, indicating that most values are low, with a few high outliers. This could reflect variations in weather or pollution.\nScatter Plot: Ozone vs Temperature\n\nThere is a weak positive correlation between ozone and temperature, suggesting that higher temperatures tend to coincide with higher ozone levels, though other factors like wind or pollution likely contribute.\nAverage Ozone Per Day & Month\n\nThe highest ozone averages occur on May 25th and July 25th, with notable peaks also on May 29th and July 30th. July generally exhibits higher ozone levels, especially around the end of the month.\nSolar Radiation and Temperature Variations\n\nThe chart reveals daily variations in solar radiation and temperature, peaking around days 18, 19, and 29. Both solar radiation and temperature are higher on these days, pointing to intense sunlight and warmth during these periods.\n\n\n5.2.3 Week 3",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Toluwanimi Olufawo</span>"
     ]
@@ -153,8 +163,8 @@
     "objectID": "Toluwanimi_Main.html#friday",
     "href": "Toluwanimi_Main.html#friday",
     "title": "5  Toluwanimi Olufawo",
-    "section": "5.2 Friday",
-    "text": "5.2 Friday\n\n5.2.1 Week 1\n\n\n5.2.2 Week 2\n\n\n5.2.3 Week 3",
+    "section": "5.3 Friday",
+    "text": "5.3 Friday\n\n5.3.1 Week 1\n\n\n5.3.2 Week 2\n\n\n5.3.3 Week 3",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Toluwanimi Olufawo</span>"
     ]
@@ -163,8 +173,8 @@
     "objectID": "Toluwanimi_Main.html#midterm-project",
     "href": "Toluwanimi_Main.html#midterm-project",
     "title": "5  Toluwanimi Olufawo",
-    "section": "5.3 Midterm Project",
-    "text": "5.3 Midterm Project\n\n5.3.1 Week 1\n\n\n5.3.2 Week 2\n\n\n5.3.3 Week 3\nBack to Main Page",
+    "section": "5.4 Midterm Project",
+    "text": "5.4 Midterm Project\n\n5.4.1 Week 1\n\n\n5.4.2 Week 2\n\n\n5.4.3 Week 3\nBack to Main Page",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Toluwanimi Olufawo</span>"
     ]
