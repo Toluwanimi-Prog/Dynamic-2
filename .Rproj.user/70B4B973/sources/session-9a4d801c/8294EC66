@@ -3,7 +3,7 @@
     "path": "C:/Users/toluf/OneDrive/Desktop/Dynamic 2/Tako_Main.qmd",
     "project_path": "Tako_Main.qmd",
     "type": "quarto_markdown",
-    "hash": "830808290",
+    "hash": "493640258",
     "contents": "",
     "dirty": false,
     "created": 1725837674614.0,
@@ -17,16 +17,16 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "cursorPosition": "117,411",
-        "scrollLine": "110",
-        "rmdVisualModeLocation": "2:93.33333587646484"
+        "cursorPosition": "60,28",
+        "scrollLine": "0",
+        "rmdVisualModeLocation": "3892:3968"
     },
-    "folds": "4|12|62|0|\n6|10|7|0|\n8|10|60|0|\n65|10|66|0|\n121|10|124|0|\n128|10|129|0|\n130|10|150|0|\n",
-    "lastKnownWriteTime": 1725926492,
+    "folds": "4|12|59|0|\n6|10|7|0|\n8|10|59|0|\n64|10|83|0|\n",
+    "lastKnownWriteTime": 1725932840,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1725926492066,
+    "last_content_update": 1725932840439,
     "read_only": false,
     "read_only_alternatives": []
 }
