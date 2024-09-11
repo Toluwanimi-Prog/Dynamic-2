@@ -1,0 +1,28 @@
+
+**Monday Tableau Public Tutorial**
+
+**Importing the Dataset**
+
+1. Open Tableau and go to File > Open to upload the "Diamonds Dataset (ggplot2).csv."
+2. Alternatively, you can connect to a Text File from the Connect Pane on the left side of the Tableau interface and select the CSV file.
+
+2. Check for Missing Values
+In Tableau, there isn’t a direct way to highlight missing values during import. However, you can check for them by creating calculated fields or visually scanning the dataset:
+
+**Step-by-Step:
+Drag the fields (e.g., Price, Carat, Cut, etc.) onto the Rows or Columns shelf to create a summary table.
+Tableau automatically handles missing values, but to check for them:
+Go to a new worksheet.
+Create a Calculated Field:
+Name it MissingValuesCheck.
+Use the formula:
+scss
+Copy code
+IFNULL([FieldName], "Missing")
+Replace FieldName with the actual field name you want to check.
+Apply this calculated field and observe if there are any "Missing" labels.
+
+
+
+
+

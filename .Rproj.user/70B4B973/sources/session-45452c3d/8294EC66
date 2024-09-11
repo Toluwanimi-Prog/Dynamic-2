@@ -17,16 +17,16 @@
         "Source": "Source",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "cursorPosition": "60,28",
+        "cursorPosition": "66,24",
         "scrollLine": "0",
         "rmdVisualModeLocation": "3892:3968"
     },
-    "folds": "4|12|59|0|\n6|10|7|0|\n8|10|59|0|\n64|10|83|0|\n",
+    "folds": "8|10|59|0|\n60|28|83|0|\n",
     "lastKnownWriteTime": 1725982892,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1725982892114,
+    "last_content_update": 1726000601249,
     "read_only": false,
     "read_only_alternatives": []
 }
