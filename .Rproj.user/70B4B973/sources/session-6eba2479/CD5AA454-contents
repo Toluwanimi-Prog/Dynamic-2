@@ -1,0 +1,22 @@
+---
+title: "Monday Tableau Tutorial"
+author: "Toluwanimi Olufawo"
+---
+
+**Monday Tableau Tutorial**
+
+In Monday’s class, we learned how to use Tableau Public. We began by downloading and installing the software or using the web version. We then imported the dataset (airquality_datasets.csv) and cleaned the data by checking for missing values and renaming columns.
+
+Importing the Dataset: After opening Tableau Public, I clicked on “Connect to Data,” selected “Text File,” and navigated to the dataset (airquality_datasets.csv). Then I clicked “Open” or dragged and dropped the file.
+
+**Visualization:**
+
+**Bar Chart for Average Ozone Levels by Month:** We dragged 'Month' to Rows and 'Ozone' to Columns, then aggregated Ozone as an average. If Tableau didn't automatically create a bar chart, we changed the Marks type to Bar and renamed the sheet tab. Line Chart for Ozone Levels Over Days: In a new worksheet, we dragged 'Day' to Columns and 'Ozone' to Rows, creating a line chart, and explored properties like color. **Scatter Plot for Temperature vs. Ozone**: We created a new worksheet, dragged 'Temp' to Columns and 'Ozone' to Rows. If Tableau defaulted to a Measure, we changed each pill to Dimension. If not showing a scatter plot, we selected Shape in the Marks tab. Map Visualization: Since our dataset didn’t include geographical data like Latitude and Longitude, we skipped this step.
+
+**Creating a Pivot Table:** In a new worksheet, we dragged 'Month' to Rows, 'Day' to Columns, 'Ozone' to Color, and 'Ozone' to Size. We observed the resulting pivot table and experimented with the added dimensions.
+
+**Building a Dashboard:** We clicked on the New Dashboard button, dragged and dropped our created sheets onto the dashboard area, arranged them cohesively, and added interactivity using filters and actions. We reviewed the ozone vs. day line plot and considered improvements or fixes.\
+
+**Conclusion**
+
+In this class , we gained hands-on experience with Tableau Public, from importing and cleaning data to creating a variety of visualizations, including bar charts, line charts, scatter plots, and pivot tables. We also learned how to build interactive dashboards to present our findings in a cohesive way. These skills will be useful for analyzing and visualizing complex datasets, making it easier to draw insights and communicate results effectively.

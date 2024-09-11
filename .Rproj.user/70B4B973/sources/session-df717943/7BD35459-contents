@@ -1,0 +1,52 @@
+---
+title: "Untitled"
+---
+### Week 3
+
+**Wednesday Tableau Tutorial**
+
+**Introduction** The Diamonds dataset is widely used for statistical analysis and data visualization, providing information about various attributes of over 50,000 diamonds, such as their carat weight, cut quality, clarity, and price. The aim of this assignment is to clean the dataset, check for any missing values, and create meaningful visualizations using Tableau
+
+**Importing the Dataset:**
+
+Steps to Import the Dataset:
+
+Opened Tableau and go to File \> Open to upload the "Diamonds Dataset (ggplot2).csv."
+
+Navigate to File \> Open and select the diamonds_ggplot2.csv file to import the data.
+
+**Cleaning the Dataset** The data set does not have any missing values, but i ensured all the data types are correct. **Ensure Data Types Are Correct:** Carat: Number (decimal) Cut: String Color: String Clarity: String Depth, Table, Price, X, Y, Z: Numbers
+
+**Creating Visualizations**
+
+**1. Bar Chart: Average Price by Cut** To explore how diamond prices vary based on their cut quality, I created a bar chart showing the average price for each cut category This chart will show how the average price varies based on the cut quality of the diamonds.
+
+**Steps I Followed:** 1.I dragged Cut to the Rows shelf. 2.Then, I dragged Price to the Columns shelf. 3.To see the average price instead of the sum, I right-clicked on Price, selected Measure, and changed it to Average.
+
+This gave me a clear view of how diamonds with different cut qualities (Ideal, Premium, etc.) are priced on average.
+
+![](Bar%20Chart_Average%20Price%20by%20Cut_Olufawo.png)
+
+**2.Line Chart: Price Over Carat** Next, I wanted to see how the price changes as the carat size increases, so I built a line chart for this.
+
+**Steps I Followed:** 1.I dragged Carat to the Columns shelf. 2.Then, I dragged Price to the Rows shelf. 3.To adjust the chart type to a line, I switched the chart type to Line from the Marks card.
+
+This line chart helped me visualize how diamonds with larger carat weights tend to have higher prices, showing a clear upward trend.
+
+![](Line%20Chart_Price%20Over%20Carat.png)
+
+**. Scatter Plot: Price vs. Carat** To get a more detailed look at the relationship between carat weight and price, I created a scatter plot. This allowed me to see the individual diamond data points more clearly.
+
+**Steps I Followed:** 1.I dragged Carat to the Columns shelf. 2.Then, I dragged Price to the Rows shelf.
+
+This generated a scatter plot that gave me a more granular view of how price is influenced by carat size. The scatter plot revealed the spread of data, showing how prices vary widely for diamonds of similar carat weights.
+
+![](ScatterPlot_Price%20Over%20Carat.png)
+
+**Creating a Pivot Table** After visualizing the data, I wanted to summarize the diamond prices across different cut and color combinations, so I built a pivot table.
+
+**Steps I Followed:** 1.I dragged Cut to the Rows shelf. 2.Then, I dragged Color to the Columns shelf. 3.Finally, I dragged Price to Text (or Label) to display the prices. 4.I right-clicked on Price and summarized it by Average to show the average price for each combination of cut and color This pivot table allowed me to easily compare prices across various cut and color categories.
+
+![](Pivot_Table.png)
+
+**Conclusion** Through this assignment, I was able to successfully import, clean, and analyze the Diamonds dataset. By ensuring the data was properly cleaned and validated, I created several visualizations, including a bar chart, line chart, and scatter plot. Each provided valuable insights into how different attributes like cut and carat size influence diamond prices. Additionally, I summarized the data using a pivot table, which made it easy to see price variations across different cut and color combinations. Tableau’s flexibility allowed me to explore the dataset interactively, giving me a deeper understanding of the relationships within the data.
