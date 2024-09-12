@@ -12,6 +12,8 @@ This page contains all of Toluwanimi Olufawo submissions this semester organized
 
 **Monday Tableau Tutorial**
 
+**Monday September 9, 2024**
+
 In Monday’s class, we learned how to use Tableau Public. We began by downloading and installing the software or using the web version. We then imported the dataset (airquality_datasets.csv) and cleaned the data by checking for missing values and renaming columns.
 
 Importing the Dataset: After opening Tableau Public, I clicked on “Connect to Data,” selected “Text File,” and navigated to the dataset (airquality_datasets.csv). Then I clicked “Open” or dragged and dropped the file.
@@ -34,6 +36,8 @@ In this class , we gained hands-on experience with Tableau Public, from importin
 
 
 **Monday Diamond Tableau Tutorial**
+
+September 9, 2024
 
 **Introduction** The Diamonds dataset is widely used for statistical analysis and data visualization, providing information about various attributes of over 50,000 diamonds, such as their carat weight, cut quality, clarity, and price. The aim of this assignment is to clean the dataset, check for any missing values, and create meaningful visualizations using Tableau
 
