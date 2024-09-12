@@ -1,7 +1,0 @@
-[1,"==> quarto preview Toluwanimi_Main.qmd --to html --no-watch-inputs --no-browse\n\n"]
-[1,"pandoc \n  to: html\n  output-file: Toluwanimi_Main.html\n  standalone: true\n  toc: true\n  number-sections: true\n  title-prefix: Dynamic Group 2\n  section-divs: true\n  html-math-method: mathjax\n  wrap: none\n  default-image-extension: png\n  number-offset:\n    - 5\n  \nmetadata\n  crossref:\n    chapters: true\n  document-css: false\n  link-citations: true\n  date-format: long\n  lang: en\n  bibliography:\n    - references.bib\n  editor: visual\n  theme: cosmo\n  hide-description: true\n  title: \"[5]{.chapter-number}\\_ [Toluwanimi Olufawo]{.chapter-title}\"\n  \n"]
-[1,"Output created: docs\\Toluwanimi_Main.html\n\nPreparing to preview\n"]
-[1,"\n"]
-[1,"Watching files for changes\nBrowse at http://localhost:4538/Toluwanimi_Main.html\n"]
-[1,"GET: /Toluwanimi_Main.html\n"]
-[1,"GET: /Toluwanimi_Main.html\n"]

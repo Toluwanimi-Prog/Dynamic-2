@@ -228,6 +228,33 @@ ul.task-list li input[type="checkbox"] {
 </p>
 <p><strong>Conclusion</strong></p>
 <p>In this class , we gained hands-on experience with Tableau Public, from importing and cleaning data to creating a variety of visualizations, including bar charts, line charts, scatter plots, and pivot tables. We also learned how to build interactive dashboards to present our findings in a cohesive way. These skills will be useful for analyzing and visualizing complex datasets, making it easier to draw insights and communicate results effectively.</p>
+<section id="section" class="level72">
+<p class="heading"></p>
+<p><strong>Monday Diamond Tableau Tutorial</strong></p>
+<p><strong>Introduction</strong> The Diamonds dataset is widely used for statistical analysis and data visualization, providing information about various attributes of over 50,000 diamonds, such as their carat weight, cut quality, clarity, and price. The aim of this assignment is to clean the dataset, check for any missing values, and create meaningful visualizations using Tableau</p>
+<p><strong>Importing the Dataset:</strong></p>
+<p>Steps to Import the Dataset:</p>
+<p>Opened Tableau and go to File &gt; Open to upload the “Diamonds Dataset (ggplot2).csv.”</p>
+<p>Navigate to File &gt; Open and select the diamonds_ggplot2.csv file to import the data.</p>
+<p><strong>Cleaning the Dataset</strong> The data set does not have any missing values, but i ensured all the data types are correct. <strong>Ensure Data Types Are Correct:</strong> Carat: Number (decimal) Cut: String Color: String Clarity: String Depth, Table, Price, X, Y, Z: Numbers</p>
+<p><strong>Creating Visualizations</strong></p>
+<p><strong>1. Bar Chart: Average Price by Cut</strong> To explore how diamond prices vary based on their cut quality, I created a bar chart showing the average price for each cut category This chart will show how the average price varies based on the cut quality of the diamonds.</p>
+<p><strong>Steps I Followed:</strong> 1.I dragged Cut to the Rows shelf. 2.Then, I dragged Price to the Columns shelf. 3.To see the average price instead of the sum, I right-clicked on Price, selected Measure, and changed it to Average.</p>
+<p>This gave me a clear view of how diamonds with different cut qualities (Ideal, Premium, etc.) are priced on average.</p>
+<p><img src="Bar Chart_Average Price by Cut_Olufawo.png" class="img-fluid"></p>
+<p><strong>2.Line Chart: Price Over Carat</strong> Next, I wanted to see how the price changes as the carat size increases, so I built a line chart for this.</p>
+<p><strong>Steps I Followed:</strong> 1.I dragged Carat to the Columns shelf. 2.Then, I dragged Price to the Rows shelf. 3.To adjust the chart type to a line, I switched the chart type to Line from the Marks card.</p>
+<p>This line chart helped me visualize how diamonds with larger carat weights tend to have higher prices, showing a clear upward trend.</p>
+<p><img src="Line Chart_Price Over Carat.png" class="img-fluid"></p>
+<p><strong>3. Scatter Plot: Price vs.&nbsp;Carat</strong> To get a more detailed look at the relationship between carat weight and price, I created a scatter plot. This allowed me to see the individual diamond data points more clearly.</p>
+<p><strong>Steps I Followed:</strong> 1.I dragged Carat to the Columns shelf. 2.Then, I dragged Price to the Rows shelf.</p>
+<p>This generated a scatter plot that gave me a more granular view of how price is influenced by carat size. The scatter plot revealed the spread of data, showing how prices vary widely for diamonds of similar carat weights.</p>
+<p><img src="ScatterPlot_Price Over Carat.png" class="img-fluid"></p>
+<p><strong>Creating a Pivot Table</strong> After visualizing the data, I wanted to summarize the diamond prices across different cut and color combinations, so I built a pivot table.</p>
+<p><strong>Steps I Followed:</strong> 1.I dragged Cut to the Rows shelf. 2.Then, I dragged Color to the Columns shelf. 3.Finally, I dragged Price to Text (or Label) to display the prices. 4.I right-clicked on Price and summarized it by Average to show the average price for each combination of cut and color This pivot table allowed me to easily compare prices across various cut and color categories.</p>
+<p><img src="Pivot_Table.png" class="img-fluid"></p>
+<p><strong>Conclusion</strong> Through this assignment, I was able to successfully import, clean, and analyze the Diamonds dataset. By ensuring the data was properly cleaned and validated, I created several visualizations, including a bar chart, line chart, and scatter plot. Each provided valuable insights into how different attributes like cut and carat size influence diamond prices. Additionally, I summarized the data using a pivot table, which made it easy to see price variations across different cut and color combinations. Tableau’s flexibility allowed me to explore the dataset interactively, giving me a deeper understanding of the relationships within the data</p>
+</section>
 </section>
 </section>
 <section id="wednesday" class="level2" data-number="5.2">
@@ -279,30 +306,35 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="week-3-1" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="week-3-1"><span class="header-section-number">5.2.3</span> Week 3</h3>
-<p><strong>Wednesday Tableau Tutorial</strong></p>
-<p><strong>Introduction</strong> The Diamonds dataset is widely used for statistical analysis and data visualization, providing information about various attributes of over 50,000 diamonds, such as their carat weight, cut quality, clarity, and price. The aim of this assignment is to clean the dataset, check for any missing values, and create meaningful visualizations using Tableau</p>
-<p><strong>Importing the Dataset:</strong></p>
-<p>Steps to Import the Dataset:</p>
-<p>Opened Tableau and go to File &gt; Open to upload the “Diamonds Dataset (ggplot2).csv.”</p>
-<p>Navigate to File &gt; Open and select the diamonds_ggplot2.csv file to import the data.</p>
-<p><strong>Cleaning the Dataset</strong> The data set does not have any missing values, but i ensured all the data types are correct. <strong>Ensure Data Types Are Correct:</strong> Carat: Number (decimal) Cut: String Color: String Clarity: String Depth, Table, Price, X, Y, Z: Numbers</p>
-<p><strong>Creating Visualizations</strong></p>
-<p><strong>1. Bar Chart: Average Price by Cut</strong> To explore how diamond prices vary based on their cut quality, I created a bar chart showing the average price for each cut category This chart will show how the average price varies based on the cut quality of the diamonds.</p>
-<p><strong>Steps I Followed:</strong> 1.I dragged Cut to the Rows shelf. 2.Then, I dragged Price to the Columns shelf. 3.To see the average price instead of the sum, I right-clicked on Price, selected Measure, and changed it to Average.</p>
-<p>This gave me a clear view of how diamonds with different cut qualities (Ideal, Premium, etc.) are priced on average.</p>
-<p><img src="Bar Chart_Average Price by Cut_Olufawo.png" class="img-fluid"></p>
-<p><strong>2.Line Chart: Price Over Carat</strong> Next, I wanted to see how the price changes as the carat size increases, so I built a line chart for this.</p>
-<p><strong>Steps I Followed:</strong> 1.I dragged Carat to the Columns shelf. 2.Then, I dragged Price to the Rows shelf. 3.To adjust the chart type to a line, I switched the chart type to Line from the Marks card.</p>
-<p>This line chart helped me visualize how diamonds with larger carat weights tend to have higher prices, showing a clear upward trend.</p>
-<p><img src="Line Chart_Price Over Carat.png" class="img-fluid"></p>
-<p><strong>3. Scatter Plot: Price vs.&nbsp;Carat</strong> To get a more detailed look at the relationship between carat weight and price, I created a scatter plot. This allowed me to see the individual diamond data points more clearly.</p>
-<p><strong>Steps I Followed:</strong> 1.I dragged Carat to the Columns shelf. 2.Then, I dragged Price to the Rows shelf.</p>
-<p>This generated a scatter plot that gave me a more granular view of how price is influenced by carat size. The scatter plot revealed the spread of data, showing how prices vary widely for diamonds of similar carat weights.</p>
-<p><img src="ScatterPlot_Price Over Carat.png" class="img-fluid"></p>
-<p><strong>Creating a Pivot Table</strong> After visualizing the data, I wanted to summarize the diamond prices across different cut and color combinations, so I built a pivot table.</p>
-<p><strong>Steps I Followed:</strong> 1.I dragged Cut to the Rows shelf. 2.Then, I dragged Color to the Columns shelf. 3.Finally, I dragged Price to Text (or Label) to display the prices. 4.I right-clicked on Price and summarized it by Average to show the average price for each combination of cut and color This pivot table allowed me to easily compare prices across various cut and color categories.</p>
-<p><img src="Pivot_Table.png" class="img-fluid"></p>
-<p><strong>Conclusion</strong> Through this assignment, I was able to successfully import, clean, and analyze the Diamonds dataset. By ensuring the data was properly cleaned and validated, I created several visualizations, including a bar chart, line chart, and scatter plot. Each provided valuable insights into how different attributes like cut and carat size influence diamond prices. Additionally, I summarized the data using a pivot table, which made it easy to see price variations across different cut and color combinations. Tableau’s flexibility allowed me to explore the dataset interactively, giving me a deeper understanding of the relationships within the data</p>
+<p><strong>Wednesday Advanced Tableau Public Tutorial</strong></p>
+<p>In Wednesday’s class, we learned how to implement what was learnt in Tableau Public on Monday at a more advanced level. We began by opening the Tableau public website.</p>
+<p><strong>Importing the Dataset</strong>:We then imported the dataset (diamonds_ggplot2_datasets.csv) and cleaned the data by checking for missing values and renaming columns.There weren’t any missing data and NA in the dataset. After opening Tableau Public, I clicked on “Connect to Data,” selected “Text File,” and navigated to the dataset (diamonds_ggplot2_datasets.csv). Then I clicked “Open” or dragged and dropped the file.</p>
+<p><strong>Calculated Fields</strong></p>
+<p>To enhance my analysis skills, I created a new calculated field in Tableau Public. First, I navigated to Sheet 1, then from the top menu, I selected Analysis and clicked on Create Calculated Field. In the dialog box that appeared, I named the new field Price per Carat. To calculate this, I used the formula [Price] / [Carat]. After entering the formula, I clicked OK, and the new field was added to my dataset, allowing me to view price per carat for each diamond</p>
+<p><img src="Calculated field _ Price_Per_Carat _ Olufawo.png" class="img-fluid"></p>
+<p><strong>2.Advanced Chart Types</strong></p>
+<p>Next, I created an advanced chart type, a boxplot, to explore the distribution of diamond prices based on their cut quality. To do this, I first dragged Price to the Rows section and Cut to the Columns section. Then, I opened the Show Me panel on the right side and selected Box Plot. To ensure that the price was treated as a discrete variable, I right-clicked on Price and chose Dimension. To visually distinguish between the different cut categories, I also dragged Cut to the Color shelf. This boxplot now allows me to hover over each category to see details about the price distribution for each cut.</p>
+<p><img src="Measure_ BarPlot_ Price_per_Cut_Olufawo.png" class="img-fluid"></p>
+<p><img src="Measure_ Boxplot_Price_per_Cut_Olufawo.png" class="img-fluid"></p>
+<p><img src="Dimension_ Boxplot_Price_per_Cut_Olufawo.png" class="img-fluid"></p>
+<p><strong>3. Dual-Axis Charts</strong></p>
+<p>To compare Price and Carat on a dual-axis chart, I began by dragging Cut to the Columns section. Then, I added Price to the Rows, followed by Carat just below it. Afterward, I right-clicked on the Carat axis and chose Dual-Axis to overlay the two measures on the same chart. To ensure both axes were aligned properly, I right-clicked the axis again and selected Synchronize Axis. Finally, I adjusted the Marks card from Automatic to Line, which allowed me to visualize the relationship between diamond prices and carat weight in a more coherent manner.</p>
+<p><img src="Step1_Dual_Axis_Chart_Price_Per_Carat _Olufawo.png" class="img-fluid"></p>
+<p><img src="Step2_Dual_Axis_Chart_Price_Per_Carat _Olufawo.png" class="img-fluid"></p>
+<p><strong>4. Using Parameters</strong></p>
+<p>To dynamically filter my dataset based on price, I created a parameter that allows for flexible threshold adjustments. First, I right-clicked in the Data pane and selected Create Parameter. I named it Price Threshold, set the data type to Float, and chose a default value of 500. After clicking OK, I right-clicked the parameter again in the Data pane and chose Show Parameter Control to make it visible on the dashboard.</p>
+<p><img src="Step1_Creating_Parameters_Olufawo.png" class="img-fluid"></p>
+<p>Next, I created a calculated field by right-clicking in the Data pane and selecting Create Calculated Field. I named this field Price Greater than Threshold, with the formula [Price] &gt; [Price Threshold]. After clicking OK, I applied this calculated field as a filter by dragging it to the Filters shelf. In the Filter Field dialog, I selected True to display only records where the price exceeded the threshold. This setup allows the plot to dynamically update as I adjust the price threshold using the parameter.</p>
+<p><img src="Step1_Creating_Calculated_Field_Olufawo.png" class="img-fluid"></p>
+<p><img src="Filters_Shelf_Olufawo.png" class="img-fluid"></p>
+<p><img src="Filters_Step2_Shelf_Olufawo.png" class="img-fluid"></p>
+<p><strong>Creating an Interactive Dashboard with Actions</strong></p>
+<p>To make my dashboard both visually appealing and interactive, I began by dragging and dropping the relevant sheets onto the dashboard to showcase my visualizations. I arranged the sheets thoughtfully to ensure the data story was clear and engaging.</p>
+<p>Next, I added a Filter Action to make the dashboard responsive. I went to the top menu, selected Dashboard, and clicked on Actions. From there, I chose Add Action -&gt; Filter. In the dialog box, I defined the source sheet, which would act as the filter, and the target sheets, which would be filtered based on the selection. I fine-tuned the settings by choosing the filtering behavior—I opted for filtering based on selection, and also ensured that clearing the selection would reset all values.</p>
+<p>To further enhance interactivity, I added a Highlight Action. Again, I went to Dashboard -&gt; Actions and selected Add Action -&gt; Highlight. I chose which sheets should act as the source and target for the highlights, and customized the settings to highlight specific dimensions that I wanted users to focus on.</p>
+<p>To personalize the dashboard, I used various tools and techniques to adjust the layout, added titles, and formatted the dashboard to align with my data storytelling goals. I made sure the filters and highlights interacted smoothly with the visualizations by testing the interactivity.</p>
+<p>Once everything was in place, I published the dashboard by selecting Save to Tableau Public from the File menu. I then shared the link with my class to showcase my work.</p>
+<p><img src="Dashboard_Olufawo.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="friday--midterm-projects" class="level2" data-number="5.3">
