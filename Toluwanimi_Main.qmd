@@ -28,7 +28,10 @@ Importing the Dataset: After opening Tableau Public, I clicked on “Connect to 
 
 In this class , we gained hands-on experience with Tableau Public, from importing and cleaning data to creating a variety of visualizations, including bar charts, line charts, scatter plots, and pivot tables. We also learned how to build interactive dashboards to present our findings in a cohesive way. These skills will be useful for analyzing and visualizing complex datasets, making it easier to draw insights and communicate results effectively.
 
-######################################################################## 
+
+
+
+
 
 **Monday Diamond Tableau Tutorial**
 
@@ -156,6 +159,8 @@ After setting up the PivotTable by selecting the dataset and placing it in a new
 ### Week 3
 
 **Wednesday Advanced Tableau Public Tutorial**
+
+**September 11,2024**
 
 In Wednesday's class, we learned how to implement what was learnt in Tableau Public on Monday at a more advanced level. We began by opening the Tableau public website.
 
