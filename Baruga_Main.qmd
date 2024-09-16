@@ -69,6 +69,34 @@ This means:
 
 ### Week 3
 
+
+[Wednesday Dashboard](https://public.tableau.com/views/Book1_17262574551960/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+1.  **Histogram of Avg REM Sleep**:
+
+-   This bar chart shows the average REM sleep time categorized by both conservation status (like "cd," "en," "lc") and dietary habits (carnivore, herbivore, omnivore, etc.).
+
+-   The distribution indicates variations in REM sleep depending on these factors. For example, certain categories, such as carnivores with an "lc" (least concern) conservation status, seem to have higher average REM sleep.
+
+2.  **Stacked Bar Chart of Vore vs. REM Sleep**:
+
+-   This chart displays the breakdown of average REM sleep across different dietary categories and their conservation statuses, further subdivided by animal order.
+
+-   It provides detailed insights into how sleep patterns differ based on dietary habits and animal groups. For instance, "Carnivora" under different conservation statuses like "lc" and "domesticated" shows varying REM sleep levels.
+
+3.  **Packed Bubble Chart of Order**:
+
+-   The chart uses bubbles to represent different orders of animals, with the size of each bubble possibly corresponding to the number of species or the average REM sleep within that order.
+
+-   Colors differentiate various dietary habits ("vore"), showing how different animal orders fall into categories such as carnivores, herbivores, omnivores, etc.
+
+4.  **Treemap of Order**:
+
+-   This chart breaks down the animal orders into smaller rectangles, where the size of each rectangle may indicate the average REM sleep, the number of species, or another quantitative measure.
+
+-   The colors correspond to different orders, offering a visual overview of how these orders compare in the measured metric.
+
+
 ## Friday - Midterm Projects
 
 ### Week 1
@@ -148,3 +176,41 @@ Here are the findings:
 From the "Warehouse and Retail Sales" dataset, I found that Beer leads in warehouse sales, with notable fluctuations due to bulk packaging, while Wine and Liquor have more stable sales. Retail sales show Liquor as the top seller, recently surpassing Wine, with Beer also performing strongly but declining. The histograms illustrate high Beer volume in warehouses and a shift in retail dominance from Wine to Liquor. Next, I will analyze seasonal trends, create advanced visualizations for deeper insights, and finalize the report with comprehensive findings and recommendations. \### Week 2 \### Week 3
 
 ### Week 3
+
+
+[Wednesday Dashboard](https://public.tableau.com/views/Book1_17262574551960/Dashboard2?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+  **1.Histogram of Avg Sales Over Time:**
+
+-   This stacked bar chart displays the average retail sales from June 2017 to September 2020, broken down by different item types such as "BEER," "WINE," "LIQUOR," "NON-ALCOHOL," and others.
+
+-   The chart shows monthly fluctuations in sales, with noticeable peaks around December 2017 and July 2020. This suggests seasonal effects or particular periods of high demand for certain items.
+
+-   The different colors represent various item types, indicating the contribution of each category to the total sales in each month. For example, "LIQUOR" and "NON-ALCOHOL" seem to contribute significantly to the total sales during peak months.
+
+ **2. Area Chart: Avg Sales vs. Transfers:**
+
+-   This plot consists of two layered area charts: the top one shows average retail transfers, and the bottom one shows average retail sales over the same period (June 2017 to September 2020).
+
+-   Both charts use colors to represent different item types, revealing how each type contributes to overall sales and transfers.
+
+-   The charts indicate that the trends in transfers often align with the sales trends, which suggests a correlation between the quantity of goods transferred and the sales performance.
+
+-   Peaks and troughs in the charts could indicate seasonal variations, inventory management strategies, or market demand shifts for various items.
+
+ **3. Packed Bubble Chart of Avg Sales Over Time:**
+
+-   This chart visualizes average sales using bubbles, where the size of each bubble reflects the volume of sales, and the color represents different item types.
+
+-   Larger bubbles correspond to higher sales, indicating which item types have the greatest impact on sales over time.
+
+-   The variety of bubble sizes and colors reveals the diversity in item types and their varying sales performance.
+
+ **4. Treemap of Retail Transfers vs. Retail Sales:**
+
+-   The treemap displays retail sales data, with each rectangle representing different categories ("NON-ALCOHOL," "BEER," "LIQUOR," "REF," etc.) and specific years (2017, 2019, 2020).
+
+-   The size of each rectangle corresponds to the magnitude of sales, and the color shading indicates the average retail sales, with darker shades representing higher sales.
+
+-   This visualization shows how different item types and their sales vary in significance. For example, "NON-ALCOHOL" items appear to have a prominent share, especially in 2020.
+

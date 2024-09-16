@@ -52,6 +52,20 @@ This PivotTable displays the average temperature values for each day of each mon
 
 ### Week 3
 
+## Wednesday, September 11
+
+The data from the Cars dataset was recorded in the 1920s and focuses on two different variables:
+
+Speed (Numerical) - The speed in mph at which the car was traveling Stop Distance (Numerical) - The distance in ft that it took for the car to stop while traveling a specific speed
+
+This is the dashboard: ![](CarsDatasetDashboard.png)
+
+The graph "Speed/DistAgainstSpeed+DistDualAxis" was a dual axis plot that measured the variables speed and stop distance against a new calculated variable called speed+dist. This graph simply shows how the distance values have a much greater numerical value than the speed values.
+
+The graph "SpeedAndDistBoxPlot" was a box plot that measured the average distance per each speed value and calculated all the data into one box plot. This plot shows the different values for average stopping distance in comparison to all the speed values.
+
+The graph "AverageSpeedPerDistance" is a line plot that calculates the average speed per each distance value. There is a correlation between the values of average speed and distance; as distance values increase, the average speed of which the car was traveling also increases.
+
 ## Friday - Midterm Projects
 
 ### Week 1
@@ -121,3 +135,31 @@ Through the dot plot, the average of the temperatures is 8.75 ºC as most of the
 The average temperatures of all collective 28 years gathered within each month. During the summer months, the averages are lower. During the winter months, the averages are higher.
 
 ![](TemperatureMonthAverage.png) \### Week 3
+
+###Week 3
+
+**Friday, September 13**
+
+The Oceanographic data from the Newport Line along Oregon was gathered from 1996 - present and focuses on seven different variables.
+
+Sample Date (Date) - The exact date of which the rest of the variables were sampled
+
+Month (Categorical) - The month of which the variables were sampled
+
+Year (Numerical) - The year of which the variables were sampled
+
+Average Of Temperature (Numerical) - The average oceanographic temperature sampled 50 meters deep during the date it was sampled
+
+Average of Oxygen (Numerical) - The average oceanographic temperature sampled 50 meters deep during the date it was sampled
+
+Northern Copepod Biomass (Numerical) - The units of carbon biomass per cubic meter of copepods in the northern section of the sample site
+
+Southern Copepod Biomass (Numerical) - The units of carbon biomass per cubic meter of copepods in the southern section of the sample site
+
+This is the dashboard: ![](NewportOceanographicDatasetDashboard.png)
+
+The graph "AverageOceanographicTemperatureEachMonth" was a box plot that measured the variables Avg of Temperature against the categorical variable month. Each value of temperature that was sampled on its sample date was recorded for each month. This graph shows how during the summer months, the oceanographic temperature was lower than during the winter months, differing from what would be commonly assumed.
+
+The graph "AverageOceanographic(Temp/Oxygen)EachYear" was a dual axis plot that measured the variables Avg of Temperature and Avg of Oxygen against the categorical variable year. This plot shows the average values of these two variables for each month so the viewer can see how these values have changed throughout the years.
+
+The graph "EffectsOf(Temp/Oxygen)On(Northern/Southern)CopepodBiomass" is a dual axis plot that measures four different variables. This plot focuses on the effects that the oceanographic temperature and oceanographic oxygen have on the population and copepod biomass recorded on the sample dates and near the sample areas. From the graph, it is visible that as oceanographic oxygen rises, the northern copepod biomass greatly decreases and the southern copepod biomass slightly increases. It is also evident that as oceanographic temperature rises, the northern copepod biomass also greatly decreases and the southern copepod biomass also slightly increases.
