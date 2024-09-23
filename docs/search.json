@@ -60,6 +60,66 @@
     ]
   },
   {
+    "objectID": "Tako_Main.html#jupyter-notebooks",
+    "href": "Tako_Main.html#jupyter-notebooks",
+    "title": "2  Abigail Tako",
+    "section": "2.3 Jupyter Notebooks",
+    "text": "2.3 Jupyter Notebooks",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
+    ]
+  },
+  {
+    "objectID": "Tako_Main.html#week-4",
+    "href": "Tako_Main.html#week-4",
+    "title": "2  Abigail Tako",
+    "section": "2.4 Week 4",
+    "text": "2.4 Week 4\n\nAbigail’s Notebook: This notebook contains the data cleaning and exploration tasks.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
+    ]
+  },
+  {
+    "objectID": "Tako_Main.html#this-is-a-markdown-title",
+    "href": "Tako_Main.html#this-is-a-markdown-title",
+    "title": "2  Abigail Tako",
+    "section": "2.5 This is a markdown title",
+    "text": "2.5 This is a markdown title\nin markdown we can create lists:\n\nitem 1\nitem 2\nitem 3\n\nalso we can create enumerated list\n\nHola\nHi\nNamaste\n\nwe can do bold, also italic\n# List are native to Python\nimport numpy as np\nprint(np.absolute(-1))\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)\n1\n[1 2 3 4 5]\n# List are native to Python\nmy_list = [1, 2, 3, 4, 5]\nprint (my_list)\n[1, 2, 3, 4, 5]\n# We will be using a lot of data frames, so we need pandas library\n# Panda allows us to make small spreadsheets, there will be rows and columns\nimport pandas as pd\ndata = {'Ozone': [41, 36, 12], 'Temp': [67, 72, 74]}\ndf = pd.DataFrame(data)\nprint(df)\n   Ozone  Temp\n0     41    67\n1     36    72\n2     12    74",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
+    ]
+  },
+  {
+    "objectID": "Tako_Main.html#loading-csv-files",
+    "href": "Tako_Main.html#loading-csv-files",
+    "title": "2  Abigail Tako",
+    "section": "2.6 4. Loading CSV files",
+    "text": "2.6 4. Loading CSV files\nTo load files into a DataFrame , we use the pandas function read_csv;\n# Load and analyze data from a CSV file named airquality_datasets.csv using the pandas library\ndf = pd.read_csv('airquality_datasets.csv')\n# df.info () -&gt; displays the structure and non-null counts of the DataFrame.\n# df.describe () -&gt; provides summary statistics such as mean, standard deviation, minimum, and maximum values for each column.\nprint(df.info())\nprint(df.describe())\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 153 entries, 0 to 152\nData columns (total 6 columns):\n #   Column   Non-Null Count  Dtype  \n---  ------   --------------  -----  \n 0   Ozone    116 non-null    float64\n 1   Solar.R  146 non-null    float64\n 2   Wind     153 non-null    float64\n 3   Temp     153 non-null    int64  \n 4   Month    153 non-null    int64  \n 5   Day      153 non-null    int64  \ndtypes: float64(3), int64(3)\nmemory usage: 7.3 KB\nNone\n            Ozone     Solar.R        Wind        Temp       Month         Day\ncount  116.000000  146.000000  153.000000  153.000000  153.000000  153.000000\nmean    42.129310  185.931507    9.957516   77.882353    6.993464   15.803922\nstd     32.987885   90.058422    3.523001    9.465270    1.416522    8.864520\nmin      1.000000    7.000000    1.700000   56.000000    5.000000    1.000000\n25%     18.000000  115.750000    7.400000   72.000000    6.000000    8.000000\n50%     31.500000  205.000000    9.700000   79.000000    7.000000   16.000000\n75%     63.250000  258.750000   11.500000   85.000000    8.000000   23.000000\nmax    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
+    ]
+  },
+  {
+    "objectID": "Tako_Main.html#instant-data-view",
+    "href": "Tako_Main.html#instant-data-view",
+    "title": "2  Abigail Tako",
+    "section": "2.7 Instant data view",
+    "text": "2.7 Instant data view\n\nJupyterLab allows us to instantly view the structure and data types of the columns within the DataFrame by using df.info(). This displays a concise summary of each column, including the number of non-null entries and the type of data (e.g., float64, int64).\nThis feature makes it easy to verify that the data types (like floats for Temp, Ozone, Wind, etc.) align with the expected values from the CSV file, ensuring the data is in the correct format for further analysis and visualization.\n\nimport matplotlib.pyplot as plt\n\n# Ozone Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Ozone'].dropna(), bins=20, color='blue', edgecolor='black')\nplt.title('Distribution of Ozone Levels')\nplt.xlabel('Ozone (ppb)')\nplt.ylabel('Frequency')\nplt.show()\n\n# Temp Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Temp'].dropna(), bins=20, color='orange', edgecolor='black')\nplt.title('Distribution of Temperature')\nplt.xlabel('Temperature (°F)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng\n\n\n\n\n\npng",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
+    ]
+  },
+  {
+    "objectID": "Tako_Main.html#visual-insights",
+    "href": "Tako_Main.html#visual-insights",
+    "title": "2  Abigail Tako",
+    "section": "2.8 Visual Insights",
+    "text": "2.8 Visual Insights\n\nWe can quickly identify trends and the spread of values.\nPeaks in the histograms indicate where data points are densely clustered, revealing common or typical readings in the dataset.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
+    ]
+  },
+  {
     "objectID": "Caleb_Main.html",
     "href": "Caleb_Main.html",
     "title": "3  Caleb Pena",
@@ -90,6 +150,56 @@
     ]
   },
   {
+    "objectID": "Caleb_Main.html#jupyter-notebooks",
+    "href": "Caleb_Main.html#jupyter-notebooks",
+    "title": "3  Caleb Pena",
+    "section": "3.3 Jupyter Notebooks",
+    "text": "3.3 Jupyter Notebooks",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
+    ]
+  },
+  {
+    "objectID": "Caleb_Main.html#week-4",
+    "href": "Caleb_Main.html#week-4",
+    "title": "3  Caleb Pena",
+    "section": "3.4 Week 4",
+    "text": "3.4 Week 4\n\nCaleb’s Notebook: This notebook contains the data cleaning and exploration tasks.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
+    ]
+  },
+  {
+    "objectID": "Caleb_Main.html#this-is-a-markdown-title",
+    "href": "Caleb_Main.html#this-is-a-markdown-title",
+    "title": "3  Caleb Pena",
+    "section": "3.5 This is a markdown title",
+    "text": "3.5 This is a markdown title\nIn markdown, we can create lists:\n\nItem 1\nItem 2\nItem 3\n\nWe can also create enumerated lists:\n\nHola\nHi\nNamaste\n\nWe can bold and italic\n# Here we are importing numby with a nickname np\nimport numpy as np\nprint(np.absolute(-1))\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)\n1\n[1 2 3 4 5]\n# Lists are native to Python\nmy_list = [1, 2, 3, 4, 5]\nprint(my_list)\n[1, 2, 3, 4, 5]\n# We will be using a lot of dataframes, so we need Pandas library\nimport pandas as pd\ndata = {'Ozone': [41, 36, 12], 'Temp': [67, 72, 74]}\ndf = pd.DataFrame(data)\nprint(df)\n   Ozone  Temp\n0     41    67\n1     36    72\n2     12    74",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
+    ]
+  },
+  {
+    "objectID": "Caleb_Main.html#loading-csv-files",
+    "href": "Caleb_Main.html#loading-csv-files",
+    "title": "3  Caleb Pena",
+    "section": "3.6 4. Loading csv files",
+    "text": "3.6 4. Loading csv files\nTo load .csv files into a DataFrame, we use the Pandas function read.csv:\ndf = pd.read_csv('airquality_datasets.csv')\nprint(df.info())\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 153 entries, 0 to 152\nData columns (total 6 columns):\n #   Column   Non-Null Count  Dtype  \n---  ------   --------------  -----  \n 0   Ozone    116 non-null    float64\n 1   Solar.R  146 non-null    float64\n 2   Wind     153 non-null    float64\n 3   Temp     153 non-null    int64  \n 4   Month    153 non-null    int64  \n 5   Day      153 non-null    int64  \ndtypes: float64(3), int64(3)\nmemory usage: 7.3 KB\nNone\nprint(df.describe())\n            Ozone     Solar.R        Wind        Temp       Month         Day\ncount  116.000000  146.000000  153.000000  153.000000  153.000000  153.000000\nmean    42.129310  185.931507    9.957516   77.882353    6.993464   15.803922\nstd     32.987885   90.058422    3.523001    9.465270    1.416522    8.864520\nmin      1.000000    7.000000    1.700000   56.000000    5.000000    1.000000\n25%     18.000000  115.750000    7.400000   72.000000    6.000000    8.000000\n50%     31.500000  205.000000    9.700000   79.000000    7.000000   16.000000\n75%     63.250000  258.750000   11.500000   85.000000    8.000000   23.000000\nmax    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
+    ]
+  },
+  {
+    "objectID": "Caleb_Main.html#visualizing-the-dataset",
+    "href": "Caleb_Main.html#visualizing-the-dataset",
+    "title": "3  Caleb Pena",
+    "section": "3.7 5. Visualizing the Dataset",
+    "text": "3.7 5. Visualizing the Dataset\nLet’s dive into visualizations using matplotlib. We’ll start with simple histograms and boxplots, then move on to correlation plots.\n\n3.7.1 Histograms\nHistograms help us understand the distribution of the variables. We’ll create histograms for Ozone and Temp.\nimport matplotlib.pyplot as plt\n\n# Ozone Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Ozone'].dropna(), bins=20, color='blue', edgecolor='black')\nplt.title('Distribution of Ozone Levels')\nplt.xlabel('Ozone (ppb)')\nplt.ylabel('Frequency')\nplt.show()\nMatplotlib is building the font cache; this may take a moment.\n\n\n\npng\n\n\n# Temp Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Temp'].dropna(), bins=20, color='orange', edgecolor='black')\nplt.title('Distribution of Temperature')\nplt.xlabel('Temperature (°F)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
+    ]
+  },
+  {
     "objectID": "Baruga_Main.html",
     "href": "Baruga_Main.html",
     "title": "4  Derrick Baruga",
@@ -115,6 +225,46 @@
     "title": "4  Derrick Baruga",
     "section": "4.2 Friday - Midterm Projects",
     "text": "4.2 Friday - Midterm Projects\n\n4.2.1 Week 1\n\n\n4.2.2 Week 2\ntitle: “Midterm_Project_Baruga” subtitle: “Data.gov: Warehouse and Retail Sales” format: html —\nContext of the Dataset\n\nTitle: Warehouse and Retail Sales\nLink: Download the CSV dataset\n\nThe Warehouse and Retail Sales dataset provides a comprehensive view of sales activities in Montgomery County, Maryland, by capturing data from various warehouse and retail operations. This dataset was collected through a combination of direct reporting from businesses, automated sales tracking systems, and regional sales surveys. The data encompasses a range of sales metrics, including volume and product categories, to offer insights into business performance across different types of establishments.\nThe dataset includes the following variables:\n\nRow Labels: Categories or identifiers used to organize and classify the sales data.\nBEER: Sales volume for beer products.\nDUNNAGE: Sales volume for dunnage products, which are materials used to protect goods during transportation.\nKEGS: Sales volume for kegs, typically used for storing and transporting beverages.\nLIQUOR: Sales volume for liquor products.\nNON-ALCOHOL: Sales volume for non-alcoholic beverages.\nREF: Sales volume for refrigeration supplies or products.\nSTR_SUPPLIES: Sales volume for store supplies, which may include various retail essentials.\nWINE: Sales volume for wine products.\nGrand Total: The total sales volume across all categories combined.\n\n** Data Cleaning and Preparation**\n\nImport the Data: I downloaded and loaded the CSV file into Excel.\nCheck for Missing Values: My preferred method for handling NAs is by highlighting them and deselecting them using the filter tool for each column as I feel most thorough by doing that. Using the following steps “Select the entire dataset, go to Home &gt; Conditional Formatting &gt; Highlight Cells Rules &gt; Blanks to highlight all blank cells.”\nData Formatting: Formated any columns that need specific data types (such as dates as date format, numbers as currency or percentage).\n\n\nSpecifically I used the =TEXTJOIN(“-”, TRUE, A2, B2) function to join column one (YYYY) and column two (MM) into a new column called TIME\n\n\nVisualization\nPivot Tables YT link: https://www.youtube.com/watch?v=qu-AK0Hv0b4\n\nPivot tables are a powerful and user friendly (drag and drop) summary statistic/visualisation tool that I used to get an intial feel of my data.\n\nHere are the findings:\nWarehouse Sales/Expenses of Beverages Over Time (2017 - 2020)\n\n\nOverall Sales: BEER has the highest sales, followed by WINE, while DUNNAGE, REF, and STR_SUPPLIES have negative or minimal sales, which makes sense as refers to materials used to protect goods during shipping and handling, such as packing materials or cushioning, and as such is an expense to the business leading to its negative output on revenue.\nMonthly Trends: BEER sales vary significantly, with large peaks and drops. WINE sales are more stable but still show some fluctuation. KEGS and LIQUOR show positive but lower sales.\n\nHistogram of Warehouse Sales/Expenses of Beverages Over Time\n\n\nHere is a histogram representation of the aforementioned summary pivot tables. There appears to be a disporportionate amount of BEER bought for warehouses. But that could be due to the fact that beers are sold in packs and so single unit quantity has skyrocketed in order to make a “12 pack” that will later count as one unit sold at retail.\n\nRetail Sales of Beverages Over Time (2017 - 2020)\n\n\nProduct Types: Includes Beer, Liquor, Wine, Non-Alcoholic beverages, and others, with substantial sales figures for Beer, Liquor, and Wine.\nSales Trends: Liquor leads with $802,691.43 in total sales, followed by Wine ($746,498.59) and Beer ($574,220.53). Recent months show higher sales for Beer and Wine.\nLow Sales Categories: Items like Dunnage and Kegs have negligible or zero sales.\nOverall Total: Total sales across all products amount to $2,160,899.37, highlighting overall retail activity.\n\nHistogram of Retail Sales of Beverages Over Time\n\n\nOnce we come to the retail side of things we see that WINE and LIQUOR are clear best sellers. It is shown hower that LIQUOR has begun to overtake WINE in retail sales.\n\nSummary\nFrom the “Warehouse and Retail Sales” dataset, I found that Beer leads in warehouse sales, with notable fluctuations due to bulk packaging, while Wine and Liquor have more stable sales. Retail sales show Liquor as the top seller, recently surpassing Wine, with Beer also performing strongly but declining. The histograms illustrate high Beer volume in warehouses and a shift in retail dominance from Wine to Liquor. Next, I will analyze seasonal trends, create advanced visualizations for deeper insights, and finalize the report with comprehensive findings and recommendations. ### Week 2 ### Week 3\n\n\n4.2.3 Week 3\nWednesday Dashboard\n1.Histogram of Avg Sales Over Time:\n\nThis stacked bar chart displays the average retail sales from June 2017 to September 2020, broken down by different item types such as “BEER,” “WINE,” “LIQUOR,” “NON-ALCOHOL,” and others.\nThe chart shows monthly fluctuations in sales, with noticeable peaks around December 2017 and July 2020. This suggests seasonal effects or particular periods of high demand for certain items.\nThe different colors represent various item types, indicating the contribution of each category to the total sales in each month. For example, “LIQUOR” and “NON-ALCOHOL” seem to contribute significantly to the total sales during peak months.\n\n2. Area Chart: Avg Sales vs. Transfers:\n\nThis plot consists of two layered area charts: the top one shows average retail transfers, and the bottom one shows average retail sales over the same period (June 2017 to September 2020).\nBoth charts use colors to represent different item types, revealing how each type contributes to overall sales and transfers.\nThe charts indicate that the trends in transfers often align with the sales trends, which suggests a correlation between the quantity of goods transferred and the sales performance.\nPeaks and troughs in the charts could indicate seasonal variations, inventory management strategies, or market demand shifts for various items.\n\n3. Packed Bubble Chart of Avg Sales Over Time:\n\nThis chart visualizes average sales using bubbles, where the size of each bubble reflects the volume of sales, and the color represents different item types.\nLarger bubbles correspond to higher sales, indicating which item types have the greatest impact on sales over time.\nThe variety of bubble sizes and colors reveals the diversity in item types and their varying sales performance.\n\n4. Treemap of Retail Transfers vs. Retail Sales:\n\nThe treemap displays retail sales data, with each rectangle representing different categories (“NON-ALCOHOL,” “BEER,” “LIQUOR,” “REF,” etc.) and specific years (2017, 2019, 2020).\nThe size of each rectangle corresponds to the magnitude of sales, and the color shading indicates the average retail sales, with darker shades representing higher sales.\nThis visualization shows how different item types and their sales vary in significance. For example, “NON-ALCOHOL” items appear to have a prominent share, especially in 2020.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Derrick Baruga</span>"
+    ]
+  },
+  {
+    "objectID": "Baruga_Main.html#jupyter-notebooks",
+    "href": "Baruga_Main.html#jupyter-notebooks",
+    "title": "4  Derrick Baruga",
+    "section": "4.3 Jupyter Notebooks",
+    "text": "4.3 Jupyter Notebooks",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Derrick Baruga</span>"
+    ]
+  },
+  {
+    "objectID": "Baruga_Main.html#week-4",
+    "href": "Baruga_Main.html#week-4",
+    "title": "4  Derrick Baruga",
+    "section": "4.4 Week 4",
+    "text": "4.4 Week 4\n\nDerrick’s Notebook: This notebook contains the data cleaning and exploration tasks.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Derrick Baruga</span>"
+    ]
+  },
+  {
+    "objectID": "Baruga_Main.html#markdown-title",
+    "href": "Baruga_Main.html#markdown-title",
+    "title": "4  Derrick Baruga",
+    "section": "4.5 Markdown title",
+    "text": "4.5 Markdown title\nMarkdown Lists:\n\nItem 1\nItem 2\nItem 3\n\nEnumarated list\n\nHola\nHi\nNamaste\n\nWe can do bold, or italic\n# Importing Numpy with nickname np\nimport numpy as np\nnp.absolute(-1)\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)\n[1 2 3 4 5]\n# Lists are native to python\nmy_list = [1, 2, 3, 4, 5]\nprint(my_list)\n[1, 2, 3, 4, 5]\n# Dataframes, so we need pandas library\nimport pandas as pd\ndata = {'Ozone': [41, 36, 12], 'Temp': [67, 72, 74]}\ndf = pd.DataFrame(data)\nprint(df)\n   Ozone  Temp\n0     41    67\n1     36    72\n2     12    74",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Derrick Baruga</span>"
+    ]
+  },
+  {
+    "objectID": "Baruga_Main.html#loading-csv-files",
+    "href": "Baruga_Main.html#loading-csv-files",
+    "title": "4  Derrick Baruga",
+    "section": "4.6 4. Loading csv files",
+    "text": "4.6 4. Loading csv files\nTo load .csv files into a ‘DataFrame’, we use pandas function read_csv\ndf = pd.read_csv('/Users/derrickmarkbavaudbaruga/Documents/fall 2024/CSC 477/Week 2/airquality_datasets.csv')\n# Summary of the dataset\nprint(df.info())\nprint(df.describe())\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 153 entries, 0 to 152\nData columns (total 6 columns):\n #   Column   Non-Null Count  Dtype  \n---  ------   --------------  -----  \n 0   Ozone    116 non-null    float64\n 1   Solar.R  146 non-null    float64\n 2   Wind     153 non-null    float64\n 3   Temp     153 non-null    int64  \n 4   Month    153 non-null    int64  \n 5   Day      153 non-null    int64  \ndtypes: float64(3), int64(3)\nmemory usage: 7.3 KB\nNone\n            Ozone     Solar.R        Wind        Temp       Month         Day\ncount  116.000000  146.000000  153.000000  153.000000  153.000000  153.000000\nmean    42.129310  185.931507    9.957516   77.882353    6.993464   15.803922\nstd     32.987885   90.058422    3.523001    9.465270    1.416522    8.864520\nmin      1.000000    7.000000    1.700000   56.000000    5.000000    1.000000\n25%     18.000000  115.750000    7.400000   72.000000    6.000000    8.000000\n50%     31.500000  205.000000    9.700000   79.000000    7.000000   16.000000\n75%     63.250000  258.750000   11.500000   85.000000    8.000000   23.000000\nmax    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000\nimport matplotlib.pyplot as plt\n\n# Ozone Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Ozone'].dropna(), bins=20, color='blue', edgecolor='black')\nplt.title('Distribution of Ozone Levels')\nplt.xlabel('Ozone (ppb)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng\n\n\n# Temp Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Temp'].dropna(), bins=20, color='orange', edgecolor='black')\nplt.title('Distribution of Temperature')\nplt.xlabel('Temperature (°F)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng\n\n\n# Boxplot for Ozone\nplt.figure(figsize=(8, 6))\nplt.boxplot(df['Ozone'].dropna())\nplt.title('Boxplot of Ozone Levels')\nplt.ylabel('Ozone (ppb)')\nplt.show()\n\n\n\npng\n\n\n# Boxplot for Temp\nplt.figure(figsize=(8, 6))\nplt.boxplot(df['Temp'].dropna())\nplt.title('Boxplot of Temperature')\nplt.ylabel('Temperature (°F)')\nplt.show()\n\n\n\npng",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Derrick Baruga</span>"
     ]
@@ -160,96 +310,6 @@
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "6  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
-    "objectID": "Tako_Main.html#nd-dashboard---individual-project",
-    "href": "Tako_Main.html#nd-dashboard---individual-project",
-    "title": "2  Abigail Tako",
-    "section": "2.1 2nd Dashboard - Individual Project",
-    "text": "2.1 2nd Dashboard - Individual Project\nClick on this link to see and interact with the dashboard! https://public.tableau.com/views/IndividualProjectTableau_17262585364150/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link\n\n2.1.1 Variables\n\nCrashes\nTotal number of traffic crashes reported\nFatalities\nNumber of individuals killed in traffic-related incidents\nInjured persons\nTotal number of people injured in traffic accidents\nVehicles-miles traveled\nTotal number of miles driven by all vehicles, measured in millions\n\n\n\n\n2.1.2 Description\nFigure 1.1\nThis line chart displays the overall trends in key traffic-related variables over the years. Crashes (green line) have shown a slight decline but remain relatively stable. Fatalities (red line) have stayed consistent, fluctuating around 30,000 to 40,000 per year. Injured persons (blue line) exhibit a gradual downward trend, with a noticeable dip in 2015, possibly due to reporting changes or other factors. Vehicle-miles traveled (brown line) show a sharp drop in 2015 but are generally consistent, indicating steady road usage over the years. The chart provides a high-level overview of the interactions between these variables over time.\nFigure 1.2\nIt shows a decreasing trend in injuries until around 2015, after which it fluctuates. Fatalities also display minor fluctuations but generally remain around the 30,000 to 40,000 range per year.\nFigure 1.3\nThe boxes represent the interquartile range, while the whiskers capture the spread of data, offering a clear view of central tendencies (mean) and variability across the years 2000 to 2023. This chart highlights the typical values and outliers for crashes, fatalities, injuries, and miles traveled.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
-    ]
-  },
-  {
-    "objectID": "Caleb_Main.html#wednesday-september-11",
-    "href": "Caleb_Main.html#wednesday-september-11",
-    "title": "3  Caleb Pena",
-    "section": "3.2 Wednesday, September 11",
-    "text": "3.2 Wednesday, September 11\nThe data from the Cars dataset was recorded in the 1920s and focuses on two different variables:\nSpeed (Numerical) - The speed in mph at which the car was traveling Stop Distance (Numerical) - The distance in ft that it took for the car to stop while traveling a specific speed\nThis is the dashboard: \nThe graph “Speed/DistAgainstSpeed+DistDualAxis” was a dual axis plot that measured the variables speed and stop distance against a new calculated variable called speed+dist. This graph simply shows how the distance values have a much greater numerical value than the speed values.\nThe graph “SpeedAndDistBoxPlot” was a box plot that measured the average distance per each speed value and calculated all the data into one box plot. This plot shows the different values for average stopping distance in comparison to all the speed values.\nThe graph “AverageSpeedPerDistance” is a line plot that calculates the average speed per each distance value. There is a correlation between the values of average speed and distance; as distance values increase, the average speed of which the car was traveling also increases.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
-    ]
-  },
-  {
-    "objectID": "Baruga_Main.html#jupyter-notebooks",
-    "href": "Baruga_Main.html#jupyter-notebooks",
-    "title": "4  Derrick Baruga",
-    "section": "4.3 Jupyter Notebooks",
-    "text": "4.3 Jupyter Notebooks",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Derrick Baruga</span>"
-    ]
-  },
-  {
-    "objectID": "Baruga_Main.html#week-4",
-    "href": "Baruga_Main.html#week-4",
-    "title": "4  Derrick Baruga",
-    "section": "4.4 Week 4",
-    "text": "4.4 Week 4\n\nDerrick’s Notebook: This notebook contains the data cleaning and exploration tasks.",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Derrick Baruga</span>"
-    ]
-  },
-  {
-    "objectID": "Tako_Main.html#jupyter-notebooks",
-    "href": "Tako_Main.html#jupyter-notebooks",
-    "title": "2  Abigail Tako",
-    "section": "2.3 Jupyter Notebooks",
-    "text": "2.3 Jupyter Notebooks",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
-    ]
-  },
-  {
-    "objectID": "Tako_Main.html#week-4",
-    "href": "Tako_Main.html#week-4",
-    "title": "2  Abigail Tako",
-    "section": "2.4 Week 4",
-    "text": "2.4 Week 4\n\nAbigail’s Notebook: This notebook contains the data cleaning and exploration tasks.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
-    ]
-  },
-  {
-    "objectID": "Caleb_Main.html#jupyter-notebooks",
-    "href": "Caleb_Main.html#jupyter-notebooks",
-    "title": "3  Caleb Pena",
-    "section": "3.3 Jupyter Notebooks",
-    "text": "3.3 Jupyter Notebooks",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
-    ]
-  },
-  {
-    "objectID": "Caleb_Main.html#week-4",
-    "href": "Caleb_Main.html#week-4",
-    "title": "3  Caleb Pena",
-    "section": "3.4 Week 4",
-    "text": "3.4 Week 4\n\nCaleb’s Notebook: This notebook contains the data cleaning and exploration tasks.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
-    ]
-  },
-  {
     "objectID": "Toluwanimi_Main.html#jupyter-notebook",
     "href": "Toluwanimi_Main.html#jupyter-notebook",
     "title": "5  Toluwanimi Olufawo",
@@ -270,93 +330,13 @@
     ]
   },
   {
-    "objectID": "Caleb_Main.html#this-is-a-markdown-title",
-    "href": "Caleb_Main.html#this-is-a-markdown-title",
-    "title": "3  Caleb Pena",
-    "section": "3.5 This is a markdown title",
-    "text": "3.5 This is a markdown title\nIn markdown, we can create lists:\n\nItem 1\nItem 2\nItem 3\n\nWe can also create enumerated lists:\n\nHola\nHi\nNamaste\n\nWe can bold and italic\n# Here we are importing numby with a nickname np\nimport numpy as np\nprint(np.absolute(-1))\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)\n1\n[1 2 3 4 5]\n# Lists are native to Python\nmy_list = [1, 2, 3, 4, 5]\nprint(my_list)\n[1, 2, 3, 4, 5]\n# We will be using a lot of dataframes, so we need Pandas library\nimport pandas as pd\ndata = {'Ozone': [41, 36, 12], 'Temp': [67, 72, 74]}\ndf = pd.DataFrame(data)\nprint(df)\n   Ozone  Temp\n0     41    67\n1     36    72\n2     12    74",
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "6  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
-    ]
-  },
-  {
-    "objectID": "Caleb_Main.html#loading-csv-files",
-    "href": "Caleb_Main.html#loading-csv-files",
-    "title": "3  Caleb Pena",
-    "section": "3.6 4. Loading csv files",
-    "text": "3.6 4. Loading csv files\nTo load .csv files into a DataFrame, we use the Pandas function read.csv:\ndf = pd.read_csv('airquality_datasets.csv')\nprint(df.info())\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 153 entries, 0 to 152\nData columns (total 6 columns):\n #   Column   Non-Null Count  Dtype  \n---  ------   --------------  -----  \n 0   Ozone    116 non-null    float64\n 1   Solar.R  146 non-null    float64\n 2   Wind     153 non-null    float64\n 3   Temp     153 non-null    int64  \n 4   Month    153 non-null    int64  \n 5   Day      153 non-null    int64  \ndtypes: float64(3), int64(3)\nmemory usage: 7.3 KB\nNone\nprint(df.describe())\n            Ozone     Solar.R        Wind        Temp       Month         Day\ncount  116.000000  146.000000  153.000000  153.000000  153.000000  153.000000\nmean    42.129310  185.931507    9.957516   77.882353    6.993464   15.803922\nstd     32.987885   90.058422    3.523001    9.465270    1.416522    8.864520\nmin      1.000000    7.000000    1.700000   56.000000    5.000000    1.000000\n25%     18.000000  115.750000    7.400000   72.000000    6.000000    8.000000\n50%     31.500000  205.000000    9.700000   79.000000    7.000000   16.000000\n75%     63.250000  258.750000   11.500000   85.000000    8.000000   23.000000\nmax    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
-    ]
-  },
-  {
-    "objectID": "Caleb_Main.html#visualizing-the-dataset",
-    "href": "Caleb_Main.html#visualizing-the-dataset",
-    "title": "3  Caleb Pena",
-    "section": "3.7 5. Visualizing the Dataset",
-    "text": "3.7 5. Visualizing the Dataset\nLet’s dive into visualizations using matplotlib. We’ll start with simple histograms and boxplots, then move on to correlation plots.\n\n3.7.1 Histograms\nHistograms help us understand the distribution of the variables. We’ll create histograms for Ozone and Temp.\nimport matplotlib.pyplot as plt\n\n# Ozone Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Ozone'].dropna(), bins=20, color='blue', edgecolor='black')\nplt.title('Distribution of Ozone Levels')\nplt.xlabel('Ozone (ppb)')\nplt.ylabel('Frequency')\nplt.show()\nMatplotlib is building the font cache; this may take a moment.\n\n\n\npng\n\n\n# Temp Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Temp'].dropna(), bins=20, color='orange', edgecolor='black')\nplt.title('Distribution of Temperature')\nplt.xlabel('Temperature (°F)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
-    ]
-  },
-  {
-    "objectID": "Tako_Main.html#this-is-a-markdown-title",
-    "href": "Tako_Main.html#this-is-a-markdown-title",
-    "title": "2  Abigail Tako",
-    "section": "2.5 This is a markdown title",
-    "text": "2.5 This is a markdown title\nin markdown we can create lists:\n\nitem 1\nitem 2\nitem 3\n\nalso we can create enumerated list\n\nHola\nHi\nNamaste\n\nwe can do bold, also italic\n# List are native to Python\nimport numpy as np\nprint(np.absolute(-1))\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)\n1\n[1 2 3 4 5]\n# List are native to Python\nmy_list = [1, 2, 3, 4, 5]\nprint (my_list)\n[1, 2, 3, 4, 5]\n# We will be using a lot of data frames, so we need pandas library\n# Panda allows us to make small spreadsheets, there will be rows and columns\nimport pandas as pd\ndata = {'Ozone': [41, 36, 12], 'Temp': [67, 72, 74]}\ndf = pd.DataFrame(data)\nprint(df)\n   Ozone  Temp\n0     41    67\n1     36    72\n2     12    74",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
-    ]
-  },
-  {
-    "objectID": "Tako_Main.html#loading-csv-files",
-    "href": "Tako_Main.html#loading-csv-files",
-    "title": "2  Abigail Tako",
-    "section": "2.6 4. Loading CSV files",
-    "text": "2.6 4. Loading CSV files\nTo load files into a DataFrame , we use the pandas function read_csv;\n# Load and analyze data from a CSV file named airquality_datasets.csv using the pandas library\ndf = pd.read_csv('airquality_datasets.csv')\n# df.info () -&gt; displays the structure and non-null counts of the DataFrame.\n# df.describe () -&gt; provides summary statistics such as mean, standard deviation, minimum, and maximum values for each column.\nprint(df.info())\nprint(df.describe())\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 153 entries, 0 to 152\nData columns (total 6 columns):\n #   Column   Non-Null Count  Dtype  \n---  ------   --------------  -----  \n 0   Ozone    116 non-null    float64\n 1   Solar.R  146 non-null    float64\n 2   Wind     153 non-null    float64\n 3   Temp     153 non-null    int64  \n 4   Month    153 non-null    int64  \n 5   Day      153 non-null    int64  \ndtypes: float64(3), int64(3)\nmemory usage: 7.3 KB\nNone\n            Ozone     Solar.R        Wind        Temp       Month         Day\ncount  116.000000  146.000000  153.000000  153.000000  153.000000  153.000000\nmean    42.129310  185.931507    9.957516   77.882353    6.993464   15.803922\nstd     32.987885   90.058422    3.523001    9.465270    1.416522    8.864520\nmin      1.000000    7.000000    1.700000   56.000000    5.000000    1.000000\n25%     18.000000  115.750000    7.400000   72.000000    6.000000    8.000000\n50%     31.500000  205.000000    9.700000   79.000000    7.000000   16.000000\n75%     63.250000  258.750000   11.500000   85.000000    8.000000   23.000000\nmax    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
-    ]
-  },
-  {
-    "objectID": "Tako_Main.html#instant-data-view",
-    "href": "Tako_Main.html#instant-data-view",
-    "title": "2  Abigail Tako",
-    "section": "2.7 Instant data view",
-    "text": "2.7 Instant data view\n\nJupyterLab allows us to instantly view the structure and data types of the columns within the DataFrame by using df.info(). This displays a concise summary of each column, including the number of non-null entries and the type of data (e.g., float64, int64).\nThis feature makes it easy to verify that the data types (like floats for Temp, Ozone, Wind, etc.) align with the expected values from the CSV file, ensuring the data is in the correct format for further analysis and visualization.\n\nimport matplotlib.pyplot as plt\n\n# Ozone Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Ozone'].dropna(), bins=20, color='blue', edgecolor='black')\nplt.title('Distribution of Ozone Levels')\nplt.xlabel('Ozone (ppb)')\nplt.ylabel('Frequency')\nplt.show()\n\n# Temp Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Temp'].dropna(), bins=20, color='orange', edgecolor='black')\nplt.title('Distribution of Temperature')\nplt.xlabel('Temperature (°F)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng\n\n\n\n\n\npng",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
-    ]
-  },
-  {
-    "objectID": "Tako_Main.html#visual-insights",
-    "href": "Tako_Main.html#visual-insights",
-    "title": "2  Abigail Tako",
-    "section": "2.8 Visual Insights",
-    "text": "2.8 Visual Insights\n\nWe can quickly identify trends and the spread of values.\nPeaks in the histograms indicate where data points are densely clustered, revealing common or typical readings in the dataset.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
-    ]
-  },
-  {
-    "objectID": "Baruga_Main.html#markdown-title",
-    "href": "Baruga_Main.html#markdown-title",
-    "title": "4  Derrick Baruga",
-    "section": "4.5 Markdown title",
-    "text": "4.5 Markdown title\nMarkdown Lists:\n\nItem 1\nItem 2\nItem 3\n\nEnumarated list\n\nHola\nHi\nNamaste\n\nWe can do bold, or italic\n# Importing Numpy with nickname np\nimport numpy as np\nnp.absolute(-1)\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)\n[1 2 3 4 5]\n# Lists are native to python\nmy_list = [1, 2, 3, 4, 5]\nprint(my_list)\n[1, 2, 3, 4, 5]\n# Dataframes, so we need pandas library\nimport pandas as pd\ndata = {'Ozone': [41, 36, 12], 'Temp': [67, 72, 74]}\ndf = pd.DataFrame(data)\nprint(df)\n   Ozone  Temp\n0     41    67\n1     36    72\n2     12    74",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Derrick Baruga</span>"
-    ]
-  },
-  {
-    "objectID": "Baruga_Main.html#loading-csv-files",
-    "href": "Baruga_Main.html#loading-csv-files",
-    "title": "4  Derrick Baruga",
-    "section": "4.6 4. Loading csv files",
-    "text": "4.6 4. Loading csv files\nTo load .csv files into a ‘DataFrame’, we use pandas function read_csv\ndf = pd.read_csv('/Users/derrickmarkbavaudbaruga/Documents/fall 2024/CSC 477/Week 2/airquality_datasets.csv')\n# Summary of the dataset\nprint(df.info())\nprint(df.describe())\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 153 entries, 0 to 152\nData columns (total 6 columns):\n #   Column   Non-Null Count  Dtype  \n---  ------   --------------  -----  \n 0   Ozone    116 non-null    float64\n 1   Solar.R  146 non-null    float64\n 2   Wind     153 non-null    float64\n 3   Temp     153 non-null    int64  \n 4   Month    153 non-null    int64  \n 5   Day      153 non-null    int64  \ndtypes: float64(3), int64(3)\nmemory usage: 7.3 KB\nNone\n            Ozone     Solar.R        Wind        Temp       Month         Day\ncount  116.000000  146.000000  153.000000  153.000000  153.000000  153.000000\nmean    42.129310  185.931507    9.957516   77.882353    6.993464   15.803922\nstd     32.987885   90.058422    3.523001    9.465270    1.416522    8.864520\nmin      1.000000    7.000000    1.700000   56.000000    5.000000    1.000000\n25%     18.000000  115.750000    7.400000   72.000000    6.000000    8.000000\n50%     31.500000  205.000000    9.700000   79.000000    7.000000   16.000000\n75%     63.250000  258.750000   11.500000   85.000000    8.000000   23.000000\nmax    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000\nimport matplotlib.pyplot as plt\n\n# Ozone Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Ozone'].dropna(), bins=20, color='blue', edgecolor='black')\nplt.title('Distribution of Ozone Levels')\nplt.xlabel('Ozone (ppb)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng\n\n\n# Temp Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Temp'].dropna(), bins=20, color='orange', edgecolor='black')\nplt.title('Distribution of Temperature')\nplt.xlabel('Temperature (°F)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng\n\n\n# Boxplot for Ozone\nplt.figure(figsize=(8, 6))\nplt.boxplot(df['Ozone'].dropna())\nplt.title('Boxplot of Ozone Levels')\nplt.ylabel('Ozone (ppb)')\nplt.show()\n\n\n\npng\n\n\n# Boxplot for Temp\nplt.figure(figsize=(8, 6))\nplt.boxplot(df['Temp'].dropna())\nplt.title('Boxplot of Temperature')\nplt.ylabel('Temperature (°F)')\nplt.show()\n\n\n\npng",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Derrick Baruga</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Summary</span>"
     ]
   }
 ]
