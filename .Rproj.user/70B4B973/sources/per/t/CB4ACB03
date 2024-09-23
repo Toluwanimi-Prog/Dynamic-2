@@ -7,7 +7,7 @@
     "contents": "",
     "dirty": false,
     "created": 1726067630170.0,
-    "source_on_save": true,
+    "source_on_save": false,
     "relative_order": 2,
     "properties": {
         "rmdVisualMode": "false",
@@ -26,7 +26,7 @@
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1727063742956,
+    "last_content_update": 1727066687670,
     "read_only": false,
     "read_only_alternatives": []
 }
