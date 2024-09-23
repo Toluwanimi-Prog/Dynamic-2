@@ -168,3 +168,5 @@ The graph "EffectsOf(Temp/Oxygen)On(Northern/Southern)CopepodBiomass" is a dual 
 ## Jupyter Notebooks
 ## Week 4
 - [Caleb's Notebook](Tut2_Python_Pena_092024.ipynb): This notebook contains the data cleaning and exploration tasks.
+
+{{< include "Tut2_Python_Pena_092024.md" >}}

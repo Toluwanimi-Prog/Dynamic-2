@@ -163,3 +163,5 @@ Monitoring the trends in motor vehicle safety in the U.S., including fatalities,
 ## Jupyter Notebooks
 ## Week 4
 - [Abigail's Notebook](Tut2_Python_Tako_092024.ipynb): This notebook contains the data cleaning and exploration tasks.
+
+{{< include "Tut2_Python_Tako_092024.md" >}}

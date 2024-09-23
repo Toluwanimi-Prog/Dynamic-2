@@ -264,9 +264,99 @@
     "href": "Toluwanimi_Main.html#week-4",
     "title": "5  Toluwanimi Olufawo",
     "section": "5.5 Week 4",
-    "text": "5.5 Week 4\n\nToluwanimi’s Notebook: This notebook contains the data cleaning and exploration tasks.",
+    "text": "5.5 Week 4\n\nToluwanimi’s Notebook: This notebook contains the data cleaning and exploration tasks.\n\n#This is a markdown title\nIn Markdown, we can create lists: - item 1 - item 2 - item 3\nAlso, we can create enumerated lists: 1. Hola 2. Hi 3. Namaste\nWe can bold text, and also italicize text.\n# Here we are importing numpy with a nickname np\nimport numpy as np\nprint(np.absolute(-1))\narr = np.array([1, 2, 3, 4, 5])\nprint (arr)\n1\n[1 2 3 4 5]\n# lists are native to python \nmy_list = [1, 2, 3, 4, 5]\nprint (my_list)\n[1, 2, 3, 4, 5]\n#We will be using a lot of dataframes , so we need pandas libary \nimport pandas as pd\ndata = {'Ozone': [41, 36, 12], 'Temp': [67, 72, 74]}\ndf = pd.DataFrame(data)\nprint(df)\n   Ozone  Temp\n0     41    67\n1     36    72\n2     12    74\n#load .csv files into **DataFrame**, we use pandas function **read_csv**\ndf = pd.read_csv(r'C:\\Users\\toluf\\venv477\\Scripts\\airquality_datasets.csv')\nprint(df.info())\nprint(df.describe())\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 153 entries, 0 to 152\nData columns (total 6 columns):\n #   Column   Non-Null Count  Dtype  \n---  ------   --------------  -----  \n 0   Ozone    116 non-null    float64\n 1   Solar.R  146 non-null    float64\n 2   Wind     153 non-null    float64\n 3   Temp     153 non-null    int64  \n 4   Month    153 non-null    int64  \n 5   Day      153 non-null    int64  \ndtypes: float64(3), int64(3)\nmemory usage: 7.3 KB\nNone\n            Ozone     Solar.R        Wind        Temp       Month         Day\ncount  116.000000  146.000000  153.000000  153.000000  153.000000  153.000000\nmean    42.129310  185.931507    9.957516   77.882353    6.993464   15.803922\nstd     32.987885   90.058422    3.523001    9.465270    1.416522    8.864520\nmin      1.000000    7.000000    1.700000   56.000000    5.000000    1.000000\n25%     18.000000  115.750000    7.400000   72.000000    6.000000    8.000000\n50%     31.500000  205.000000    9.700000   79.000000    7.000000   16.000000\n75%     63.250000  258.750000   11.500000   85.000000    8.000000   23.000000\nmax    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000\nimport matplotlib.pyplot as plt\n\n# Ozone Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Ozone'].dropna(), bins=20, color='blue', edgecolor='black')\nplt.title('Distribution of Ozone Levels')\nplt.xlabel('Ozone (ppb)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\n\npng\n\n\n# Temp Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Temp'].dropna(), bins=20, color='orange', edgecolor='black')\nplt.title('Distribution of Temperature')\nplt.xlabel('Temperature (°F)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng\n\n\n# Boxplot for Ozone\nplt.figure(figsize=(8, 6))\nplt.boxplot(df['Ozone'].dropna())\nplt.title('Boxplot of Ozone Levels')\nplt.ylabel('Ozone (ppb)')\nplt.show()\n\n\n\n\npng\n\n\n# Boxplot for Temp\nplt.figure(figsize=(8, 6))\nplt.boxplot(df['Temp'].dropna())\nplt.title('Boxplot of Temperature')\nplt.ylabel('Temperature (°F)')\nplt.show()\n\n\n\npng\n\n\n\nimport matplotlib.pyplot as plt\n\n# Ozone Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Ozone'].dropna(), bins=20, color='blue', edgecolor='black')\nplt.title('Distribution of Ozone Levels')\nplt.xlabel('Ozone (ppb)')\nplt.ylabel('Frequency')\nplt.show()\n\n# Temp Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Temp'].dropna(), bins=20, color='orange', edgecolor='black')\nplt.title('Distribution of Temperature')\nplt.xlabel('Temperature (°F)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng\n\n\n\n\n\npng",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Toluwanimi Olufawo</span>"
+    ]
+  },
+  {
+    "objectID": "Caleb_Main.html#this-is-a-markdown-title",
+    "href": "Caleb_Main.html#this-is-a-markdown-title",
+    "title": "3  Caleb Pena",
+    "section": "3.5 This is a markdown title",
+    "text": "3.5 This is a markdown title\nIn markdown, we can create lists:\n\nItem 1\nItem 2\nItem 3\n\nWe can also create enumerated lists:\n\nHola\nHi\nNamaste\n\nWe can bold and italic\n# Here we are importing numby with a nickname np\nimport numpy as np\nprint(np.absolute(-1))\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)\n1\n[1 2 3 4 5]\n# Lists are native to Python\nmy_list = [1, 2, 3, 4, 5]\nprint(my_list)\n[1, 2, 3, 4, 5]\n# We will be using a lot of dataframes, so we need Pandas library\nimport pandas as pd\ndata = {'Ozone': [41, 36, 12], 'Temp': [67, 72, 74]}\ndf = pd.DataFrame(data)\nprint(df)\n   Ozone  Temp\n0     41    67\n1     36    72\n2     12    74",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
+    ]
+  },
+  {
+    "objectID": "Caleb_Main.html#loading-csv-files",
+    "href": "Caleb_Main.html#loading-csv-files",
+    "title": "3  Caleb Pena",
+    "section": "3.6 4. Loading csv files",
+    "text": "3.6 4. Loading csv files\nTo load .csv files into a DataFrame, we use the Pandas function read.csv:\ndf = pd.read_csv('airquality_datasets.csv')\nprint(df.info())\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 153 entries, 0 to 152\nData columns (total 6 columns):\n #   Column   Non-Null Count  Dtype  \n---  ------   --------------  -----  \n 0   Ozone    116 non-null    float64\n 1   Solar.R  146 non-null    float64\n 2   Wind     153 non-null    float64\n 3   Temp     153 non-null    int64  \n 4   Month    153 non-null    int64  \n 5   Day      153 non-null    int64  \ndtypes: float64(3), int64(3)\nmemory usage: 7.3 KB\nNone\nprint(df.describe())\n            Ozone     Solar.R        Wind        Temp       Month         Day\ncount  116.000000  146.000000  153.000000  153.000000  153.000000  153.000000\nmean    42.129310  185.931507    9.957516   77.882353    6.993464   15.803922\nstd     32.987885   90.058422    3.523001    9.465270    1.416522    8.864520\nmin      1.000000    7.000000    1.700000   56.000000    5.000000    1.000000\n25%     18.000000  115.750000    7.400000   72.000000    6.000000    8.000000\n50%     31.500000  205.000000    9.700000   79.000000    7.000000   16.000000\n75%     63.250000  258.750000   11.500000   85.000000    8.000000   23.000000\nmax    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
+    ]
+  },
+  {
+    "objectID": "Caleb_Main.html#visualizing-the-dataset",
+    "href": "Caleb_Main.html#visualizing-the-dataset",
+    "title": "3  Caleb Pena",
+    "section": "3.7 5. Visualizing the Dataset",
+    "text": "3.7 5. Visualizing the Dataset\nLet’s dive into visualizations using matplotlib. We’ll start with simple histograms and boxplots, then move on to correlation plots.\n\n3.7.1 Histograms\nHistograms help us understand the distribution of the variables. We’ll create histograms for Ozone and Temp.\nimport matplotlib.pyplot as plt\n\n# Ozone Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Ozone'].dropna(), bins=20, color='blue', edgecolor='black')\nplt.title('Distribution of Ozone Levels')\nplt.xlabel('Ozone (ppb)')\nplt.ylabel('Frequency')\nplt.show()\nMatplotlib is building the font cache; this may take a moment.\n\n\n\npng\n\n\n# Temp Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Temp'].dropna(), bins=20, color='orange', edgecolor='black')\nplt.title('Distribution of Temperature')\nplt.xlabel('Temperature (°F)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Caleb Pena</span>"
+    ]
+  },
+  {
+    "objectID": "Tako_Main.html#this-is-a-markdown-title",
+    "href": "Tako_Main.html#this-is-a-markdown-title",
+    "title": "2  Abigail Tako",
+    "section": "2.5 This is a markdown title",
+    "text": "2.5 This is a markdown title\nin markdown we can create lists:\n\nitem 1\nitem 2\nitem 3\n\nalso we can create enumerated list\n\nHola\nHi\nNamaste\n\nwe can do bold, also italic\n# List are native to Python\nimport numpy as np\nprint(np.absolute(-1))\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)\n1\n[1 2 3 4 5]\n# List are native to Python\nmy_list = [1, 2, 3, 4, 5]\nprint (my_list)\n[1, 2, 3, 4, 5]\n# We will be using a lot of data frames, so we need pandas library\n# Panda allows us to make small spreadsheets, there will be rows and columns\nimport pandas as pd\ndata = {'Ozone': [41, 36, 12], 'Temp': [67, 72, 74]}\ndf = pd.DataFrame(data)\nprint(df)\n   Ozone  Temp\n0     41    67\n1     36    72\n2     12    74",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
+    ]
+  },
+  {
+    "objectID": "Tako_Main.html#loading-csv-files",
+    "href": "Tako_Main.html#loading-csv-files",
+    "title": "2  Abigail Tako",
+    "section": "2.6 4. Loading CSV files",
+    "text": "2.6 4. Loading CSV files\nTo load files into a DataFrame , we use the pandas function read_csv;\n# Load and analyze data from a CSV file named airquality_datasets.csv using the pandas library\ndf = pd.read_csv('airquality_datasets.csv')\n# df.info () -&gt; displays the structure and non-null counts of the DataFrame.\n# df.describe () -&gt; provides summary statistics such as mean, standard deviation, minimum, and maximum values for each column.\nprint(df.info())\nprint(df.describe())\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 153 entries, 0 to 152\nData columns (total 6 columns):\n #   Column   Non-Null Count  Dtype  \n---  ------   --------------  -----  \n 0   Ozone    116 non-null    float64\n 1   Solar.R  146 non-null    float64\n 2   Wind     153 non-null    float64\n 3   Temp     153 non-null    int64  \n 4   Month    153 non-null    int64  \n 5   Day      153 non-null    int64  \ndtypes: float64(3), int64(3)\nmemory usage: 7.3 KB\nNone\n            Ozone     Solar.R        Wind        Temp       Month         Day\ncount  116.000000  146.000000  153.000000  153.000000  153.000000  153.000000\nmean    42.129310  185.931507    9.957516   77.882353    6.993464   15.803922\nstd     32.987885   90.058422    3.523001    9.465270    1.416522    8.864520\nmin      1.000000    7.000000    1.700000   56.000000    5.000000    1.000000\n25%     18.000000  115.750000    7.400000   72.000000    6.000000    8.000000\n50%     31.500000  205.000000    9.700000   79.000000    7.000000   16.000000\n75%     63.250000  258.750000   11.500000   85.000000    8.000000   23.000000\nmax    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
+    ]
+  },
+  {
+    "objectID": "Tako_Main.html#instant-data-view",
+    "href": "Tako_Main.html#instant-data-view",
+    "title": "2  Abigail Tako",
+    "section": "2.7 Instant data view",
+    "text": "2.7 Instant data view\n\nJupyterLab allows us to instantly view the structure and data types of the columns within the DataFrame by using df.info(). This displays a concise summary of each column, including the number of non-null entries and the type of data (e.g., float64, int64).\nThis feature makes it easy to verify that the data types (like floats for Temp, Ozone, Wind, etc.) align with the expected values from the CSV file, ensuring the data is in the correct format for further analysis and visualization.\n\nimport matplotlib.pyplot as plt\n\n# Ozone Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Ozone'].dropna(), bins=20, color='blue', edgecolor='black')\nplt.title('Distribution of Ozone Levels')\nplt.xlabel('Ozone (ppb)')\nplt.ylabel('Frequency')\nplt.show()\n\n# Temp Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Temp'].dropna(), bins=20, color='orange', edgecolor='black')\nplt.title('Distribution of Temperature')\nplt.xlabel('Temperature (°F)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng\n\n\n\n\n\npng",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
+    ]
+  },
+  {
+    "objectID": "Tako_Main.html#visual-insights",
+    "href": "Tako_Main.html#visual-insights",
+    "title": "2  Abigail Tako",
+    "section": "2.8 Visual Insights",
+    "text": "2.8 Visual Insights\n\nWe can quickly identify trends and the spread of values.\nPeaks in the histograms indicate where data points are densely clustered, revealing common or typical readings in the dataset.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Abigail Tako</span>"
+    ]
+  },
+  {
+    "objectID": "Baruga_Main.html#markdown-title",
+    "href": "Baruga_Main.html#markdown-title",
+    "title": "4  Derrick Baruga",
+    "section": "4.5 Markdown title",
+    "text": "4.5 Markdown title\nMarkdown Lists:\n\nItem 1\nItem 2\nItem 3\n\nEnumarated list\n\nHola\nHi\nNamaste\n\nWe can do bold, or italic\n# Importing Numpy with nickname np\nimport numpy as np\nnp.absolute(-1)\narr = np.array([1, 2, 3, 4, 5])\nprint(arr)\n[1 2 3 4 5]\n# Lists are native to python\nmy_list = [1, 2, 3, 4, 5]\nprint(my_list)\n[1, 2, 3, 4, 5]\n# Dataframes, so we need pandas library\nimport pandas as pd\ndata = {'Ozone': [41, 36, 12], 'Temp': [67, 72, 74]}\ndf = pd.DataFrame(data)\nprint(df)\n   Ozone  Temp\n0     41    67\n1     36    72\n2     12    74",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Derrick Baruga</span>"
+    ]
+  },
+  {
+    "objectID": "Baruga_Main.html#loading-csv-files",
+    "href": "Baruga_Main.html#loading-csv-files",
+    "title": "4  Derrick Baruga",
+    "section": "4.6 4. Loading csv files",
+    "text": "4.6 4. Loading csv files\nTo load .csv files into a ‘DataFrame’, we use pandas function read_csv\ndf = pd.read_csv('/Users/derrickmarkbavaudbaruga/Documents/fall 2024/CSC 477/Week 2/airquality_datasets.csv')\n# Summary of the dataset\nprint(df.info())\nprint(df.describe())\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 153 entries, 0 to 152\nData columns (total 6 columns):\n #   Column   Non-Null Count  Dtype  \n---  ------   --------------  -----  \n 0   Ozone    116 non-null    float64\n 1   Solar.R  146 non-null    float64\n 2   Wind     153 non-null    float64\n 3   Temp     153 non-null    int64  \n 4   Month    153 non-null    int64  \n 5   Day      153 non-null    int64  \ndtypes: float64(3), int64(3)\nmemory usage: 7.3 KB\nNone\n            Ozone     Solar.R        Wind        Temp       Month         Day\ncount  116.000000  146.000000  153.000000  153.000000  153.000000  153.000000\nmean    42.129310  185.931507    9.957516   77.882353    6.993464   15.803922\nstd     32.987885   90.058422    3.523001    9.465270    1.416522    8.864520\nmin      1.000000    7.000000    1.700000   56.000000    5.000000    1.000000\n25%     18.000000  115.750000    7.400000   72.000000    6.000000    8.000000\n50%     31.500000  205.000000    9.700000   79.000000    7.000000   16.000000\n75%     63.250000  258.750000   11.500000   85.000000    8.000000   23.000000\nmax    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000\nimport matplotlib.pyplot as plt\n\n# Ozone Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Ozone'].dropna(), bins=20, color='blue', edgecolor='black')\nplt.title('Distribution of Ozone Levels')\nplt.xlabel('Ozone (ppb)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng\n\n\n# Temp Histogram\nplt.figure(figsize=(8, 6))\nplt.hist(df['Temp'].dropna(), bins=20, color='orange', edgecolor='black')\nplt.title('Distribution of Temperature')\nplt.xlabel('Temperature (°F)')\nplt.ylabel('Frequency')\nplt.show()\n\n\n\npng\n\n\n# Boxplot for Ozone\nplt.figure(figsize=(8, 6))\nplt.boxplot(df['Ozone'].dropna())\nplt.title('Boxplot of Ozone Levels')\nplt.ylabel('Ozone (ppb)')\nplt.show()\n\n\n\npng\n\n\n# Boxplot for Temp\nplt.figure(figsize=(8, 6))\nplt.boxplot(df['Temp'].dropna())\nplt.title('Boxplot of Temperature')\nplt.ylabel('Temperature (°F)')\nplt.show()\n\n\n\npng",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Derrick Baruga</span>"
     ]
   }
 ]
