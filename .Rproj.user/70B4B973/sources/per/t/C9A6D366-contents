@@ -1,0 +1,8 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+quarto convert "C:/Users/toluf/Downloads/Tut2_Python_Olufawo_092024.ipynb" --to qmd
+quarto render "Tut2_Python_Olufawo_092024.qmd"

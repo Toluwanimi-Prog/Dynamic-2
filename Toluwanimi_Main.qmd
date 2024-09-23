@@ -315,9 +315,10 @@ With the use of advanced features like calculated fields, dual-axis charts, para
 
 ![Dashboard](Final.png)
 
-
 ## Jupyter Notebook
-## Week 4
-- [Toluwanimi's Notebook](Tut2_Python_Olufawo_09_21_24.ipynb): This notebook contains the data cleaning and exploration tasks.
+
+### Week 4
+
+-   [Toluwanimi's Notebook](Tut2_Python_Olufawo_09_21_24.ipynb): This notebook contains the data cleaning and exploration tasks.
 
 {{< include "Tut2_Python_Olufawo_09_21_24.md" >}}
