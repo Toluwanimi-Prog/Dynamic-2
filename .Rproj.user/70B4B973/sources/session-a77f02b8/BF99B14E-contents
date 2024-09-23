@@ -213,6 +213,7 @@ From the "Warehouse and Retail Sales" dataset, I found that Beer leads in wareho
 
 ## Jupyter Notebooks
 ## Week 4
+
 - [Derrick's Notebook](week4_baruga_python.ipynb): This notebook contains the data cleaning and exploration tasks.
 
 {{< include "week4_baruga_python.md" >}}
