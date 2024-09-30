@@ -1,10 +1,10 @@
 # Abigail Tako
 
-This page contains all of Abigail Takon submissions this semester organized into different sections.
+This page contains all of Abigail Tako's Submissions this semester organized into different sections.
 
-###Monday
+## Monday
 
-1st Dashboard - Economics_ggplot2
+**1st Dashboard - Economics_ggplot2**
 
 Click on this link to see and interact with the dashboard! <https://public.tableau.com/views/AbigailTako_Econoomics_dashboard/Dashboard1?:language=en->
 
@@ -80,6 +80,8 @@ It shows a decreasing trend in injuries until around 2015, after which it fluctu
 
 The boxes represent the interquartile range, while the whiskers capture the spread of data, offering a clear view of central tendencies (mean) and variability across the years 2000 to 2023. This chart highlights the typical values and outliers for crashes, fatalities, injuries, and miles traveled.
 
+
+
 ## Wednesday
 
 ### Week 1
@@ -136,6 +138,9 @@ Third, I'm going to make another pivot table that can show more detailed on each
 
 From the chart, we can see that, on day 30 from the 5th month, it shows the highest sum of ozone.
 
+
+
+
 ## Friday - Midterm Projects
 
 ### Week 1
@@ -162,11 +167,11 @@ Monitoring the trends in motor vehicle safety in the U.S., including fatalities,
 
 ### Week 5 
 
-# Mid Term Project
+**Mid Term Project**
 
 ![](./GDP-TransportationServices.png)
 
-### Variables in the Graph:
+**Variables in the Graph:**
 
 -   Time (X-axis)
 
@@ -176,7 +181,7 @@ Monitoring the trends in motor vehicle safety in the U.S., including fatalities,
 
     U.S. Gross Domestic Product (GDP) attributed to for-hire transportation services, measured in billions of current dollars.
 
-#### Categories of Transportation Services (Stacked Bars)
+**Categories of Transportation Services (Stacked Bars)**
 
 -   Air transportation
 -   Truck transportation
@@ -187,12 +192,27 @@ Monitoring the trends in motor vehicle safety in the U.S., including fatalities,
 -   Other transportation and support activities
 -   Warehousing and storage
 
-### Key Insights
+**Key Insights**
 
 The graph illustrates the **consistent growth of the U.S. GDP from for-hire transportation services between 1980 and 2022**. Truck and air transportation sectors contribute the largest shares, with noticeable growth across all categories post-2010. The overall upward trend reflects the increasing economic importance of transportation services in the U.S.
 
+
+
+
+
 ## Jupyter Notebooks
-## Week 4
-- [Abigail's Notebook](Tut2_Python_Tako_092024.ipynb): This notebook contains the data cleaning and exploration tasks.
+
+### Week 4
+
 
 {{< include "Tut2_Python_Tako_092024.md" >}}
+
+
+
+
+
+
+
+
+
+

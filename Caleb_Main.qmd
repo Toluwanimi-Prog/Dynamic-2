@@ -166,7 +166,7 @@ The graph "AverageOceanographic(Temp/Oxygen)EachYear" was a dual axis plot that 
 The graph "EffectsOf(Temp/Oxygen)On(Northern/Southern)CopepodBiomass" is a dual axis plot that measures four different variables. This plot focuses on the effects that the oceanographic temperature and oceanographic oxygen have on the population and copepod biomass recorded on the sample dates and near the sample areas. From the graph, it is visible that as oceanographic oxygen rises, the northern copepod biomass greatly decreases and the southern copepod biomass slightly increases. It is also evident that as oceanographic temperature rises, the northern copepod biomass also greatly decreases and the southern copepod biomass also slightly increases.
 
 ## Jupyter Notebooks
-## Week 4
+### Week 4
 - [Caleb's Notebook](Tut2_Python_Pena_092024.ipynb): This notebook contains the data cleaning and exploration tasks.
 
 {{< include "Tut2_Python_Pena_092024.md" >}}

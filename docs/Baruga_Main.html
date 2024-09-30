@@ -173,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Toluwanimi_Main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Toluwanimi Olufawo</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">VIZ: Tutorial5: Scikit-learn, Python Power to create Models</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -444,9 +444,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="jupyter-notebooks" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="jupyter-notebooks"><span class="header-section-number">4.3</span> Jupyter Notebooks</h2>
-<ul>
-<li><a href="week4_baruga_python.ipynb">Derrick’s Jupyter Notebook</a>: This notebook contains the data cleaning and exploration tasks.</li>
-</ul>
 <section id="week-4" class="level3" data-number="4.3.1">
 <h3 data-number="4.3.1" class="anchored" data-anchor-id="week-4"><span class="header-section-number">4.3.1</span> Week 4</h3>
 </section>
@@ -575,7 +572,7 @@ max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</c
 <h3 data-number="4.5.2" class="anchored" data-anchor-id="introduction-to-plotnine"><span class="header-section-number">4.5.2</span> 1. Introduction to Plotnine</h3>
 <p>plotnine is a data visualization package for Python based on the Grammar of Graphics, which is a system for understanding and building plots. The grammar describes how plots are constructed by combining data, aesthetic mappings, geometric objects, and other components.</p>
 <p>To begin, you’ll need to install the plotnine package if you don’t have it installed:</p>
-<div id="7fee8454" class="cell" data-execution_count="1">
+<div id="6235af5a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install plotnine</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -595,7 +592,7 @@ max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</c
 <section id="creating-your-first-plot" class="level3" data-number="4.5.4">
 <h3 data-number="4.5.4" class="anchored" data-anchor-id="creating-your-first-plot"><span class="header-section-number">4.5.4</span> 3. Creating Your First Plot</h3>
 <p>Let’s begin by creating a simple scatter plot using the famous mtcars dataset. We’ll show how to set up the basic structure and gradually build complexity.</p>
-<div id="61613ee4" class="cell" data-execution_count="2">
+<div id="83ccea72" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import required libraries</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> ggplot, aes, geom_point, labs</span>
@@ -622,7 +619,7 @@ max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</c
 <h3 data-number="4.5.5" class="anchored" data-anchor-id="adding-aesthetic-mappings"><span class="header-section-number">4.5.5</span> 4. Adding Aesthetic Mappings</h3>
 <p>In the Grammar of Graphics, aesthetics control how data points are represented visually. You can map variables to size, color, shape, and more.</p>
 <p>Example: Color by cyl (number of cylinders)</p>
-<div id="27f74657" class="cell" data-execution_count="3">
+<div id="6f192aa8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>, color<span class="op">=</span><span class="st">'factor(cyl)'</span>)) <span class="op">+</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a> geom_point() <span class="op">+</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a> labs(title<span class="op">=</span><span class="st">'MPG vs Weight by Cylinder'</span>,</span>
@@ -638,7 +635,7 @@ max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</c
 </div>
 </div>
 <p>Example: Size by horsepower (hp)</p>
-<div id="675fd1d8" class="cell" data-execution_count="4">
+<div id="170017f8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>(ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>, color<span class="op">=</span><span class="st">'factor(cyl)'</span>, size<span class="op">=</span><span class="st">'hp'</span>)) <span class="op">+</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a> geom_point() <span class="op">+</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a> labs(title<span class="op">=</span><span class="st">'MPG vs Weight by Cylinder and Horsepower'</span>,</span>
@@ -659,7 +656,7 @@ max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</c
 <h3 data-number="4.5.6" class="anchored" data-anchor-id="geometric-objects"><span class="header-section-number">4.5.6</span> 5. Geometric Objects</h3>
 <p>geom_* specifies the type of plot. You can create scatter plots, line charts, bar plots, histograms, etc.</p>
 <p>Example: Adding a smooth line (geom_smooth)</p>
-<div id="7e245d82" class="cell" data-execution_count="5">
+<div id="c20ab785" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> geom_smooth</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>(ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>)) <span class="op">+</span></span>
@@ -681,7 +678,7 @@ max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</c
 <h3 data-number="4.5.7" class="anchored" data-anchor-id="faceting"><span class="header-section-number">4.5.7</span> 6. Faceting</h3>
 <p>Faceting allows you to split your plot into multiple panels based on a factor.</p>
 <p>Example: Facet by cyl</p>
-<div id="fdd1eacc" class="cell" data-execution_count="6">
+<div id="01140d89" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> facet_wrap</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>(ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>)) <span class="op">+</span></span>
@@ -703,7 +700,7 @@ max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</c
 <h3 data-number="4.5.8" class="anchored" data-anchor-id="customizing-scales"><span class="header-section-number">4.5.8</span> 7. Customizing Scales</h3>
 <p>Scales control the mapping from data to aesthetic attributes. You can customize scales for color, size, and more.</p>
 <p>Example: Custom Color Scale</p>
-<div id="357dae82" class="cell" data-execution_count="7">
+<div id="7b5f607b" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> scale_color_manual</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>(ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>, color<span class="op">=</span><span class="st">'factor(cyl)'</span>)) <span class="op">+</span></span>
@@ -726,7 +723,7 @@ max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</c
 <h3 data-number="4.5.9" class="anchored" data-anchor-id="flip-coordinates"><span class="header-section-number">4.5.9</span> 8. Flip Coordinates</h3>
 <p>Create a bar plot showing distribution of cylinders</p>
 <p>Example: Fliping coordinates axis</p>
-<div id="4658d507" class="cell" data-execution_count="8">
+<div id="448dfcd1" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> ggplot, aes, geom_bar, coord_flip, labs</span>
@@ -754,7 +751,7 @@ max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</c
 <h3 data-number="4.5.10" class="anchored" data-anchor-id="themes"><span class="header-section-number">4.5.10</span> 9. Themes</h3>
 <p>Themes allow you to adjust the non-data aspects of the plot, such as background, axis labels, and gridlines.</p>
 <p>Example: Apply a Minimal Theme</p>
-<div id="5a4844ce" class="cell" data-execution_count="9">
+<div id="ae5d2780" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> theme_minimal</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>(ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>)) <span class="op">+</span></span>
@@ -776,7 +773,7 @@ max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</c
 <h3 data-number="4.5.11" class="anchored" data-anchor-id="saving-the-plot"><span class="header-section-number">4.5.11</span> 10. Saving the Plot</h3>
 <p>You can save your plot using the save method.</p>
 <p>Example: Save the plot</p>
-<div id="1adc4167" class="cell" data-execution_count="10">
+<div id="07bb9a8b" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the plot to a file</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> (ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>)) <span class="op">+</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>     geom_point() <span class="op">+</span></span>
@@ -1223,8 +1220,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Toluwanimi_Main.html" class="pagination-link" aria-label="Toluwanimi Olufawo">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Toluwanimi Olufawo</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Toluwanimi_Main.html" class="pagination-link" aria-label="VIZ: Tutorial5: Scikit-learn, Python Power to create Models">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">VIZ: Tutorial5: Scikit-learn, Python Power to create Models</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
