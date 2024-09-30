@@ -322,3 +322,22 @@ With the use of advanced features like calculated fields, dual-axis charts, para
 -   [Toluwanimi's Notebook](Tut2_Python_Olufawo_09_21_24.ipynb): This notebook contains the data cleaning and exploration tasks.
 
 {{< include "Tut2_Python_Olufawo_09_21_24.md" >}}
+
+### Week 5
+
+**Introduction to Plotnine**
+{{< include "Tu4_python_plotnine_Olufawo_092524.md" >}}
+
+**05_VIZ_python_scikit-learn**
+{{< include "Tutorial5_python_Olufawo_092724.md" >}}
+
+
+
+
+
+
+
+
+
+
+

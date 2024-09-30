@@ -211,9 +211,19 @@ From the "Warehouse and Retail Sales" dataset, I found that Beer leads in wareho
 
 -   This visualization shows how different item types and their sales vary in significance. For example, "NON-ALCOHOL" items appear to have a prominent share, especially in 2020.
 
-## Jupyter Notebooks
-## Week 4
 
-- [Derrick's Notebook](week4_baruga_python.ipynb): This notebook contains the data cleaning and exploration tasks.
+
+## Jupyter Notebooks
+
+
+- [Derrick's Jupyter Notebook](week4_baruga_python.ipynb): This notebook contains the data cleaning and exploration tasks.
+
+### Week 4
 
 {{< include "week4_baruga_python.md" >}}
+
+
+### Week 5 
+{{< include "Week5_Baruga_092424.md" >}}
+
+{{< include "week5_midterm_plot.md" >}}

@@ -160,6 +160,37 @@ Monitoring the trends in motor vehicle safety in the U.S., including fatalities,
 
 -   Vehicles miles traveled - total number of miles driven by vehicles
 
+### Week 5 
+
+# Mid Term Project
+
+![](./GDP-TransportationServices.png)
+
+### Variables in the Graph:
+
+-   Time (X-axis)
+
+    Years from 1980 to 2022
+
+-   GDP (Y-axis)
+
+    U.S. Gross Domestic Product (GDP) attributed to for-hire transportation services, measured in billions of current dollars.
+
+#### Categories of Transportation Services (Stacked Bars)
+
+-   Air transportation
+-   Truck transportation
+-   Rail transportation
+-   Water transportation
+-   Pipeline transportation
+-   Transit and ground passenger transportation
+-   Other transportation and support activities
+-   Warehousing and storage
+
+### Key Insights
+
+The graph illustrates the **consistent growth of the U.S. GDP from for-hire transportation services between 1980 and 2022**. Truck and air transportation sectors contribute the largest shares, with noticeable growth across all categories post-2010. The overall upward trend reflects the increasing economic importance of transportation services in the U.S.
+
 ## Jupyter Notebooks
 ## Week 4
 - [Abigail's Notebook](Tut2_Python_Tako_092024.ipynb): This notebook contains the data cleaning and exploration tasks.
