@@ -1,6 +1,4 @@
----
-jupyter: python3
----
+
 
 **1. Introduction to Plotnine**
 plotnine is a data visualization package for Python based on the Grammar of Graphics, which is a system for understanding and building plots. The grammar describes how plots are constructed by combining data, aesthetic mappings, geometric objects, and other components.

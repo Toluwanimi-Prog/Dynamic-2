@@ -222,10 +222,16 @@ From the "Warehouse and Retail Sales" dataset, I found that Beer leads in wareho
 {{< include "week4_baruga_python.md" >}}
 
 
-
-
-
-
 ### Week 5 
+
 {{< include "Week5_Baruga_092424.md" >}}
+
+
+
+**Midterm Report**
+
+{{< include "senior_paper.md" >}}
+
+
+
 

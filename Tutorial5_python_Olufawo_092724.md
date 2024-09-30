@@ -1,7 +1,3 @@
----
-title: 'VIZ: Tutorial5: Scikit-learn, Python Power to create Models'
-jupyter: python3
----
 
 
 Here’s a structured tutorial to showcase the power of **scikit-learn** using the Iris dataset, incorporating statistical summaries, visualizations, simple linear regression, correlation plots, and multiple linear regression.

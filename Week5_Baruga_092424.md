@@ -1,8 +1,3 @@
----
-title: 'Plotnine Tutorial: Understanding the Grammar of Graphics'
-jupyter: python3
----
-
 
 
 ### 1. Introduction to Plotnine

@@ -167,13 +167,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Baruga_Main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Plotnine Tutorial: Understanding the Grammar of Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Derrick Baruga</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Toluwanimi_Main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">VIZ: Tutorial5: Scikit-learn, Python Power to create Models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Toluwanimi Olufawo</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -214,10 +214,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#week-4" id="toc-week-4" class="nav-link" data-scroll-target="#week-4"><span class="header-section-number">2.4.1</span> Week 4</a></li>
   </ul></li>
-  <li><a href="#this-is-a-markdown-title" id="toc-this-is-a-markdown-title" class="nav-link" data-scroll-target="#this-is-a-markdown-title"><span class="header-section-number">2.5</span> This is a markdown title</a></li>
-  <li><a href="#loading-csv-files" id="toc-loading-csv-files" class="nav-link" data-scroll-target="#loading-csv-files"><span class="header-section-number">2.6</span> 4. Loading CSV files</a></li>
-  <li><a href="#instant-data-view" id="toc-instant-data-view" class="nav-link" data-scroll-target="#instant-data-view"><span class="header-section-number">2.7</span> Instant data view</a></li>
-  <li><a href="#visual-insights" id="toc-visual-insights" class="nav-link" data-scroll-target="#visual-insights"><span class="header-section-number">2.8</span> Visual Insights</a></li>
   </ul>
 </nav>
     </div>
@@ -372,10 +368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="2.4" class="anchored" data-anchor-id="jupyter-notebooks"><span class="header-section-number">2.4</span> Jupyter Notebooks</h2>
 <section id="week-4" class="level3" data-number="2.4.1">
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="week-4"><span class="header-section-number">2.4.1</span> Week 4</h3>
-</section>
-</section>
-<section id="this-is-a-markdown-title" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="this-is-a-markdown-title"><span class="header-section-number">2.5</span> This is a markdown title</h2>
+<p><strong>This is a markdown title</strong></p>
 <p>in markdown we can create lists:</p>
 <ul>
 <li>item 1</li>
@@ -410,10 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 0     41    67
 1     36    72
 2     12    74</code></pre>
-</section>
-<section id="loading-csv-files" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="loading-csv-files"><span class="header-section-number">2.6</span> 4. Loading CSV files</h2>
-<p>To load files into a <code>DataFrame</code> , we use the pandas function <code>read_csv</code>;</p>
+<p><strong>4. Loading CSV files</strong> To load files into a <code>DataFrame</code> , we use the pandas function <code>read_csv</code>;</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load and analyze data from a CSV file named airquality_datasets.csv using the pandas library</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'airquality_datasets.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># df.info () -&gt; displays the structure and non-null counts of the DataFrame.</span></span>
@@ -443,13 +433,7 @@ min      1.000000    7.000000    1.700000   56.000000    5.000000    1.000000
 50%     31.500000  205.000000    9.700000   79.000000    7.000000   16.000000
 75%     63.250000  258.750000   11.500000   85.000000    8.000000   23.000000
 max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</code></pre>
-</section>
-<section id="instant-data-view" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="instant-data-view"><span class="header-section-number">2.7</span> Instant data view</h2>
-<ul>
-<li>JupyterLab allows us to instantly view the structure and data types of the columns within the DataFrame by using df.info(). This displays a concise summary of each column, including the number of non-null entries and the type of data (e.g., float64, int64).</li>
-<li>This feature makes it easy to verify that the data types (like floats for Temp, Ozone, Wind, etc.) align with the expected values from the CSV file, ensuring the data is in the correct format for further analysis and visualization.</li>
-</ul>
+<p><strong>Instant data view</strong> - JupyterLab allows us to instantly view the structure and data types of the columns within the DataFrame by using df.info(). This displays a concise summary of each column, including the number of non-null entries and the type of data (e.g., float64, int64). - This feature makes it easy to verify that the data types (like floats for Temp, Ozone, Wind, etc.) align with the expected values from the CSV file, ensuring the data is in the correct format for further analysis and visualization.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Ozone Histogram</span></span>
@@ -479,15 +463,10 @@ max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</c
 <figcaption>png</figcaption>
 </figure>
 </div>
+<p><strong>Visual Insights</strong> - We can quickly identify trends and the spread of values. - Peaks in the histograms indicate where data points are densely clustered, revealing common or typical readings in the dataset.</p>
+
+
 </section>
-<section id="visual-insights" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="visual-insights"><span class="header-section-number">2.8</span> Visual Insights</h2>
-<ul>
-<li>We can quickly identify trends and the spread of values.</li>
-<li>Peaks in the histograms indicate where data points are densely clustered, revealing common or typical readings in the dataset.</li>
-</ul>
-
-
 </section>
 
 </main> <!-- /main -->

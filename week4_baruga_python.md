@@ -1,4 +1,4 @@
-## Markdown title
+**Markdown title**
 
 Markdown Lists:
 
@@ -51,7 +51,7 @@ print(df)
     2     12    74
     
 
-## 4. Loading csv files
+**4. Loading csv files**
 
 To load .csv files into a 'DataFrame', we use pandas function read_csv
 

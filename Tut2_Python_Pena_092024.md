@@ -1,4 +1,4 @@
-## This is a markdown title
+**This is a markdown title**
 
 In markdown, we can create lists:
 
@@ -52,7 +52,7 @@ print(df)
     2     12    74
     
 
-## 4. Loading csv files
+**4. Loading csv files**
 
 To load .csv files into a `DataFrame`, we use the Pandas function `read.csv`:
 
@@ -98,11 +98,11 @@ print(df.describe())
     max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000
     
 
-## 5. Visualizing the Dataset
+**5. Visualizing the Dataset**
 
 Let’s dive into visualizations using matplotlib. We’ll start with simple histograms and boxplots, then move on to correlation plots.
 
-### Histograms
+**Histograms**
 Histograms help us understand the distribution of the variables. We’ll create histograms for Ozone and Temp.
 
 

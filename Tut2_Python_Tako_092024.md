@@ -1,4 +1,4 @@
-## This is a markdown title
+**This is a markdown title**
 
 in markdown we can create lists:
 
@@ -54,7 +54,7 @@ print(df)
     2     12    74
     
 
-## 4. Loading CSV files
+**4. Loading CSV files**
 To load files into a `DataFrame` , we use the pandas function
 `read_csv`;
 
@@ -97,7 +97,7 @@ print(df.describe())
     max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000
     
 
-## Instant data view
+**Instant data view**
 - JupyterLab allows us to instantly view the structure and data types of the columns within the DataFrame by using df.info(). This displays a concise summary of each column, including the number of non-null entries and the type of data (e.g., float64, int64).
 - This feature makes it easy to verify that the data types (like floats for Temp, Ozone, Wind, etc.) align with the expected values from the CSV file, ensuring the data is in the correct format for further analysis and visualization.
 
@@ -134,6 +134,6 @@ plt.show()
     
 
 
-## Visual Insights
+**Visual Insights**
 - We can quickly identify trends and the spread of values.
 - Peaks in the histograms indicate where data points are densely clustered, revealing common or typical readings in the dataset.

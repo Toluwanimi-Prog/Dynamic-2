@@ -167,13 +167,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Baruga_Main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Plotnine Tutorial: Understanding the Grammar of Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Derrick Baruga</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Toluwanimi_Main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">VIZ: Tutorial5: Scikit-learn, Python Power to create Models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Toluwanimi Olufawo</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -212,12 +212,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#jupyter-notebooks" id="toc-jupyter-notebooks" class="nav-link" data-scroll-target="#jupyter-notebooks"><span class="header-section-number">3.3</span> Jupyter Notebooks</a>
   <ul class="collapse">
   <li><a href="#week-4" id="toc-week-4" class="nav-link" data-scroll-target="#week-4"><span class="header-section-number">3.3.1</span> Week 4</a></li>
-  </ul></li>
-  <li><a href="#this-is-a-markdown-title" id="toc-this-is-a-markdown-title" class="nav-link" data-scroll-target="#this-is-a-markdown-title"><span class="header-section-number">3.4</span> This is a markdown title</a></li>
-  <li><a href="#loading-csv-files" id="toc-loading-csv-files" class="nav-link" data-scroll-target="#loading-csv-files"><span class="header-section-number">3.5</span> 4. Loading csv files</a></li>
-  <li><a href="#visualizing-the-dataset" id="toc-visualizing-the-dataset" class="nav-link" data-scroll-target="#visualizing-the-dataset"><span class="header-section-number">3.6</span> 5. Visualizing the Dataset</a>
-  <ul class="collapse">
-  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms"><span class="header-section-number">3.6.1</span> Histograms</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -347,10 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><a href="Tut2_Python_Pena_092024.ipynb">Caleb’s Notebook</a>: This notebook contains the data cleaning and exploration tasks.</li>
 </ul>
-</section>
-</section>
-<section id="this-is-a-markdown-title" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="this-is-a-markdown-title"><span class="header-section-number">3.4</span> This is a markdown title</h2>
+<p><strong>This is a markdown title</strong></p>
 <p>In markdown, we can create lists:</p>
 <ul>
 <li>Item 1</li>
@@ -384,9 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 0     41    67
 1     36    72
 2     12    74</code></pre>
-</section>
-<section id="loading-csv-files" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="loading-csv-files"><span class="header-section-number">3.5</span> 4. Loading csv files</h2>
+<p><strong>4. Loading csv files</strong></p>
 <p>To load .csv files into a <code>DataFrame</code>, we use the Pandas function <code>read.csv</code>:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'airquality_datasets.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -414,13 +403,9 @@ min      1.000000    7.000000    1.700000   56.000000    5.000000    1.000000
 50%     31.500000  205.000000    9.700000   79.000000    7.000000   16.000000
 75%     63.250000  258.750000   11.500000   85.000000    8.000000   23.000000
 max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</code></pre>
-</section>
-<section id="visualizing-the-dataset" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="visualizing-the-dataset"><span class="header-section-number">3.6</span> 5. Visualizing the Dataset</h2>
+<p><strong>5. Visualizing the Dataset</strong></p>
 <p>Let’s dive into visualizations using matplotlib. We’ll start with simple histograms and boxplots, then move on to correlation plots.</p>
-<section id="histograms" class="level3" data-number="3.6.1">
-<h3 data-number="3.6.1" class="anchored" data-anchor-id="histograms"><span class="header-section-number">3.6.1</span> Histograms</h3>
-<p>Histograms help us understand the distribution of the variables. We’ll create histograms for Ozone and Temp.</p>
+<p><strong>Histograms</strong> Histograms help us understand the distribution of the variables. We’ll create histograms for Ozone and Temp.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Ozone Histogram</span></span>
@@ -884,8 +869,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Baruga_Main.html" class="pagination-link" aria-label="Plotnine Tutorial: Understanding the Grammar of Graphics">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Plotnine Tutorial: Understanding the Grammar of Graphics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Baruga_Main.html" class="pagination-link" aria-label="Derrick Baruga">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Derrick Baruga</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
