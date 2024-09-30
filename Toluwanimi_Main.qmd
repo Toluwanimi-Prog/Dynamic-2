@@ -315,6 +315,10 @@ With the use of advanced features like calculated fields, dual-axis charts, para
 
 ![Dashboard](Final.png)
 
+
+### Week 5
+![](Dashboard2.png)
+
 ## Jupyter Notebook
 
 ### Week 4

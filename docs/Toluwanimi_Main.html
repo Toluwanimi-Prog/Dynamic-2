@@ -218,11 +218,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#week-1-2" id="toc-week-1-2" class="nav-link" data-scroll-target="#week-1-2"><span class="header-section-number">5.3.1</span> Week 1</a></li>
   <li><a href="#week-2-2" id="toc-week-2-2" class="nav-link" data-scroll-target="#week-2-2"><span class="header-section-number">5.3.2</span> Week 2</a></li>
   <li><a href="#week-3-2" id="toc-week-3-2" class="nav-link" data-scroll-target="#week-3-2"><span class="header-section-number">5.3.3</span> Week 3</a></li>
+  <li><a href="#week-5" id="toc-week-5" class="nav-link" data-scroll-target="#week-5"><span class="header-section-number">5.3.4</span> Week 5</a></li>
   </ul></li>
   <li><a href="#jupyter-notebook" id="toc-jupyter-notebook" class="nav-link" data-scroll-target="#jupyter-notebook"><span class="header-section-number">5.4</span> Jupyter Notebook</a>
   <ul class="collapse">
   <li><a href="#week-4" id="toc-week-4" class="nav-link" data-scroll-target="#week-4"><span class="header-section-number">5.4.1</span> Week 4</a></li>
-  <li><a href="#week-5" id="toc-week-5" class="nav-link" data-scroll-target="#week-5"><span class="header-section-number">5.4.2</span> Week 5</a></li>
+  <li><a href="#week-5-1" id="toc-week-5-1" class="nav-link" data-scroll-target="#week-5-1"><span class="header-section-number">5.4.2</span> Week 5</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -465,6 +466,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
+<section id="week-5" class="level3" data-number="5.3.4">
+<h3 data-number="5.3.4" class="anchored" data-anchor-id="week-5"><span class="header-section-number">5.3.4</span> Week 5</h3>
+<p><img src="Dashboard2.png" class="img-fluid"></p>
+</section>
 </section>
 <section id="jupyter-notebook" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="jupyter-notebook"><span class="header-section-number">5.4</span> Jupyter Notebook</h2>
@@ -611,17 +616,17 @@ max    168.000000  334.000000   20.700000   97.000000    9.000000   31.000000</c
 <div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="week-5" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="week-5"><span class="header-section-number">5.4.2</span> Week 5</h3>
+<section id="week-5-1" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="week-5-1"><span class="header-section-number">5.4.2</span> Week 5</h3>
 <p><strong>Introduction to Plotnine</strong></p>
 <p><strong>1. Introduction to Plotnine</strong> plotnine is a data visualization package for Python based on the Grammar of Graphics, which is a system for understanding and building plots. The grammar describes how plots are constructed by combining data, aesthetic mappings, geometric objects, and other components.</p>
 <p>To begin, you’ll need to install the plotnine package if you don’t have it installed:</p>
-<div id="295ff08d" class="cell" data-execution_count="1">
+<div id="9ea6898a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#pip install plotnine</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>2. The Grammar of Graphics</strong> The Grammar of Graphics consists of the following key components: - <strong>Data</strong>: The data you want to visualize. - <strong>Aesthetics (aes)</strong>: How the data is mapped to visual properties, such as x and y coordinates, color, size, etc. - <strong>Geometries (geom)</strong>: The type of plot, like points, lines, bars, etc. - <strong>Facets:</strong> Subplots based on the data. - <strong>Scales:</strong> Control the mapping from data to aesthetic properties. - <strong>Coordinate systems:</strong> Adjust how data is projected on the plane -(Cartesian, rotations, polar, etc.). - <strong>Themes:</strong> Adjust the non-data elements like background, labels, gridlines, etc</p>
 <p><strong>3. Creating Your First Plot</strong> Let’s begin by creating a simple scatter plot using the famous mtcars dataset. We’ll show how to set up the basic structure and gradually build complexity</p>
-<div id="850b7de5" class="cell" data-execution_count="2">
+<div id="2e001786" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import required libraries</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> ggplot, aes, geom_point, labs</span>
@@ -642,7 +647,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 </div>
 <p><strong>4. Adding Aesthetic Mappings</strong> In the Grammar of Graphics, aesthetics control how data points are represented visually. You can map variables to size, color, shape, and more. <strong>Example: Color by cyl (number of cylinders)</strong></p>
-<div id="87478368" class="cell" data-execution_count="3">
+<div id="b9d239f9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>image2 <span class="op">=</span> (ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>, color<span class="op">=</span><span class="st">'factor(cyl)'</span>)) <span class="op">+</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a> geom_point() <span class="op">+</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a> labs(title<span class="op">=</span><span class="st">'MPG vs Weight by Cylinder'</span>,</span>
@@ -656,7 +661,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 </div>
 <p><strong>Example</strong>: Size by horsepower (hp)</p>
-<div id="835a232b" class="cell" data-execution_count="4">
+<div id="a473f14d" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>(ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>, color<span class="op">=</span><span class="st">'factor(cyl)'</span>, size<span class="op">=</span><span class="st">'hp'</span>)) <span class="op">+</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a> geom_point() <span class="op">+</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a> labs(title<span class="op">=</span><span class="st">'MPG vs Weight by Cylinder and Horsepower'</span>,</span>
@@ -672,7 +677,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 </div>
 </div>
-<div id="cf432e52" class="cell" data-execution_count="5">
+<div id="cc60a051" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>image3 <span class="op">=</span> (ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>, color<span class="op">=</span><span class="st">'factor(cyl)'</span>, size<span class="op">=</span><span class="st">'hp'</span>)) <span class="op">+</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a> geom_point() <span class="op">+</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a> labs(title<span class="op">=</span><span class="st">'MPG vs Weight by Cylinder and Horsepower'</span>,</span>
@@ -689,7 +694,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 <p><strong>5. Geometric Objects</strong></p>
 <p>geom_* specifies the type of plot. You can create scatter plots, line charts, bar plots, histograms, etc.</p>
 <p><strong>Example:</strong> Adding a smooth line (geom_smooth)</p>
-<div id="3d3e15b6" class="cell" data-execution_count="6">
+<div id="3926c266" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> geom_smooth</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>(ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>)) <span class="op">+</span></span>
@@ -706,7 +711,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 </div>
 </div>
-<div id="87431e3f" class="cell" data-execution_count="7">
+<div id="0740be5a" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> geom_smooth</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>image4<span class="op">=</span> (ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>)) <span class="op">+</span></span>
@@ -721,7 +726,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py:607: PlotnineWarning: Filename: MPG vs Weight with Regression Line.png</code></pre>
 </div>
 </div>
-<div id="9f7da875" class="cell" data-execution_count="8">
+<div id="23e270fd" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> geom_smooth</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>(ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>)) <span class="op">+</span></span>
@@ -738,7 +743,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 </div>
 </div>
-<div id="18ad0de5" class="cell" data-execution_count="9">
+<div id="432398d6" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> geom_smooth</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>image5 <span class="op">=</span> (ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>)) <span class="op">+</span></span>
@@ -753,7 +758,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py:607: PlotnineWarning: Filename: MPG vs Weight with Regression Line.png</code></pre>
 </div>
 </div>
-<div id="613400c0" class="cell" data-execution_count="10">
+<div id="233e61fe" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> ggplot, aes, geom_point, geom_smooth, labs</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine.data <span class="im">import</span> mtcars</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -776,7 +781,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 </div>
 </div>
-<div id="af8a675b" class="cell" data-execution_count="11">
+<div id="5fd79b64" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> ggplot, aes, geom_point, geom_smooth, labs</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine.data <span class="im">import</span> mtcars</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -800,7 +805,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 <p><strong>6. Faceting</strong> Faceting allows you to split your plot into multiple panels based on a factor.</p>
 <p><strong>Example:</strong> Facet by cyl</p>
 <p><strong>Example:</strong> Facet by cyl</p>
-<div id="1b5ff06e" class="cell" data-execution_count="12">
+<div id="594b282c" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> facet_wrap</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>(ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>)) <span class="op">+</span></span>
@@ -817,7 +822,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 </div>
 </div>
-<div id="0d06d49d" class="cell" data-execution_count="13">
+<div id="72f38fa0" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> facet_wrap</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>image7<span class="op">=</span> (ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>)) <span class="op">+</span></span>
@@ -834,7 +839,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 <p><strong>8. Flip Coordinates</strong> Create a bar plot showing distribution of cylinders</p>
 <p><strong>Example:</strong> Fliping coordinates axis</p>
-<div id="7dcf7332" class="cell" data-execution_count="14">
+<div id="28b4b9bd" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> ggplot, aes, geom_bar, coord_flip, labs</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -856,7 +861,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 </div>
 </div>
-<div id="36bf0b6f" class="cell" data-execution_count="15">
+<div id="672a470c" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> ggplot, aes, geom_bar, coord_flip, labs</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -878,7 +883,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 <p><strong>9. Themes</strong> Themes allow you to adjust the non-data aspects of the plot, such as background, axis labels, and gridlines.</p>
 <p><strong>Example: Apply a Minimal Theme</strong></p>
-<div id="37931628" class="cell" data-execution_count="16">
+<div id="2e13600d" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> theme_minimal</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>(ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>)) <span class="op">+</span></span>
@@ -895,7 +900,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 </div>
 </div>
-<div id="dd170770" class="cell" data-execution_count="17">
+<div id="31257b7c" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> theme_minimal</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>image9 <span class="op">=</span> (ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>)) <span class="op">+</span></span>
@@ -912,7 +917,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 <p><strong>10. Saving the Plot</strong> You can save your plot using the save method.</p>
 <p><strong>Example: Save the plot</strong></p>
-<div id="77306ea2" class="cell" data-execution_count="18">
+<div id="bdb72872" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the plot to a file</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> (ggplot(mtcars, aes(x<span class="op">=</span><span class="st">'wt'</span>, y<span class="op">=</span><span class="st">'mpg'</span>)) <span class="op">+</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>     geom_point() <span class="op">+</span></span>
@@ -929,7 +934,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 <p><strong>05_VIZ_python_scikit-learn</strong></p>
 <p>Here’s a structured tutorial to showcase the power of <strong>scikit-learn</strong> using the Iris dataset, incorporating statistical summaries, visualizations, simple linear regression, correlation plots, and multiple linear regression.</p>
 <p><strong>1. Statistical Summary</strong> with Pandas Start by loading the Iris dataset and generating summary statistics using <strong>Pandas</strong>.</p>
-<div id="2fae3382" class="cell" data-execution_count="19">
+<div id="4b4ce164" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> datasets</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1023,7 +1028,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 <li><strong>Visualizations</strong> Using Matplotlib and Seaborn</li>
 </ol>
 <p>Now, visualize the data to understand relationships between features. Seaborn is great for quick visualizations.</p>
-<div id="62a27351" class="cell" data-execution_count="20">
+<div id="14cc22ad" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1059,7 +1064,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 <li><strong>Boxplots</strong> help visualize the distribution and potential outliers in each feature.</li>
 </ul>
 <p><strong>3. Simple Linear Regression</strong> We can now build a simple linear regression model. For example, predicting sepal length based on sepal width</p>
-<div id="a446fce9" class="cell" data-execution_count="21">
+<div id="4c1e98f2" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1095,7 +1100,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 <p>Here we’ve modeled <strong>sepal length</strong> based on sepal width, split the data into training and test sets, and plotted the predicted vs actual values.</p>
 <p><strong>4. Correlation Plot</strong> Next, explore the correlation between features using a heatmap to see how strongly they are related.</p>
-<div id="c356b1dd" class="cell" data-execution_count="22">
+<div id="5d965660" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlation matrix</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>corr_matrix <span class="op">=</span> iris_df.drop(columns<span class="op">=</span><span class="st">'species'</span>).corr()</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1114,7 +1119,7 @@ C:\Users\toluf\AppData\Roaming\Python\Python312\site-packages\plotnine\ggplot.py
 </div>
 <p>This heatmap will help you understand which features are highly correlated, which can be helpful for model building.</p>
 <p><strong>5. Multiple Linear Regression</strong> Finally, let’s perform a multiple linear regression using all the features to predict a response variable (e.g., sepal length).</p>
-<div id="73735378" class="cell" data-execution_count="23">
+<div id="4230257b" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># All features (excluding target/species) as predictors</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> iris_df.drop(columns<span class="op">=</span>[<span class="st">'species'</span>, <span class="st">'sepal length (cm)'</span>])</span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> iris_df[<span class="st">'sepal length (cm)'</span>]</span>
