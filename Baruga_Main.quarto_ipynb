@@ -398,7 +398,7 @@
         "\n",
         "To begin, you’ll need to install the plotnine package if you don’t have it installed:\n"
       ],
-      "id": "3dbddecf"
+      "id": "c68917fb"
     },
     {
       "cell_type": "code",
@@ -406,7 +406,7 @@
       "source": [
         "# !pip install plotnine"
       ],
-      "id": "bbf71c80",
+      "id": "c10e44cf",
       "execution_count": null,
       "outputs": []
     },
@@ -429,7 +429,7 @@
         "### 3. Creating Your First Plot\n",
         "Let’s begin by creating a simple scatter plot using the famous mtcars dataset. We’ll show how to set up the basic structure and gradually build complexity.\n"
       ],
-      "id": "9364aab5"
+      "id": "5e892be5"
     },
     {
       "cell_type": "code",
@@ -449,7 +449,7 @@
         "      x='Weight (1000 lbs)',\n",
         "      y='Miles per Gallon'))"
       ],
-      "id": "52da24fe",
+      "id": "6bb15391",
       "execution_count": null,
       "outputs": []
     },
@@ -463,7 +463,7 @@
         "\n",
         "Example: Color by cyl (number of cylinders)\n"
       ],
-      "id": "f8f123fc"
+      "id": "41f35292"
     },
     {
       "cell_type": "code",
@@ -476,7 +476,7 @@
         "      y='Miles per Gallon',\n",
         "      color='Cylinders'))"
       ],
-      "id": "416d811b",
+      "id": "f444802f",
       "execution_count": null,
       "outputs": []
     },
@@ -486,7 +486,7 @@
       "source": [
         "Example: Size by horsepower (hp)\n"
       ],
-      "id": "8ccf4b69"
+      "id": "4c6916f8"
     },
     {
       "cell_type": "code",
@@ -500,7 +500,7 @@
         "      color='Cylinders',\n",
         "      size='Horsepower'))"
       ],
-      "id": "3043f3d7",
+      "id": "a3af297e",
       "execution_count": null,
       "outputs": []
     },
@@ -514,7 +514,7 @@
         "\n",
         "Example: Adding a smooth line (geom_smooth)\n"
       ],
-      "id": "5a15feac"
+      "id": "66f2fa00"
     },
     {
       "cell_type": "code",
@@ -529,7 +529,7 @@
         "      x='Weight (1000 lbs)',\n",
         "      y='Miles per Gallon'))"
       ],
-      "id": "c302b820",
+      "id": "c6ea6cc6",
       "execution_count": null,
       "outputs": []
     },
@@ -543,7 +543,7 @@
         "\n",
         "Example: Facet by cyl\n"
       ],
-      "id": "e33382ea"
+      "id": "3f2059c8"
     },
     {
       "cell_type": "code",
@@ -558,7 +558,7 @@
         "      x='Weight (1000 lbs)',\n",
         "      y='Miles per Gallon'))"
       ],
-      "id": "e4ae9e3b",
+      "id": "4c740ce7",
       "execution_count": null,
       "outputs": []
     },
@@ -572,7 +572,7 @@
         "\n",
         "Example: Custom Color Scale\n"
       ],
-      "id": "2f602ac2"
+      "id": "bd052ce6"
     },
     {
       "cell_type": "code",
@@ -588,7 +588,7 @@
         "      y='Miles per Gallon',\n",
         "      color='Cylinders'))"
       ],
-      "id": "b618a7be",
+      "id": "8cede759",
       "execution_count": null,
       "outputs": []
     },
@@ -601,7 +601,7 @@
         "\n",
         "Example: Fliping coordinates axis\n"
       ],
-      "id": "cd7d6cbb"
+      "id": "fa66f5cd"
     },
     {
       "cell_type": "code",
@@ -622,7 +622,7 @@
         "      x='Cylinders',\n",
         "      fill='Cylinders'))"
       ],
-      "id": "637a525b",
+      "id": "37ecebf8",
       "execution_count": null,
       "outputs": []
     },
@@ -636,7 +636,7 @@
         "\n",
         "Example: Apply a Minimal Theme\n"
       ],
-      "id": "2be7f038"
+      "id": "e8a09322"
     },
     {
       "cell_type": "code",
@@ -651,7 +651,7 @@
         "      x='Weight (1000 lbs)',\n",
         "      y='Miles per Gallon'))"
       ],
-      "id": "23caa296",
+      "id": "fd4d8ce3",
       "execution_count": null,
       "outputs": []
     },
@@ -665,7 +665,7 @@
         "\n",
         "Example: Save the plot\n"
       ],
-      "id": "bb778ceb"
+      "id": "74ec99f1"
     },
     {
       "cell_type": "code",
@@ -680,7 +680,7 @@
         "\n",
         "p.save(\"mpg_vs_weight.png\")"
       ],
-      "id": "6504ca71",
+      "id": "f2d39c4f",
       "execution_count": null,
       "outputs": []
     },
@@ -688,7 +688,7 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "**Midterm Report**\n",
+        "**Week 5 Midterm Report**\n",
         "\n",
         "\n",
         "**Data Analysis**\n",
@@ -1024,7 +1024,7 @@
         "\n",
         "This plot, based on the 2018 Police-Public Contact Survey dataset, shows the count of arrests (SCRMCTRL) across different racial categories (HISP), segmented by gender (SEX). The survey, conducted by the U.S. Bureau of Justice Statistics, examines public interactions with law enforcement, such as police stops and arrests. The higher arrest count for White males can be attributed to the fact that White individuals make up the largest racial group in the dataset. The data reveals notable racial and gender disparities in arrests, with arrest counts for females across all racial categories being lower than for males.\n"
       ],
-      "id": "ea682043"
+      "id": "9f4d5a06"
     }
   ],
   "metadata": {
