@@ -332,7 +332,10 @@ With the use of advanced features like calculated fields, dual-axis charts, para
 **Introduction to Plotnine**
 {{< include "Tu4_python_plotnine_Olufawo_092524.md" >}}
 
+### Week 6
+
 **05_VIZ_python_scikit-learn**
+
 {{< include "Tutorial5_python_Olufawo_092724.md" >}}
 
 

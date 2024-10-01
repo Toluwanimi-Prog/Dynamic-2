@@ -137,7 +137,7 @@ The average temperatures of all collective 28 years gathered within each month. 
 
 ![](TemperatureMonthAverage.png) \### Week 3
 
-###Week 3
+### Week 3
 
 **Friday, September 13**
 
@@ -164,6 +164,8 @@ The graph "AverageOceanographicTemperatureEachMonth" was a box plot that measure
 The graph "AverageOceanographic(Temp/Oxygen)EachYear" was a dual axis plot that measured the variables Avg of Temperature and Avg of Oxygen against the categorical variable year. This plot shows the average values of these two variables for each month so the viewer can see how these values have changed throughout the years.
 
 The graph "EffectsOf(Temp/Oxygen)On(Northern/Southern)CopepodBiomass" is a dual axis plot that measures four different variables. This plot focuses on the effects that the oceanographic temperature and oceanographic oxygen have on the population and copepod biomass recorded on the sample dates and near the sample areas. From the graph, it is visible that as oceanographic oxygen rises, the northern copepod biomass greatly decreases and the southern copepod biomass slightly increases. It is also evident that as oceanographic temperature rises, the northern copepod biomass also greatly decreases and the southern copepod biomass also slightly increases.
+
+### Week 5
 
 ## Jupyter Notebooks
 ### Week 4
