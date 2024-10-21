@@ -211,8 +211,103 @@ From the "Warehouse and Retail Sales" dataset, I found that Beer leads in wareho
 
 -   This visualization shows how different item types and their sales vary in significance. For example, "NON-ALCOHOL" items appear to have a prominent share, especially in 2020.
 
+### Week 8 
+
+This contains Derrick Week 8 Submissions 
+
+I chose the dataset “Federal, State, and Local Government Transportation-Related Revenues and Expenditures, Fiscal Year” provides financial data on transportation-related revenues and expenditures across federal, state, and local governments in the United States, measured in millions of current dollars. It includes detailed information on government revenues from user charges and taxes specifically allocated for transportation programs, as well as expenditures in this sector over multiple fiscal years. The dataset excludes general fund revenues and borrowing proceeds, focusing on own-source revenues.
+
+The data is sourced from the U.S. Department of Transportation’s Bureau of Transportation Statistics (BTS) and is published under the National Transportation Statistics Table 3-29, available on the BTS website. This dataset is instrumental for analyzing transportation funding and government spending trends at various governmental levels.
+
+**Dataset Exploration**
+
+```{r}
+# Load necessary libraries
+library(readxl)  # To read Excel files
+library(dplyr)   # For data manipulation
+library(ggplot2) # For visualization
+
+# Task 1: Load the dataset
+file_path <-  "C:/Users/toluf/OneDrive/Desktop/Dynamic 2/Archive 2/table_03_29_061324.xlsx" 
 
 
+dataset <- read_excel(file_path, sheet = 2)
+
+# Explore the structure of the dataset
+str(dataset)
+
+# Check for missing values
+summary(dataset)
+
+# Check for duplicates
+duplicated_rows <- dataset[duplicated(dataset), ]
+
+# Rename columns for easier access
+colnames(dataset) <- c("Description", "2007", "2008", "2009", "2010", "2011", 
+                       "2012", "2013", "2014", "2015", "2016", "2017", "2018", 
+                       "2019", "2020", "2021")
+
+# Get an overview of the data
+head(dataset)
+```
+
+**Data Cleaning**
+
+```{r}
+# Task 2: Data Cleaning
+
+# Remove duplicates (if any)
+dataset <- dataset %>% distinct()
+
+# Handle missing values (remove rows with missing values or impute with mean/median if necessary)
+# Option 1: Remove rows with missing values
+cleaned_dataset <- na.omit(dataset)
+
+# Option 2: Impute missing values with median (can also use mean if more appropriate)
+cleaned_dataset <- dataset %>% 
+  mutate(across(where(is.numeric), ~ ifelse(is.na(.), median(., na.rm = TRUE), .)))
+
+# Check for inconsistencies or outliers using boxplots (visual inspection)
+boxplot(cleaned_dataset[, sapply(cleaned_dataset, is.numeric)], main = "Boxplots for Numeric Variables")
+
+# Remove rows where the Description column is NA
+cleaned_dataset <- dataset %>% filter(!is.na(Description))
+
+# Convert year columns to numeric
+cleaned_dataset[, -1] <- lapply(cleaned_dataset[, -1], as.numeric)
+
+# Check if the conversion was successful
+str(cleaned_dataset)
+```
+
+**Descriptive Statistics**
+
+```{r}
+# Calculate summary statistics for numeric columns
+descriptive_stats <- cleaned_dataset %>%
+  summarise(across(where(is.numeric), list(
+    mean = ~ mean(., na.rm = TRUE),
+    median = ~ median(., na.rm = TRUE),
+    std_dev = ~ sd(., na.rm = TRUE)
+  )))
+
+# View the descriptive statistics
+print(descriptive_stats)
+
+# Plot the distribution for one of the years, e.g., 2021
+hist(cleaned_dataset$`2021`, 
+     main = "Distribution of Transportation-Related Revenues/Expenditures for 2021", 
+     xlab = "Revenue/Expenditure (Millions)", 
+     breaks = 20)
+
+# Example: Create a correlation matrix to identify relationships between variables
+cor_matrix <- cor(cleaned_dataset %>% select(where(is.numeric)), use = "complete.obs")
+print(cor_matrix)
+
+# Visualize correlations (optional)
+library(corrplot)
+corrplot(cor_matrix, method = "circle")
+```
 
 
 ## Jupyter Notebooks
@@ -221,16 +316,18 @@ From the "Warehouse and Retail Sales" dataset, I found that Beer leads in wareho
 
 {{< include "week4_baruga_python.md" >}}
 
-
-### Week 5 
+### Week 5
 
 {{< include "Week5_Baruga_092424.md" >}}
-
-
 
 **Week 5 Midterm Report**
 
 {{< include "senior_paper.md" >}}
+
+
+
+
+
 
 
 

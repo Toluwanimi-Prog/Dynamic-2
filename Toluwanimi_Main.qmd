@@ -319,6 +319,82 @@ With the use of advanced features like calculated fields, dual-axis charts, para
 ### Week 5
 ![](Dashboard2.png)
 
+
+### Week 8
+**Load libraries**
+```{r}
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(tidyr)  # New: for better reshaping of data
+library(janitor) # New: for quick data cleaning
+
+```
+
+
+**Task 1: Load the dataset**
+```{r}
+file_path <- "C:/Users/toluf/OneDrive/Desktop/Visualization/Group Project/Group_Projectdata.xlsx"
+
+dataset <- read_excel(file_path, sheet = "3-1") %>% 
+
+  clean_names()  # Automatically cleans and standardizes column names
+
+```
+
+
+
+**Explore the structure and check for basic issues**
+```{r}
+glimpse(dataset)  # New: Offers a quick summary overview of data
+
+```
+
+
+
+**Identifying missing values in a more detailed way**
+```{r}
+missing_vals <- dataset %>%
+  summarise(across(everything(), ~ sum(is.na(.)))) %>%
+  pivot_longer(everything(), names_to = "column", values_to = "missing_count")
+
+print(missing_vals)  # Check where missing data exists
+
+```
+
+
+
+**Visualize missing data using ggplot**
+```{r}
+ggplot(missing_vals, aes(x = column, y = missing_count)) +
+  geom_bar(stat = "identity") +
+  theme_minimal() +
+  labs(title = "Missing Data Overview", x = "Columns", y = "Count of Missing Values") +
+  coord_flip()
+
+```
+
+
+
+**Task 2: Cleaning the data**
+
+**Remove duplicated rows and filter out non-numeric columns**
+```{r}
+colnames(dataset)
+
+str(dataset)
+
+# Identify missing values
+sum(is.na(dataset))
+
+# Remove rows with missing values
+dataset <- na.omit(dataset)
+
+
+
+
+```
+
 ## Jupyter Notebook
 
 ### Week 4

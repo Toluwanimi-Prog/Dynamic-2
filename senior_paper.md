@@ -1,6 +1,6 @@
 **Data Analysis**
 
-### Load libraries
+**Load libraries**
 
 
 ```python
@@ -11,14 +11,14 @@ import openpyxl as opxl
 import seaborn as sns
 ```
 
-### Load CSV
+**Load CSV**
 
 
 ```python
 df = pd.read_csv('data.csv', low_memory=False)
 ```
 
-### Summary Stats
+**Summary Stats**
 
 
 ```python
@@ -197,7 +197,7 @@ df.head()
 
 
 
-### Mapping Race (HISP) and CHECK_ITEM_L
+**TRace (HISP) and CHECK_ITEM_L**
 
 CHECK_ITEM_L is the survey question asked to participants on whether or not they have been arrested before
 

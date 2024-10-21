@@ -1,6 +1,6 @@
 
 
-### 1. Introduction to Plotnine
+**1. Introduction to Plotnine**
 
 plotnine is a data visualization package for Python based on the Grammar of Graphics, which is a system for understanding and building plots. The grammar describes how plots are constructed by combining data, aesthetic mappings, geometric objects, and other components.
 
@@ -10,7 +10,7 @@ To begin, you’ll need to install the plotnine package if you don’t have it i
 # !pip install plotnine
 ```
 
-### 2. The Grammar of Graphics
+**2. The Grammar of Graphics**
 
 The Grammar of Graphics consists of the following key components:
 
@@ -22,7 +22,7 @@ The Grammar of Graphics consists of the following key components:
 - Coordinate systems: Adjust how data is projected on the plane (Cartesian, rotations, polar, etc.).
 - Themes: Adjust the non-data elements like background, labels, gridlines, etc.
 
-### 3. Creating Your First Plot
+**3. Creating Your First Plot**
 Let’s begin by creating a simple scatter plot using the famous mtcars dataset. We’ll show how to set up the basic structure and gradually build complexity.
 
 ```{python}
@@ -41,7 +41,7 @@ mtcars = pd.read_csv('https://raw.githubusercontent.com/selva86/datasets/master/
       y='Miles per Gallon'))
 ```
 
-### 4. Adding Aesthetic Mappings
+** 4. Adding Aesthetic Mappings**
 
 In the Grammar of Graphics, aesthetics control how data points are represented visually. You can map variables to size, color, shape, and more.
 
@@ -68,7 +68,7 @@ Example: Size by horsepower (hp)
       size='Horsepower'))
 ```
 
-### 5. Geometric Objects
+**5. Geometric Objects**
 
 geom_* specifies the type of plot. You can create scatter plots, line charts, bar plots, histograms, etc.
 
@@ -85,7 +85,7 @@ from plotnine import geom_smooth
       y='Miles per Gallon'))
 ```
 
-### 6. Faceting
+**6. Faceting**
 
 Faceting allows you to split your plot into multiple panels based on a factor.
 
@@ -102,7 +102,7 @@ from plotnine import facet_wrap
       y='Miles per Gallon'))
 ```
 
-### 7. Customizing Scales
+**7. Customizing Scales**
 
 Scales control the mapping from data to aesthetic attributes. You can customize scales for color, size, and more.
 
@@ -120,7 +120,7 @@ from plotnine import scale_color_manual
       color='Cylinders'))
 ```
 
-### 8. Flip Coordinates
+**8. Flip Coordinates**
 Create a bar plot showing distribution of cylinders
 
 Example: Fliping coordinates axis
@@ -142,7 +142,7 @@ mtcars = pd.read_csv('https://raw.githubusercontent.com/selva86/datasets/master/
       fill='Cylinders'))
 ```
 
-### 9. Themes
+**9. Themes**
 
 Themes allow you to adjust the non-data aspects of the plot, such as background, axis labels, and gridlines.
 
@@ -159,7 +159,7 @@ from plotnine import theme_minimal
       y='Miles per Gallon'))
 ```
 
-### 10. Saving the Plot
+**10. Saving the Plot**
 
 You can save your plot using the save method.
 
