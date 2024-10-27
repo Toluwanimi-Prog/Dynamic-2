@@ -9,16 +9,23 @@ book:
   chapters:
     - index.qmd
     - Introduction.qmd
-    - Tako_Main.qmd
-    - Caleb_Main.qmd
-    - Baruga_Main.qmd
-    - Toluwanimi_Main.qmd
-    - part: Final Project
+    - part: Midterm-project
+      title: "Midterm Project"
+      chapters:
+        - Tako_Main.qmd
+        - Caleb_Main.qmd
+        - Baruga_Main.qmd
+        - Toluwanimi_Main.qmd
+    - part: Final-project
       title: "Final Project"
       chapters:
-        - FinalProject_Main.qmd
+        - FinalProject_Abigail.qmd
+        - FinalProject_Caleb.qmd
+        - FinalProject_Derrick.qmd
+        - FinalProject_Toluwanimi.qmd
     - summary.qmd
     - references.qmd
+
 
 bibliography: references.bib
 

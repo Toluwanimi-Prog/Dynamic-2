@@ -1,0 +1,47 @@
+## Caleb Pena 
+### Week 1 
+
+**1. Correlation Analysis Between For-Hire Transportation GDP & Total U.S. GDP**
+
+As the total U.S. GDP has grown over the years—from $7,414.7 billion in 1995 to $25,462.7 billion in 2022—the For-Hire Transportation GDP has also increased, rising from $231.7 billion in 1995 to $815.0 billion in 2022. Despite this growth, the For-Hire Transportation sectors share of the total U.S. GDP has fluctuated between 2.7% and 3.7% during this period. This data indicates that while both the total U.S. GDP and the For-Hire Transportation GDP have expanded at a similar pace, the substantial increase in the For-Hire Transportation GDP over these 28 years has not directly driven the rise in the overall U.S. GDP. However, despite this, there remains a clear correlation between the Total U.S. GDP and the For-Hire Transportation GDP. The data reveals a positive relationship between these two variables: as the Total U.S. GDP increases, the For-Hire Transportation GDP rises as well.
+
+**2. Draft Scatter Plots Between Key Transportation Sectors & Total U.S. GDP**
+
+```{r, echo=FALSE}
+library(readxl)
+data_xlsx <- read_excel("C:/Users/toluf/OneDrive/Desktop/Dynamic 2/cp_Finalmain/finalpro.xlsx", sheet = "Sheet2")
+library(esquisse)
+
+```
+
+
+```{r}
+library(ggplot2)
+ggplot(data_xlsx) +
+  aes(x = `TOTAL U.S. GDP`, y = `Air transportation...4`) +
+  geom_point(size = 2.25, colour = "#112446") +
+  labs(
+    y = "Air Transportation GDP",
+    title = "Air Transportation GDP on Total U.S. GDP"
+  ) +
+  theme_bw()
+
+```
+
+The scatter plot illustrates a positive correlation between the Air Transportation GDP and the Total U.S. GDP. Over the years, as the Total U.S. GDP has grown, the Air Transportation GDP has shown a similar upward trend. Although there are some notable outliers, the overall relationship between these two variables remains clearly positive.
+
+
+```{r}
+ggplot(data_xlsx) +
+  aes(x = `TOTAL U.S. GDP`, y = `Truck transportation...7`) +
+  geom_point(size = 2.25, colour = "#112446") +
+  labs(
+    y = "Truck Transportation GDP",
+    title = "Truck Transportation GDP on Total U.S. GDP"
+  ) +
+  theme_bw()
+
+```
+
+The scatter plot clearly demonstrates a positive correlation between the Truck Transportation GDP and the Total U.S. GDP. As the Total U.S. GDP increases, the Truck Transportation GDP rises accordingly. Notably, there appear to be no visible outliers, as the data points closely align with the potential line of best fit. 
+
