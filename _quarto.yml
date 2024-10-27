@@ -26,13 +26,13 @@ book:
     - summary.qmd
     - references.qmd
 
-
 bibliography: references.bib
 
 format:
   html:
     theme: cosmo
+    toc: true
+    number-sections: true
+    css: styles.css  # If you have a custom stylesheet
   pdf:
     documentclass: scrreprt
-
-editor: visual
