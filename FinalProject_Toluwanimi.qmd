@@ -1,10 +1,12 @@
-# Toluwanimi Olufawo 
+# Toluwanimi Olufawo
+
 ### Week 1
 
-**To-Do list for this week**
+**To-Do list for this week** 
 Develop a timeline outlining major external factors (fuel prices, policy changes) affecting the transportation sector and visualize it in R
 
 **Load Required Libraries**
+
 ```{r}
 # Load necessary libraries
 library(ggplot2)
@@ -14,13 +16,16 @@ library(readxl)  # For reading Excel files
 ```
 
 **Load the Dataset**
+
 ```{r}
 # Load the dataset
 file_path <- "C:/Users/toluf/OneDrive/Desktop/Dynamic 2/Olufawo_FinalProjectWeek1/Dataset_USGDP.xlsx"
 data <- read_excel(file_path)
 
 ```
+
 **Inspect and Clean the Data**
+
 ```{r}
 # View the first few rows of the dataset
 head(data)
@@ -30,10 +35,8 @@ colnames(data)
 
 ```
 
+**Filter Data for Timeline Events** Since I'm focused on creating a timeline of external factors like fuel prices and policy changes, I'll need to isolate specific years and events to include in the timeline. I’ll add a subset of relevant data and then create a separate data frame for these events.
 
-
-**Filter Data for Timeline Events**
-Since I'm focused on creating a timeline of external factors like fuel prices and policy changes, I'll need to isolate specific years and events to include in the timeline. I’ll add a subset of relevant data and then create a separate data frame for these events.
 ```{r}
 # Create a data frame with specific events for the timeline
 events <- data.frame(
@@ -56,6 +59,7 @@ events <- data.frame(
 ```
 
 **Plot the Timeline**
+
 ```{r}
 # Plot the timeline with line width aesthetic
 ggplot(events, aes(x = year, y = 1, color = type)) +
@@ -79,11 +83,7 @@ ggplot(events, aes(x = year, y = 1, color = type)) +
 
 ```
 
-
-
 **Modify the Data for a Gantt-Style Chart**
-
-
 
 ```{r}
 # Load necessary libraries
@@ -107,11 +107,10 @@ events <- data.frame(
 
 **Create the Gantt-Style Timeline Chart**
 
-
 ```{r}
 # Gantt-style timeline plot
 ggplot(events, aes(x = start_year, xend = end_year, y = event, yend = event, color = type)) +
-  geom_segment(size = 5) +  # Create horizontal bars for each event
+  geom_segment(linewidth = 5) +  # Use linewidth instead of size for line thickness
   scale_x_continuous(breaks = seq(2005, 2022, by = 1)) +  # Set x-axis breaks for each year
   labs(
     title = "Gantt-Style Timeline of Major External Factors Affecting the U.S. Transportation Sector",
@@ -125,4 +124,27 @@ ggplot(events, aes(x = start_year, xend = end_year, y = event, yend = event, col
   ) +
   guides(color = guide_legend(title = "Event Type"))  # Legend for event types
 
+
 ```
+
+**Key Points to Observe**
+
+*Event Types*: Each row represents a specific event, with different colors indicating the type of factor (e.g., fuel-related, policy-related, or global events). This visualization helps quickly identify the kinds of events that have significantly impacted the transportation sector over the years.
+
+*Event Duration:* The length of each horizontal bar shows the duration of each event:
+
+*Short-Term Events* (like specific policy implementations) have shorter bars, indicating a limited time impact.
+
+*Long-Term Events* (like the shale gas boom or supply chain disruptions) have longer bars, indicating they affected the transportation sector over multiple years.
+
+**Overlapping Events:** Look for events that occur around the same time. For example, if a fuel price surge coincides with a global event (like the COVID-19 pandemic), it may indicate a compounded effect on the transportation sector during that period. Overlapping policy changes and fuel-related events (such as the 2012 MAP-21 Act and low oil prices in 2015) could suggest a favorable environment for sector growth or cost reduction.
+
+**Major Disruptions:** The COVID-19 pandemic in 2020 and the subsequent supply chain disruptions in 2021-2022 stand out, as they span multiple categories (global events, policy responses) and have broad implications across transportation modes.
+
+**Trends by Type:** Fuel-Related Events: Periodic spikes and drops in fuel prices (2005-2008, 2015, 2022) indicate volatility that directly affects transportation costs.
+
+**Policy Events:** Regulatory changes and infrastructure investments, like the FMCSA Safety Regulations (2010) and the Infrastructure Act (2021), tend to support long-term improvements but may come with short-term compliance costs.
+
+**Global Events:** Economic downturns (2009 financial crisis) and the COVID-19 pandemic have had significant impacts, shown by bars for 2009 and 2020, signaling major demand shocks or disruptions.
+
+**Overall Insights:** The Gantt-style timeline provides a broad overview of the external pressures and opportunities the transportation sector has faced. By analyzing the interaction between fuel volatility, policy changes, and global disruptions, you can better understand how these factors shape sector trends and resilience. This visual will make it easier to discuss how specific types of external factors impact transportation modes differently and the sector’s response to multi-year trends.

@@ -104,6 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -115,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./FinalProject_Abigail.html">Final-project</a></li><li class="breadcrumb-item"><a href="./FinalProject_Toluwanimi.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Toluwanimi Olufawo</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./FinalProject_Abigail.html">Final-Project</a></li><li class="breadcrumb-item"><a href="./FinalProject_Toluwanimi.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Toluwanimi Olufawo</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Midterm-project</span></a>
+ <span class="menu-text">Midterm-Project</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Final-project</span></a>
+ <span class="menu-text">Final-Project</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -251,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./FinalProject_Abigail.html">Final-project</a></li><li class="breadcrumb-item"><a href="./FinalProject_Toluwanimi.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Toluwanimi Olufawo</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./FinalProject_Abigail.html">Final-Project</a></li><li class="breadcrumb-item"><a href="./FinalProject_Toluwanimi.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Toluwanimi Olufawo</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Toluwanimi Olufawo</span></h1>
 </div>
@@ -465,7 +466,7 @@ Attaching package: 'dplyr'</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gantt-style timeline plot</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(events, <span class="fu">aes</span>(<span class="at">x =</span> start_year, <span class="at">xend =</span> end_year, <span class="at">y =</span> event, <span class="at">yend =</span> event, <span class="at">color =</span> type)) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span>  <span class="co"># Create horizontal bars for each event</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">linewidth =</span> <span class="dv">5</span>) <span class="sc">+</span>  <span class="co"># Use linewidth instead of size for line thickness</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2005</span>, <span class="dv">2022</span>, <span class="at">by =</span> <span class="dv">1</span>)) <span class="sc">+</span>  <span class="co"># Set x-axis breaks for each year</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Gantt-Style Timeline of Major External Factors Affecting the U.S. Transportation Sector"</span>,</span>
@@ -478,10 +479,6 @@ Attaching package: 'dplyr'</code></pre>
 <span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
 <span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">"Event Type"</span>))  <span class="co"># Legend for event types</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -490,6 +487,17 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 </div>
 </div>
+<p><strong>Key Points to Observe</strong></p>
+<p><em>Event Types</em>: Each row represents a specific event, with different colors indicating the type of factor (e.g., fuel-related, policy-related, or global events). This visualization helps quickly identify the kinds of events that have significantly impacted the transportation sector over the years.</p>
+<p><em>Event Duration:</em> The length of each horizontal bar shows the duration of each event:</p>
+<p><em>Short-Term Events</em> (like specific policy implementations) have shorter bars, indicating a limited time impact.</p>
+<p><em>Long-Term Events</em> (like the shale gas boom or supply chain disruptions) have longer bars, indicating they affected the transportation sector over multiple years.</p>
+<p><strong>Overlapping Events:</strong> Look for events that occur around the same time. For example, if a fuel price surge coincides with a global event (like the COVID-19 pandemic), it may indicate a compounded effect on the transportation sector during that period. Overlapping policy changes and fuel-related events (such as the 2012 MAP-21 Act and low oil prices in 2015) could suggest a favorable environment for sector growth or cost reduction.</p>
+<p><strong>Major Disruptions:</strong> The COVID-19 pandemic in 2020 and the subsequent supply chain disruptions in 2021-2022 stand out, as they span multiple categories (global events, policy responses) and have broad implications across transportation modes.</p>
+<p><strong>Trends by Type:</strong> Fuel-Related Events: Periodic spikes and drops in fuel prices (2005-2008, 2015, 2022) indicate volatility that directly affects transportation costs.</p>
+<p><strong>Policy Events:</strong> Regulatory changes and infrastructure investments, like the FMCSA Safety Regulations (2010) and the Infrastructure Act (2021), tend to support long-term improvements but may come with short-term compliance costs.</p>
+<p><strong>Global Events:</strong> Economic downturns (2009 financial crisis) and the COVID-19 pandemic have had significant impacts, shown by bars for 2009 and 2020, signaling major demand shocks or disruptions.</p>
+<p><strong>Overall Insights:</strong> The Gantt-style timeline provides a broad overview of the external pressures and opportunities the transportation sector has faced. By analyzing the interaction between fuel volatility, policy changes, and global disruptions, you can better understand how these factors shape sector trends and resilience. This visual will make it easier to discuss how specific types of external factors impact transportation modes differently and the sector’s response to multi-year trends.</p>
 
 
 </section>
