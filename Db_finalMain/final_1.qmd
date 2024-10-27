@@ -1,38 +1,40 @@
-# Derrick Baruga
-## Week 1 
+---
+title: "Final"
+author: "Derrick Baruga"
+format: html
+---
 
- Load Libraries
+# Load Libraries
 
 ```{r}
 library(readxl) 
 library(tidyr)
-library(dplyr)
 library(ggplot2)
 ```
 
 
- Load Dataset
+# Load Dataset
 
 ```{r}
-file_path <- "C:/Users/toluf/OneDrive/Desktop/Dynamic 2/Db_finalMain/table_03_01_072623.xlsx"  
+file_path <- "/Users/derrickmarkbavaudbaruga/Documents/fall 2024/CSC 477/Archive 3/table_03_01_072623.xlsx"  
 dataset <- read_excel(file_path, sheet = 4)
 ```
 
 
- Dataset structure
+# Dataset structure
 
 ```{r}
 dataset
 ```
 
- Check for missing values
+# Check for missing values
 
 ```{r}
 summary(dataset)
 ```
 
 
- Check for duplicates
+# Check for duplicates
 
 ```{r}
 duplicated_rows <- dataset[duplicated(dataset), ]
@@ -82,7 +84,7 @@ dataset[29, 1] <- "2020"
 dataset[30, 1] <- "2021"
 ```
 
-Create stacked bar chart
+# Create stacked bar chart
 
 ```{r}
 # Select relevant columns and convert to long format
@@ -127,7 +129,7 @@ p2 <- ggplot(transport_long_filtered, aes(x = as.factor(Year), y = GDP, fill = S
 # Display both plots
 p1
 p2
-
+p3
 ```
 
 The Plot shows a general increase in the total GDP of for-hire transportation gdp of different sectors over time. We can see that the all sectors gace grown gdps over the decades, some winning out more than others. We see initially that the total gdp for all sectors sits well under 200 Billion and for the next 40 years grows by a factor of over 4X. The sector of for-hire that has grown the most over the period of this analysis is the Trucking sector. Followed by Other. We cab see that during the pandemic, Air lost a considerable market share and lost it's momentum that previously looked like it would get carried by to become a leader amongst all the sectors. This decline makes sense as air travel was not permitted/heavily regulate/discrouraged during the pandameic. We can also see that warehousing is making considerable strides in gdp growth over the past decade.
