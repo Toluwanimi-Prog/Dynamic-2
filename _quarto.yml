@@ -13,6 +13,10 @@ book:
     - Caleb_Main.qmd
     - Baruga_Main.qmd
     - Toluwanimi_Main.qmd
+    - part: Final Project
+      title: "Final Project"
+      chapters:
+        - FinalProject_Main.qmd
     - summary.qmd
     - references.qmd
 
@@ -20,7 +24,6 @@ bibliography: references.bib
 
 format:
   html:
-
     theme: cosmo
   pdf:
     documentclass: scrreprt
