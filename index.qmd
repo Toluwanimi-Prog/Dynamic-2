@@ -1,16 +1,32 @@
 # Preface {.unnumbered}
 
-**Hello and Welcome!**
 
-This book is dedicated to showcasing the work of Group 2, a dynamic team of dedicated students from the Visualization class at the prestigious Oral Roberts University, Oklahoma, under the guidance of Dr. V. Here, you'll find weekly Quarto documents and exciting projects as they explore the world of data visualization.
 
-The Members of the Group 2 are
+Welcome to *Dynamic Group 2*! This book is a product of the hard work and collaboration of students from the Visualization class at **Oral Roberts University**, under the guidance of **Dr. V**. Here, we’ve documented our journey through data visualization, where each of us brings a unique perspective and academic background.
 
-1.  Abigail Tako
-2.  Caleb Pena
-3.  Derrick Baruga
-4.  Toluwanimi Olufawo
+---
 
-This is a Quarto book.
+ **Meet the Members of Group 2**
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Each team member contributes a distinct academic focus, enriching our collective approach to data visualization:
+
+- **Abigail Tako**  
+  *Major: Computer Science*
+
+- **Caleb Pena**  
+  *Major: Data Science*
+
+- **Derrick Baruga**  
+  *Major: Information Technology*
+
+- **Toluwanimi Olufawo**  
+  *Major: Data Science*
+
+---
+
+Our shared goal is to explore the power of data visualization and present findings that are both insightful and accessible. We hope this book reflects our dedication and growth as we navigate the fascinating world of data.
+
+---
+
+We invite you to explore our work and witness how our diverse academic paths intersect through these pages. Thank you for joining us on this journey!
+
