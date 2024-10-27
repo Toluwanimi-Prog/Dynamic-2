@@ -9,14 +9,14 @@ book:
   chapters:
     - index.qmd
     - Introduction.qmd
-    - part: Midterm-project
+    - part: Midterm-Project
       title: "Midterm Project"
       chapters:
         - Tako_Main.qmd
         - Caleb_Main.qmd
         - Baruga_Main.qmd
         - Toluwanimi_Main.qmd
-    - part: Final-project
+    - part: Final-Project
       title: "Final Project"
       chapters:
         - FinalProject_Abigail.qmd

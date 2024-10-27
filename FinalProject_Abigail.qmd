@@ -1,6 +1,6 @@
-## Abigail Tako
+# Abigail Tako
 
-### Week 1 
+## Week 1 
 **Time series for each of the transportation**
 
 ```{r}
