@@ -1,7 +1,8 @@
 # Derrick Baruga
-## Week 1 
 
- Load Libraries
+## Week 1
+
+Load Libraries
 
 ```{r}
 library(readxl) 
@@ -10,29 +11,26 @@ library(dplyr)
 library(ggplot2)
 ```
 
-
- Load Dataset
+Load Dataset
 
 ```{r}
 file_path <- "C:/Users/toluf/OneDrive/Desktop/Dynamic 2/Db_finalMain/table_03_01_072623.xlsx"  
 dataset <- read_excel(file_path, sheet = 4)
 ```
 
-
- Dataset structure
+Dataset structure
 
 ```{r}
 dataset
 ```
 
- Check for missing values
+Check for missing values
 
 ```{r}
 summary(dataset)
 ```
 
-
- Check for duplicates
+Check for duplicates
 
 ```{r}
 duplicated_rows <- dataset[duplicated(dataset), ]
@@ -130,4 +128,182 @@ p2
 
 ```
 
-The Plot shows a general increase in the total GDP of for-hire transportation gdp of different sectors over time. We can see that the all sectors gace grown gdps over the decades, some winning out more than others. We see initially that the total gdp for all sectors sits well under 200 Billion and for the next 40 years grows by a factor of over 4X. The sector of for-hire that has grown the most over the period of this analysis is the Trucking sector. Followed by Other. We cab see that during the pandemic, Air lost a considerable market share and lost it's momentum that previously looked like it would get carried by to become a leader amongst all the sectors. This decline makes sense as air travel was not permitted/heavily regulate/discrouraged during the pandameic. We can also see that warehousing is making considerable strides in gdp growth over the past decade.
+The Plot shows a general increase in the total GDP of for-hire transportation gdp of different sectors over time. We can see that the all sectors gace grown gdps over the decades, some winning out more than others. We see initially that the total gdp for all sectors sits well under 200 Billion and for the next 40 years grows by a factor of over 4X. The sector of for-hire that has grown the most over the period of this analysis is the Trucking sector. Followed by Other. We cab see that during the pandemic, Air lost a considerable market share and lost it's momentum that previously looked like it would get carried by to become a leader amongst all the sectors. This decline makes sense as air travel was not permitted/heavily regulate/discrouraged during the pandameic. We can also see that warehousing is making considerable strides in gdp growth over the past decade. \## Week 3 \# Load Libraries
+
+```{r}
+library(readxl) 
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+```
+
+# Load Dataset
+
+```{r}
+file_path <- "C:/Users/toluf/OneDrive/Desktop/Dynamic 2/table_03_01_072623.xlsx"
+  
+dataset <- read_excel(file_path, sheet = 4)
+```
+
+# Dataset structure
+
+```{r}
+dataset
+```
+
+# Check for missing values
+
+```{r}
+summary(dataset)
+```
+
+# Check for duplicates
+
+```{r}
+duplicated_rows <- dataset[duplicated(dataset), ]
+
+# changing col names
+clean_names <- c(
+  "Year",
+  "Total_GDP",
+  "Transport_GDP_Total",
+  "Air",
+  "Rail",
+  "Water",
+  "Truck",
+  "Transit",
+  "Pipeline",
+  "Other",
+  "Warehousing",
+  "Percent_GDP",
+  "Transport_Services",
+  "Air_Pct",
+  "Rail_Pct",
+  "Water_Pct",
+  "Truck_Pct",
+  "Transit_Pct",
+  "Pipeline_Pct",
+  "Other_Pct",
+  "Warehousing_Pct",
+  "Pct_Transport_GDP",
+  "Air_Share",
+  "Rail_Share",
+  "Water_Share",
+  "Truck_Share",
+  "Transit_Share",
+  "Pipeline_Share",
+  "Other_Share",
+  "Warehousing_Share"
+)
+
+# Assign new column names
+colnames(dataset) <- clean_names
+
+# Redoing col 1, rows 26:30
+dataset[26, 1] <- "2017"
+dataset[27, 1] <- "2018"
+dataset[28, 1] <- "2019"
+dataset[29, 1] <- "2020"
+dataset[30, 1] <- "2021"
+```
+
+# Create stacked bar chart
+
+```{r}
+# Select relevant columns and convert to long format
+transport_long <- dataset %>%
+  select(Year, Air, Rail, Water, Truck, Transit, Pipeline, Other, Warehousing) %>%
+  pivot_longer(cols = -Year, 
+               names_to = "Sector", 
+               values_to = "GDP")
+
+# Create stacked bar chart for all years
+# Convert Year to factor for first plot to ensure discrete x-axis
+p1 <- ggplot(transport_long, aes(x = as.factor(Year), y = GDP, fill = Sector)) +
+  geom_bar(stat = "identity") +
+  labs(title = "For-hire Transportation GDP by Sector (1980-2022)",
+       x = "Year",
+       y = "GDP (Billions of Dollars)",
+       fill = "Transportation Sector") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set2") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        plot.title = element_text(hjust = 0.5),
+        legend.position = "bottom") +
+  # Show fewer year labels to prevent overcrowding
+  scale_x_discrete(breaks = function(x) x[seq(1, length(x), by = 2)])
+
+# Create filtered version showing only decade intervals
+transport_long_filtered <- transport_long %>%
+  filter(Year %in% seq(1980, 2022, by = 10))
+
+p2 <- ggplot(transport_long_filtered, aes(x = as.factor(Year), y = GDP, fill = Sector)) +
+  geom_bar(stat = "identity") +
+  labs(title = "For-hire Transportation GDP by Sector (Decade Intervals)",
+       x = "Year",
+       y = "GDP (Billions of Dollars)",
+       fill = "Transportation Sector") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set2") +
+  theme(axis.text.x = element_text(angle = 37),
+        plot.title = element_text(hjust = 0.3),
+        legend.position = "bottom")
+
+# Display both plots
+p1
+p2
+```
+
+The plot shows a general increase in the total GDP of for-hire transportation gdp of different sectors over time. We can see that the all sectors gace grown gdps over the decades, some winning out more than others. We see initially that the total gdp for all sectors sits well under 200 Billion and for the next 40 years grows by a factor of over 4X. The sector of for-hire that has grown the most over the period of this analysis is the Trucking sector. Followed by Other. We cab see that during the pandemic, Air lost a considerable market share and lost it's momentum that previously looked like it would get carried by to become a leader amongst all the sectors. This decline makes sense as air travel was not permitted/heavily regulate/discrouraged during the pandameic. We can also see that warehousing is making considerable strides in gdp growth over the past decade.
+
+```{r}
+# Calculate sector percentages for each year
+transport_long_pct <- transport_long %>%
+  group_by(Year) %>%
+  mutate(Percent_GDP = GDP / sum(GDP) * 100)
+
+# Create stacked bar chart with sector percentages for all years
+p3 <- ggplot(transport_long_pct, aes(x = as.factor(Year), y = Percent_GDP, fill = Sector)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Percentage of For-hire Transportation GDP by Sector (1980-2022)",
+       x = "Year",
+       y = "Percentage of Total GDP",
+       fill = "Transportation Sector") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set3") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        plot.title = element_text(hjust = 0.5),
+        legend.position = "bottom") +
+  scale_x_discrete(breaks = function(x) x[seq(1, length(x), by = 2)])
+
+# Create filtered version showing only decade intervals with percentages
+transport_long_pct_filtered <- transport_long_pct %>%
+  filter(Year %in% seq(1980, 2022, by = 10))
+
+p4 <- ggplot(transport_long_pct_filtered, aes(x = as.factor(Year), y = Percent_GDP, fill = Sector)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Percentage of For-hire Transportation GDP by Sector (Decade Intervals)",
+       x = "Year",
+       y = "Percentage of Total GDP",
+       fill = "Transportation Sector") +
+  theme_minimal() +
+  scale_fill_brewer(palette = "Set3") +
+  theme(axis.text.x = element_text(angle = 37),
+        plot.title = element_text(hjust = 0.3),
+        legend.position = "bottom")
+
+# Display the percentage plots
+p3
+p4
+
+# Analyze the sectors with the highest growth
+growth_analysis <- transport_long_pct %>%
+  group_by(Sector) %>%
+  summarize(Growth = Percent_GDP[Year == "2022"] - Percent_GDP[Year == "1980"]) %>%
+  arrange(desc(Growth))
+
+print("Growth Analysis by Sector:")
+growth_analysis
+```
+
+This bar chart displays the percentage distribution of for-hire transportation GDP by sector from 1980 to 2022. I normalised each year to display which sector had the majority share year by year. The chart shows that the trucking sector consistently holds the largest share, while other sectors such as air and rail maintain relatively steady proportions. Warehousing has shown noticeable growth in its GDP share, especially in the most recent years, reflecting its increasing importance.

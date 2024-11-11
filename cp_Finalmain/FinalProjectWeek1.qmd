@@ -14,7 +14,7 @@ As the total U.S. GDP has grown over the years—from $7,414.7 billion in 1995 t
 library(readxl)
 data_xlsx <- read_excel("finalpro.xlsx", sheet = "Sheet2")
 library(esquisse)
-esquisse::esquisser(data_xlsx)
+#esquisse::esquisser(data_xlsx)
 ```
 
 ---

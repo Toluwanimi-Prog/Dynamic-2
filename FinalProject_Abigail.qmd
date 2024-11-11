@@ -193,3 +193,302 @@ GDP growth in warehousing and storage remains largely unaffected during the 2007
 
 **Conclusion**
 Most of them in 2019-2020 has a decrease in their GDP due to Covid-19 that happened all around the world. Each of the graph emphasizes the patterns of adaptation and recovery across several transportation sectors.
+
+## Week 3 
+### Trends in Transportation GDP
+
+```{r}
+library(readxl)
+library(ggplot2)
+library(plotly)
+library(ggpubr)
+library(readxl)
+mydata <- read_excel("C:/Users/toluf/OneDrive/Desktop/Dynamic 2/GDPDataSets.xlsx", sheet = "Sheet2")
+
+str(mydata)
+row.names(mydata)
+```
+
+#### Overall Trends
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(plotly)
+library(reshape2)
+
+# Transpose the data and convert row names to a column
+mydata <- as.data.frame(t(mydata))
+colnames(mydata) <- mydata[1, ]  # Set first row as column names
+mydata <- mydata[-1, ]           # Remove the first row
+
+# Convert 'Year' back to row names (assuming first column is now 'Year')
+mydata$Year <- rownames(mydata)
+rownames(mydata) <- NULL
+
+# Reshape data into long format
+mydata_long <- melt(mydata, id.vars = "Year", variable.name = "Sector", value.name = "GDP")
+
+# Convert Year to numeric (if not already)
+mydata_long$Year <- as.numeric(mydata_long$Year)
+
+# Plot using ggplot2
+p <- ggplot(mydata_long, aes(x = Year, y = GDP, color = Sector)) +
+  geom_line(size = 1) +
+  labs(
+    title = "Overall GDP Trends in Transportation Sectors (1980–2022)",
+    x = "Year",
+    y = "GDP (billions of current dollars)",
+    color = "Sector"
+  ) +
+  theme_minimal()
+
+# Make the plot interactive
+p_interactive <- ggplotly(p)
+p_interactive
+
+
+```
+
+
+```{r}
+library(ggplot2)
+library(plotly)
+
+p <- ggplot(mydata, aes(x = Year)) +
+  geom_line(aes(y = `Air transportation`, color = "Air Transportation"), size = 1) +
+  geom_line(aes(y = `Rail transportation`, color = "Rail Transportation"), size = 1) +
+  geom_line(aes(y = `Water transportation`, color = "Water Transportation"), size = 1) +
+  geom_line(aes(y = `Truck transportation`, color = "Truck Transportation"), size = 1) +
+  geom_line(aes(y = `Transit and ground passenger transportation`, color = "Transit & Ground Passenger Transportation"), size = 1) +
+  geom_line(aes(y = `Pipeline transportation`, color = "Pipeline Transportation"), size = 1) +
+  geom_line(aes(y = `Other transportation and support activities`, color = "Other Transportation & Support Activities"), size = 1) +
+  geom_line(aes(y = `Warehousing and storage`, color = "Warehousing & Storage"), size = 1) +
+  labs(
+    title = "Overall GDP Trends in Transportation Sectors (1980–2022)",
+    x = "Year",
+    y = "GDP (billions of current dollars)",
+    color = "Sector"
+  ) +
+  theme_minimal()
+
+p_interactive <- ggplotly(p)
+p_interactive
+
+```
+
+
+#### Key Insights for `Overall GDP Trends in Tranasportation Sectors` Over the Years
+
+#### Air Transportation
+Experienced steady growth until 2019, followed by a sharp decline in 2020 due to COVID-19. Recovery begins post-2021, driven by rising passenger and cargo demand.
+
+#### Rail Transportation
+GDP remains relatively stable with minor fluctuations. The Great Recession and COVID-19 caused slight dips, but the sector generally shows resilience in freight transport.
+
+#### Water Transportation
+Exhibits slower growth compared to other sectors, with noticeable declines during major economic downturns. Recovery remains gradual post-2020.
+
+#### Truck Transportation
+Shows consistent growth, slightly slowed by the Great Recession and COVID-19. The sector's strong recovery highlights its critical role in freight logistics.
+
+#### Transit & Ground Passenger Transportation
+Faced significant downturns during the Great Recession and COVID-19 due to reduced passenger demand. Recovery is ongoing as restrictions ease.
+
+#### Pipeline Transportation
+Shows steady growth with minimal impact from economic downturns. This reflects stable demand for energy transport.
+
+#### Other Transportation & Support Activities
+Rapid growth post-2000, underpinned by increasing logistics and supply chain demand. Quick recovery after economic disruptions highlights sector resilience.
+
+#### Warehousing & Storage
+A standout performer with consistent growth, accelerated by the e-commerce boom. The sector remains largely unaffected by economic crises, reflecting its essential role in modern supply chains.
+
+
+#### Impact of The Great Recession
+Focusing from 2007 through 2012 to capture the Great Recession and initial recovery.
+
+```{r}
+# Filter data for Great Recession period
+recession_data <- mydata %>% filter(Year >= 2007 & Year <= 2012)
+
+ggline(recession_data, x = "Year", y = "Air transportation", 
+       add = "point", 
+       color = "blue", 
+       ylab = "GDP (billions of current dollars)", 
+       xlab = "Year",
+       title = "Air Transportation GDP During Great Recession (2007–2012)")
+
+```
+
+#### Key Insights for `Air Transportation` (2007-2012)
+
+During the Great Recession (2007–2012), air transportation GDP experienced a dip in 2009, reflecting reduced air travel demand due to the economic downturn. However, the sector showed a steady recovery starting in 2010, driven by gradual improvements in both passenger and cargo transport.
+
+
+
+```{r}
+p_rail <- ggline(recession_data, x = "Year", y = "Rail transportation", 
+       add = "point", 
+       color = "#3CB371", 
+       ylab = "GDP (billions of current dollars)", 
+       xlab = "Year",
+       title = "Rail Transportation GDP During Great Recession")
+
+ggplotly(p_rail)
+```
+
+
+
+#### Key Insights for `Rail Transportation` (2007-2012)
+
+Rail transportation GDP declined significantly in 2009 but recovered strongly by 2012. This reflects a temporary reduction in freight activity during the recession, followed by a robust rebound as economic conditions improved.
+
+
+```{r}
+p_water <- ggline(recession_data, x = "Year", y = "Water transportation", 
+       add = "point", 
+       color = "#D43790", 
+       ylab = "GDP (billions of current dollars)", 
+       xlab = "Year",
+       title = "Water Transportation GDP During Great Recession")
+
+ggplotly(p_water)
+```
+
+#### Key Insights for `Water Transportation` (2007-2012)
+
+Water transportation GDP peaked in 2008 but declined sharply thereafter, indicating the impact of reduced global trade during the recession. Recovery was slower compared to other sectors, with GDP continuing to decline through 2012.
+
+
+
+
+```{r}
+p_truck <- ggline(recession_data, x = "Year", y = "Truck transportation", 
+       add = "point", 
+       color = "deepskyblue", 
+       ylab = "GDP (billions of current dollars)", 
+       xlab = "Year",
+       title = "Truck Transportation GDP During Great Recession")
+
+# Make it interactive
+ggplotly(p_truck)
+
+```
+
+#### Key Insights for `Truck Transportation` (2007-2012)
+
+Truck transportation GDP experienced a decline in 2009, reflecting the recession's impact on freight demand. However, it showed a strong recovery starting in 2010, underscoring the sector's critical role in goods movement as economic activity picked up.
+
+
+
+
+```{r}
+p_transit <- ggline(recession_data, x = "Year", y = "Transit and ground passenger transportation", 
+       add = "point", 
+       color = "turquoise", 
+       ylab = "GDP (billions of current dollars)", 
+       xlab = "Year",
+       title = "Transit & Ground Passenger Transportation GDP During Great Recession")
+
+# Make it interactive
+ggplotly(p_transit)
+
+```
+
+
+#### Key Insights for `Tranist & Ground Passenger Transportation` (2007-2012)
+
+This sector showed steady growth throughout the Great Recession, with no significant decline. Despite economic challenges, it likely maintained stable demand due to its essential role in daily commuting and public transportation services.
+
+
+
+```{r}
+p_pipeline <- ggline(recession_data, x = "Year", y = "Pipeline transportation", 
+       add = "point", 
+       color = "darkgreen", 
+       ylab = "GDP (billions of current dollars)", 
+       xlab = "Year",
+       title = "Pipeline Transportation GDP During Great Recession")
+
+ggplotly(p_pipeline)
+
+```
+
+
+
+#### Key Insights for `Pipeline Transportation` (2007-2012)
+
+Pipeline transportation GDP demonstrated resilience during the recession, with consistent growth from 2007 to 2012. This reflects the steady demand for energy transport, even during periods of economic downturn.
+
+
+```{r}
+p_others <- ggline(recession_data, x = "Year", y = "Other transportation and support activities", 
+       add = "point", 
+       color = "tan", 
+       ylab = "GDP (billions of current dollars)", 
+       xlab = "Year",
+       title = "Other Transportation & Support Activitives GDP During Great Recession")
+
+# Make it interactive
+ggplotly(p_others)
+
+```
+
+
+#### Key Insights for `Other Transportation & Support Activities` (2007-2012)
+
+GDP for this sector peaked in 2008 before experiencing a sharp decline in 2009, reflecting the immediate impact of the Great Recession. However, it rebounded quickly from 2010 onwards, showcasing its resilience as economic activity resumed.
+
+
+
+```{r}
+p_warehousing_storage <- ggline(recession_data, x = "Year", y = "Warehousing and storage", 
+       add = "point", 
+       color = "purple", 
+       ylab = "GDP (billions of current dollars)", 
+       xlab = "Year",
+       title = "Warehousing and Storage GDP During Great Recession")
+ggplotly(p_warehousing_storage)
+```
+
+
+#### Key Insights for `Warehousing & Storage` (2007-2012)
+
+The warehousing and storage sector displayed steady growth throughout the Great Recession period, with no significant downturn. This highlights its critical role in supporting supply chains, even during economic slowdowns, as demand for storage and inventory management remained strong.
+
+
+
+#### COVID-19
+
+```{r}
+# Filter data for COVID-19 period
+covid_data <- mydata %>% filter(Year >= 2019 & Year <= 2022)
+
+library(tidyr)
+
+covid_long <- covid_data %>%
+  pivot_longer(cols = c("Air transportation", 
+                        "Rail transportation", 
+                        "Water transportation", 
+                        "Truck transportation",
+                        "Transit and ground passenger transportation",
+                        "Pipeline transportation", 
+                        "Other transportation and support activities",
+                        "Warehousing and storage"),
+               names_to = "Sector", 
+               values_to = "GDP")
+
+p_covid <- ggline(covid_long, x = "Year", y = "GDP", 
+       color = "Sector", 
+       add = "point", 
+       ylab = "GDP (billions of current dollars)", 
+       xlab = "Year",
+       title = "GDP Trends by Transportation Sectors During COVID-19 (2019–2022)")
+
+ggplotly(p_covid)
+```
+
+
+#### COVID-19 Impact on all of the transportation sectors
+
+2020 marked a critical year with substantial declines across most sectors, reflecting the immediate impact of the pandemic.On 2021–2022, there are strong recovery trends are visible in key sectors like air transportation, truck transportation, and warehousing, underscoring their essential roles in the post-pandemic economy. Sectors with slower recovery, such as transit and water transportation, highlight areas where pandemic-induced changes (e.g., remote work, disrupted trade) had longer-lasting effects.

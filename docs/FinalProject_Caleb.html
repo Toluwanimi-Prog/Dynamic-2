@@ -246,6 +246,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#week-1" id="toc-week-1" class="nav-link active" data-scroll-target="#week-1"><span class="header-section-number">7.1</span> Week 1</a></li>
+  <li><a href="#week-3" id="toc-week-3" class="nav-link" data-scroll-target="#week-3"><span class="header-section-number">7.2</span> wEEK 3</a>
+  <ul class="collapse">
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">7.2.1</span> Summary</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -311,23 +315,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   support activities...29`
 • `Warehousing and storage` -&gt; `Warehousing and storage...30`</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'esquisse' was built under R version 4.3.3</code></pre>
-</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.3.2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_xlsx) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">TOTAL U.S. GDP</span><span class="st">`</span>, <span class="at">y =</span> <span class="st">`</span><span class="at">Air transportation...4</span><span class="st">`</span>) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.25</span>, <span class="at">colour =</span> <span class="st">"#112446"</span>) <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Air Transportation GDP"</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Air Transportation GDP on Total U.S. GDP"</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_xlsx) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">TOTAL U.S. GDP</span><span class="st">`</span>, <span class="at">y =</span> <span class="st">`</span><span class="at">Air transportation...4</span><span class="st">`</span>) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.25</span>, <span class="at">colour =</span> <span class="st">"#112446"</span>) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Air Transportation GDP"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Air Transportation GDP on Total U.S. GDP"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -338,14 +336,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>The scatter plot illustrates a positive correlation between the Air Transportation GDP and the Total U.S. GDP. Over the years, as the Total U.S. GDP has grown, the Air Transportation GDP has shown a similar upward trend. Although there are some notable outliers, the overall relationship between these two variables remains clearly positive.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_xlsx) <span class="sc">+</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">TOTAL U.S. GDP</span><span class="st">`</span>, <span class="at">y =</span> <span class="st">`</span><span class="at">Truck transportation...7</span><span class="st">`</span>) <span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.25</span>, <span class="at">colour =</span> <span class="st">"#112446"</span>) <span class="sc">+</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Truck Transportation GDP"</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Truck Transportation GDP on Total U.S. GDP"</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_xlsx) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">TOTAL U.S. GDP</span><span class="st">`</span>, <span class="at">y =</span> <span class="st">`</span><span class="at">Truck transportation...7</span><span class="st">`</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.25</span>, <span class="at">colour =</span> <span class="st">"#112446"</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Truck Transportation GDP"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Truck Transportation GDP on Total U.S. GDP"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -355,8 +353,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>The scatter plot clearly demonstrates a positive correlation between the Truck Transportation GDP and the Total U.S. GDP. As the Total U.S. GDP increases, the Truck Transportation GDP rises accordingly. Notably, there appear to be no visible outliers, as the data points closely align with the potential line of best fit.</p>
+</section>
+<section id="week-3" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="week-3"><span class="header-section-number">7.2</span> wEEK 3</h2>
+<section id="summary" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.2.1</span> Summary</h3>
+<p>As the total U.S. GDP has grown over the years—from $7,414.7 billion in 1995 to $25,462.7 billion in 2022—the For-Hire Transportation GDP has also increased, rising from $231.7 billion in 1995 to $815.0 billion in 2022. Despite this growth, the For-Hire Transportation sectors share of the total U.S. GDP has fluctuated between 2.7% and 3.7% during this period. This data indicates that while both the total U.S. GDP and the For-Hire Transportation GDP have expanded at a similar pace, the substantial increase in the For-Hire Transportation GDP over these 28 years has not directly driven the rise in the overall U.S. GDP. However, despite this, there remains a clear correlation between the Total U.S. GDP and the For-Hire Transportation GDP. The data reveals a positive relationship between these two variables: as the Total U.S. GDP increases, the For-Hire Transportation GDP rises as well.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="1.png" class="img-fluid figure-img"></p>
+<figcaption>From this line graph, we can see how as the Total US GDP rises, the Total GDP derived from For-Hire Transportation Services also increases in a correlated way. The increase is almost consistent in the way that they both rise at a similar rate.</figcaption>
+</figure>
+</div>
+<p><img src="2.png" class="img-fluid" alt="From this line graph, we can see the relationship in the increases of both Total GDP from For-Hire Transportation Services and the United States as they both increase in similar fashions. As the time increases, so does the GDP for both factors.">`</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

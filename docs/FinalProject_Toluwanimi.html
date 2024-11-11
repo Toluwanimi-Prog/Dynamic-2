@@ -102,6 +102,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/plotly-binding-4.10.4/plotly.js"></script>
+
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
 
 
 <link rel="stylesheet" href="styles.css">
@@ -245,7 +263,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#week-1" id="toc-week-1" class="nav-link active" data-scroll-target="#week-1"><span class="header-section-number">9.0.1</span> Week 1</a></li>
+  <li><a href="#week-1" id="toc-week-1" class="nav-link active" data-scroll-target="#week-1"><span class="header-section-number">9.1</span> Week 1</a></li>
+  <li><a href="#week-3" id="toc-week-3" class="nav-link" data-scroll-target="#week-3"><span class="header-section-number">9.2</span> wEEK 3</a></li>
   </ul>
 </nav>
     </div>
@@ -271,17 +290,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="week-1" class="level3" data-number="9.0.1">
-<h3 data-number="9.0.1" class="anchored" data-anchor-id="week-1"><span class="header-section-number">9.0.1</span> Week 1</h3>
+<section id="week-1" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="week-1"><span class="header-section-number">9.1</span> Week 1</h2>
 <p><strong>To-Do list for this week</strong> Develop a timeline outlining major external factors (fuel prices, policy changes) affecting the transportation sector and visualize it in R</p>
 <p><strong>Load Required Libraries</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.3.2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'dplyr'</code></pre>
@@ -296,13 +312,13 @@ Attaching package: 'dplyr'</code></pre>
 
     intersect, setdiff, setequal, union</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)  <span class="co"># For reading Excel files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)  <span class="co"># For reading Excel files</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Load the Dataset</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="st">"C:/Users/toluf/OneDrive/Desktop/Dynamic 2/Olufawo_FinalProjectWeek1/Dataset_USGDP.xlsx"</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(file_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="st">"C:/Users/toluf/OneDrive/Desktop/Dynamic 2/Olufawo_FinalProjectWeek1/Dataset_USGDP.xlsx"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(file_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>New names:
 • `` -&gt; `...1`
@@ -340,8 +356,8 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 <p><strong>Inspect and Clean the Data</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows of the dataset</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows of the dataset</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 30
   ...1  `TOTAL U.S. GDP` For-hire transportation servic…¹ Air transportation..…²
@@ -360,8 +376,8 @@ Attaching package: 'dplyr'</code></pre>
 #   `Pipeline transportation...9` &lt;dbl&gt;,
 #   `Other transportation and support activities...10` &lt;dbl&gt;, …</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check column names</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check column names</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "...1"                                            
  [2] "TOTAL U.S. GDP"                                  
@@ -397,44 +413,44 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 <p><strong>Filter Data for Timeline Events</strong> Since I’m focused on creating a timeline of external factors like fuel prices and policy changes, I’ll need to isolate specific years and events to include in the timeline. I’ll add a subset of relevant data and then create a separate data frame for these events.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame with specific events for the timeline</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>events <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">year =</span> <span class="fu">c</span>(<span class="dv">2005</span>, <span class="dv">2008</span>, <span class="dv">2009</span>, <span class="dv">2010</span>, <span class="dv">2011</span>, <span class="dv">2012</span>, <span class="dv">2015</span>, <span class="dv">2020</span>, <span class="dv">2021</span>, <span class="dv">2022</span>),</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="fu">c</span>(</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Fuel Prices Spike"</span>,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Energy Policy Act"</span>,</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Global Financial Crisis"</span>,</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"FMCSA Safety Regulations"</span>,</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Natural Gas Boom"</span>,</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MAP-21 Act"</span>,</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Low Oil Prices"</span>,</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"COVID-19 Pandemic &amp; CARES Act"</span>,</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Supply Chain Disruptions &amp; Infrastructure Act"</span>,</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Fuel Price Surge"</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"Fuel"</span>, <span class="st">"Policy"</span>, <span class="st">"Global"</span>, <span class="st">"Policy"</span>, <span class="st">"Fuel"</span>, <span class="st">"Policy"</span>, <span class="st">"Fuel"</span>, <span class="st">"Global"</span>, <span class="st">"Global/Policy"</span>, <span class="st">"Fuel"</span>)</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame with specific events for the timeline</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>events <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">year =</span> <span class="fu">c</span>(<span class="dv">2005</span>, <span class="dv">2008</span>, <span class="dv">2009</span>, <span class="dv">2010</span>, <span class="dv">2011</span>, <span class="dv">2012</span>, <span class="dv">2015</span>, <span class="dv">2020</span>, <span class="dv">2021</span>, <span class="dv">2022</span>),</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="fu">c</span>(</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Fuel Prices Spike"</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Energy Policy Act"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Global Financial Crisis"</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"FMCSA Safety Regulations"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Natural Gas Boom"</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MAP-21 Act"</span>,</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Low Oil Prices"</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"COVID-19 Pandemic &amp; CARES Act"</span>,</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Supply Chain Disruptions &amp; Infrastructure Act"</span>,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Fuel Price Surge"</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"Fuel"</span>, <span class="st">"Policy"</span>, <span class="st">"Global"</span>, <span class="st">"Policy"</span>, <span class="st">"Fuel"</span>, <span class="st">"Policy"</span>, <span class="st">"Fuel"</span>, <span class="st">"Global"</span>, <span class="st">"Global/Policy"</span>, <span class="st">"Fuel"</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Plot the Timeline</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the timeline with line width aesthetic</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(events, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">color =</span> type)) <span class="sc">+</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span>  <span class="co"># Points for each event</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">xend =</span> year, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">yend =</span> <span class="fl">0.9</span>), <span class="at">color =</span> <span class="st">"gray"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span>  <span class="co"># Adjusted to use linewidth</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> label), <span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">nudge_y =</span> <span class="fl">0.2</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span>  <span class="co"># Event labels</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2005</span>, <span class="dv">2022</span>, <span class="at">by =</span> <span class="dv">1</span>)) <span class="sc">+</span>  <span class="co"># Set x-axis breaks for each year</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Timeline of Major External Factors Affecting the U.S. Transportation Sector"</span>,</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),  <span class="co"># Remove y-axis text</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),  <span class="co"># Remove y-axis ticks</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">"Event Type"</span>))  <span class="co"># Legend for event types</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the timeline with line width aesthetic</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(events, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span>  <span class="co"># Points for each event</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">xend =</span> year, <span class="at">y =</span> <span class="dv">1</span>, <span class="at">yend =</span> <span class="fl">0.9</span>), <span class="at">color =</span> <span class="st">"gray"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span>  <span class="co"># Adjusted to use linewidth</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> label), <span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">nudge_y =</span> <span class="fl">0.2</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span>  <span class="co"># Event labels</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2005</span>, <span class="dv">2022</span>, <span class="at">by =</span> <span class="dv">1</span>)) <span class="sc">+</span>  <span class="co"># Set x-axis breaks for each year</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Timeline of Major External Factors Affecting the U.S. Transportation Sector"</span>,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(),  <span class="co"># Remove y-axis text</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),  <span class="co"># Remove y-axis ticks</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">"Event Type"</span>))  <span class="co"># Legend for event types</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -445,40 +461,40 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 <p><strong>Modify the Data for a Gantt-Style Chart</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the data with start and end years for Gantt-style visualization</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>events <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">event =</span> <span class="fu">c</span>(</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Fuel Prices Spike"</span>, <span class="st">"Energy Policy Act"</span>, <span class="st">"Global Financial Crisis"</span>,</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"FMCSA Safety Regulations"</span>, <span class="st">"Natural Gas Boom"</span>, <span class="st">"MAP-21 Act"</span>,</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Low Oil Prices"</span>, <span class="st">"COVID-19 Pandemic &amp; CARES Act"</span>, </span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Supply Chain Disruptions &amp; Infrastructure Act"</span>, <span class="st">"Fuel Price Surge"</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"Fuel"</span>, <span class="st">"Policy"</span>, <span class="st">"Global"</span>, <span class="st">"Policy"</span>, <span class="st">"Fuel"</span>, <span class="st">"Policy"</span>, <span class="st">"Fuel"</span>, <span class="st">"Global"</span>, <span class="st">"Global/Policy"</span>, <span class="st">"Fuel"</span>),</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">start_year =</span> <span class="fu">c</span>(<span class="dv">2005</span>, <span class="dv">2008</span>, <span class="dv">2009</span>, <span class="dv">2010</span>, <span class="dv">2011</span>, <span class="dv">2012</span>, <span class="dv">2015</span>, <span class="dv">2020</span>, <span class="dv">2021</span>, <span class="dv">2022</span>),</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">end_year =</span> <span class="fu">c</span>(<span class="dv">2008</span>, <span class="dv">2008</span>, <span class="dv">2009</span>, <span class="dv">2010</span>, <span class="dv">2014</span>, <span class="dv">2012</span>, <span class="dv">2018</span>, <span class="dv">2020</span>, <span class="dv">2022</span>, <span class="dv">2022</span>)</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the data with start and end years for Gantt-style visualization</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>events <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">event =</span> <span class="fu">c</span>(</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Fuel Prices Spike"</span>, <span class="st">"Energy Policy Act"</span>, <span class="st">"Global Financial Crisis"</span>,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"FMCSA Safety Regulations"</span>, <span class="st">"Natural Gas Boom"</span>, <span class="st">"MAP-21 Act"</span>,</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Low Oil Prices"</span>, <span class="st">"COVID-19 Pandemic &amp; CARES Act"</span>, </span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Supply Chain Disruptions &amp; Infrastructure Act"</span>, <span class="st">"Fuel Price Surge"</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"Fuel"</span>, <span class="st">"Policy"</span>, <span class="st">"Global"</span>, <span class="st">"Policy"</span>, <span class="st">"Fuel"</span>, <span class="st">"Policy"</span>, <span class="st">"Fuel"</span>, <span class="st">"Global"</span>, <span class="st">"Global/Policy"</span>, <span class="st">"Fuel"</span>),</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">start_year =</span> <span class="fu">c</span>(<span class="dv">2005</span>, <span class="dv">2008</span>, <span class="dv">2009</span>, <span class="dv">2010</span>, <span class="dv">2011</span>, <span class="dv">2012</span>, <span class="dv">2015</span>, <span class="dv">2020</span>, <span class="dv">2021</span>, <span class="dv">2022</span>),</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">end_year =</span> <span class="fu">c</span>(<span class="dv">2008</span>, <span class="dv">2008</span>, <span class="dv">2009</span>, <span class="dv">2010</span>, <span class="dv">2014</span>, <span class="dv">2012</span>, <span class="dv">2018</span>, <span class="dv">2020</span>, <span class="dv">2022</span>, <span class="dv">2022</span>)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Create the Gantt-Style Timeline Chart</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gantt-style timeline plot</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(events, <span class="fu">aes</span>(<span class="at">x =</span> start_year, <span class="at">xend =</span> end_year, <span class="at">y =</span> event, <span class="at">yend =</span> event, <span class="at">color =</span> type)) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">linewidth =</span> <span class="dv">5</span>) <span class="sc">+</span>  <span class="co"># Use linewidth instead of size for line thickness</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2005</span>, <span class="dv">2022</span>, <span class="at">by =</span> <span class="dv">1</span>)) <span class="sc">+</span>  <span class="co"># Set x-axis breaks for each year</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Gantt-Style Timeline of Major External Factors Affecting the U.S. Transportation Sector"</span>,</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Event"</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),  <span class="co"># Adjust y-axis text size for readability</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">"Event Type"</span>))  <span class="co"># Legend for event types</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gantt-style timeline plot</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(events, <span class="fu">aes</span>(<span class="at">x =</span> start_year, <span class="at">xend =</span> end_year, <span class="at">y =</span> event, <span class="at">yend =</span> event, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">linewidth =</span> <span class="dv">5</span>) <span class="sc">+</span>  <span class="co"># Use linewidth instead of size for line thickness</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2005</span>, <span class="dv">2022</span>, <span class="at">by =</span> <span class="dv">1</span>)) <span class="sc">+</span>  <span class="co"># Set x-axis breaks for each year</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Gantt-Style Timeline of Major External Factors Affecting the U.S. Transportation Sector"</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Event"</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),  <span class="co"># Adjust y-axis text size for readability</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">"Event Type"</span>))  <span class="co"># Legend for event types</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -498,8 +514,502 @@ Attaching package: 'dplyr'</code></pre>
 <p><strong>Policy Events:</strong> Regulatory changes and infrastructure investments, like the FMCSA Safety Regulations (2010) and the Infrastructure Act (2021), tend to support long-term improvements but may come with short-term compliance costs.</p>
 <p><strong>Global Events:</strong> Economic downturns (2009 financial crisis) and the COVID-19 pandemic have had significant impacts, shown by bars for 2009 and 2020, signaling major demand shocks or disruptions.</p>
 <p><strong>Overall Insights:</strong> The Gantt-style timeline provides a broad overview of the external pressures and opportunities the transportation sector has faced. By analyzing the interaction between fuel volatility, policy changes, and global disruptions, you can better understand how these factors shape sector trends and resilience. This visual will make it easier to discuss how specific types of external factors impact transportation modes differently and the sector’s response to multi-year trends.</p>
+</section>
+<section id="week-3" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="week-3"><span class="header-section-number">9.2</span> wEEK 3</h2>
+<section id="step-1-data-preparation-and-loading" class="level4" data-number="9.2.0.1">
+<h4 data-number="9.2.0.1" class="anchored" data-anchor-id="step-1-data-preparation-and-loading"><span class="header-section-number">9.2.0.1</span> Step 1 Data Preparation and Loading</h4>
+</section>
+<section id="load-the-data-and-inspect" class="level4" data-number="9.2.0.2">
+<h4 data-number="9.2.0.2" class="anchored" data-anchor-id="load-the-data-and-inspect"><span class="header-section-number">9.2.0.2</span> 1.1 Load the Data and Inspect</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'plotly'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:ggplot2':
+
+    last_plot</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:stats':
+
+    filter</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:graphics':
+
+    layout</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"C:/Users/toluf/OneDrive/Desktop/Week_10/Cleaned_Dataset_USGDP.csv"</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the first few rows</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  year total_u_s_gdp for_hire_transportation_services_gdp_total
+1 1980      2788.100                                    102.600
+2 1985      4217.500                                    137.100
+3 1990      5800.500                                    172.800
+4 1995      7414.700                                    231.700
+5 1996      7838.500                                    241.300
+6 1997      8577.552                                    257.255
+  air_transportation_4 rail_transportation_5 water_transportation_6
+1               13.100                20.200                  3.500
+2               19.300                21.000                  4.000
+3               31.300                18.600                  5.100
+4               46.200                21.100                  6.300
+5               46.900                20.900                  6.600
+6               54.657                19.966                  6.564
+  truck_transportation_7 transit_and_ground_passenger_transportation_8
+1                 28.400                                         5.800
+2                 39.400                                         7.300
+3                 49.700                                         9.000
+4                 69.300                                        11.800
+5                 73.100                                        12.800
+6                 77.138                                        15.123
+  pipeline_transportation_9 other_transportation_and_support_activities_10
+1                     5.100                                         20.200
+2                     7.300                                         29.300
+3                     6.000                                         39.900
+4                     6.700                                         51.600
+5                     7.100                                         54.300
+6                     6.953                                         55.862
+  warehousing_and_storage_11 percent_of_u_s_gdp
+1                      6.400                 NA
+2                      9.500                 NA
+3                     13.000                 NA
+4                     18.800                 NA
+5                     19.600                 NA
+6                     20.992                 NA
+  for_hire_transportation_services air_transportation_14 rail_transportation_15
+1                         3.679925             0.4698540              0.7245077
+2                         3.250741             0.4576171              0.4979253
+3                         2.979054             0.5396087              0.3206620
+4                         3.124874             0.6230866              0.2845698
+5                         3.078395             0.5983288              0.2666326
+6                         2.999166             0.6372098              0.2327704
+  water_transportation_16 truck_transportation_17
+1              0.12553352               1.0186148
+2              0.09484292               0.9342027
+3              0.08792345               0.8568227
+4              0.08496635               0.9346299
+5              0.08419978               0.9325764
+6              0.07652533               0.8993009
+  transit_and_ground_passenger_transportation_18 pipeline_transportation_19
+1                                      0.2080270                 0.18292027
+2                                      0.1730883                 0.17308832
+3                                      0.1551590                 0.10343936
+4                                      0.1591433                 0.09036104
+5                                      0.1632965                 0.09057856
+6                                      0.1763090                 0.08106042
+  other_transportation_and_support_activities_20 warehousing_and_storage_21
+1                                      0.7245077                  0.2295470
+2                                      0.6947244                  0.2252519
+3                                      0.6878717                  0.2241186
+4                                      0.6959149                  0.2535504
+5                                      0.6927346                  0.2500478
+6                                      0.6512581                  0.2447318
+  percent_of_for_hire_transportation_services_gdp air_transportation_23
+1                                              NA              12.76803
+2                                              NA              14.07732
+3                                              NA              18.11343
+4                                              NA              19.93958
+5                                              NA              19.43639
+6                                              NA              21.24623
+  rail_transportation_24 water_transportation_25 truck_transportation_26
+1              19.688109                3.411306                27.68031
+2              15.317287                2.917578                28.73815
+3              10.763889                2.951389                28.76157
+4               9.106603                2.719033                29.90937
+5               8.661417                2.735184                30.29424
+6               7.761171                2.551554                29.98503
+  transit_and_ground_passenger_transportation_27 pipeline_transportation_28
+1                                       5.653021                   4.970760
+2                                       5.324581                   5.324581
+3                                       5.208333                   3.472222
+4                                       5.092792                   2.891670
+5                                       5.304600                   2.942395
+6                                       5.878603                   2.702766
+  other_transportation_and_support_activities_29 warehousing_and_storage_30
+1                                       19.68811                   6.237817
+2                                       21.37126                   6.929249
+3                                       23.09028                   7.523148
+4                                       22.27018                   8.113940
+5                                       22.50311                   8.122669
+6                                       21.71464                   8.159997</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "year"                                           
+ [2] "total_u_s_gdp"                                  
+ [3] "for_hire_transportation_services_gdp_total"     
+ [4] "air_transportation_4"                           
+ [5] "rail_transportation_5"                          
+ [6] "water_transportation_6"                         
+ [7] "truck_transportation_7"                         
+ [8] "transit_and_ground_passenger_transportation_8"  
+ [9] "pipeline_transportation_9"                      
+[10] "other_transportation_and_support_activities_10" 
+[11] "warehousing_and_storage_11"                     
+[12] "percent_of_u_s_gdp"                             
+[13] "for_hire_transportation_services"               
+[14] "air_transportation_14"                          
+[15] "rail_transportation_15"                         
+[16] "water_transportation_16"                        
+[17] "truck_transportation_17"                        
+[18] "transit_and_ground_passenger_transportation_18" 
+[19] "pipeline_transportation_19"                     
+[20] "other_transportation_and_support_activities_20" 
+[21] "warehousing_and_storage_21"                     
+[22] "percent_of_for_hire_transportation_services_gdp"
+[23] "air_transportation_23"                          
+[24] "rail_transportation_24"                         
+[25] "water_transportation_25"                        
+[26] "truck_transportation_26"                        
+[27] "transit_and_ground_passenger_transportation_27" 
+[28] "pipeline_transportation_28"                     
+[29] "other_transportation_and_support_activities_29" 
+[30] "warehousing_and_storage_30"                     </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the structure of the data to understand its types</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   31 obs. of  30 variables:
+ $ year                                           : int  1980 1985 1990 1995 1996 1997 1998 1999 2000 2001 ...
+ $ total_u_s_gdp                                  : num  2788 4218 5800 7415 7838 ...
+ $ for_hire_transportation_services_gdp_total     : num  103 137 173 232 241 ...
+ $ air_transportation_4                           : num  13.1 19.3 31.3 46.2 46.9 ...
+ $ rail_transportation_5                          : num  20.2 21 18.6 21.1 20.9 ...
+ $ water_transportation_6                         : num  3.5 4 5.1 6.3 6.6 ...
+ $ truck_transportation_7                         : num  28.4 39.4 49.7 69.3 73.1 ...
+ $ transit_and_ground_passenger_transportation_8  : num  5.8 7.3 9 11.8 12.8 ...
+ $ pipeline_transportation_9                      : num  5.1 7.3 6 6.7 7.1 ...
+ $ other_transportation_and_support_activities_10 : num  20.2 29.3 39.9 51.6 54.3 ...
+ $ warehousing_and_storage_11                     : num  6.4 9.5 13 18.8 19.6 ...
+ $ percent_of_u_s_gdp                             : logi  NA NA NA NA NA NA ...
+ $ for_hire_transportation_services               : num  3.68 3.25 2.98 3.12 3.08 ...
+ $ air_transportation_14                          : num  0.47 0.458 0.54 0.623 0.598 ...
+ $ rail_transportation_15                         : num  0.725 0.498 0.321 0.285 0.267 ...
+ $ water_transportation_16                        : num  0.1255 0.0948 0.0879 0.085 0.0842 ...
+ $ truck_transportation_17                        : num  1.019 0.934 0.857 0.935 0.933 ...
+ $ transit_and_ground_passenger_transportation_18 : num  0.208 0.173 0.155 0.159 0.163 ...
+ $ pipeline_transportation_19                     : num  0.1829 0.1731 0.1034 0.0904 0.0906 ...
+ $ other_transportation_and_support_activities_20 : num  0.725 0.695 0.688 0.696 0.693 ...
+ $ warehousing_and_storage_21                     : num  0.23 0.225 0.224 0.254 0.25 ...
+ $ percent_of_for_hire_transportation_services_gdp: logi  NA NA NA NA NA NA ...
+ $ air_transportation_23                          : num  12.8 14.1 18.1 19.9 19.4 ...
+ $ rail_transportation_24                         : num  19.69 15.32 10.76 9.11 8.66 ...
+ $ water_transportation_25                        : num  3.41 2.92 2.95 2.72 2.74 ...
+ $ truck_transportation_26                        : num  27.7 28.7 28.8 29.9 30.3 ...
+ $ transit_and_ground_passenger_transportation_27 : num  5.65 5.32 5.21 5.09 5.3 ...
+ $ pipeline_transportation_28                     : num  4.97 5.32 3.47 2.89 2.94 ...
+ $ other_transportation_and_support_activities_29 : num  19.7 21.4 23.1 22.3 22.5 ...
+ $ warehousing_and_storage_30                     : num  6.24 6.93 7.52 8.11 8.12 ...</code></pre>
+</div>
+</div>
+</section>
+<section id="step-2-create-the-timeline-of-major-external-events" class="level4" data-number="9.2.0.3">
+<h4 data-number="9.2.0.3" class="anchored" data-anchor-id="step-2-create-the-timeline-of-major-external-events"><span class="header-section-number">9.2.0.3</span> Step 2 Create the Timeline of Major External Events</h4>
+<section id="prepare-data-for-the-timeline" class="level5" data-number="9.2.0.3.1">
+<h5 data-number="9.2.0.3.1" class="anchored" data-anchor-id="prepare-data-for-the-timeline"><span class="header-section-number">9.2.0.3.1</span> 2.1Prepare Data for the Timeline</h5>
+<p>First, i’ll create a separate data frame for significant events, listing the year, event name, description, and category</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a timeline data frame with key events</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>timeline_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Year =</span> <span class="fu">c</span>(<span class="dv">1973</span>, <span class="dv">1978</span>, <span class="dv">1980</span>, <span class="dv">1980</span>, <span class="dv">1985</span>, <span class="dv">1994</span>, <span class="dv">2001</span>, <span class="dv">2008</span>, <span class="dv">2010</span>, <span class="dv">2015</span>, <span class="dv">2020</span>, <span class="dv">2021</span>),</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Event =</span> <span class="fu">c</span>(<span class="st">"1973 Oil Crisis"</span>, <span class="st">"Airline Deregulation Act"</span>, <span class="st">"Motor Carrier Act"</span>, <span class="st">"Staggers Rail Act"</span>,</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Decline in Fuel Prices"</span>, <span class="st">"NAFTA Agreement"</span>, <span class="st">"Rise in Fuel Prices"</span>, <span class="st">"2008 Recession"</span>, </span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Clean Truck Program"</span>, <span class="st">"Diesel Price Decline"</span>, <span class="st">"COVID-19 Pandemic"</span>, </span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Infrastructure Investment and Jobs Act"</span>),</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Description =</span> <span class="fu">c</span>(</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"OPEC oil embargo led to sharp increase in fuel prices."</span>,</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Deregulated the airline industry, leading to increased competition."</span>,</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Deregulated trucking industry, allowing for increased competition."</span>,</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Deregulated rail industry, allowing rail companies to set competitive rates."</span>,</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Fuel prices began to decline, reducing operational costs."</span>,</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Increased cross-border trucking and rail traffic between U.S., Canada, and Mexico."</span>,</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Steady increase in fuel prices during this period, peaking in 2008."</span>,</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Global economic downturn reduced demand across the transportation sector."</span>,</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Stricter environmental standards for trucks, encouraging cleaner technologies."</span>,</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Diesel prices fell due to increased U.S. oil production."</span>,</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Pandemic disrupted global supply chains and shifted demand."</span>,</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Allocated significant funding for transportation infrastructure improvements."</span></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">Category =</span> <span class="fu">c</span>(<span class="st">"Fuel Crisis"</span>, <span class="st">"Policy Change"</span>, <span class="st">"Policy Change"</span>, <span class="st">"Policy Change"</span>, <span class="st">"Fuel Prices"</span>, </span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Policy Change"</span>, <span class="st">"Fuel Prices"</span>, <span class="st">"Economic Event"</span>, <span class="st">"Environmental Policy"</span>, </span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>               <span class="st">"Fuel Prices"</span>, <span class="st">"Pandemic"</span>, <span class="st">"Infrastructure Investment"</span>)</span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Print to verify the structure</span></span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(timeline_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Year                                  Event
+1  1973                        1973 Oil Crisis
+2  1978               Airline Deregulation Act
+3  1980                      Motor Carrier Act
+4  1980                      Staggers Rail Act
+5  1985                 Decline in Fuel Prices
+6  1994                        NAFTA Agreement
+7  2001                    Rise in Fuel Prices
+8  2008                         2008 Recession
+9  2010                    Clean Truck Program
+10 2015                   Diesel Price Decline
+11 2020                      COVID-19 Pandemic
+12 2021 Infrastructure Investment and Jobs Act
+                                                                          Description
+1                              OPEC oil embargo led to sharp increase in fuel prices.
+2                 Deregulated the airline industry, leading to increased competition.
+3                  Deregulated trucking industry, allowing for increased competition.
+4        Deregulated rail industry, allowing rail companies to set competitive rates.
+5                           Fuel prices began to decline, reducing operational costs.
+6  Increased cross-border trucking and rail traffic between U.S., Canada, and Mexico.
+7                 Steady increase in fuel prices during this period, peaking in 2008.
+8           Global economic downturn reduced demand across the transportation sector.
+9      Stricter environmental standards for trucks, encouraging cleaner technologies.
+10                           Diesel prices fell due to increased U.S. oil production.
+11                        Pandemic disrupted global supply chains and shifted demand.
+12      Allocated significant funding for transportation infrastructure improvements.
+                    Category
+1                Fuel Crisis
+2              Policy Change
+3              Policy Change
+4              Policy Change
+5                Fuel Prices
+6              Policy Change
+7                Fuel Prices
+8             Economic Event
+9       Environmental Policy
+10               Fuel Prices
+11                  Pandemic
+12 Infrastructure Investment</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="create-the-timeline-plot" class="level4" data-number="9.2.0.4">
+<h4 data-number="9.2.0.4" class="anchored" data-anchor-id="create-the-timeline-plot"><span class="header-section-number">9.2.0.4</span> 2.2 Create the Timeline Plot</h4>
+<p>Using ggplot2 with ggrepel for annotations, creating a timeline visualization that categorizes events by color.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define colors for categories</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>category_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Fuel Crisis"</span> <span class="ot">=</span> <span class="st">"red"</span>, <span class="st">"Policy Change"</span> <span class="ot">=</span> <span class="st">"blue"</span>, <span class="st">"Fuel Prices"</span> <span class="ot">=</span> <span class="st">"orange"</span>,</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Economic Event"</span> <span class="ot">=</span> <span class="st">"green"</span>, <span class="st">"Environmental Policy"</span> <span class="ot">=</span> <span class="st">"purple"</span>, </span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pandemic"</span> <span class="ot">=</span> <span class="st">"pink"</span>, <span class="st">"Infrastructure Investment"</span> <span class="ot">=</span> <span class="st">"brown"</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the timeline plot</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(timeline_data, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">color =</span> Category)) <span class="sc">+</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="fu">aes</span>(<span class="at">label =</span> Event), <span class="at">size =</span> <span class="dv">3</span>, <span class="at">direction =</span> <span class="st">"y"</span>, <span class="at">nudge_y =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> category_colors) <span class="sc">+</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Timeline of Major External Factors Affecting the U.S. Transportation Sector"</span>,</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>, </span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinalProject_Toluwanimi_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-total-gdp-vs.-transportation-gdp-over-time" class="level4" data-number="9.2.0.5">
+<h4 data-number="9.2.0.5" class="anchored" data-anchor-id="step-3-total-gdp-vs.-transportation-gdp-over-time"><span class="header-section-number">9.2.0.5</span> Step 3: Total GDP vs.&nbsp;Transportation GDP Over Time</h4>
+<p>To observe how the transportation sector has grown in relation to the total GDP, we’ll plot these two GDP metrics as line graphs over time.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define colors for the GDP lines</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>gdp_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Total U.S. GDP"</span> <span class="ot">=</span> <span class="st">"blue"</span>, <span class="st">"For-Hire Transportation Services GDP"</span> <span class="ot">=</span> <span class="st">"red"</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Total U.S. GDP and Transportation GDP over time</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> total_u_s_gdp, <span class="at">color =</span> <span class="st">"Total U.S. GDP"</span>)) <span class="sc">+</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> for_hire_transportation_services_gdp_total, <span class="at">color =</span> <span class="st">"For-Hire Transportation Services GDP"</span>)) <span class="sc">+</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Total U.S. GDP vs For-Hire Transportation Services GDP Over Time"</span>,</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>, </span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"GDP (in billions of current dollars)"</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="st">""</span>, <span class="at">values =</span> gdp_colors) <span class="sc">+</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinalProject_Toluwanimi_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="step-4-sector-specific-gdp-trends" class="level4" data-number="9.2.0.6">
+<h4 data-number="9.2.0.6" class="anchored" data-anchor-id="step-4-sector-specific-gdp-trends"><span class="header-section-number">9.2.0.6</span> Step 4: Sector-Specific GDP Trends</h4>
+<p>To examine each transportation sector (trucking, air, rail, water), we’ll plot them separately to observe unique trends over time.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape data for sector-specific plotting</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>sector_gdp_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, air_transportation_4, rail_transportation_5, water_transportation_6, truck_transportation_7) <span class="sc">%&gt;%</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>year, <span class="at">names_to =</span> <span class="st">"sector"</span>, <span class="at">values_to =</span> <span class="st">"gdp"</span>)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot sector-specific GDP trends</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sector_gdp_data, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> gdp, <span class="at">color =</span> sector)) <span class="sc">+</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Sector-Specific GDP Trends in For-Hire Transportation Services"</span>,</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>, </span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"GDP (in billions of current dollars)"</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">name =</span> <span class="st">"Sector"</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Air"</span>, <span class="st">"Rail"</span>, <span class="st">"Water"</span>, <span class="st">"Truck"</span>)) <span class="sc">+</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinalProject_Toluwanimi_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="step-5-sector-contribution-as-a-percentage-of-total-transportation-gdp" class="level4" data-number="9.2.0.7">
+<h4 data-number="9.2.0.7" class="anchored" data-anchor-id="step-5-sector-contribution-as-a-percentage-of-total-transportation-gdp"><span class="header-section-number">9.2.0.7</span> Step 5: Sector Contribution as a Percentage of Total Transportation GDP</h4>
+<p>To understand the shifting dominance of each sector within the transportation GDP, we’ll create a stacked area chart showing each sector’s contribution as a percentage over time.</p>
+</section>
+<section id="prepare-data-for-percentage-contribution-plot" class="level4" data-number="9.2.0.8">
+<h4 data-number="9.2.0.8" class="anchored" data-anchor-id="prepare-data-for-percentage-contribution-plot"><span class="header-section-number">9.2.0.8</span> 5.1 Prepare Data for Percentage Contribution Plot</h4>
+<p>We’ll reshape the data to focus on each sector’s percentage contribution to total For-Hire Transportation GDP.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select and reshape data for percentage contribution by sector</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>sector_percentage_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    year, air_transportation_23, rail_transportation_24, water_transportation_25,</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    truck_transportation_26, transit_and_ground_passenger_transportation_27,</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    pipeline_transportation_28, other_transportation_and_support_activities_29,</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    warehousing_and_storage_30</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>year, <span class="at">names_to =</span> <span class="st">"sector"</span>, <span class="at">values_to =</span> <span class="st">"percentage"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="plot-the-percentage-contribution-over-time" class="level4" data-number="9.2.0.9">
+<h4 data-number="9.2.0.9" class="anchored" data-anchor-id="plot-the-percentage-contribution-over-time"><span class="header-section-number">9.2.0.9</span> 5.2 Plot the Percentage Contribution Over Time</h4>
+<p>This stacked area chart will help illustrate how each sector’s contribution to GDP has changed, showing trends like trucking’s increasing role due to deregulation and e-commerce growth</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot percentage contribution of each sector over time</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sector_percentage_data, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> percentage, <span class="at">fill =</span> sector)) <span class="sc">+</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>() <span class="sc">+</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Percentage Contribution of Each Sector in For-Hire Transportation Services GDP"</span>,</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>, </span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Total For-Hire Transportation GDP"</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">name =</span> <span class="st">"Sector"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="FinalProject_Toluwanimi_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>This plot showS how sectors like trucking and air transport grew in their GDP contributions over time. We can explain trends here, such as the effect of deregulation on trucking and how e-commerce drove an increase in demand for both trucking and warehousing.```</code></pre>
+</section>
+<section id="step-6-interactive-timeline-with-gdp-and-major-events" class="level4" data-number="9.2.0.10">
+<h4 data-number="9.2.0.10" class="anchored" data-anchor-id="step-6-interactive-timeline-with-gdp-and-major-events"><span class="header-section-number">9.2.0.10</span> Step 6: Interactive Timeline with GDP and Major Events</h4>
+<p>This visualization combines GDP data with significant events, allowing for an interactive examination of how external factors align with GDP trend</p>
+</section>
+<section id="prepare-the-interactive-plotly-timeline-data" class="level4" data-number="9.2.0.11">
+<h4 data-number="9.2.0.11" class="anchored" data-anchor-id="prepare-the-interactive-plotly-timeline-data"><span class="header-section-number">9.2.0.11</span> 6.1 Prepare the Interactive Plotly Timeline Data</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create interactive timeline with plotly</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>timeline_plot <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> timeline_data,</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="sc">~</span>Year,</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="sc">~</span><span class="dv">0</span>,  <span class="co"># Keep all events on the same y-axis level for a horizontal timeline</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"scatter"</span>,</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">mode =</span> <span class="st">"markers+text"</span>,</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">text =</span> <span class="sc">~</span><span class="fu">paste0</span>(<span class="st">"Event: "</span>, Event, <span class="st">"&lt;br&gt;Description: "</span>, Description, <span class="st">"&lt;br&gt;Category: "</span>, Category),</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">hoverinfo =</span> <span class="st">"text"</span>,</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">marker =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="sc">~</span>Category,</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">colors =</span> category_colors</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">layout</span>(</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Interactive Timeline of Major External Factors Affecting the U.S. Transportation Sector"</span>,</span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">xaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">"Year"</span>, <span class="at">tickmode =</span> <span class="st">"linear"</span>),</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">yaxis =</span> <span class="fu">list</span>(<span class="at">title =</span> <span class="st">""</span>, <span class="at">showticklabels =</span> <span class="cn">FALSE</span>),</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">hoverlabel =</span> <span class="fu">list</span>(<span class="at">bgcolor =</span> <span class="st">"white"</span>, <span class="at">font =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">12</span>)),</span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">showlegend =</span> <span class="cn">TRUE</span></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plot</span></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>timeline_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-7689cc9378ef259845e1" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-7689cc9378ef259845e1">{"x":{"visdat":{"6fb828c06633":["function () ","plotlyVisDat"]},"cur_data":"6fb828c06633","attrs":{"6fb828c06633":{"x":{},"y":{},"mode":"markers+text","text":{},"hoverinfo":"text","marker":{"size":10},"color":{},"colors":["red","blue","orange","green","purple","pink","brown"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Interactive Timeline of Major External Factors Affecting the U.S. Transportation Sector","xaxis":{"domain":[0,1],"automargin":true,"title":"Year","tickmode":"linear"},"yaxis":{"domain":[0,1],"automargin":true,"title":"","showticklabels":false},"hoverlabel":{"bgcolor":"white","font":{"size":12}},"showlegend":true,"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[2008],"y":[0],"mode":"markers+text","text":"Event: 2008 Recession<br>Description: Global economic downturn reduced demand across the transportation sector.<br>Category: Economic Event","hoverinfo":"text","marker":{"color":"rgba(0,255,0,1)","size":10,"line":{"color":"rgba(0,255,0,1)"}},"type":"scatter","name":"Economic Event","textfont":{"color":"rgba(0,255,0,1)"},"error_y":{"color":"rgba(0,255,0,1)"},"error_x":{"color":"rgba(0,255,0,1)"},"line":{"color":"rgba(0,255,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2010],"y":[0],"mode":"markers+text","text":"Event: Clean Truck Program<br>Description: Stricter environmental standards for trucks, encouraging cleaner technologies.<br>Category: Environmental Policy","hoverinfo":"text","marker":{"color":"rgba(160,32,240,1)","size":10,"line":{"color":"rgba(160,32,240,1)"}},"type":"scatter","name":"Environmental Policy","textfont":{"color":"rgba(160,32,240,1)"},"error_y":{"color":"rgba(160,32,240,1)"},"error_x":{"color":"rgba(160,32,240,1)"},"line":{"color":"rgba(160,32,240,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1973],"y":[0],"mode":"markers+text","text":"Event: 1973 Oil Crisis<br>Description: OPEC oil embargo led to sharp increase in fuel prices.<br>Category: Fuel Crisis","hoverinfo":"text","marker":{"color":"rgba(255,0,0,1)","size":10,"line":{"color":"rgba(255,0,0,1)"}},"type":"scatter","name":"Fuel Crisis","textfont":{"color":"rgba(255,0,0,1)"},"error_y":{"color":"rgba(255,0,0,1)"},"error_x":{"color":"rgba(255,0,0,1)"},"line":{"color":"rgba(255,0,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1985,2001,2015],"y":[0,0,0],"mode":"markers+text","text":["Event: Decline in Fuel Prices<br>Description: Fuel prices began to decline, reducing operational costs.<br>Category: Fuel Prices","Event: Rise in Fuel Prices<br>Description: Steady increase in fuel prices during this period, peaking in 2008.<br>Category: Fuel Prices","Event: Diesel Price Decline<br>Description: Diesel prices fell due to increased U.S. oil production.<br>Category: Fuel Prices"],"hoverinfo":["text","text","text"],"marker":{"color":"rgba(255,165,0,1)","size":10,"line":{"color":"rgba(255,165,0,1)"}},"type":"scatter","name":"Fuel Prices","textfont":{"color":"rgba(255,165,0,1)"},"error_y":{"color":"rgba(255,165,0,1)"},"error_x":{"color":"rgba(255,165,0,1)"},"line":{"color":"rgba(255,165,0,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2021],"y":[0],"mode":"markers+text","text":"Event: Infrastructure Investment and Jobs Act<br>Description: Allocated significant funding for transportation infrastructure improvements.<br>Category: Infrastructure Investment","hoverinfo":"text","marker":{"color":"rgba(165,42,42,1)","size":10,"line":{"color":"rgba(165,42,42,1)"}},"type":"scatter","name":"Infrastructure Investment","textfont":{"color":"rgba(165,42,42,1)"},"error_y":{"color":"rgba(165,42,42,1)"},"error_x":{"color":"rgba(165,42,42,1)"},"line":{"color":"rgba(165,42,42,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2020],"y":[0],"mode":"markers+text","text":"Event: COVID-19 Pandemic<br>Description: Pandemic disrupted global supply chains and shifted demand.<br>Category: Pandemic","hoverinfo":"text","marker":{"color":"rgba(255,192,203,1)","size":10,"line":{"color":"rgba(255,192,203,1)"}},"type":"scatter","name":"Pandemic","textfont":{"color":"rgba(255,192,203,1)"},"error_y":{"color":"rgba(255,192,203,1)"},"error_x":{"color":"rgba(255,192,203,1)"},"line":{"color":"rgba(255,192,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1978,1980,1980,1994],"y":[0,0,0,0],"mode":"markers+text","text":["Event: Airline Deregulation Act<br>Description: Deregulated the airline industry, leading to increased competition.<br>Category: Policy Change","Event: Motor Carrier Act<br>Description: Deregulated trucking industry, allowing for increased competition.<br>Category: Policy Change","Event: Staggers Rail Act<br>Description: Deregulated rail industry, allowing rail companies to set competitive rates.<br>Category: Policy Change","Event: NAFTA Agreement<br>Description: Increased cross-border trucking and rail traffic between U.S., Canada, and Mexico.<br>Category: Policy Change"],"hoverinfo":["text","text","text","text"],"marker":{"color":"rgba(0,0,255,1)","size":10,"line":{"color":"rgba(0,0,255,1)"}},"type":"scatter","name":"Policy Change","textfont":{"color":"rgba(0,0,255,1)"},"error_y":{"color":"rgba(0,0,255,1)"},"error_x":{"color":"rgba(0,0,255,1)"},"line":{"color":"rgba(0,0,255,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<pre><code>Explanation: This timeline allows users to interactively explore the events and see their descriptions and categories. Key events such as the 2008 Recession or COVID-19 Pandemic are marked to show their effects on the transportation GDP, with implications such as temporary drops in freight and changes in sectoral growth patterns``</code></pre>
+</section>
+<section id="step-7-drafting-the-impact-analysis" class="level4" data-number="9.2.0.12">
+<h4 data-number="9.2.0.12" class="anchored" data-anchor-id="step-7-drafting-the-impact-analysis"><span class="header-section-number">9.2.0.12</span> Step 7: Drafting the Impact Analysis</h4>
+<ol type="1">
+<li>Timeline of Major External Events:</li>
+</ol>
+<ul>
+<li><p>Impact of Policies: Deregulation policies like the Motor Carrier Act (1980) and Staggers Rail Act (1980) reduced costs and increased competition, leading to a growth boost in trucking and rail sectors.</p></li>
+<li><p>Technological Advances: The rise of e-commerce in the 2000s, coupled with advances in logistics, significantly increased trucking’s share of GDP, as it became essential for last-mile delivery.</p></li>
+<li><p>Economic Crises: The 2008 Recession and COVID-19 Pandemic caused temporary drops in GDP, affecting the transportation sector due to reduced demand.</p></li>
+</ul>
+<ol start="2" type="1">
+<li>Total GDP vs.&nbsp;Transportation GDP:</li>
+</ol>
+<ul>
+<li><p>Overall Trend: Total GDP has grown at a faster rate than transportation GDP, especially in the 2000s, with technology, finance, and healthcare leading economic growth.</p></li>
+<li><p>Policy Correlation: Transportation GDP saw significant upticks after deregulation in the 1980s and as trade agreements like NAFTA (1994) increased demand for trucking and rail transport.</p></li>
+<li><p>Explanation of Fluctuations: Highlight inflection points, like the 2008 recession, to show how economic events affect transportation differently than other sectors.</p></li>
+</ul>
+<ol start="3" type="1">
+<li>Sector-Specific Trends:</li>
+</ol>
+<ul>
+<li><p>Trucking: Deregulation and the rise of e-commerce in the 2000s significantly benefited trucking. Continued infrastructure investments have also strengthened trucking as the primary mode of goods distribution.</p></li>
+<li><p>Air Transport: Growth in global trade and support for air cargo infrastructure made air transportation crucial for high-value and time-sensitive goods.</p></li>
+<li><p>Rail and Water: Despite deregulation, rail and water transport have seen slower growth due to competition from trucking and air, particularly for shorter regional hauls.</p></li>
+</ul>
+<p>4.Sector Contribution as a Percentage:</p>
+<ul>
+<li><p>Trucking’s Dominance: Over the years, trucking’s share of transportation GDP has increased, supported by infrastructure investments and the logistics demands of e-commerce.</p></li>
+<li><p>Steady Contributions of Other Sectors: Sectors like rail and water transport remain stable due to specialized uses and regulatory constraints, while air transport has grown in response to global trade demands.</p></li>
+</ul>
+<ol start="5" type="1">
+<li>Future Implications:</li>
+</ol>
+<ul>
+<li><p>Policy: Current infrastructure investments (e.g., Infrastructure Investment and Jobs Act) will likely enhance trucking, rail, and water transport efficiencies.</p></li>
+<li><p>Technology: Advances in automation and electric vehicles will shape the future of transportation GDP, especially as environmental policies favor cleaner modes.</p></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

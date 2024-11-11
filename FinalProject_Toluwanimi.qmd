@@ -1,6 +1,6 @@
 # Toluwanimi Olufawo
 
-### Week 1
+## Week 1
 
 **To-Do list for this week** 
 Develop a timeline outlining major external factors (fuel prices, policy changes) affecting the transportation sector and visualize it in R
@@ -148,3 +148,322 @@ ggplot(events, aes(x = start_year, xend = end_year, y = event, yend = event, col
 **Global Events:** Economic downturns (2009 financial crisis) and the COVID-19 pandemic have had significant impacts, shown by bars for 2009 and 2020, signaling major demand shocks or disruptions.
 
 **Overall Insights:** The Gantt-style timeline provides a broad overview of the external pressures and opportunities the transportation sector has faced. By analyzing the interaction between fuel volatility, policy changes, and global disruptions, you can better understand how these factors shape sector trends and resilience. This visual will make it easier to discuss how specific types of external factors impact transportation modes differently and the sector’s response to multi-year trends.
+
+## wEEK 3 
+#### Step 1 Data Preparation and Loading
+#### 1.1 Load the Data and Inspect
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(plotly)
+library(ggrepel)
+
+# Load the dataset
+data <- read.csv("C:/Users/toluf/OneDrive/Desktop/Week_10/Cleaned_Dataset_USGDP.csv")
+
+# Inspect the first few rows
+head(data)
+colnames(data)
+# Check the structure of the data to understand its types
+str(data)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Step 2 Create the Timeline of Major External Events
+##### 2.1Prepare Data for the Timeline
+First, i’ll create a separate data frame for significant events, listing the year, event name, description, and category
+```{r}
+# Create a timeline data frame with key events
+timeline_data <- data.frame(
+  Year = c(1973, 1978, 1980, 1980, 1985, 1994, 2001, 2008, 2010, 2015, 2020, 2021),
+  Event = c("1973 Oil Crisis", "Airline Deregulation Act", "Motor Carrier Act", "Staggers Rail Act",
+            "Decline in Fuel Prices", "NAFTA Agreement", "Rise in Fuel Prices", "2008 Recession", 
+            "Clean Truck Program", "Diesel Price Decline", "COVID-19 Pandemic", 
+            "Infrastructure Investment and Jobs Act"),
+  Description = c(
+    "OPEC oil embargo led to sharp increase in fuel prices.",
+    "Deregulated the airline industry, leading to increased competition.",
+    "Deregulated trucking industry, allowing for increased competition.",
+    "Deregulated rail industry, allowing rail companies to set competitive rates.",
+    "Fuel prices began to decline, reducing operational costs.",
+    "Increased cross-border trucking and rail traffic between U.S., Canada, and Mexico.",
+    "Steady increase in fuel prices during this period, peaking in 2008.",
+    "Global economic downturn reduced demand across the transportation sector.",
+    "Stricter environmental standards for trucks, encouraging cleaner technologies.",
+    "Diesel prices fell due to increased U.S. oil production.",
+    "Pandemic disrupted global supply chains and shifted demand.",
+    "Allocated significant funding for transportation infrastructure improvements."
+  ),
+  Category = c("Fuel Crisis", "Policy Change", "Policy Change", "Policy Change", "Fuel Prices", 
+               "Policy Change", "Fuel Prices", "Economic Event", "Environmental Policy", 
+               "Fuel Prices", "Pandemic", "Infrastructure Investment")
+)
+
+# Print to verify the structure
+print(timeline_data)
+
+```
+
+
+#### 2.2 Create the Timeline Plot
+Using ggplot2 with ggrepel for annotations, creating a timeline visualization that categorizes events by color.
+```{r}
+# Define colors for categories
+category_colors <- c(
+  "Fuel Crisis" = "red", "Policy Change" = "blue", "Fuel Prices" = "orange",
+  "Economic Event" = "green", "Environmental Policy" = "purple", 
+  "Pandemic" = "pink", "Infrastructure Investment" = "brown"
+)
+
+# Create the timeline plot
+ggplot(timeline_data, aes(x = Year, y = 0, color = Category)) +
+  geom_point(size = 4) +
+  geom_text_repel(aes(label = Event), size = 3, direction = "y", nudge_y = 0.2) +
+  scale_color_manual(values = category_colors) +
+  labs(
+    title = "Timeline of Major External Factors Affecting the U.S. Transportation Sector",
+    x = "Year", 
+    y = ""
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_blank(), 
+    axis.ticks.y = element_blank(),
+    panel.grid.minor.y = element_blank(), 
+    legend.position = "bottom"
+  )
+
+```
+
+#### Step 3: Total GDP vs. Transportation GDP Over Time
+
+To observe how the transportation sector has grown in relation to the total GDP, we’ll plot these two GDP metrics as line graphs over time.
+```{r}
+# Define colors for the GDP lines
+gdp_colors <- c("Total U.S. GDP" = "blue", "For-Hire Transportation Services GDP" = "red")
+
+# Plot Total U.S. GDP and Transportation GDP over time
+ggplot(data, aes(x = year)) +
+  geom_line(aes(y = total_u_s_gdp, color = "Total U.S. GDP")) +
+  geom_line(aes(y = for_hire_transportation_services_gdp_total, color = "For-Hire Transportation Services GDP")) +
+  labs(
+    title = "Total U.S. GDP vs For-Hire Transportation Services GDP Over Time",
+    x = "Year", 
+    y = "GDP (in billions of current dollars)"
+  ) +
+  scale_color_manual("", values = gdp_colors) +
+  theme_minimal()
+
+```
+
+
+
+
+#### Step 4: Sector-Specific GDP Trends
+To examine each transportation sector (trucking, air, rail, water), we’ll plot them separately to observe unique trends over time.
+```{r}
+# Reshape data for sector-specific plotting
+sector_gdp_data <- data %>%
+  select(year, air_transportation_4, rail_transportation_5, water_transportation_6, truck_transportation_7) %>%
+  pivot_longer(cols = -year, names_to = "sector", values_to = "gdp")
+
+# Plot sector-specific GDP trends
+ggplot(sector_gdp_data, aes(x = year, y = gdp, color = sector)) +
+  geom_line() +
+  labs(
+    title = "Sector-Specific GDP Trends in For-Hire Transportation Services",
+    x = "Year", 
+    y = "GDP (in billions of current dollars)"
+  ) +
+  scale_color_discrete(name = "Sector", labels = c("Air", "Rail", "Water", "Truck")) +
+  theme_minimal()
+
+```
+
+
+#### Step 5: Sector Contribution as a Percentage of Total Transportation GDP
+To understand the shifting dominance of each sector within the transportation GDP, we’ll create a stacked area chart showing each sector’s contribution as a percentage over time.
+
+#### 5.1 Prepare Data for Percentage Contribution Plot
+We’ll reshape the data to focus on each sector’s percentage contribution to total For-Hire Transportation GDP.
+
+```{r}
+# Select and reshape data for percentage contribution by sector
+sector_percentage_data <- data %>%
+  select(
+    year, air_transportation_23, rail_transportation_24, water_transportation_25,
+    truck_transportation_26, transit_and_ground_passenger_transportation_27,
+    pipeline_transportation_28, other_transportation_and_support_activities_29,
+    warehousing_and_storage_30
+  ) %>%
+  pivot_longer(cols = -year, names_to = "sector", values_to = "percentage")
+
+```
+
+
+#### 5.2 Plot the Percentage Contribution Over Time
+
+This stacked area chart will help illustrate how each sector’s contribution to GDP has changed, showing trends like trucking's increasing role due to deregulation and e-commerce growth
+
+```{r}
+# Plot percentage contribution of each sector over time
+ggplot(sector_percentage_data, aes(x = year, y = percentage, fill = sector)) +
+  geom_area() +
+  labs(
+    title = "Percentage Contribution of Each Sector in For-Hire Transportation Services GDP",
+    x = "Year", 
+    y = "Percentage of Total For-Hire Transportation GDP"
+  ) +
+  theme_minimal() +
+  scale_fill_discrete(name = "Sector")
+
+```
+
+
+````
+This plot showS how sectors like trucking and air transport grew in their GDP contributions over time. We can explain trends here, such as the effect of deregulation on trucking and how e-commerce drove an increase in demand for both trucking and warehousing.```
+`````
+
+
+#### Step 6: Interactive Timeline with GDP and Major Events
+This visualization combines GDP data with significant events, allowing for an interactive examination of how external factors align with GDP trend
+
+#### 6.1 Prepare the Interactive Plotly Timeline Data
+```{r}
+
+library(plotly)
+
+# Create interactive timeline with plotly
+timeline_plot <- plot_ly(
+  data = timeline_data,
+  x = ~Year,
+  y = ~0,  # Keep all events on the same y-axis level for a horizontal timeline
+  type = "scatter",
+  mode = "markers+text",
+  text = ~paste0("Event: ", Event, "<br>Description: ", Description, "<br>Category: ", Category),
+  hoverinfo = "text",
+  marker = list(size = 10),
+  color = ~Category,
+  colors = category_colors
+) %>%
+  layout(
+    title = "Interactive Timeline of Major External Factors Affecting the U.S. Transportation Sector",
+    xaxis = list(title = "Year", tickmode = "linear"),
+    yaxis = list(title = "", showticklabels = FALSE),
+    hoverlabel = list(bgcolor = "white", font = list(size = 12)),
+    showlegend = TRUE
+  )
+
+# Display the plot
+timeline_plot
+
+```
+
+
+
+````
+Explanation: This timeline allows users to interactively explore the events and see their descriptions and categories. Key events such as the 2008 Recession or COVID-19 Pandemic are marked to show their effects on the transportation GDP, with implications such as temporary drops in freight and changes in sectoral growth patterns``
+`````
+
+#### Step 7: Drafting the Impact Analysis
+
+1. Timeline of Major External Events:
+
+- Impact of Policies: Deregulation policies like the Motor Carrier Act (1980) and Staggers Rail Act (1980) reduced costs and increased competition, leading to a growth boost in trucking and rail sectors.
+
+- Technological Advances: The rise of e-commerce in the 2000s, coupled with advances in logistics, significantly increased trucking’s share of GDP, as it became essential for last-mile delivery.
+
+- Economic Crises: The 2008 Recession and COVID-19 Pandemic caused temporary drops in GDP, affecting the transportation sector due to reduced demand.
+
+
+2. Total GDP vs. Transportation GDP:
+
+- Overall Trend: Total GDP has grown at a faster rate than transportation GDP, especially in the 2000s, with technology, finance, and healthcare leading economic growth.
+
+- Policy Correlation: Transportation GDP saw significant upticks after deregulation in the 1980s and as trade agreements like NAFTA (1994) increased demand for trucking and rail transport.
+
+- Explanation of Fluctuations: Highlight inflection points, like the 2008 recession, to show how economic events affect transportation differently than other sectors.
+
+3. Sector-Specific Trends:
+
+- Trucking: Deregulation and the rise of e-commerce in the 2000s significantly benefited trucking. Continued infrastructure investments have also strengthened trucking as the primary mode of goods distribution.
+
+- Air Transport: Growth in global trade and support for air cargo infrastructure made air transportation crucial for high-value and time-sensitive goods.
+
+- Rail and Water: Despite deregulation, rail and water transport have seen slower growth due to competition from trucking and air, particularly for shorter regional hauls.
+
+4.Sector Contribution as a Percentage:
+
+- Trucking’s Dominance: Over the years, trucking’s share of transportation GDP has increased, supported by infrastructure investments and the logistics demands of e-commerce.
+
+- Steady Contributions of Other Sectors: Sectors like rail and water transport remain stable due to specialized uses and regulatory constraints, while air transport has grown in response to global trade demands.
+
+5. Future Implications:
+
+- Policy: Current infrastructure investments (e.g., Infrastructure Investment and Jobs Act) will likely enhance trucking, rail, and water transport efficiencies.
+
+- Technology: Advances in automation and electric vehicles will shape the future of transportation GDP, especially as environmental policies favor cleaner modes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

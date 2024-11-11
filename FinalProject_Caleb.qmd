@@ -1,9 +1,10 @@
-# Caleb Pena 
-## Week 1 
+# Caleb Pena
+
+## Week 1
 
 **1. Correlation Analysis Between For-Hire Transportation GDP & Total U.S. GDP**
 
-As the total U.S. GDP has grown over the years—from $7,414.7 billion in 1995 to $25,462.7 billion in 2022—the For-Hire Transportation GDP has also increased, rising from $231.7 billion in 1995 to $815.0 billion in 2022. Despite this growth, the For-Hire Transportation sectors share of the total U.S. GDP has fluctuated between 2.7% and 3.7% during this period. This data indicates that while both the total U.S. GDP and the For-Hire Transportation GDP have expanded at a similar pace, the substantial increase in the For-Hire Transportation GDP over these 28 years has not directly driven the rise in the overall U.S. GDP. However, despite this, there remains a clear correlation between the Total U.S. GDP and the For-Hire Transportation GDP. The data reveals a positive relationship between these two variables: as the Total U.S. GDP increases, the For-Hire Transportation GDP rises as well.
+As the total U.S. GDP has grown over the years—from \$7,414.7 billion in 1995 to \$25,462.7 billion in 2022—the For-Hire Transportation GDP has also increased, rising from \$231.7 billion in 1995 to \$815.0 billion in 2022. Despite this growth, the For-Hire Transportation sectors share of the total U.S. GDP has fluctuated between 2.7% and 3.7% during this period. This data indicates that while both the total U.S. GDP and the For-Hire Transportation GDP have expanded at a similar pace, the substantial increase in the For-Hire Transportation GDP over these 28 years has not directly driven the rise in the overall U.S. GDP. However, despite this, there remains a clear correlation between the Total U.S. GDP and the For-Hire Transportation GDP. The data reveals a positive relationship between these two variables: as the Total U.S. GDP increases, the For-Hire Transportation GDP rises as well.
 
 **2. Draft Scatter Plots Between Key Transportation Sectors & Total U.S. GDP**
 
@@ -13,7 +14,6 @@ data_xlsx <- read_excel("C:/Users/toluf/OneDrive/Desktop/Dynamic 2/cp_Finalmain/
 library(esquisse)
 
 ```
-
 
 ```{r}
 library(ggplot2)
@@ -30,7 +30,6 @@ ggplot(data_xlsx) +
 
 The scatter plot illustrates a positive correlation between the Air Transportation GDP and the Total U.S. GDP. Over the years, as the Total U.S. GDP has grown, the Air Transportation GDP has shown a similar upward trend. Although there are some notable outliers, the overall relationship between these two variables remains clearly positive.
 
-
 ```{r}
 ggplot(data_xlsx) +
   aes(x = `TOTAL U.S. GDP`, y = `Truck transportation...7`) +
@@ -43,5 +42,14 @@ ggplot(data_xlsx) +
 
 ```
 
-The scatter plot clearly demonstrates a positive correlation between the Truck Transportation GDP and the Total U.S. GDP. As the Total U.S. GDP increases, the Truck Transportation GDP rises accordingly. Notably, there appear to be no visible outliers, as the data points closely align with the potential line of best fit. 
+The scatter plot clearly demonstrates a positive correlation between the Truck Transportation GDP and the Total U.S. GDP. As the Total U.S. GDP increases, the Truck Transportation GDP rises accordingly. Notably, there appear to be no visible outliers, as the data points closely align with the potential line of best fit.
 
+## wEEK 3
+
+### Summary
+
+As the total U.S. GDP has grown over the years—from \$7,414.7 billion in 1995 to \$25,462.7 billion in 2022—the For-Hire Transportation GDP has also increased, rising from \$231.7 billion in 1995 to \$815.0 billion in 2022. Despite this growth, the For-Hire Transportation sectors share of the total U.S. GDP has fluctuated between 2.7% and 3.7% during this period. This data indicates that while both the total U.S. GDP and the For-Hire Transportation GDP have expanded at a similar pace, the substantial increase in the For-Hire Transportation GDP over these 28 years has not directly driven the rise in the overall U.S. GDP. However, despite this, there remains a clear correlation between the Total U.S. GDP and the For-Hire Transportation GDP. The data reveals a positive relationship between these two variables: as the Total U.S. GDP increases, the For-Hire Transportation GDP rises as well.
+
+![From this line graph, we can see how as the Total US GDP rises, the Total GDP derived from For-Hire Transportation Services also increases in a correlated way. The increase is almost consistent in the way that they both rise at a similar rate.](1.png)
+
+![From this line graph, we can see the relationship in the increases of both Total GDP from For-Hire Transportation Services and the United States as they both increase in similar fashions. As the time increases, so does the GDP for both factors.](2.png)\`
