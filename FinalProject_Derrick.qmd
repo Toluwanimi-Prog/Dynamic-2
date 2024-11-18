@@ -130,8 +130,8 @@ p2
 
 The Plot shows a general increase in the total GDP of for-hire transportation gdp of different sectors over time. We can see that the all sectors gace grown gdps over the decades, some winning out more than others. We see initially that the total gdp for all sectors sits well under 200 Billion and for the next 40 years grows by a factor of over 4X. The sector of for-hire that has grown the most over the period of this analysis is the Trucking sector. Followed by Other. We cab see that during the pandemic, Air lost a considerable market share and lost it's momentum that previously looked like it would get carried by to become a leader amongst all the sectors. This decline makes sense as air travel was not permitted/heavily regulate/discrouraged during the pandameic. We can also see that warehousing is making considerable strides in gdp growth over the past decade. \## Week 3 \# Load Libraries
 
+## Week 3
 
-## Week 3 
 ```{r}
 library(readxl) 
 library(tidyr)
@@ -310,7 +310,7 @@ growth_analysis
 
 This bar chart displays the percentage distribution of for-hire transportation GDP by sector from 1980 to 2022. I normalised each year to display which sector had the majority share year by year. The chart shows that the trucking sector consistently holds the largest share, while other sectors such as air and rail maintain relatively steady proportions. Warehousing has shown noticeable growth in its GDP share, especially in the most recent years, reflecting its increasing importance.
 
-## Week 4 
+## Week 4
 
 ### Access the Interactive Shiny App
 

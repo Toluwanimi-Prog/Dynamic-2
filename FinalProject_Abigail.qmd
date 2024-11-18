@@ -503,7 +503,7 @@ The following Shiny app allows for interactive exploration of GDP trends across 
 
 To interact with the Shiny app and explore trends, click the link below:
 
-[Launch the Shiny App](https://toluwanimi-dyanmic2lead.shinyapps.io/MyShinyApp)
+[Launch the Shiny App](https://abigailtako.shinyapps.io/ShinyApp-Tako/)
 
 ```{r eval=TRUE}
 

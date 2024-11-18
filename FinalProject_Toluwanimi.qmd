@@ -1,5 +1,7 @@
 # Toluwanimi Olufawo
 
+
+
 ## Week 1
 
 **To-Do list for this week** 
@@ -149,7 +151,7 @@ ggplot(events, aes(x = start_year, xend = end_year, y = event, yend = event, col
 
 **Overall Insights:** The Gantt-style timeline provides a broad overview of the external pressures and opportunities the transportation sector has faced. By analyzing the interaction between fuel volatility, policy changes, and global disruptions, you can better understand how these factors shape sector trends and resilience. This visual will make it easier to discuss how specific types of external factors impact transportation modes differently and the sector’s response to multi-year trends.
 
-## wEEK 3 
+## WEEK 3 
 #### Step 1 Data Preparation and Loading
 #### 1.1 Load the Data and Inspect
 ```{r}
@@ -161,7 +163,8 @@ library(plotly)
 library(ggrepel)
 
 # Load the dataset
-data <- read.csv("C:/Users/toluf/OneDrive/Desktop/Week_10/Cleaned_Dataset_USGDP.csv")
+data <- read.csv("C:/Users/toluf/OneDrive/Desktop/Dynamic 2/Cleaned_Dataset_USGDP.csv")
+
 
 # Inspect the first few rows
 head(data)
@@ -466,4 +469,113 @@ Explanation: This timeline allows users to interactively explore the events and 
 
 
 
+
+
+
+## WEEK 4
+
+
+#### Access the Interactive Shiny App
+
+To interact with the Shiny app and explore trends, click the link below:
+
+[Launch the Shiny App](https://toluwanimi-dyanmic2lead.shinyapps.io/MyShinyApp)
+
+### Interactive Transportation Analysis
+
+This week i have an integrated way using the Shiny app to explore transportation trends and external factors.
+
+### Interactive Shiny App
+
+
+```{r}
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(ggrepel)
+library(plotly)
+
+## Define UI
+ui <- fluidPage(
+  titlePanel("Transportation Sector Analysis"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("plot_type", "Choose a Plot:",
+                  choices = c("Timeline Plot", "GDP Trends", "Sector-Specific Trends")),
+      hr(),
+      helpText("Explore transportation trends and external factors.")
+    ),
+    
+    mainPanel(
+      uiOutput("plot_output")
+    )
+  )
+)
+
+## Define Server
+server <- function(input, output) {
+  
+  # Render dynamic plots based on user selection
+  output$plot_output <- renderUI({
+    if (input$plot_type == "Timeline Plot") {
+      plotlyOutput("timeline_plot")
+    } else if (input$plot_type == "GDP Trends") {
+      plotOutput("gdp_trends_plot")
+    } else if (input$plot_type == "Sector-Specific Trends") {
+      plotOutput("sector_trends_plot")
+    }
+  })
+  
+  ## Timeline Plot
+  output$timeline_plot <- renderPlotly({
+    timeline_data <- data.frame(
+      Year = c(1973, 1978, 1980, 1980, 1985, 1994, 2001, 2008, 2010, 2015, 2020, 2021),
+      Event = c("1973 Oil Crisis", "Airline Deregulation Act", "Motor Carrier Act", "Staggers Rail Act",
+                "Decline in Fuel Prices", "NAFTA Agreement", "Rise in Fuel Prices", "2008 Recession", 
+                "Clean Truck Program", "Diesel Price Decline", "COVID-19 Pandemic", 
+                "Infrastructure Investment and Jobs Act"),
+      Description = c(
+        "OPEC oil embargo led to sharp increase in fuel prices.",
+        "Deregulated the airline industry, leading to increased competition.",
+        "Deregulated trucking industry, allowing for increased competition.",
+        "Deregulated rail industry, allowing rail companies to set competitive rates.",
+        "Fuel prices began to decline, reducing operational costs.",
+        "Increased cross-border trucking and rail traffic between U.S., Canada, and Mexico.",
+        "Steady increase in fuel prices during this period, peaking in 2008.",
+        "Global economic downturn reduced demand across the transportation sector.",
+        "Stricter environmental standards for trucks, encouraging cleaner technologies.",
+        "Diesel prices fell due to increased U.S. oil production.",
+        "Pandemic disrupted global supply chains and shifted demand.",
+        "Allocated significant funding for transportation infrastructure improvements."
+      ),
+      Category = c("Fuel Crisis", "Policy Change", "Policy Change", "Policy Change", "Fuel Prices", 
+                   "Policy Change", "Fuel Prices", "Economic Event", "Environmental Policy", 
+                   "Fuel Prices", "Pandemic", "Infrastructure Investment")
+    )
+    
+    plot_ly(
+      data = timeline_data,
+      x = ~Year,
+      y = ~0,
+      type = "scatter",
+      mode = "markers+text",
+      text = ~paste("Event:", Event, "<br>Description:", Description, "<br>Category:", Category),
+      hoverinfo = "text",
+      marker = list(size = 10),
+      color = ~Category
+    ) %>%
+      layout(
+        title = "Interactive Timeline of Major Events",
+        xaxis = list(title = "Year", tickmode = "linear"),
+        yaxis = list(title = "", showticklabels = FALSE),
+        hoverlabel = list(bgcolor = "white", font = list(size = 12))
+      )
+  })
+}
+
+## Run Shiny App in Quarto
+shinyApp(ui = ui, server = server)
+```
 

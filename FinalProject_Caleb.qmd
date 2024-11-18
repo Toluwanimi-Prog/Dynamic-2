@@ -56,6 +56,13 @@ As the total U.S. GDP has grown over the years—from \$7,414.7 billion in 1995 
 
 ## WEEK 4 
 
+### Access the Interactive Shiny App
+
+To interact with the Shiny app and explore trends, click the link below:
+
+[Launch the Shiny App](https://derrick-baruga.shinyapps.io/App-final/)
+
+
 This data set goes more into depth of the different sections of US Transportation GDP rather than just For-Hire Transportation. The main focuses of the Transportation GDP that the data set explores are personal consumption, private domestic investment, exports, imports, and government-transportation related purchases. The data shows how much of each of these separate sections spend or contribute to the GDP of the US in a dollar amount (billions of $).
 
 ### Summary

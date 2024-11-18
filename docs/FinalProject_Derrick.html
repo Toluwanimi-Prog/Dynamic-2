@@ -1084,6 +1084,8 @@ The following object is masked from 'package:readr':
 <div class="cell-output cell-output-stderr">
 <pre><code>`shiny::dataTableOutput()` is deprecated as of shiny 1.8.1.
 Please use `DT::DTOutput()` instead.
+Since you have a suitable version of DT (&gt;= v0.32.1), shiny::dataTableOutput() will automatically use DT::DTOutput() under-the-hood.
+If this happens to break your app, set `options(shiny.legacy.datatable = TRUE)` to get the legacy datatable implementation (or `FALSE` to squelch this message).
 See &lt;https://rstudio.github.io/DT/shiny.html&gt; for more information.</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
