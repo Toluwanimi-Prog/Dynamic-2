@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Toluwanimi Olufawo">
+
+<title>US GDP Analysis by Transportation Sector</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="draft_files/libs/clipboard/clipboard.min.js"></script>
+<script src="draft_files/libs/quarto-html/quarto.js"></script>
+<script src="draft_files/libs/quarto-html/popper.min.js"></script>
+<script src="draft_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="draft_files/libs/quarto-html/anchor.min.js"></script>
+<link href="draft_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="draft_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="draft_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="draft_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="draft_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="draft_files/libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="draft_files/libs/quarto-dashboard/stickythead.js"></script>
+<script src="draft_files/libs/quarto-dashboard/datatables.min.js" kdttablesentinel="true"></script>
+<script src="draft_files/libs/quarto-dashboard/pdfmake.min.js" kdttablesentinel="true"></script>
+<script src="draft_files/libs/quarto-dashboard/vfs_fonts.js" kdttablesentinel="true"></script>
+<script src="draft_files/libs/quarto-dashboard/web-components.js" type="module"></script>
+<script src="draft_files/libs/quarto-dashboard/components.js"></script>
+<link href="draft_files/libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
+<script src="draft_files/libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+
+<script src="draft_files/libs/plotly-binding-4.10.4/plotly.js"></script>
+
+<script src="draft_files/libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="draft_files/libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="draft_files/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="draft_files/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+<link href="draft_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="draft_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+
+</head>
+
+<body class="quarto-dashboard dashboard-fill fullcontent">
+
+<header id="quarto-dashboard-header">
+<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
+  <div class="navbar-container container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
+
+
+    <div class="navbar-brand-container">       
+
+      <div class="navbar-title">
+        <div class="navbar-title-text"><a href="#">US GDP Analysis by Transportation Sector</a></div>
+        
+        <div class="navbar-author">Toluwanimi Olufawo</div>
+      </div>
+    </div>
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-setup" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#setup" data-scrolling="false" href="#setup" aria-controls="setup" aria-selected="true"><span class="nav-link-text">Setup</span></a></li><li class="nav-item" role="presentation"><a id="tab-page-1" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#page-1" data-scrolling="false" href="#page-1" aria-controls="page-1" aria-selected="false"><span class="nav-link-text">Page 1</span></a></li><li class="nav-item" role="presentation"><a id="tab-page-2-air-transportation-gdp" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#page-2-air-transportation-gdp" data-scrolling="false" href="#page-2-air-transportation-gdp" aria-controls="page-2-air-transportation-gdp" aria-selected="false"><span class="nav-link-text">Page 2 Air Transportation GDP</span></a></li><li class="nav-item" role="presentation"><a id="tab-page-3-rail-transportation-gdp" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#page-3-rail-transportation-gdp" data-scrolling="false" href="#page-3-rail-transportation-gdp" aria-controls="page-3-rail-transportation-gdp" aria-selected="false"><span class="nav-link-text">Page 3 Rail Transportation GDP</span></a></li><li class="nav-item" role="presentation"><a id="tab-page-4-water-transportation-gdp" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#page-4-water-transportation-gdp" data-scrolling="false" href="#page-4-water-transportation-gdp" aria-controls="page-4-water-transportation-gdp" aria-selected="false"><span class="nav-link-text">Page 4 Water Transportation GDP</span></a></li><li class="nav-item" role="presentation"><a id="tab-page-5-truck-transportation-gdp" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#page-5-truck-transportation-gdp" data-scrolling="false" href="#page-5-truck-transportation-gdp" aria-controls="page-5-truck-transportation-gdp" aria-selected="false"><span class="nav-link-text">Page 5 Truck Transportation GDP</span></a></li><li class="nav-item" role="presentation"><a id="tab-page-6-transit-and-ground-passenger-gdp" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#page-6-transit-and-ground-passenger-gdp" data-scrolling="false" href="#page-6-transit-and-ground-passenger-gdp" aria-controls="page-6-transit-and-ground-passenger-gdp" aria-selected="false"><span class="nav-link-text">Page 6 Transit and Ground Passenger GDP</span></a></li><li class="nav-item" role="presentation"><a id="tab-page-7" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#page-7" data-scrolling="false" href="#page-7" aria-controls="page-7" aria-selected="false"><span class="nav-link-text">Page 7</span></a></li><li class="nav-item" role="presentation"><a id="tab-page-8" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#page-8" data-scrolling="false" href="#page-8" aria-controls="page-8" aria-selected="false"><span class="nav-link-text">Page 8</span></a></li><li class="nav-item" role="presentation"><a id="tab-page-9" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#page-9" data-scrolling="false" href="#page-9" aria-controls="page-9" aria-selected="false"><span class="nav-link-text">Page 9</span></a></li><li class="nav-item" role="presentation"><a id="tab-page-10" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#page-10" data-scrolling="false" href="#page-10" aria-controls="page-10" aria-selected="false"><span class="nav-link-text">Page 10</span></a></li><li class="nav-item" role="presentation"><a id="tab-summary-8" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#summary-8" data-scrolling="false" href="#summary-8" aria-controls="summary-8" aria-selected="false"><span class="nav-link-text">Summary</span></a></li></ul></div></div>
+</nav>
+</header>
+<div class="page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages">  
+
+<div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div id="setup" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-setup">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>To set up the environment, we load the required libraries for data manipulation, visualization, and interactivity:</p>
+<ul>
+<li>library(ggplot2) # For creating static plots</li>
+<li>library(dplyr) # For data manipulation and cleaning</li>
+<li>library(plotly) # For converting ggplot2 plots into interactive charts</li>
+</ul>
+<p>This setup ensures all necessary libraries are available for data processing and both static and interactive visualizations</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+<div id="page-1" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-page-1">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Load Datasets</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+<div id="page-2-air-transportation-gdp" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-page-2-air-transportation-gdp">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Air Transportation GDP- This visualization shows the trend of GDP contribution from the Air Transportation sector over time. Starting from around 1980, there is a steady upward trajectory, indicating growth in the sector’s economic impact. Notable increases are observed during the 1990s and early 2000s, followed by a more rapid rise after 2010. However, a slight decline can be seen after 2019, potentially reflecting external economic disruptions, such as the COVID-19 pandemic, which impacted global air travel. This chart highlights the overall positive trend and significance of the air transportation sector in contributing to the U.S. GDP, with some fluctuations due to economic events</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item html-fill-container" id="htmlwidget-f2c2d5c89a538f326ae7" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-f2c2d5c89a538f326ae7">{"x":{"data":[{"x":[1980,1985,1990,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2022,null,null,null,null,null],"y":[13.1,19.300000000000001,31.300000000000001,46.200000000000003,46.899999999999999,54.656999999999996,55.170000000000002,57.671999999999997,58.098999999999997,49.207000000000001,52.042999999999999,54.606999999999999,60.816000000000003,61.680999999999997,68.015000000000001,73.197999999999993,68.695999999999998,71.641000000000005,84.260000000000005,84.816999999999993,88.054000000000002,94.233999999999995,102.98699999999999,117.747,129.18199999999999,120.40300000000001,134.81700000000001,136.26300000000001,145.55000000000001,60.442,84.025000000000006],"text":["year: 1980<br />air_transportation_4:  13.100<br />colour: Air Transportation GDP","year: 1985<br />air_transportation_4:  19.300<br />colour: Air Transportation GDP","year: 1990<br />air_transportation_4:  31.300<br />colour: Air Transportation GDP","year: 1995<br />air_transportation_4:  46.200<br />colour: Air Transportation GDP","year: 1996<br />air_transportation_4:  46.900<br />colour: Air Transportation GDP","year: 1997<br />air_transportation_4:  54.657<br />colour: Air Transportation GDP","year: 1998<br />air_transportation_4:  55.170<br />colour: Air Transportation GDP","year: 1999<br />air_transportation_4:  57.672<br />colour: Air Transportation GDP","year: 2000<br />air_transportation_4:  58.099<br />colour: Air Transportation GDP","year: 2001<br />air_transportation_4:  49.207<br />colour: Air Transportation GDP","year: 2002<br />air_transportation_4:  52.043<br />colour: Air Transportation GDP","year: 2003<br />air_transportation_4:  54.607<br />colour: Air Transportation GDP","year: 2004<br />air_transportation_4:  60.816<br />colour: Air Transportation GDP","year: 2005<br />air_transportation_4:  61.681<br />colour: Air Transportation GDP","year: 2006<br />air_transportation_4:  68.015<br />colour: Air Transportation GDP","year: 2007<br />air_transportation_4:  73.198<br />colour: Air Transportation GDP","year: 2008<br />air_transportation_4:  68.696<br />colour: Air Transportation GDP","year: 2009<br />air_transportation_4:  71.641<br />colour: Air Transportation GDP","year: 2010<br />air_transportation_4:  84.260<br />colour: Air Transportation GDP","year: 2011<br />air_transportation_4:  84.817<br />colour: Air Transportation GDP","year: 2012<br />air_transportation_4:  88.054<br />colour: Air Transportation GDP","year: 2013<br />air_transportation_4:  94.234<br />colour: Air Transportation GDP","year: 2014<br />air_transportation_4: 102.987<br />colour: Air Transportation GDP","year: 2015<br />air_transportation_4: 117.747<br />colour: Air Transportation GDP","year: 2016<br />air_transportation_4: 129.182<br />colour: Air Transportation GDP","year: 2022<br />air_transportation_4: 120.403<br />colour: Air Transportation GDP","year:   NA<br />air_transportation_4: 134.817<br />colour: Air Transportation GDP","year:   NA<br />air_transportation_4: 136.263<br />colour: Air Transportation GDP","year:   NA<br />air_transportation_4: 145.550<br />colour: Air Transportation GDP","year:   NA<br />air_transportation_4:  60.442<br />colour: Air Transportation GDP","year:   NA<br />air_transportation_4:  84.025<br />colour: Air Transportation GDP"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","name":"Air Transportation GDP","legendgroup":"Air Transportation GDP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.223744292237441,"r":7.3059360730593621,"b":41.643835616438366,"l":43.105022831050242},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Air Transportation GDP Over Time","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1977.9000000000001,2024.0999999999999],"tickmode":"array","ticktext":["1980","1990","2000","2010","2020"],"tickvals":[1980,1990,2000,2010,2020],"categoryorder":"array","categoryarray":["1980","1990","2000","2010","2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[6.4774999999999983,152.17250000000001],"tickmode":"array","ticktext":["50","100","150"],"tickvals":[50,100,150],"categoryorder":"array","categoryarray":["50","100","150"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716894984},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"GDP (Billions USD)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"colour","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"305c2e45c6e":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"305c2e45c6e","visdat":{"305c2e45c6e":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+<div id="page-3-rail-transportation-gdp" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-page-3-rail-transportation-gdp">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Rail Transportation GDP</p>
+<p>This visualization illustrates the GDP contribution from the Rail Transportation sector over time. Starting in the 1980s, there is a relatively flat trend, with minor fluctuations until the late 1990s. Around the early 2000s, we observe a notable upward trend, indicating growth in the sector’s economic impact. The rise accelerates through the 2000s and early 2010s, with some dips along the way, reflecting possible economic cycles or industry-specific changes. This chart highlights the increasing importance of rail transportation to the U.S. GDP over recent decades, with marked growth despite periodic fluctuations.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item html-fill-container" id="htmlwidget-d47a4078c389f2760542" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-d47a4078c389f2760542">{"x":{"data":[{"x":[1980,1985,1990,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2022,null,null,null,null,null],"y":[20.199999999999999,21,18.600000000000001,21.100000000000001,20.899999999999999,19.966000000000001,22.202000000000002,22.588000000000001,23.289000000000001,23.331,21.722000000000001,23.445,25.239999999999998,28.004999999999999,32.116,32.393999999999998,37.270000000000003,32.899000000000001,33.770000000000003,36.569000000000003,39.743000000000002,40.988999999999997,43.923999999999999,44.338000000000001,40.082999999999998,44.587000000000003,41.344000000000001,43.698,43.347999999999999,39.789000000000001,42.152999999999999],"text":["year: 1980<br />rail_transportation_5: 20.200<br />colour: Rail Transportation GDP","year: 1985<br />rail_transportation_5: 21.000<br />colour: Rail Transportation GDP","year: 1990<br />rail_transportation_5: 18.600<br />colour: Rail Transportation GDP","year: 1995<br />rail_transportation_5: 21.100<br />colour: Rail Transportation GDP","year: 1996<br />rail_transportation_5: 20.900<br />colour: Rail Transportation GDP","year: 1997<br />rail_transportation_5: 19.966<br />colour: Rail Transportation GDP","year: 1998<br />rail_transportation_5: 22.202<br />colour: Rail Transportation GDP","year: 1999<br />rail_transportation_5: 22.588<br />colour: Rail Transportation GDP","year: 2000<br />rail_transportation_5: 23.289<br />colour: Rail Transportation GDP","year: 2001<br />rail_transportation_5: 23.331<br />colour: Rail Transportation GDP","year: 2002<br />rail_transportation_5: 21.722<br />colour: Rail Transportation GDP","year: 2003<br />rail_transportation_5: 23.445<br />colour: Rail Transportation GDP","year: 2004<br />rail_transportation_5: 25.240<br />colour: Rail Transportation GDP","year: 2005<br />rail_transportation_5: 28.005<br />colour: Rail Transportation GDP","year: 2006<br />rail_transportation_5: 32.116<br />colour: Rail Transportation GDP","year: 2007<br />rail_transportation_5: 32.394<br />colour: Rail Transportation GDP","year: 2008<br />rail_transportation_5: 37.270<br />colour: Rail Transportation GDP","year: 2009<br />rail_transportation_5: 32.899<br />colour: Rail Transportation GDP","year: 2010<br />rail_transportation_5: 33.770<br />colour: Rail Transportation GDP","year: 2011<br />rail_transportation_5: 36.569<br />colour: Rail Transportation GDP","year: 2012<br />rail_transportation_5: 39.743<br />colour: Rail Transportation GDP","year: 2013<br />rail_transportation_5: 40.989<br />colour: Rail Transportation GDP","year: 2014<br />rail_transportation_5: 43.924<br />colour: Rail Transportation GDP","year: 2015<br />rail_transportation_5: 44.338<br />colour: Rail Transportation GDP","year: 2016<br />rail_transportation_5: 40.083<br />colour: Rail Transportation GDP","year: 2022<br />rail_transportation_5: 44.587<br />colour: Rail Transportation GDP","year:   NA<br />rail_transportation_5: 41.344<br />colour: Rail Transportation GDP","year:   NA<br />rail_transportation_5: 43.698<br />colour: Rail Transportation GDP","year:   NA<br />rail_transportation_5: 43.348<br />colour: Rail Transportation GDP","year:   NA<br />rail_transportation_5: 39.789<br />colour: Rail Transportation GDP","year:   NA<br />rail_transportation_5: 42.153<br />colour: Rail Transportation GDP"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,255,0,1)","dash":"solid"},"hoveron":"points","name":"Rail Transportation GDP","legendgroup":"Rail Transportation GDP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.223744292237441,"r":7.3059360730593621,"b":41.643835616438366,"l":37.260273972602747},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Rail Transportation GDP Over Time","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1977.9000000000001,2024.0999999999999],"tickmode":"array","ticktext":["1980","1990","2000","2010","2020"],"tickvals":[1980,1990,2000,2010,2020],"categoryorder":"array","categoryarray":["1980","1990","2000","2010","2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[17.300650000000001,45.88635],"tickmode":"array","ticktext":["20","25","30","35","40","45"],"tickvals":[20,25,30,35,40,45],"categoryorder":"array","categoryarray":["20","25","30","35","40","45"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716894984},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"GDP (Billions USD)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"colour","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"305c2340691a":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"305c2340691a","visdat":{"305c2340691a":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+<div id="page-4-water-transportation-gdp" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-page-4-water-transportation-gdp">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, max-content) minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item html-fill-container" id="htmlwidget-661935add96c90da076a" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-661935add96c90da076a">{"x":{"data":[{"x":[1980,1985,1990,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2022,null,null,null,null,null],"y":[3.5,4,5.0999999999999996,6.2999999999999998,6.5999999999999996,6.5640000000000001,6.4790000000000001,6.6280000000000001,8.0459999999999994,8.2539999999999996,7.0359999999999996,8.2230000000000008,8.6349999999999998,8.8239999999999998,12.710000000000001,14.227,16.440000000000001,15.605,14.657999999999999,14.112,13.164999999999999,16.468,16.207999999999998,15.798999999999999,13.470000000000001,18.216000000000001,13.025,14.363,14.430999999999999,11.24,12.846],"text":["year: 1980<br />water_transportation_6:  3.500<br />colour: Water Transportation GDP","year: 1985<br />water_transportation_6:  4.000<br />colour: Water Transportation GDP","year: 1990<br />water_transportation_6:  5.100<br />colour: Water Transportation GDP","year: 1995<br />water_transportation_6:  6.300<br />colour: Water Transportation GDP","year: 1996<br />water_transportation_6:  6.600<br />colour: Water Transportation GDP","year: 1997<br />water_transportation_6:  6.564<br />colour: Water Transportation GDP","year: 1998<br />water_transportation_6:  6.479<br />colour: Water Transportation GDP","year: 1999<br />water_transportation_6:  6.628<br />colour: Water Transportation GDP","year: 2000<br />water_transportation_6:  8.046<br />colour: Water Transportation GDP","year: 2001<br />water_transportation_6:  8.254<br />colour: Water Transportation GDP","year: 2002<br />water_transportation_6:  7.036<br />colour: Water Transportation GDP","year: 2003<br />water_transportation_6:  8.223<br />colour: Water Transportation GDP","year: 2004<br />water_transportation_6:  8.635<br />colour: Water Transportation GDP","year: 2005<br />water_transportation_6:  8.824<br />colour: Water Transportation GDP","year: 2006<br />water_transportation_6: 12.710<br />colour: Water Transportation GDP","year: 2007<br />water_transportation_6: 14.227<br />colour: Water Transportation GDP","year: 2008<br />water_transportation_6: 16.440<br />colour: Water Transportation GDP","year: 2009<br />water_transportation_6: 15.605<br />colour: Water Transportation GDP","year: 2010<br />water_transportation_6: 14.658<br />colour: Water Transportation GDP","year: 2011<br />water_transportation_6: 14.112<br />colour: Water Transportation GDP","year: 2012<br />water_transportation_6: 13.165<br />colour: Water Transportation GDP","year: 2013<br />water_transportation_6: 16.468<br />colour: Water Transportation GDP","year: 2014<br />water_transportation_6: 16.208<br />colour: Water Transportation GDP","year: 2015<br />water_transportation_6: 15.799<br />colour: Water Transportation GDP","year: 2016<br />water_transportation_6: 13.470<br />colour: Water Transportation GDP","year: 2022<br />water_transportation_6: 18.216<br />colour: Water Transportation GDP","year:   NA<br />water_transportation_6: 13.025<br />colour: Water Transportation GDP","year:   NA<br />water_transportation_6: 14.363<br />colour: Water Transportation GDP","year:   NA<br />water_transportation_6: 14.431<br />colour: Water Transportation GDP","year:   NA<br />water_transportation_6: 11.240<br />colour: Water Transportation GDP","year:   NA<br />water_transportation_6: 12.846<br />colour: Water Transportation GDP"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(255,192,203,1)","dash":"solid"},"hoveron":"points","name":"Water Transportation GDP","legendgroup":"Water Transportation GDP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.223744292237441,"r":7.3059360730593621,"b":41.643835616438366,"l":37.260273972602747},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Water Transportation GDP Over Time","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1977.9000000000001,2024.0999999999999],"tickmode":"array","ticktext":["1980","1990","2000","2010","2020"],"tickvals":[1980,1990,2000,2010,2020],"categoryorder":"array","categoryarray":["1980","1990","2000","2010","2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2.7641999999999998,18.951800000000002],"tickmode":"array","ticktext":["5","10","15"],"tickvals":[5,10,15],"categoryorder":"array","categoryarray":["5","10","15"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716894984},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"GDP in Billions of USD","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"colour","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"305c6c121893":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"305c6c121893","visdat":{"305c6c121893":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>This chart presents an in-depth look at the GDP contribution of the Water Transportation sector from 1980 onward, showing how its economic impact has evolved over time. Here’s a detailed breakdown:</p>
+<ol type="1">
+<li>1980s-1990s - Gradual Growth:</li>
+</ol>
+<p>Starting at a low level, the sector grows steadily, likely due to an increase in global trade and stable demand for shipping. The 1990s show gradual, stable increases, reflecting consistent economic activit.</p>
+<ol start="2" type="1">
+<li>Early 2000s - Rapid Growth::</li>
+</ol>
+<ul>
+<li>The early 2000s see a sharp rise in GDP contribution, aligning with globalization and rising trade with emerging economies. This surge reflects increased demand for maritime transport and growth in international shipping.</li>
+</ul>
+<ol start="3" type="1">
+<li>2008 Financial Crisis - Decline:</li>
+</ol>
+<ul>
+<li>The sector experiences a significant dip around 2008, likely due to the global recession, which reduced shipping demand. This decline reflects decreased consumer spending and industrial activity worldwide.</li>
+</ul>
+<ol start="4" type="1">
+<li>2010s - Recovery and Fluctuations</li>
+</ol>
+<ul>
+<li>The sector recovers in the 2010s, with some fluctuations that could be tied to industry challenges such as fuel prices, regulatory changes, and geopolitical events impacting trade routes.</li>
+</ul>
+<ol start="5" type="1">
+<li>Recent Trends - Resilience and Growth:</li>
+</ol>
+<ul>
+<li>In recent years, the sector shows a resurgence, likely driven by rising e-commerce and international trade, despite challenges like the COVID-19 pandemic.</li>
+</ul>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<ul>
+<li><p>This visualization highlights the Water Transportation sector’s essential role in supporting global trade and its resilience in facing economic challenges. The sector’s GDP contribution generally follows global economic cycles, with growth in prosperous periods and contractions during downturns.</p></li>
+<li><p>The notable peaks and dips reveal the sector’s sensitivity to broader economic conditions, reflecting how external factors—such as economic crises, globalization trends, and shifts in trade policy—can influence its economic contribution.</p></li>
+<li><p>This analysis underscores water transportation’s integral role in maintaining supply chains and facilitating international commerce, illustrating how global events can shape sectoral performance over time.</p></li>
+</ul>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+<div id="page-5-truck-transportation-gdp" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-page-5-truck-transportation-gdp">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr) minmax(3em, max-content) minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Truck Transportation GDP</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item html-fill-container" id="htmlwidget-668f87fff2bd39c21d69" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-668f87fff2bd39c21d69">{"x":{"data":[{"x":[1980,1985,1990,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2022,null,null,null,null,null],"y":[28.399999999999999,39.399999999999999,49.700000000000003,69.299999999999997,73.099999999999994,77.138000000000005,85.591999999999999,92.372,98.022000000000006,97.213999999999999,97.111000000000004,101.39700000000001,109.105,116.858,125.48399999999999,123.709,120.515,109.462,113.524,122.002,128.39599999999999,131.077,140.82400000000001,149.108,148.864,226.11699999999999,156.38,167.804,173.30799999999999,169.56800000000001,192.517],"text":["year: 1980<br />truck_transportation_7:  28.400<br />colour: Truck Transportation GDP","year: 1985<br />truck_transportation_7:  39.400<br />colour: Truck Transportation GDP","year: 1990<br />truck_transportation_7:  49.700<br />colour: Truck Transportation GDP","year: 1995<br />truck_transportation_7:  69.300<br />colour: Truck Transportation GDP","year: 1996<br />truck_transportation_7:  73.100<br />colour: Truck Transportation GDP","year: 1997<br />truck_transportation_7:  77.138<br />colour: Truck Transportation GDP","year: 1998<br />truck_transportation_7:  85.592<br />colour: Truck Transportation GDP","year: 1999<br />truck_transportation_7:  92.372<br />colour: Truck Transportation GDP","year: 2000<br />truck_transportation_7:  98.022<br />colour: Truck Transportation GDP","year: 2001<br />truck_transportation_7:  97.214<br />colour: Truck Transportation GDP","year: 2002<br />truck_transportation_7:  97.111<br />colour: Truck Transportation GDP","year: 2003<br />truck_transportation_7: 101.397<br />colour: Truck Transportation GDP","year: 2004<br />truck_transportation_7: 109.105<br />colour: Truck Transportation GDP","year: 2005<br />truck_transportation_7: 116.858<br />colour: Truck Transportation GDP","year: 2006<br />truck_transportation_7: 125.484<br />colour: Truck Transportation GDP","year: 2007<br />truck_transportation_7: 123.709<br />colour: Truck Transportation GDP","year: 2008<br />truck_transportation_7: 120.515<br />colour: Truck Transportation GDP","year: 2009<br />truck_transportation_7: 109.462<br />colour: Truck Transportation GDP","year: 2010<br />truck_transportation_7: 113.524<br />colour: Truck Transportation GDP","year: 2011<br />truck_transportation_7: 122.002<br />colour: Truck Transportation GDP","year: 2012<br />truck_transportation_7: 128.396<br />colour: Truck Transportation GDP","year: 2013<br />truck_transportation_7: 131.077<br />colour: Truck Transportation GDP","year: 2014<br />truck_transportation_7: 140.824<br />colour: Truck Transportation GDP","year: 2015<br />truck_transportation_7: 149.108<br />colour: Truck Transportation GDP","year: 2016<br />truck_transportation_7: 148.864<br />colour: Truck Transportation GDP","year: 2022<br />truck_transportation_7: 226.117<br />colour: Truck Transportation GDP","year:   NA<br />truck_transportation_7: 156.380<br />colour: Truck Transportation GDP","year:   NA<br />truck_transportation_7: 167.804<br />colour: Truck Transportation GDP","year:   NA<br />truck_transportation_7: 173.308<br />colour: Truck Transportation GDP","year:   NA<br />truck_transportation_7: 169.568<br />colour: Truck Transportation GDP","year:   NA<br />truck_transportation_7: 192.517<br />colour: Truck Transportation GDP"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(255,165,0,1)","dash":"solid"},"hoveron":"points","name":"Truck Transportation GDP","legendgroup":"Truck Transportation GDP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.223744292237441,"r":7.3059360730593621,"b":41.643835616438366,"l":43.105022831050242},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Truck Transportation GDP Over Time","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1977.9000000000001,2024.0999999999999],"tickmode":"array","ticktext":["1980","1990","2000","2010","2020"],"tickvals":[1980,1990,2000,2010,2020],"categoryorder":"array","categoryarray":["1980","1990","2000","2010","2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18.514150000000001,236.00285],"tickmode":"array","ticktext":["50","100","150","200"],"tickvals":[50,100,150,200],"categoryorder":"array","categoryarray":["50","100","150","200"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716894984},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"GDP in Billions of USD","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"colour","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"305c7e8d61ea":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"305c7e8d61ea","visdat":{"305c7e8d61ea":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>This chart illustrates the GDP contribution of the Truck Transportation sector over time, highlighting significant growth patterns:</p>
+<p>1980s-1990s - Steady Rise:</p>
+<p>The sector shows consistent growth, reflecting the importance of trucks in domestic goods transportation and economic expansion. Early 2000s - Acceleration:</p>
+<p>Around the early 2000s, truck transportation GDP increases sharply, likely due to a boom in trade, infrastructure improvements, and the sector’s role in supply chain logistics. 2008 Financial Crisis - Brief Decline:</p>
+<p>A slight dip is visible around 2008, likely due to the global financial crisis, which impacted transportation demand. 2010s Onward - Strong Resurgence and Growth:</p>
+<p>Following recovery, the sector exhibits rapid growth, especially post-2010, likely driven by e-commerce expansion and demand for last-mile delivery.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Summary: The Truck Transportation sector has shown robust and continuous growth, especially in recent years, underscoring its critical role in supporting both domestic and online retail supply chains.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+<div id="page-6-transit-and-ground-passenger-gdp" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-page-6-transit-and-ground-passenger-gdp">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr) minmax(3em, max-content) minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Transit and Ground Passenger GDP</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item html-fill-container" id="htmlwidget-1aa33c53ce2320720352" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-1aa33c53ce2320720352">{"x":{"data":[{"x":[1980,1985,1990,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2022,null,null,null,null,null],"y":[5.7999999999999998,7.2999999999999998,9,11.800000000000001,12.800000000000001,15.122999999999999,16.161999999999999,17.683,18.451000000000001,19.035,19.460999999999999,21.41,23.036999999999999,23.547999999999998,25.873000000000001,26.285,28.138000000000002,29.399000000000001,31.404,34.204000000000001,36.459000000000003,37.993000000000002,40.591999999999999,42.228999999999999,42.689999999999998,51.270000000000003,45.021999999999998,47.539999999999999,54.194000000000003,40.354999999999997,42.857999999999997],"text":["year: 1980<br />transit_and_ground_passenger_transportation_8:  5.800<br />colour: Transit and Ground Passenger GDP","year: 1985<br />transit_and_ground_passenger_transportation_8:  7.300<br />colour: Transit and Ground Passenger GDP","year: 1990<br />transit_and_ground_passenger_transportation_8:  9.000<br />colour: Transit and Ground Passenger GDP","year: 1995<br />transit_and_ground_passenger_transportation_8: 11.800<br />colour: Transit and Ground Passenger GDP","year: 1996<br />transit_and_ground_passenger_transportation_8: 12.800<br />colour: Transit and Ground Passenger GDP","year: 1997<br />transit_and_ground_passenger_transportation_8: 15.123<br />colour: Transit and Ground Passenger GDP","year: 1998<br />transit_and_ground_passenger_transportation_8: 16.162<br />colour: Transit and Ground Passenger GDP","year: 1999<br />transit_and_ground_passenger_transportation_8: 17.683<br />colour: Transit and Ground Passenger GDP","year: 2000<br />transit_and_ground_passenger_transportation_8: 18.451<br />colour: Transit and Ground Passenger GDP","year: 2001<br />transit_and_ground_passenger_transportation_8: 19.035<br />colour: Transit and Ground Passenger GDP","year: 2002<br />transit_and_ground_passenger_transportation_8: 19.461<br />colour: Transit and Ground Passenger GDP","year: 2003<br />transit_and_ground_passenger_transportation_8: 21.410<br />colour: Transit and Ground Passenger GDP","year: 2004<br />transit_and_ground_passenger_transportation_8: 23.037<br />colour: Transit and Ground Passenger GDP","year: 2005<br />transit_and_ground_passenger_transportation_8: 23.548<br />colour: Transit and Ground Passenger GDP","year: 2006<br />transit_and_ground_passenger_transportation_8: 25.873<br />colour: Transit and Ground Passenger GDP","year: 2007<br />transit_and_ground_passenger_transportation_8: 26.285<br />colour: Transit and Ground Passenger GDP","year: 2008<br />transit_and_ground_passenger_transportation_8: 28.138<br />colour: Transit and Ground Passenger GDP","year: 2009<br />transit_and_ground_passenger_transportation_8: 29.399<br />colour: Transit and Ground Passenger GDP","year: 2010<br />transit_and_ground_passenger_transportation_8: 31.404<br />colour: Transit and Ground Passenger GDP","year: 2011<br />transit_and_ground_passenger_transportation_8: 34.204<br />colour: Transit and Ground Passenger GDP","year: 2012<br />transit_and_ground_passenger_transportation_8: 36.459<br />colour: Transit and Ground Passenger GDP","year: 2013<br />transit_and_ground_passenger_transportation_8: 37.993<br />colour: Transit and Ground Passenger GDP","year: 2014<br />transit_and_ground_passenger_transportation_8: 40.592<br />colour: Transit and Ground Passenger GDP","year: 2015<br />transit_and_ground_passenger_transportation_8: 42.229<br />colour: Transit and Ground Passenger GDP","year: 2016<br />transit_and_ground_passenger_transportation_8: 42.690<br />colour: Transit and Ground Passenger GDP","year: 2022<br />transit_and_ground_passenger_transportation_8: 51.270<br />colour: Transit and Ground Passenger GDP","year:   NA<br />transit_and_ground_passenger_transportation_8: 45.022<br />colour: Transit and Ground Passenger GDP","year:   NA<br />transit_and_ground_passenger_transportation_8: 47.540<br />colour: Transit and Ground Passenger GDP","year:   NA<br />transit_and_ground_passenger_transportation_8: 54.194<br />colour: Transit and Ground Passenger GDP","year:   NA<br />transit_and_ground_passenger_transportation_8: 40.355<br />colour: Transit and Ground Passenger GDP","year:   NA<br />transit_and_ground_passenger_transportation_8: 42.858<br />colour: Transit and Ground Passenger GDP"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(160,32,240,1)","dash":"solid"},"hoveron":"points","name":"Transit and Ground Passenger GDP","legendgroup":"Transit and Ground Passenger GDP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.223744292237441,"r":7.3059360730593621,"b":41.643835616438366,"l":37.260273972602747},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Transit and Ground Passenger GDP Over Time","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1977.9000000000001,2024.0999999999999],"tickmode":"array","ticktext":["1980","1990","2000","2010","2020"],"tickvals":[1980,1990,2000,2010,2020],"categoryorder":"array","categoryarray":["1980","1990","2000","2010","2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[3.3802999999999992,56.613700000000001],"tickmode":"array","ticktext":["10","20","30","40","50"],"tickvals":[10,20,30,40,50],"categoryorder":"array","categoryarray":["10","20","30","40","50"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716894984},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"GDP in Billions of USD","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"colour","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"305c59b34091":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"305c59b34091","visdat":{"305c59b34091":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>This chart displays the GDP contribution of the Transit and Ground Passenger sector over time, showing a clear and consistent upward trend:</p>
+<p>1980s-1990s - Steady Growth:</p>
+<p>The sector’s GDP contribution begins at a lower level and grows gradually, likely reflecting increased urbanization and the expansion of public transit systems in metropolitan areas. 2000s - Accelerated Rise:</p>
+<p>In the early 2000s, there’s a noticeable acceleration in GDP growth, possibly due to rising demand for public transit, increased investment in infrastructure, and greater urban population density. 2010s to Present - Continued Steady Growth:</p>
+<p>The growth trend remains consistent through the 2010s and beyond, likely driven by factors such as higher reliance on public transportation, environmental awareness, and investments in sustainable transit options.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>The Transit and Ground Passenger sector shows a steady, upward trajectory in GDP contribution, reflecting its growing importance in supporting urban mobility and providing sustainable transport solutions in densely populated areas.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+<div id="page-7" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-page-7">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr) minmax(3em, max-content) minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Pipeline Transportation GDP</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item html-fill-container" id="htmlwidget-8d9288719b964fe8e1a3" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-8d9288719b964fe8e1a3">{"x":{"data":[{"x":[1980,1985,1990,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2022,null,null,null,null,null],"y":[5.0999999999999996,7.2999999999999998,6,6.7000000000000002,7.0999999999999996,6.9530000000000003,9.8030000000000008,10.444000000000001,9.3610000000000007,16.068000000000001,10.032999999999999,10.324999999999999,10.641,9.8480000000000008,10.717000000000001,13.005000000000001,16.289999999999999,14.606,20.225000000000001,21.591000000000001,25.334,26.992000000000001,30.206,36.826999999999998,39.194000000000003,48.472999999999999,40.990000000000002,44.540999999999997,42.537999999999997,41.835999999999999,45.128999999999998],"text":["year: 1980<br />pipeline_transportation_9:  5.100<br />colour: Pipeline Transportation GDP","year: 1985<br />pipeline_transportation_9:  7.300<br />colour: Pipeline Transportation GDP","year: 1990<br />pipeline_transportation_9:  6.000<br />colour: Pipeline Transportation GDP","year: 1995<br />pipeline_transportation_9:  6.700<br />colour: Pipeline Transportation GDP","year: 1996<br />pipeline_transportation_9:  7.100<br />colour: Pipeline Transportation GDP","year: 1997<br />pipeline_transportation_9:  6.953<br />colour: Pipeline Transportation GDP","year: 1998<br />pipeline_transportation_9:  9.803<br />colour: Pipeline Transportation GDP","year: 1999<br />pipeline_transportation_9: 10.444<br />colour: Pipeline Transportation GDP","year: 2000<br />pipeline_transportation_9:  9.361<br />colour: Pipeline Transportation GDP","year: 2001<br />pipeline_transportation_9: 16.068<br />colour: Pipeline Transportation GDP","year: 2002<br />pipeline_transportation_9: 10.033<br />colour: Pipeline Transportation GDP","year: 2003<br />pipeline_transportation_9: 10.325<br />colour: Pipeline Transportation GDP","year: 2004<br />pipeline_transportation_9: 10.641<br />colour: Pipeline Transportation GDP","year: 2005<br />pipeline_transportation_9:  9.848<br />colour: Pipeline Transportation GDP","year: 2006<br />pipeline_transportation_9: 10.717<br />colour: Pipeline Transportation GDP","year: 2007<br />pipeline_transportation_9: 13.005<br />colour: Pipeline Transportation GDP","year: 2008<br />pipeline_transportation_9: 16.290<br />colour: Pipeline Transportation GDP","year: 2009<br />pipeline_transportation_9: 14.606<br />colour: Pipeline Transportation GDP","year: 2010<br />pipeline_transportation_9: 20.225<br />colour: Pipeline Transportation GDP","year: 2011<br />pipeline_transportation_9: 21.591<br />colour: Pipeline Transportation GDP","year: 2012<br />pipeline_transportation_9: 25.334<br />colour: Pipeline Transportation GDP","year: 2013<br />pipeline_transportation_9: 26.992<br />colour: Pipeline Transportation GDP","year: 2014<br />pipeline_transportation_9: 30.206<br />colour: Pipeline Transportation GDP","year: 2015<br />pipeline_transportation_9: 36.827<br />colour: Pipeline Transportation GDP","year: 2016<br />pipeline_transportation_9: 39.194<br />colour: Pipeline Transportation GDP","year: 2022<br />pipeline_transportation_9: 48.473<br />colour: Pipeline Transportation GDP","year:   NA<br />pipeline_transportation_9: 40.990<br />colour: Pipeline Transportation GDP","year:   NA<br />pipeline_transportation_9: 44.541<br />colour: Pipeline Transportation GDP","year:   NA<br />pipeline_transportation_9: 42.538<br />colour: Pipeline Transportation GDP","year:   NA<br />pipeline_transportation_9: 41.836<br />colour: Pipeline Transportation GDP","year:   NA<br />pipeline_transportation_9: 45.129<br />colour: Pipeline Transportation GDP"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(165,42,42,1)","dash":"solid"},"hoveron":"points","name":"Pipeline Transportation GDP","legendgroup":"Pipeline Transportation GDP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.223744292237441,"r":7.3059360730593621,"b":41.643835616438366,"l":37.260273972602747},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Pipeline Transportation GDP Over Time","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1977.9000000000001,2024.0999999999999],"tickmode":"array","ticktext":["1980","1990","2000","2010","2020"],"tickvals":[1980,1990,2000,2010,2020],"categoryorder":"array","categoryarray":["1980","1990","2000","2010","2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2.9313499999999997,50.641649999999998],"tickmode":"array","ticktext":["10","20","30","40","50"],"tickvals":[10,20,30.000000000000004,40,50],"categoryorder":"array","categoryarray":["10","20","30","40","50"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716894984},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"GDP in Billions of USD","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"colour","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"305c5a3c66e1":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"305c5a3c66e1","visdat":{"305c5a3c66e1":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>This chart shows the GDP contribution of the Pipeline Transportation sector over time, highlighting notable changes:</p>
+<p>1980s-1990s - Stable Contribution:</p>
+<p>During this period, the GDP contribution remains relatively flat, indicating steady but modest demand for pipeline transport with limited infrastructure expansion. Early 2000s - Initial Increase:</p>
+<p>Around the early 2000s, the sector starts to see a slight increase in GDP contribution, possibly driven by rising energy demands and infrastructure projects aimed at improving oil and gas transport. Post-2010 - Sharp Growth:</p>
+<p>Starting in the early 2010s, there’s a significant rise in pipeline GDP contribution, coinciding with the U.S. shale boom. This growth reflects increased oil and gas production, requiring extensive pipeline networks to meet transport demands. 2020s - Sustained High Growth:</p>
+<p>The upward trend continues into the 2020s, likely fueled by ongoing energy production and the expansion of pipeline infrastructure to support regional and national energy distribution needs.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>The Pipeline Transportation sector has experienced rapid growth in recent years, largely due to the surge in U.S. energy production and the need for robust transportation infrastructure. This trend highlights the sector’s critical role in the energy supply chain and its increasing economic importance.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+<div id="page-8" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-page-8">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr) minmax(3em, max-content) minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Other Transportation Support GDP</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item html-fill-container" id="htmlwidget-9262f45820a390b8fa95" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-9262f45820a390b8fa95">{"x":{"data":[{"x":[1980,1985,1990,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2022,null,null,null,null,null],"y":[20.199999999999999,29.300000000000001,39.899999999999999,51.600000000000001,54.299999999999997,55.862000000000002,59.813000000000002,58.125999999999998,65.846000000000004,69.116,71.688000000000002,73.262,80.929000000000002,88.807000000000002,94.590000000000003,89.933999999999997,94.394999999999996,85.611999999999995,90.512,94.037000000000006,94.941999999999993,97.055000000000007,99.956000000000003,108.108,110.858,193.333,115.093,124.52800000000001,134.51599999999999,142.41399999999999,170.00200000000001],"text":["year: 1980<br />other_transportation_and_support_activities_10:  20.200<br />colour: Other Transportation Support GDP","year: 1985<br />other_transportation_and_support_activities_10:  29.300<br />colour: Other Transportation Support GDP","year: 1990<br />other_transportation_and_support_activities_10:  39.900<br />colour: Other Transportation Support GDP","year: 1995<br />other_transportation_and_support_activities_10:  51.600<br />colour: Other Transportation Support GDP","year: 1996<br />other_transportation_and_support_activities_10:  54.300<br />colour: Other Transportation Support GDP","year: 1997<br />other_transportation_and_support_activities_10:  55.862<br />colour: Other Transportation Support GDP","year: 1998<br />other_transportation_and_support_activities_10:  59.813<br />colour: Other Transportation Support GDP","year: 1999<br />other_transportation_and_support_activities_10:  58.126<br />colour: Other Transportation Support GDP","year: 2000<br />other_transportation_and_support_activities_10:  65.846<br />colour: Other Transportation Support GDP","year: 2001<br />other_transportation_and_support_activities_10:  69.116<br />colour: Other Transportation Support GDP","year: 2002<br />other_transportation_and_support_activities_10:  71.688<br />colour: Other Transportation Support GDP","year: 2003<br />other_transportation_and_support_activities_10:  73.262<br />colour: Other Transportation Support GDP","year: 2004<br />other_transportation_and_support_activities_10:  80.929<br />colour: Other Transportation Support GDP","year: 2005<br />other_transportation_and_support_activities_10:  88.807<br />colour: Other Transportation Support GDP","year: 2006<br />other_transportation_and_support_activities_10:  94.590<br />colour: Other Transportation Support GDP","year: 2007<br />other_transportation_and_support_activities_10:  89.934<br />colour: Other Transportation Support GDP","year: 2008<br />other_transportation_and_support_activities_10:  94.395<br />colour: Other Transportation Support GDP","year: 2009<br />other_transportation_and_support_activities_10:  85.612<br />colour: Other Transportation Support GDP","year: 2010<br />other_transportation_and_support_activities_10:  90.512<br />colour: Other Transportation Support GDP","year: 2011<br />other_transportation_and_support_activities_10:  94.037<br />colour: Other Transportation Support GDP","year: 2012<br />other_transportation_and_support_activities_10:  94.942<br />colour: Other Transportation Support GDP","year: 2013<br />other_transportation_and_support_activities_10:  97.055<br />colour: Other Transportation Support GDP","year: 2014<br />other_transportation_and_support_activities_10:  99.956<br />colour: Other Transportation Support GDP","year: 2015<br />other_transportation_and_support_activities_10: 108.108<br />colour: Other Transportation Support GDP","year: 2016<br />other_transportation_and_support_activities_10: 110.858<br />colour: Other Transportation Support GDP","year: 2022<br />other_transportation_and_support_activities_10: 193.333<br />colour: Other Transportation Support GDP","year:   NA<br />other_transportation_and_support_activities_10: 115.093<br />colour: Other Transportation Support GDP","year:   NA<br />other_transportation_and_support_activities_10: 124.528<br />colour: Other Transportation Support GDP","year:   NA<br />other_transportation_and_support_activities_10: 134.516<br />colour: Other Transportation Support GDP","year:   NA<br />other_transportation_and_support_activities_10: 142.414<br />colour: Other Transportation Support GDP","year:   NA<br />other_transportation_and_support_activities_10: 170.002<br />colour: Other Transportation Support GDP"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,255,255,1)","dash":"solid"},"hoveron":"points","name":"Other Transportation Support GDP","legendgroup":"Other Transportation Support GDP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.223744292237441,"r":7.3059360730593621,"b":41.643835616438366,"l":43.105022831050242},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Other Transportation Support GDP Over Time","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1977.9000000000001,2024.0999999999999],"tickmode":"array","ticktext":["1980","1990","2000","2010","2020"],"tickvals":[1980,1990,2000,2010,2020],"categoryorder":"array","categoryarray":["1980","1990","2000","2010","2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[11.543349999999998,201.98965000000001],"tickmode":"array","ticktext":["50","100","150","200"],"tickvals":[50,100,150,200],"categoryorder":"array","categoryarray":["50","100","150","200"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716894984},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"GDP in Billions of USD","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"colour","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"305c5f165094":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"305c5f165094","visdat":{"305c5f165094":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>This chart illustrates the GDP contribution of the Other Transportation Support sector over time, showing substantial growth:</p>
+<p>1980s-1990s - Steady Increase:</p>
+<p>The sector’s GDP contribution shows a gradual, consistent increase, likely reflecting foundational investments in transportation support services, such as logistics, warehousing, and infrastructure maintenance. Early 2000s - Accelerated Growth:</p>
+<p>In the early 2000s, GDP contribution begins to rise more sharply, possibly due to the expansion of supply chain services and increased demand for logistics support amid globalization and e-commerce growth. Post-2010 - Significant Surge:</p>
+<p>From 2010 onward, there’s a rapid increase in GDP contribution, indicating the sector’s essential role in supporting a growing, complex transportation network. This period aligns with the rise in e-commerce, requiring extensive support services for warehousing, distribution, and logistics. 2020s - Continued Upward Trend:</p>
+<p>The sector continues its rapid growth into the 2020s, fueled by high demand for transportation support services to accommodate the evolving needs of online retail, global trade, and just-in-time logistics.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>: The Other Transportation Support sector has become increasingly crucial, driven by the demands of modern supply chains, global trade, and e-commerce. Its rapid growth in recent years underscores its vital role in enabling efficient transportation and logistics services across various industries.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+<div id="page-9" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-page-9">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr) minmax(3em, max-content) minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Warehousing and Storage GDP</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item html-fill-container" id="htmlwidget-93cdc178650520d4c6ff" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-93cdc178650520d4c6ff">{"x":{"data":[{"x":[1980,1985,1990,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2022,null,null,null,null,null],"y":[6.4000000000000004,9.5,13,18.800000000000001,19.600000000000001,20.992000000000001,24.776,24.609999999999999,26.66,25.786000000000001,26.552,28.733000000000001,33.595999999999997,38.079999999999998,40.793999999999997,41.277000000000001,45.25,45.146000000000001,45.170000000000002,45.170000000000002,47.216999999999999,47.298000000000002,47.816000000000003,51.948,58.033000000000001,112.56100000000001,62.409999999999997,69.938999999999993,74.828000000000003,82.697000000000003,98.706000000000003],"text":["year: 1980<br />warehousing_and_storage_11:   6.400<br />colour: Warehousing and Storage GDP","year: 1985<br />warehousing_and_storage_11:   9.500<br />colour: Warehousing and Storage GDP","year: 1990<br />warehousing_and_storage_11:  13.000<br />colour: Warehousing and Storage GDP","year: 1995<br />warehousing_and_storage_11:  18.800<br />colour: Warehousing and Storage GDP","year: 1996<br />warehousing_and_storage_11:  19.600<br />colour: Warehousing and Storage GDP","year: 1997<br />warehousing_and_storage_11:  20.992<br />colour: Warehousing and Storage GDP","year: 1998<br />warehousing_and_storage_11:  24.776<br />colour: Warehousing and Storage GDP","year: 1999<br />warehousing_and_storage_11:  24.610<br />colour: Warehousing and Storage GDP","year: 2000<br />warehousing_and_storage_11:  26.660<br />colour: Warehousing and Storage GDP","year: 2001<br />warehousing_and_storage_11:  25.786<br />colour: Warehousing and Storage GDP","year: 2002<br />warehousing_and_storage_11:  26.552<br />colour: Warehousing and Storage GDP","year: 2003<br />warehousing_and_storage_11:  28.733<br />colour: Warehousing and Storage GDP","year: 2004<br />warehousing_and_storage_11:  33.596<br />colour: Warehousing and Storage GDP","year: 2005<br />warehousing_and_storage_11:  38.080<br />colour: Warehousing and Storage GDP","year: 2006<br />warehousing_and_storage_11:  40.794<br />colour: Warehousing and Storage GDP","year: 2007<br />warehousing_and_storage_11:  41.277<br />colour: Warehousing and Storage GDP","year: 2008<br />warehousing_and_storage_11:  45.250<br />colour: Warehousing and Storage GDP","year: 2009<br />warehousing_and_storage_11:  45.146<br />colour: Warehousing and Storage GDP","year: 2010<br />warehousing_and_storage_11:  45.170<br />colour: Warehousing and Storage GDP","year: 2011<br />warehousing_and_storage_11:  45.170<br />colour: Warehousing and Storage GDP","year: 2012<br />warehousing_and_storage_11:  47.217<br />colour: Warehousing and Storage GDP","year: 2013<br />warehousing_and_storage_11:  47.298<br />colour: Warehousing and Storage GDP","year: 2014<br />warehousing_and_storage_11:  47.816<br />colour: Warehousing and Storage GDP","year: 2015<br />warehousing_and_storage_11:  51.948<br />colour: Warehousing and Storage GDP","year: 2016<br />warehousing_and_storage_11:  58.033<br />colour: Warehousing and Storage GDP","year: 2022<br />warehousing_and_storage_11: 112.561<br />colour: Warehousing and Storage GDP","year:   NA<br />warehousing_and_storage_11:  62.410<br />colour: Warehousing and Storage GDP","year:   NA<br />warehousing_and_storage_11:  69.939<br />colour: Warehousing and Storage GDP","year:   NA<br />warehousing_and_storage_11:  74.828<br />colour: Warehousing and Storage GDP","year:   NA<br />warehousing_and_storage_11:  82.697<br />colour: Warehousing and Storage GDP","year:   NA<br />warehousing_and_storage_11:  98.706<br />colour: Warehousing and Storage GDP"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,100,0,1)","dash":"solid"},"hoveron":"points","name":"Warehousing and Storage GDP","legendgroup":"Warehousing and Storage GDP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.223744292237441,"r":7.3059360730593621,"b":41.643835616438366,"l":37.260273972602747},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Warehousing and Storage GDP Over Time","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1977.9000000000001,2024.0999999999999],"tickmode":"array","ticktext":["1980","1990","2000","2010","2020"],"tickvals":[1980,1990,2000,2010,2020],"categoryorder":"array","categoryarray":["1980","1990","2000","2010","2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1.0919499999999998,117.86905],"tickmode":"array","ticktext":["30","60","90"],"tickvals":[30,59.999999999999993,90],"categoryorder":"array","categoryarray":["30","60","90"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716894984},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"GDP in Billions of USD","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"colour","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"305c3de0654b":{"x":{},"y":{},"colour":{},"type":"scatter"}},"cur_data":"305c3de0654b","visdat":{"305c3de0654b":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>This chart illustrates the GDP contribution of the Warehousing and Storage sector over time, highlighting its continuous growth:</p>
+<p>1980s-1990s - Slow, Steady Growth:</p>
+<p>The sector’s GDP contribution begins with gradual growth, reflecting the early development of warehousing infrastructure to support traditional retail and manufacturing needs. 2000s - Acceleration in Growth:</p>
+<p>There is a noticeable rise in GDP contribution in the early 2000s, possibly due to the expansion of supply chains and increasing reliance on warehousing for inventory management, driven by globalization and the growth of big-box retail. Post-2010 - Rapid Expansion:</p>
+<p>After 2010, the sector’s GDP contribution accelerates sharply. This period aligns with the e-commerce boom, where demand for warehousing and fulfillment centers increased significantly to support online shopping and rapid delivery expectations. 2020s - Significant Surge:</p>
+<p>The sector sees a dramatic upward trend in the 2020s, fueled by increased demand for storage and fulfillment centers to accommodate the continued rise in e-commerce, as well as the shift toward faster delivery models in logistics.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>The Warehousing and Storage sector has experienced tremendous growth, especially in the past decade, due to the transformation of retail and logistics by e-commerce. This upward trend reflects the sector’s crucial role in supporting efficient supply chains and meeting the demands of modern, fast-paced consumer expectations.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+<div id="page-10" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-page-10">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr) minmax(3em, max-content) minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Annotated GDP Growth with Policy Impacts</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item html-fill-container" id="htmlwidget-a43b92e263b8d21c4882" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-a43b92e263b8d21c4882">{"x":{"data":[{"x":[1980,1985,1990,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2022,null,null,null,null,null],"y":[2788.0999999999999,4217.5,5800.5,7414.6999999999998,7838.5,8577.5519999999997,9062.8169999999991,9631.1720000000005,10250.951999999999,10581.929,10929.108,11456.450000000001,12217.196,13039.197,13815.583000000001,14474.227999999999,14769.861999999999,14478.066999999999,15048.969999999999,15599.731,16253.969999999999,16843.196,17550.687000000002,18206.023000000001,18695.106,25462.722000000002,19477.337,20533.058000000001,21380.975999999999,21060.473999999998,23315.080999999998],"text":["year: 1980<br />total_u_s_gdp:  2788.100<br />colour: Total U.S. GDP","year: 1985<br />total_u_s_gdp:  4217.500<br />colour: Total U.S. GDP","year: 1990<br />total_u_s_gdp:  5800.500<br />colour: Total U.S. GDP","year: 1995<br />total_u_s_gdp:  7414.700<br />colour: Total U.S. GDP","year: 1996<br />total_u_s_gdp:  7838.500<br />colour: Total U.S. GDP","year: 1997<br />total_u_s_gdp:  8577.552<br />colour: Total U.S. GDP","year: 1998<br />total_u_s_gdp:  9062.817<br />colour: Total U.S. GDP","year: 1999<br />total_u_s_gdp:  9631.172<br />colour: Total U.S. GDP","year: 2000<br />total_u_s_gdp: 10250.952<br />colour: Total U.S. GDP","year: 2001<br />total_u_s_gdp: 10581.929<br />colour: Total U.S. GDP","year: 2002<br />total_u_s_gdp: 10929.108<br />colour: Total U.S. GDP","year: 2003<br />total_u_s_gdp: 11456.450<br />colour: Total U.S. GDP","year: 2004<br />total_u_s_gdp: 12217.196<br />colour: Total U.S. GDP","year: 2005<br />total_u_s_gdp: 13039.197<br />colour: Total U.S. GDP","year: 2006<br />total_u_s_gdp: 13815.583<br />colour: Total U.S. GDP","year: 2007<br />total_u_s_gdp: 14474.228<br />colour: Total U.S. GDP","year: 2008<br />total_u_s_gdp: 14769.862<br />colour: Total U.S. GDP","year: 2009<br />total_u_s_gdp: 14478.067<br />colour: Total U.S. GDP","year: 2010<br />total_u_s_gdp: 15048.970<br />colour: Total U.S. GDP","year: 2011<br />total_u_s_gdp: 15599.731<br />colour: Total U.S. GDP","year: 2012<br />total_u_s_gdp: 16253.970<br />colour: Total U.S. GDP","year: 2013<br />total_u_s_gdp: 16843.196<br />colour: Total U.S. GDP","year: 2014<br />total_u_s_gdp: 17550.687<br />colour: Total U.S. GDP","year: 2015<br />total_u_s_gdp: 18206.023<br />colour: Total U.S. GDP","year: 2016<br />total_u_s_gdp: 18695.106<br />colour: Total U.S. GDP","year: 2022<br />total_u_s_gdp: 25462.722<br />colour: Total U.S. GDP","year:   NA<br />total_u_s_gdp: 19477.337<br />colour: Total U.S. GDP","year:   NA<br />total_u_s_gdp: 20533.058<br />colour: Total U.S. GDP","year:   NA<br />total_u_s_gdp: 21380.976<br />colour: Total U.S. GDP","year:   NA<br />total_u_s_gdp: 21060.474<br />colour: Total U.S. GDP","year:   NA<br />total_u_s_gdp: 23315.081<br />colour: Total U.S. GDP"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,191,196,1)","dash":"solid"},"hoveron":"points","name":"Total U.S. GDP","legendgroup":"Total U.S. GDP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1980,1985,1990,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2022,null,null,null,null,null],"y":[102.59999999999999,137.09999999999999,172.80000000000001,231.69999999999999,241.30000000000001,257.255,279.99700000000001,290.12200000000001,307.77499999999998,308.00900000000001,305.64699999999999,321.40199999999999,352,375.649,410.29899999999998,414.029,426.99400000000003,404.37,433.52300000000002,452.50200000000001,473.31099999999998,492.10500000000002,522.51199999999994,566.10400000000004,582.37300000000005,814.96100000000001,609.08299999999997,648.67700000000002,682.71199999999999,588.34000000000003,688.23699999999997],"text":["year: 1980<br />for_hire_transportation_services_gdp_total: 102.600<br />colour: For-Hire Transportation GDP","year: 1985<br />for_hire_transportation_services_gdp_total: 137.100<br />colour: For-Hire Transportation GDP","year: 1990<br />for_hire_transportation_services_gdp_total: 172.800<br />colour: For-Hire Transportation GDP","year: 1995<br />for_hire_transportation_services_gdp_total: 231.700<br />colour: For-Hire Transportation GDP","year: 1996<br />for_hire_transportation_services_gdp_total: 241.300<br />colour: For-Hire Transportation GDP","year: 1997<br />for_hire_transportation_services_gdp_total: 257.255<br />colour: For-Hire Transportation GDP","year: 1998<br />for_hire_transportation_services_gdp_total: 279.997<br />colour: For-Hire Transportation GDP","year: 1999<br />for_hire_transportation_services_gdp_total: 290.122<br />colour: For-Hire Transportation GDP","year: 2000<br />for_hire_transportation_services_gdp_total: 307.775<br />colour: For-Hire Transportation GDP","year: 2001<br />for_hire_transportation_services_gdp_total: 308.009<br />colour: For-Hire Transportation GDP","year: 2002<br />for_hire_transportation_services_gdp_total: 305.647<br />colour: For-Hire Transportation GDP","year: 2003<br />for_hire_transportation_services_gdp_total: 321.402<br />colour: For-Hire Transportation GDP","year: 2004<br />for_hire_transportation_services_gdp_total: 352.000<br />colour: For-Hire Transportation GDP","year: 2005<br />for_hire_transportation_services_gdp_total: 375.649<br />colour: For-Hire Transportation GDP","year: 2006<br />for_hire_transportation_services_gdp_total: 410.299<br />colour: For-Hire Transportation GDP","year: 2007<br />for_hire_transportation_services_gdp_total: 414.029<br />colour: For-Hire Transportation GDP","year: 2008<br />for_hire_transportation_services_gdp_total: 426.994<br />colour: For-Hire Transportation GDP","year: 2009<br />for_hire_transportation_services_gdp_total: 404.370<br />colour: For-Hire Transportation GDP","year: 2010<br />for_hire_transportation_services_gdp_total: 433.523<br />colour: For-Hire Transportation GDP","year: 2011<br />for_hire_transportation_services_gdp_total: 452.502<br />colour: For-Hire Transportation GDP","year: 2012<br />for_hire_transportation_services_gdp_total: 473.311<br />colour: For-Hire Transportation GDP","year: 2013<br />for_hire_transportation_services_gdp_total: 492.105<br />colour: For-Hire Transportation GDP","year: 2014<br />for_hire_transportation_services_gdp_total: 522.512<br />colour: For-Hire Transportation GDP","year: 2015<br />for_hire_transportation_services_gdp_total: 566.104<br />colour: For-Hire Transportation GDP","year: 2016<br />for_hire_transportation_services_gdp_total: 582.373<br />colour: For-Hire Transportation GDP","year: 2022<br />for_hire_transportation_services_gdp_total: 814.961<br />colour: For-Hire Transportation GDP","year:   NA<br />for_hire_transportation_services_gdp_total: 609.083<br />colour: For-Hire Transportation GDP","year:   NA<br />for_hire_transportation_services_gdp_total: 648.677<br />colour: For-Hire Transportation GDP","year:   NA<br />for_hire_transportation_services_gdp_total: 682.712<br />colour: For-Hire Transportation GDP","year:   NA<br />for_hire_transportation_services_gdp_total: 588.340<br />colour: For-Hire Transportation GDP","year:   NA<br />for_hire_transportation_services_gdp_total: 688.237<br />colour: For-Hire Transportation GDP"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","name":"For-Hire Transportation GDP","legendgroup":"For-Hire Transportation GDP","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1990,2001,2008],"y":[25462.722000000002,25462.722000000002,25462.722000000002],"text":["Policy A","Policy B","Policy C"],"hovertext":["Year: 1990<br />max(data$total_u_s_gdp): 25462.72<br />Policy: Policy A","Year: 2001<br />max(data$total_u_s_gdp): 25462.72<br />Policy: Policy B","Year: 2008<br />max(data$total_u_s_gdp): 25462.72<br />Policy: Policy C"],"textfont":{"size":14.66456692913386,"color":"rgba(0,0,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.223744292237441,"r":7.3059360730593621,"b":41.643835616438366,"l":54.794520547945226},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"GDP Contribution Over Time with Policy Annotations","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1977.9000000000001,2024.0999999999999],"tickmode":"array","ticktext":["1980","1990","2000","2010","2020"],"tickvals":[1980,1990,2000,2010,2020],"categoryorder":"array","categoryarray":["1980","1990","2000","2010","2020"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"Year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-1165.4061000000004,26730.7281],"tickmode":"array","ticktext":["0","10000","20000"],"tickvals":[0,10000,20000],"categoryorder":"array","categoryarray":["0","10000","20000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716894984},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"GDP in Billions of USD","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"colour","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"305c25196c45":{"x":{},"y":{},"colour":{},"type":"scatter"},"305c1ec37c76":{"x":{},"y":{},"colour":{}},"305c1c498b7":{"x":{},"y":{},"label":{}}},"cur_data":"305c25196c45","visdat":{"305c25196c45":["function (y) ","x"],"305c1ec37c76":["function (y) ","x"],"305c1c498b7":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>This illustrates the GDP contribution over time with policy annotations, focusing on Total U.S. GDP and For-Hire Transportation GDP. Key policy points are marked along the timeline, potentially indicating years of impactful legislation or economic shifts.</p>
+<ol type="1">
+<li>Total U.S. GDP - Strong Upward Trend:</li>
+</ol>
+<p>The Total U.S. GDP (in blue) shows a steady upward trajectory, particularly accelerating after the 1990s. This growth reflects overall economic expansion, driven by advancements in technology, globalization, and the growth of various industries.</p>
+<ol start="2" type="1">
+<li>For-Hire Transportation GDP - Gradual Growth:</li>
+</ol>
+<p>The For-Hire Transportation GDP (in red) exhibits a gradual, consistent increase. Though its contribution remains modest compared to the total GDP, its steady growth highlights the sector’s resilience and its critical role in supporting other industries.</p>
+<ol start="3" type="1">
+<li>Policy Annotations:</li>
+</ol>
+<ul>
+<li>Three policies—labeled Policy A, Policy B, and Policy C—are marked on the chart, likely representing legislation or economic events that impacted the transportation sector and broader economy.</li>
+<li>These policies may have encouraged growth or influenced regulations within the transportation industry, thereby affecting the sector’s GDP contribution.</li>
+</ul>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>This chart highlights the overall positive economic growth of the U.S., with steady gains in the transportation sector. The policy annotations suggest that specific legislation or events played a role in shaping economic performance, especially in transportation. The steady growth in For-Hire Transportation GDP emphasizes its importance in sustaining the economy’s logistical and supply chain needs.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+<div id="summary-8" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-summary-8">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>This section provides a summary of GDP contributions across different sectors and key policy impacts. This overview will help users understand the main trends and insights from the transportation GDP data.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>Quarto Dashboards | Charles Teague | Posit https://youtu.be/_VGJIPRGTy4?feature=shared</p>
+https://www.bts.gov/content/us-gross-domestic-product-gdp-attributed-hire-transportation-services-billions-current
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /container fluid -->
+
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  if (window.bslib.Card) {
+    window.bslib.Card.initializeAllCards();
+  }
+}); 
+</script>
+  
+
+
+
+</body></html>

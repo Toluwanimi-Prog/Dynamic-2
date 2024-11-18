@@ -103,6 +103,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -246,11 +275,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#week-1" id="toc-week-1" class="nav-link active" data-scroll-target="#week-1"><span class="header-section-number">8.1</span> Week 1</a></li>
-  <li><a href="#load-dataset" id="toc-load-dataset" class="nav-link" data-scroll-target="#load-dataset"><span class="header-section-number">9</span> Load Dataset</a></li>
-  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"><span class="header-section-number">10</span> Dataset structure</a></li>
-  <li><a href="#check-for-missing-values" id="toc-check-for-missing-values" class="nav-link" data-scroll-target="#check-for-missing-values"><span class="header-section-number">11</span> Check for missing values</a></li>
-  <li><a href="#check-for-duplicates" id="toc-check-for-duplicates" class="nav-link" data-scroll-target="#check-for-duplicates"><span class="header-section-number">12</span> Check for duplicates</a></li>
-  <li><a href="#create-stacked-bar-chart" id="toc-create-stacked-bar-chart" class="nav-link" data-scroll-target="#create-stacked-bar-chart"><span class="header-section-number">13</span> Create stacked bar chart</a></li>
+  <li><a href="#week-3" id="toc-week-3" class="nav-link" data-scroll-target="#week-3"><span class="header-section-number">8.2</span> Week 3</a>
+  <ul class="collapse">
+  <li><a href="#load-dataset" id="toc-load-dataset" class="nav-link" data-scroll-target="#load-dataset"><span class="header-section-number">8.2.1</span> Load Dataset</a></li>
+  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"><span class="header-section-number">8.2.2</span> Dataset structure</a></li>
+  <li><a href="#check-for-missing-values" id="toc-check-for-missing-values" class="nav-link" data-scroll-target="#check-for-missing-values"><span class="header-section-number">8.2.3</span> Check for missing values</a></li>
+  <li><a href="#check-for-duplicates" id="toc-check-for-duplicates" class="nav-link" data-scroll-target="#check-for-duplicates"><span class="header-section-number">8.2.4</span> Check for duplicates</a></li>
+  <li><a href="#create-stacked-bar-chart" id="toc-create-stacked-bar-chart" class="nav-link" data-scroll-target="#create-stacked-bar-chart"><span class="header-section-number">8.2.5</span> Create stacked bar chart</a></li>
+  </ul></li>
+  <li><a href="#week-4" id="toc-week-4" class="nav-link" data-scroll-target="#week-4"><span class="header-section-number">8.3</span> Week 4</a>
+  <ul class="collapse">
+  <li><a href="#access-the-interactive-shiny-app" id="toc-access-the-interactive-shiny-app" class="nav-link" data-scroll-target="#access-the-interactive-shiny-app"><span class="header-section-number">8.3.1</span> Access the Interactive Shiny App</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -576,15 +612,17 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 </div>
 <p>The Plot shows a general increase in the total GDP of for-hire transportation gdp of different sectors over time. We can see that the all sectors gace grown gdps over the decades, some winning out more than others. We see initially that the total gdp for all sectors sits well under 200 Billion and for the next 40 years grows by a factor of over 4X. The sector of for-hire that has grown the most over the period of this analysis is the Trucking sector. Followed by Other. We cab see that during the pandemic, Air lost a considerable market share and lost it’s momentum that previously looked like it would get carried by to become a leader amongst all the sectors. This decline makes sense as air travel was not permitted/heavily regulate/discrouraged during the pandameic. We can also see that warehousing is making considerable strides in gdp growth over the past decade. ## Week 3 # Load Libraries</p>
+</section>
+<section id="week-3" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="week-3"><span class="header-section-number">8.2</span> Week 3</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl) </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="load-dataset" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Load Dataset</h1>
+<section id="load-dataset" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="load-dataset"><span class="header-section-number">8.2.1</span> Load Dataset</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="st">"C:/Users/toluf/OneDrive/Desktop/Dynamic 2/table_03_01_072623.xlsx"</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -625,8 +663,8 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 </div>
 </section>
-<section id="dataset-structure" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Dataset structure</h1>
+<section id="dataset-structure" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="dataset-structure"><span class="header-section-number">8.2.2</span> Dataset structure</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>dataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -653,8 +691,8 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 </div>
 </section>
-<section id="check-for-missing-values" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Check for missing values</h1>
+<section id="check-for-missing-values" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="check-for-missing-values"><span class="header-section-number">8.2.3</span> Check for missing values</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dataset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -759,8 +797,8 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 </div>
 </section>
-<section id="check-for-duplicates" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Check for duplicates</h1>
+<section id="check-for-duplicates" class="level3" data-number="8.2.4">
+<h3 data-number="8.2.4" class="anchored" data-anchor-id="check-for-duplicates"><span class="header-section-number">8.2.4</span> Check for duplicates</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>duplicated_rows <span class="ot">&lt;-</span> dataset[<span class="fu">duplicated</span>(dataset), ]</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -809,8 +847,8 @@ Attaching package: 'dplyr'</code></pre>
 <span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a>dataset[<span class="dv">30</span>, <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"2021"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="create-stacked-bar-chart" class="level1" data-number="13">
-<h1 data-number="13"><span class="header-section-number">13</span> Create stacked bar chart</h1>
+<section id="create-stacked-bar-chart" class="level3" data-number="8.2.5">
+<h3 data-number="8.2.5" class="anchored" data-anchor-id="create-stacked-bar-chart"><span class="header-section-number">8.2.5</span> Create stacked bar chart</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select relevant columns and convert to long format</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>transport_long <span class="ot">&lt;-</span> dataset <span class="sc">%&gt;%</span></span>
@@ -949,8 +987,88 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 </div>
 <p>This bar chart displays the percentage distribution of for-hire transportation GDP by sector from 1980 to 2022. I normalised each year to display which sector had the majority share year by year. The chart shows that the trucking sector consistently holds the largest share, while other sectors such as air and rail maintain relatively steady proportions. Warehousing has shown noticeable growth in its GDP share, especially in the most recent years, reflecting its increasing importance.</p>
+</section>
+</section>
+<section id="week-4" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="week-4"><span class="header-section-number">8.3</span> Week 4</h2>
+<section id="access-the-interactive-shiny-app" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="access-the-interactive-shiny-app"><span class="header-section-number">8.3.1</span> Access the Interactive Shiny App</h3>
+<p>To interact with the Shiny app and explore trends, click the link below:</p>
+<p><a href="https://derrick-baruga.shinyapps.io/App-final/">Launch the Shiny App</a></p>
+<p>library(shiny) library(bslib) library(tidyverse) library(readxl) library(scales)</p>
+<section id="create-dataset-similar-to-the-excel-file-structure" class="level4" data-number="8.3.1.1">
+<h4 data-number="8.3.1.1" class="anchored" data-anchor-id="create-dataset-similar-to-the-excel-file-structure"><span class="header-section-number">8.3.1.1</span> Create dataset similar to the Excel file structure</h4>
+<p>clean_names &lt;- c( “Year”, “Total_GDP”, “Transport_GDP_Total”, “Air”, “Rail”, “Water”, “Truck”, “Transit”, “Pipeline”, “Other”, “Warehousing”, “Percent_GDP”, “Transport_Services”, “Air_Pct”, “Rail_Pct”, “Water_Pct”, “Truck_Pct”, “Transit_Pct”, “Pipeline_Pct”, “Other_Pct”, “Warehousing_Pct”, “Pct_Transport_GDP”, “Air_Share”, “Rail_Share”, “Water_Share”, “Truck_Share”, “Transit_Share”, “Pipeline_Share”, “Other_Share”, “Warehousing_Share” )</p>
+</section>
+<section id="generate-synthetic-data-that-mimics-the-excel-file" class="level4" data-number="8.3.1.2">
+<h4 data-number="8.3.1.2" class="anchored" data-anchor-id="generate-synthetic-data-that-mimics-the-excel-file"><span class="header-section-number">8.3.1.2</span> Generate synthetic data that mimics the Excel file</h4>
+<p>set.seed(123) years &lt;- 1980:2022 base_data &lt;- expand.grid(Year = years) %&gt;% mutate( Total_GDP = runif(n(), 5000, 20000) * (1 + (Year - 1980)/20), Transport_GDP_Total = Total_GDP * runif(n(), 0.02, 0.04), Air = Transport_GDP_Total * runif(n(), 0.1, 0.2) * if_else(Year &gt;= 2020, 0.7, 1), Rail = Transport_GDP_Total * runif(n(), 0.08, 0.15), Water = Transport_GDP_Total * runif(n(), 0.05, 0.1), Truck = Transport_GDP_Total * runif(n(), 0.25, 0.35), Transit = Transport_GDP_Total * runif(n(), 0.05, 0.1), Pipeline = Transport_GDP_Total * runif(n(), 0.05, 0.1), Other = Transport_GDP_Total * runif(n(), 0.1, 0.15), Warehousing = Transport_GDP_Total * runif(n(), 0.05, 0.15) * if_else(Year &gt;= 2015, 1.5, 1) )</p>
+<p>ui &lt;- navbarPage( title = “Transportation Sector GDP Analysis (1980-2022)”,</p>
+<p># Sector Plot Tab tabPanel( title = “Sector Plot”, sidebarLayout( sidebarPanel( radioButtons(“chart_type”, “Chart Type:”, c(“GDP Values” = “gdp”, “Sector Percentages” = “percentage”)), selectInput(“time_view”, “Time View:”, c(“All Years” = “all”, “Decade Intervals” = “decade”, “Pre vs Post COVID” = “covid”)), checkboxGroupInput(“selected_sectors”, “Select Sectors:”, choices = c(“Air”, “Rail”, “Water”, “Truck”, “Transit”, “Pipeline”, “Other”, “Warehousing”), selected = c(“Air”, “Rail”, “Water”, “Truck”, “Transit”, “Pipeline”, “Other”, “Warehousing”)) ), mainPanel( plotOutput(“sector_plot”, height = “500px”) ) ) ),</p>
+<p># Growth Table Tab tabPanel( title = “Growth Analysis”, fluidPage( card( card_header(“Sector Growth Analysis”), dataTableOutput(“growth_table”) ) ) ),</p>
+<p># COVID Impact Tab tabPanel( title = “COVID Impact”, fluidPage( card( card_header(“COVID-19 Impact Analysis”), plotOutput(“covid_impact”, height = “300px”) ) ) ) )</p>
+<p>server &lt;- function(input, output) {</p>
+<p>processed_data &lt;- reactive({ data_long &lt;- base_data %&gt;% select(Year, all_of(input$selected_sectors)) %&gt;% pivot_longer(cols = -Year, names_to = “Sector”, values_to = “Value”) %&gt;% group_by(Year) %&gt;% mutate(Percentage = Value / sum(Value) * 100) %&gt;% ungroup()</p>
+<pre><code>if(input$time_view == "decade") {
+  data_long &lt;- data_long %&gt;%
+    mutate(Year = floor(Year/10) * 10) %&gt;%
+    group_by(Year, Sector) %&gt;%
+    summarise(Value = mean(Value),
+              Percentage = mean(Percentage),
+              .groups = 'drop')
+} else if(input$time_view == "covid") {
+  data_long &lt;- data_long %&gt;%
+    mutate(Period = ifelse(Year &lt; 2020, "Pre-COVID", "Post-COVID")) %&gt;%
+    group_by(Period, Sector) %&gt;%
+    summarise(Value = mean(Value),
+              Percentage = mean(Percentage),
+              .groups = 'drop')
+}
+
+data_long</code></pre>
+<p>})</p>
+<p>output$sector_plot &lt;- renderPlot({ plot_data &lt;- processed_data()</p>
+<pre><code>y_var &lt;- if(input$chart_type == "gdp") "Value" else "Percentage"
+y_lab &lt;- if(input$chart_type == "gdp") "GDP (Billions of Dollars)" else "Percentage Share (%)"
+
+ggplot(plot_data, aes(x = if(input$time_view == "covid") Period else Year, 
+                      y = .data[[y_var]], 
+                      fill = Sector)) +
+  geom_bar(stat = "identity") +
+  scale_fill_brewer(palette = "Set3") +
+  theme_minimal() +
+  labs(title = "Transportation Sector Analysis",
+       x = if(input$time_view == "covid") "Period" else "Year",
+       y = y_lab) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))</code></pre>
+<p>})</p>
+<p>output<span class="math inline">\(growth_table &lt;- renderDataTable({
+    growth_data &lt;- base_data %&gt;%
+      select(Year, all_of(input\)</span>selected_sectors)) %&gt;% filter(Year %in% c(1980, 2022)) %&gt;% pivot_longer(cols = -Year, names_to = “Sector”, values_to = “Value”) %&gt;% group_by(Sector) %&gt;% summarise( <code>Initial Value (1980)</code> = first(Value), <code>Final Value (2022)</code> = last(Value), <code>Total Growth (%)</code> = round((last(Value)/first(Value) - 1) * 100, 1), <code>Avg Annual Growth (%)</code> = round(((last(Value)/first(Value))^(1/42) - 1) * 100, 2) )</p>
+<pre><code>growth_data</code></pre>
+<p>})</p>
+<p>output<span class="math inline">\(covid_impact &lt;- renderPlot({
+    covid_data &lt;- base_data %&gt;%
+      filter(Year &gt;= 2019, Year &lt;= 2021) %&gt;%
+      select(Year, all_of(input\)</span>selected_sectors)) %&gt;% pivot_longer(cols = -Year, names_to = “Sector”, values_to = “Value”)</p>
+<pre><code>ggplot(covid_data, aes(x = Year, y = Value, color = Sector, group = Sector)) +
+  geom_line(size = 1.5) +
+  geom_point(size = 4) +
+  theme_minimal() +
+  labs(title = "COVID-19 Impact on Transportation Sectors",
+       y = "GDP Value") +
+  scale_color_brewer(palette = "Set3") +
+  theme(text = element_text(size = 14),
+        plot.title = element_text(size = 18, face = "bold"),
+        axis.title = element_text(size = 16),
+        legend.title = element_text(size = 14),
+        legend.text = element_text(size = 12))</code></pre>
+<p>}) }</p>
+<p>shinyApp(ui, server) ````</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

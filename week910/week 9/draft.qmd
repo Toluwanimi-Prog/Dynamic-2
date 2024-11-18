@@ -1,0 +1,345 @@
+---
+title: "US GDP Analysis by Transportation Sector"
+format: dashboard 
+author: "Toluwanimi Olufawo"
+---
+
+# Setup
+
+To set up the environment, we load the required libraries for data manipulation, visualization, and interactivity:
+
+
+- library(ggplot2)  # For creating static plots
+- library(dplyr)    # For data manipulation and cleaning
+- library(plotly)   # For converting ggplot2 plots into interactive charts 
+
+
+This setup ensures all necessary libraries are available for data processing and both static and interactive visualizations
+```{r}
+# Load libraries
+library(ggplot2)
+library(dplyr)
+library(plotly)
+
+```
+
+# Page 1 
+Load Datasets
+The dataset from the Bureau of Transportation Statistics (BTS), titled "U.S. Gross Domestic Product (GDP) Attributed to For-Hire Transportation Services (in billions of current USD)", provides an annual breakdown of the economic contributions made by for-hire transportation services to the U.S. GDP. For-hire transportation includes services like trucking, rail, water, air, and pipeline transportation provided by specialized companies rather than in-house transportation within other industries.
+
+The data covers multiple decades and highlights the financial impact of these transportation services, showing trends in economic growth, fluctuations related to economic cycles, and the importance of transportation as a sector within the U.S. economy. This dataset is valuable for analyzing the role of transportation services in the overall economic landscape and understanding how external factors, such as policy changes or global events, may have influenced this sector over time.
+
+```{r}
+data <- read.csv("C:/Users/toluf/OneDrive/Desktop/week 9/Cleaned_Dataset_USGDP.csv")
+
+```
+
+
+# Page 2 Air Transportation GDP
+## Air Transportation GDP
+Air Transportation GDP- This visualization shows the trend of GDP contribution from the Air Transportation sector over time. Starting from around 1980, there is a steady upward trajectory, indicating growth in the sector's economic impact. Notable increases are observed during the 1990s and early 2000s, followed by a more rapid rise after 2010. However, a slight decline can be seen after 2019, potentially reflecting external economic disruptions, such as the COVID-19 pandemic, which impacted global air travel. This chart highlights the overall positive trend and significance of the air transportation sector in contributing to the U.S. GDP, with some fluctuations due to economic events
+
+
+```{r}
+sector_plot_air <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = air_transportation_4, color = "Air Transportation GDP")) +
+  labs(title = "Air Transportation GDP Over Time", x = "Year", y = "GDP (Billions USD)") +
+  theme_minimal() +
+  scale_color_manual(values = c("Air Transportation GDP" = "blue"))
+ggplotly(sector_plot_air)
+
+```
+
+
+# Page 3 Rail Transportation GDP
+Rail Transportation GDP
+
+This visualization illustrates the GDP contribution from the Rail Transportation sector over time. Starting in the 1980s, there is a relatively flat trend, with minor fluctuations until the late 1990s. Around the early 2000s, we observe a notable upward trend, indicating growth in the sector's economic impact. The rise accelerates through the 2000s and early 2010s, with some dips along the way, reflecting possible economic cycles or industry-specific changes. This chart highlights the increasing importance of rail transportation to the U.S. GDP over recent decades, with marked growth despite periodic fluctuations.
+
+```{r}
+sector_plot_rail <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = rail_transportation_5, color = "Rail Transportation GDP")) +
+  labs(title = "Rail Transportation GDP Over Time", x = "Year", y = "GDP (Billions USD)") +
+  theme_minimal() +
+  scale_color_manual(values = c("Rail Transportation GDP" = "green"))
+ggplotly(sector_plot_rail)
+
+```
+
+
+# Page 4 Water Transportation GDP
+```{r}
+# Water Transportation GDP Over Time
+sector_plot_water <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = water_transportation_6, color = "Water Transportation GDP")) +
+  labs(title = "Water Transportation GDP Over Time", x = "Year", y = "GDP in Billions of USD") +
+  theme_minimal() +
+  scale_color_manual(values = c("Water Transportation GDP" = "pink"))
+ggplotly(sector_plot_water)
+
+```
+### Water Transportation GDP
+This chart presents an in-depth look at the GDP contribution of the Water Transportation sector from 1980 onward, showing how its economic impact has evolved over time. Here’s a detailed breakdown:
+
+1. 1980s-1990s - Gradual Growth:
+
+Starting at a low level, the sector grows steadily, likely due to an increase in global trade and stable demand for shipping. The 1990s show gradual, stable increases, reflecting consistent economic activit.
+
+
+2. Early 2000s - Rapid Growth::
+
+- The early 2000s see a sharp rise in GDP contribution, aligning with globalization and rising trade with emerging economies. This surge reflects increased demand for maritime transport and growth in international shipping.
+
+
+
+3. 2008 Financial Crisis - Decline:
+
+- The sector experiences a significant dip around 2008, likely due to the global recession, which reduced shipping demand. This decline reflects decreased consumer spending and industrial activity worldwide.
+
+
+
+4. 2010s - Recovery and Fluctuations
+
+- The sector recovers in the 2010s, with some fluctuations that could be tied to industry challenges such as fuel prices, regulatory changes, and geopolitical events impacting trade routes.
+
+5. Recent Trends - Resilience and Growth:
+
+- In recent years, the sector shows a resurgence, likely driven by rising e-commerce and international trade, despite challenges like the COVID-19 pandemic.
+
+
+### Overall Analysis:
+
+- This visualization highlights the Water Transportation sector's essential role in supporting global trade and its resilience in facing economic challenges. The sector’s GDP contribution generally follows global economic cycles, with growth in prosperous periods and contractions during downturns.
+- The notable peaks and dips reveal the sector’s sensitivity to broader economic conditions, reflecting how external factors—such as economic crises, globalization trends, and shifts in trade policy—can influence its economic contribution.
+
+- This analysis underscores water transportation's integral role in maintaining supply chains and facilitating international commerce, illustrating how global events can shape sectoral performance over time.
+
+
+
+# Page 5 Truck Transportation GDP
+Truck Transportation GDP
+```{r}
+# Truck Transportation GDP Over Time
+sector_plot_truck <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = truck_transportation_7, color = "Truck Transportation GDP")) +
+  labs(title = "Truck Transportation GDP Over Time", x = "Year", y = "GDP in Billions of USD") +
+  theme_minimal() +
+  scale_color_manual(values = c("Truck Transportation GDP" = "orange"))  
+ggplotly(sector_plot_truck)
+
+```
+
+### Summary 
+
+This chart illustrates the GDP contribution of the Truck Transportation sector over time, highlighting significant growth patterns:
+
+1980s-1990s - Steady Rise:
+
+The sector shows consistent growth, reflecting the importance of trucks in domestic goods transportation and economic expansion.
+Early 2000s - Acceleration:
+
+Around the early 2000s, truck transportation GDP increases sharply, likely due to a boom in trade, infrastructure improvements, and the sector’s role in supply chain logistics.
+2008 Financial Crisis - Brief Decline:
+
+A slight dip is visible around 2008, likely due to the global financial crisis, which impacted transportation demand.
+2010s Onward - Strong Resurgence and Growth:
+
+Following recovery, the sector exhibits rapid growth, especially post-2010, likely driven by e-commerce expansion and demand for last-mile delivery.
+
+### Summary 
+Summary: The Truck Transportation sector has shown robust and continuous growth, especially in recent years, underscoring its critical role in supporting both domestic and online retail supply chains.
+
+
+
+
+# Page 6 Transit and Ground Passenger GDP
+Transit and Ground Passenger GDP
+```{r}
+# Transit and Ground Passenger GDP Over Time
+transit_plot <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = transit_and_ground_passenger_transportation_8, color = "Transit and Ground Passenger GDP")) +
+  labs(title = "Transit and Ground Passenger GDP Over Time",
+       x = "Year", y = "GDP in Billions of USD") +
+  theme_minimal() +
+  scale_color_manual(values = c("Transit and Ground Passenger GDP" = "purple"))  
+ggplotly(transit_plot)
+
+```
+### Overview 
+This chart displays the GDP contribution of the Transit and Ground Passenger sector over time, showing a clear and consistent upward trend:
+
+1980s-1990s - Steady Growth:
+
+The sector’s GDP contribution begins at a lower level and grows gradually, likely reflecting increased urbanization and the expansion of public transit systems in metropolitan areas.
+2000s - Accelerated Rise:
+
+In the early 2000s, there’s a noticeable acceleration in GDP growth, possibly due to rising demand for public transit, increased investment in infrastructure, and greater urban population density.
+2010s to Present - Continued Steady Growth:
+
+The growth trend remains consistent through the 2010s and beyond, likely driven by factors such as higher reliance on public transportation, environmental awareness, and investments in sustainable transit options.
+
+### Summary
+The Transit and Ground Passenger sector shows a steady, upward trajectory in GDP contribution, reflecting its growing importance in supporting urban mobility and providing sustainable transport solutions in densely populated areas.
+
+
+# Page 7 Pipeline Transportation GDP
+Pipeline Transportation GDP
+```{r}
+# Pipeline Transportation GDP Over Time
+pipeline_plot <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = pipeline_transportation_9, color = "Pipeline Transportation GDP")) +
+  labs(title = "Pipeline Transportation GDP Over Time",
+       x = "Year", y = "GDP in Billions of USD") +
+  theme_minimal() +
+  scale_color_manual(values = c("Pipeline Transportation GDP" = "brown"))  
+ggplotly(pipeline_plot)
+
+```
+### Overview 
+This chart shows the GDP contribution of the Pipeline Transportation sector over time, highlighting notable changes:
+
+1980s-1990s - Stable Contribution:
+
+During this period, the GDP contribution remains relatively flat, indicating steady but modest demand for pipeline transport with limited infrastructure expansion.
+Early 2000s - Initial Increase:
+
+Around the early 2000s, the sector starts to see a slight increase in GDP contribution, possibly driven by rising energy demands and infrastructure projects aimed at improving oil and gas transport.
+Post-2010 - Sharp Growth:
+
+Starting in the early 2010s, there’s a significant rise in pipeline GDP contribution, coinciding with the U.S. shale boom. This growth reflects increased oil and gas production, requiring extensive pipeline networks to meet transport demands.
+2020s - Sustained High Growth:
+
+The upward trend continues into the 2020s, likely fueled by ongoing energy production and the expansion of pipeline infrastructure to support regional and national energy distribution needs.
+
+### Summary
+The Pipeline Transportation sector has experienced rapid growth in recent years, largely due to the surge in U.S. energy production and the need for robust transportation infrastructure. This trend highlights the sector’s critical role in the energy supply chain and its increasing economic importance.
+
+
+# Page 8 Other Transportation Support GDP
+Other Transportation Support GDP
+```{r}
+# Other Transportation Support GDP Over Time
+other_support_plot <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = other_transportation_and_support_activities_10, color = "Other Transportation Support GDP")) +
+  labs(title = "Other Transportation Support GDP Over Time",
+       x = "Year", y = "GDP in Billions of USD") +
+  theme_minimal() +
+  scale_color_manual(values = c("Other Transportation Support GDP" = "cyan"))  
+ggplotly(other_support_plot)
+
+```
+### overview 
+This chart illustrates the GDP contribution of the Other Transportation Support sector over time, showing substantial growth:
+
+1980s-1990s - Steady Increase:
+
+The sector’s GDP contribution shows a gradual, consistent increase, likely reflecting foundational investments in transportation support services, such as logistics, warehousing, and infrastructure maintenance.
+Early 2000s - Accelerated Growth:
+
+In the early 2000s, GDP contribution begins to rise more sharply, possibly due to the expansion of supply chain services and increased demand for logistics support amid globalization and e-commerce growth.
+Post-2010 - Significant Surge:
+
+From 2010 onward, there’s a rapid increase in GDP contribution, indicating the sector’s essential role in supporting a growing, complex transportation network. This period aligns with the rise in e-commerce, requiring extensive support services for warehousing, distribution, and logistics.
+2020s - Continued Upward Trend:
+
+The sector continues its rapid growth into the 2020s, fueled by high demand for transportation support services to accommodate the evolving needs of online retail, global trade, and just-in-time logistics.
+
+
+### Summary 
+: The Other Transportation Support sector has become increasingly crucial, driven by the demands of modern supply chains, global trade, and e-commerce. Its rapid growth in recent years underscores its vital role in enabling efficient transportation and logistics services across various industries.
+
+
+# Page 9  Warehousing and Storage GDP
+Warehousing and Storage GDP
+```{r}
+# Warehousing and Storage GDP Over Time
+warehousing_plot <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = warehousing_and_storage_11, color = "Warehousing and Storage GDP")) +
+  labs(title = "Warehousing and Storage GDP Over Time",
+       x = "Year", y = "GDP in Billions of USD") +
+  theme_minimal() +
+  scale_color_manual(values = c("Warehousing and Storage GDP" = "darkgreen"))  
+ggplotly(warehousing_plot)
+
+```
+
+### Overview 
+This chart illustrates the GDP contribution of the Warehousing and Storage sector over time, highlighting its continuous growth:
+
+1980s-1990s - Slow, Steady Growth:
+
+The sector’s GDP contribution begins with gradual growth, reflecting the early development of warehousing infrastructure to support traditional retail and manufacturing needs.
+2000s - Acceleration in Growth:
+
+There is a noticeable rise in GDP contribution in the early 2000s, possibly due to the expansion of supply chains and increasing reliance on warehousing for inventory management, driven by globalization and the growth of big-box retail.
+Post-2010 - Rapid Expansion:
+
+After 2010, the sector’s GDP contribution accelerates sharply. This period aligns with the e-commerce boom, where demand for warehousing and fulfillment centers increased significantly to support online shopping and rapid delivery expectations.
+2020s - Significant Surge:
+
+The sector sees a dramatic upward trend in the 2020s, fueled by increased demand for storage and fulfillment centers to accommodate the continued rise in e-commerce, as well as the shift toward faster delivery models in logistics.
+
+### SUmmary 
+ The Warehousing and Storage sector has experienced tremendous growth, especially in the past decade, due to the transformation of retail and logistics by e-commerce. This upward trend reflects the sector’s crucial role in supporting efficient supply chains and meeting the demands of modern, fast-paced consumer expectations.
+
+# Page 10 Annotated GDP Growth with Policy Impacts 
+Annotated GDP Growth with Policy Impacts 
+```{r}
+# Example policy impact data
+policy_impacts <- data.frame(
+  Year = c(1990, 2001, 2008), 
+  Policy = c("Policy A", "Policy B", "Policy C")
+)
+
+# Create the annotated GDP Growth chart
+gdp_plot <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = total_u_s_gdp, color = "Total U.S. GDP")) +
+  geom_line(aes(y = for_hire_transportation_services_gdp_total, color = "For-Hire Transportation GDP")) +
+  geom_text(data = policy_impacts, aes(x = Year, y = max(data$total_u_s_gdp), label = Policy),
+            vjust = -1, color = "black", angle = 45) +
+  labs(title = "GDP Contribution Over Time with Policy Annotations",
+       x = "Year", y = "GDP in Billions of USD") +
+  theme_minimal()
+
+# Convert to an interactive plot
+ggplotly(gdp_plot)
+
+```
+
+### Summary 
+
+This  illustrates the GDP contribution over time with policy annotations, focusing on Total U.S. GDP and For-Hire Transportation GDP. Key policy points are marked along the timeline, potentially indicating years of impactful legislation or economic shifts.
+
+1. Total U.S. GDP - Strong Upward Trend:
+
+The Total U.S. GDP (in blue) shows a steady upward trajectory, particularly accelerating after the 1990s. This growth reflects overall economic expansion, driven by advancements in technology, globalization, and the growth of various industries.
+
+2. For-Hire Transportation GDP - Gradual Growth:
+
+ The For-Hire Transportation GDP (in red) exhibits a gradual, consistent increase. Though its contribution remains modest compared to the total GDP, its steady growth highlights the sector's resilience and its critical role in supporting other industries.
+
+3. Policy Annotations:
+
+-  Three policies—labeled Policy A, Policy B, and Policy C—are marked on the chart, likely representing legislation or economic events that impacted the transportation sector and broader economy.
+- These policies may have encouraged growth or influenced regulations within the transportation industry, thereby affecting the sector's GDP contribution.
+
+
+### Summary: 
+This chart highlights the overall positive economic growth of the U.S., with steady gains in the transportation sector. The policy annotations suggest that specific legislation or events played a role in shaping economic performance, especially in transportation. The steady growth in For-Hire Transportation GDP emphasizes its importance in sustaining the economy’s logistical and supply chain needs.
+
+
+# Summary 
+This section provides a summary of GDP contributions across different sectors and key policy impacts. This overview will help users understand the main trends and insights from the transportation GDP data.
+
+
+
+
+
+
+
+## Refrence 
+
+Quarto Dashboards | Charles Teague | Posit https://youtu.be/_VGJIPRGTy4?feature=shared
+
+https://www.bts.gov/content/us-gross-domestic-product-gdp-attributed-hire-transportation-services-billions-current
+

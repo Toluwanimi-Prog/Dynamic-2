@@ -1,0 +1,50 @@
+---
+title: "Week 9 Dashboard"
+author: "Abigail Tako"
+format: dashboard
+---
+
+## Quarto
+# Page 1
+
+## Row
+
+```{r}
+#\ title: Cars Plot
+plot(cars)
+```
+
+### Column
+
+```{r}
+str(cars)
+```
+
+### Column
+
+```{r}
+summary(cars)
+```
+
+## Row
+
+```{r}
+#\ title: Pressure Plot
+plot(pressure)
+```
+
+# Page 2
+
+## Row
+
+```{r}
+#\ title: Pressure Plot
+plot(pressure)
+```
+
+## Row
+
+```{r}
+#\ title: Pressure Plot
+boxplot(pressure)
+```

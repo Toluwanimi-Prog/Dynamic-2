@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/1240489/a70ee04f1e99491096780b40aa9a44ba
+bundleId: https://api.rpubs.com/api/v1/document/1240489/a70ee04f1e99491096780b40aa9a44ba
+url: http://rpubs.com/Toluwanimi_01/1240489/edit
+version: 1

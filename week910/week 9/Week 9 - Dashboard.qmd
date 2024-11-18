@@ -1,0 +1,134 @@
+---
+title: "VIZ_Quarto Static DashBoard_Example1"
+format: dashboard 
+author: "Toluwanimi Olufawo"
+---
+
+
+# Page 1 
+
+## Row 
+
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(readxl)  # For reading Excel files
+```
+
+
+
+
+```{r}
+# Load the dataset
+file_path <- "C:/Users/toluf/OneDrive/Desktop/week 9/Dataset_USGDP.xlsx"
+
+data <- read_excel(file_path)
+
+```
+
+```{r}
+# View the first few rows of the dataset
+head(data)
+
+# Check column names
+colnames(data)
+
+```
+```{r}
+# Load necessary library for renaming columns
+library(janitor)
+
+# Clean column names for easier reference
+data <- data %>% clean_names()
+
+# Check column names after cleaning
+colnames(data)
+
+```
+
+
+
+
+
+# Column 1: Total U.S. GDP Over Time
+
+```{r}
+# Convert Year column to numeric if needed
+data$x1 <- as.numeric(data$x1)  # Replace `x1` with the correct column name for year if it's different
+
+# Plot Total U.S. GDP over time
+ggplot(data, aes(x = x1, y = total_u_s_gdp)) +
+  geom_line(color = "blue") +
+  labs(title = "Total U.S. GDP Over Time",
+       x = "Year",
+       y = "Total U.S. GDP (in billions)") +
+  theme_minimal()
+
+```
+
+
+
+# Column 2: For-Hire Transportation Services GDP Over Time
+
+```{r}
+# Plot For-Hire Transportation Services GDP over time
+ggplot(data, aes(x = x1, y = for_hire_transportation_services_gdp_total)) +
+  geom_line(color = "darkgreen") +
+  labs(title = "For-Hire Transportation Services GDP Over Time",
+       x = "Year",
+       y = "For-Hire Transportation Services GDP (in billions)") +
+  theme_minimal()
+
+```
+
+
+# Annotate Policy Impacts
+
+```{r}
+
+# Example policy impact data for annotations
+policy_data <- data.frame(
+  x1 = c(2000, 2008, 2020),  # Example years for policies
+  total_u_s_gdp = c(10200, 14000, 21000),  # Replace these with approximate GDP values if known
+  label = c("Policy A", "Policy B", "Policy C")
+)
+
+# Plot with annotations for policies
+ggplot(data, aes(x = x1, y = total_u_s_gdp)) +
+  geom_line(color = "blue") +
+  geom_point(data = policy_data, aes(x = x1, y = total_u_s_gdp), color = "red", size = 3) +
+  geom_text(data = policy_data, aes(x = x1, y = total_u_s_gdp, label = label), 
+            vjust = -1, hjust = 0.5, color = "red") +
+  labs(title = "Total U.S. GDP with Policy Impacts",
+       x = "Year",
+       y = "Total U.S. GDP (in billions)") +
+  theme_minimal()
+
+# Example policy impact data for annotations
+policy_data <- data.frame(
+  x1 = c(2000, 2008, 2020),  # Example years for policies
+  total_u_s_gdp = c(10200, 14000, 21000),  # Replace these with actual or approximate GDP values if known
+  label = c("Policy
+
+```
+
+
+
+ A", "Policy B", "Policy C")
+)
+
+# Plot with annotations for policies
+gdp_policy_plot <- ggplot(data, aes(x = year, y = total_u_s_gdp)) +
+  geom_line(color = "blue") +
+  geom_line(aes(y = for_hire_transportation_services_gdp_total), color = "green", linetype = "dashed") + 
+  geom_point(data = policy_data, aes(x = x1, y = total_u_s_gdp), color = "red", size = 3) +
+  geom_text(data = policy_data, aes(x = x1, y = total_u_s_gdp, label = label), 
+            vjust = -1, hjust = 0.5, color = "red") +
+  labs(title = "Total U.S. GDP with Policy Impacts",
+       x = "Year",
+       y = "Total U.S. GDP (in billions)") +
+  theme_minimal()
+
+# Convert to interactive plot
+ggplotly(gdp_policy_plot)

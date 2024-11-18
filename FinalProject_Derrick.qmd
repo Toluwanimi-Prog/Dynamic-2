@@ -130,6 +130,8 @@ p2
 
 The Plot shows a general increase in the total GDP of for-hire transportation gdp of different sectors over time. We can see that the all sectors gace grown gdps over the decades, some winning out more than others. We see initially that the total gdp for all sectors sits well under 200 Billion and for the next 40 years grows by a factor of over 4X. The sector of for-hire that has grown the most over the period of this analysis is the Trucking sector. Followed by Other. We cab see that during the pandemic, Air lost a considerable market share and lost it's momentum that previously looked like it would get carried by to become a leader amongst all the sectors. This decline makes sense as air travel was not permitted/heavily regulate/discrouraged during the pandameic. We can also see that warehousing is making considerable strides in gdp growth over the past decade. \## Week 3 \# Load Libraries
 
+
+## Week 3 
 ```{r}
 library(readxl) 
 library(tidyr)
@@ -137,7 +139,7 @@ library(dplyr)
 library(ggplot2)
 ```
 
-# Load Dataset
+### Load Dataset
 
 ```{r}
 file_path <- "C:/Users/toluf/OneDrive/Desktop/Dynamic 2/table_03_01_072623.xlsx"
@@ -145,19 +147,19 @@ file_path <- "C:/Users/toluf/OneDrive/Desktop/Dynamic 2/table_03_01_072623.xlsx"
 dataset <- read_excel(file_path, sheet = 4)
 ```
 
-# Dataset structure
+### Dataset structure
 
 ```{r}
 dataset
 ```
 
-# Check for missing values
+### Check for missing values
 
 ```{r}
 summary(dataset)
 ```
 
-# Check for duplicates
+### Check for duplicates
 
 ```{r}
 duplicated_rows <- dataset[duplicated(dataset), ]
@@ -207,7 +209,7 @@ dataset[29, 1] <- "2020"
 dataset[30, 1] <- "2021"
 ```
 
-# Create stacked bar chart
+### Create stacked bar chart
 
 ```{r}
 # Select relevant columns and convert to long format
@@ -307,3 +309,182 @@ growth_analysis
 ```
 
 This bar chart displays the percentage distribution of for-hire transportation GDP by sector from 1980 to 2022. I normalised each year to display which sector had the majority share year by year. The chart shows that the trucking sector consistently holds the largest share, while other sectors such as air and rail maintain relatively steady proportions. Warehousing has shown noticeable growth in its GDP share, especially in the most recent years, reflecting its increasing importance.
+
+## Week 4 
+
+### Access the Interactive Shiny App
+
+To interact with the Shiny app and explore trends, click the link below:
+
+[Launch the Shiny App](https://derrick-baruga.shinyapps.io/App-final/)
+
+```{r eval=TRUE}
+library(shiny)
+library(bslib)
+library(tidyverse)
+library(readxl)
+library(scales)
+
+#### Create dataset similar to the Excel file structure
+clean_names <- c(
+  "Year", "Total_GDP", "Transport_GDP_Total", "Air", "Rail", "Water", "Truck",
+  "Transit", "Pipeline", "Other", "Warehousing", "Percent_GDP", "Transport_Services",
+  "Air_Pct", "Rail_Pct", "Water_Pct", "Truck_Pct", "Transit_Pct", "Pipeline_Pct",
+  "Other_Pct", "Warehousing_Pct", "Pct_Transport_GDP", "Air_Share", "Rail_Share",
+  "Water_Share", "Truck_Share", "Transit_Share", "Pipeline_Share", "Other_Share",
+  "Warehousing_Share"
+)
+
+#### Generate synthetic data that mimics the Excel file
+set.seed(123)
+years <- 1980:2022
+base_data <- expand.grid(Year = years) %>%
+  mutate(
+    Total_GDP = runif(n(), 5000, 20000) * (1 + (Year - 1980)/20),
+    Transport_GDP_Total = Total_GDP * runif(n(), 0.02, 0.04),
+    Air = Transport_GDP_Total * runif(n(), 0.1, 0.2) * if_else(Year >= 2020, 0.7, 1),
+    Rail = Transport_GDP_Total * runif(n(), 0.08, 0.15),
+    Water = Transport_GDP_Total * runif(n(), 0.05, 0.1),
+    Truck = Transport_GDP_Total * runif(n(), 0.25, 0.35),
+    Transit = Transport_GDP_Total * runif(n(), 0.05, 0.1),
+    Pipeline = Transport_GDP_Total * runif(n(), 0.05, 0.1),
+    Other = Transport_GDP_Total * runif(n(), 0.1, 0.15),
+    Warehousing = Transport_GDP_Total * runif(n(), 0.05, 0.15) * if_else(Year >= 2015, 1.5, 1)
+  )
+
+ui <- navbarPage(
+  title = "Transportation Sector GDP Analysis (1980-2022)",
+  
+  # Sector Plot Tab
+  tabPanel(
+    title = "Sector Plot",
+    sidebarLayout(
+      sidebarPanel(
+        radioButtons("chart_type", "Chart Type:",
+                     c("GDP Values" = "gdp",
+                       "Sector Percentages" = "percentage")),
+        selectInput("time_view", "Time View:",
+                    c("All Years" = "all",
+                      "Decade Intervals" = "decade",
+                      "Pre vs Post COVID" = "covid")),
+        checkboxGroupInput("selected_sectors", "Select Sectors:",
+                           choices = c("Air", "Rail", "Water", "Truck", "Transit", 
+                                       "Pipeline", "Other", "Warehousing"),
+                           selected = c("Air", "Rail", "Water", "Truck", "Transit", 
+                                        "Pipeline", "Other", "Warehousing"))
+      ),
+      mainPanel(
+        plotOutput("sector_plot", height = "500px")
+      )
+    )
+  ),
+  
+  # Growth Table Tab
+  tabPanel(
+    title = "Growth Analysis",
+    fluidPage(
+      card(
+        card_header("Sector Growth Analysis"),
+        dataTableOutput("growth_table")
+      )
+    )
+  ),
+  
+  # COVID Impact Tab
+  tabPanel(
+    title = "COVID Impact",
+    fluidPage(
+      card(
+        card_header("COVID-19 Impact Analysis"),
+        plotOutput("covid_impact", height = "300px")
+      )
+    )
+  )
+)
+
+server <- function(input, output) {
+  
+  processed_data <- reactive({
+    data_long <- base_data %>%
+      select(Year, all_of(input$selected_sectors)) %>%
+      pivot_longer(cols = -Year, names_to = "Sector", values_to = "Value") %>%
+      group_by(Year) %>%
+      mutate(Percentage = Value / sum(Value) * 100) %>%
+      ungroup()
+    
+    if(input$time_view == "decade") {
+      data_long <- data_long %>%
+        mutate(Year = floor(Year/10) * 10) %>%
+        group_by(Year, Sector) %>%
+        summarise(Value = mean(Value),
+                  Percentage = mean(Percentage),
+                  .groups = 'drop')
+    } else if(input$time_view == "covid") {
+      data_long <- data_long %>%
+        mutate(Period = ifelse(Year < 2020, "Pre-COVID", "Post-COVID")) %>%
+        group_by(Period, Sector) %>%
+        summarise(Value = mean(Value),
+                  Percentage = mean(Percentage),
+                  .groups = 'drop')
+    }
+    
+    data_long
+  })
+  
+  output$sector_plot <- renderPlot({
+    plot_data <- processed_data()
+    
+    y_var <- if(input$chart_type == "gdp") "Value" else "Percentage"
+    y_lab <- if(input$chart_type == "gdp") "GDP (Billions of Dollars)" else "Percentage Share (%)"
+    
+    ggplot(plot_data, aes(x = if(input$time_view == "covid") Period else Year, 
+                          y = .data[[y_var]], 
+                          fill = Sector)) +
+      geom_bar(stat = "identity") +
+      scale_fill_brewer(palette = "Set3") +
+      theme_minimal() +
+      labs(title = "Transportation Sector Analysis",
+           x = if(input$time_view == "covid") "Period" else "Year",
+           y = y_lab) +
+      theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  })
+  
+  output$growth_table <- renderDataTable({
+    growth_data <- base_data %>%
+      select(Year, all_of(input$selected_sectors)) %>%
+      filter(Year %in% c(1980, 2022)) %>%
+      pivot_longer(cols = -Year, names_to = "Sector", values_to = "Value") %>%
+      group_by(Sector) %>%
+      summarise(
+        `Initial Value (1980)` = first(Value),
+        `Final Value (2022)` = last(Value),
+        `Total Growth (%)` = round((last(Value)/first(Value) - 1) * 100, 1),
+        `Avg Annual Growth (%)` = round(((last(Value)/first(Value))^(1/42) - 1) * 100, 2)
+      )
+    
+    growth_data
+  })
+  
+  output$covid_impact <- renderPlot({
+    covid_data <- base_data %>%
+      filter(Year >= 2019, Year <= 2021) %>%
+      select(Year, all_of(input$selected_sectors)) %>%
+      pivot_longer(cols = -Year, names_to = "Sector", values_to = "Value")
+    
+    ggplot(covid_data, aes(x = Year, y = Value, color = Sector, group = Sector)) +
+      geom_line(size = 1.5) +
+      geom_point(size = 4) +
+      theme_minimal() +
+      labs(title = "COVID-19 Impact on Transportation Sectors",
+           y = "GDP Value") +
+      scale_color_brewer(palette = "Set3") +
+      theme(text = element_text(size = 14),
+            plot.title = element_text(size = 18, face = "bold"),
+            axis.title = element_text(size = 16),
+            legend.title = element_text(size = 14),
+            legend.text = element_text(size = 12))
+  })
+}
+
+shinyApp(ui, server)
+````

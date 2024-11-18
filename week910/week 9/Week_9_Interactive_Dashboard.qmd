@@ -1,0 +1,215 @@
+---
+title: "GDP Analysis Dashboard"
+format: dashboard 
+author: "Toluwanimi Olufawo"
+---
+
+
+
+# Page 1
+
+## Row 1 
+
+*Load Required Libraries*
+```{r}
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+library(plotly)
+
+```
+
+### column 
+*Load and Prepare the Data*
+
+
+```{r}
+# Load the cleaned dataset
+data <- read.csv("C:/Users/toluf/OneDrive/Desktop/week 9/Cleaned_Dataset_USGDP.csv")
+```
+
+
+# Page 2 
+
+## Row 1 
+Create Interactive Charts with Annotations for the sectors 
+1- Air Transportation GDP Over Time
+
+```{r}
+## Air Transportation GDP Over Time
+
+sector_plot_air <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = air_transportation_4, color = "Air Transportation GDP")) +
+  labs(title = "Air Transportation GDP Over Time",
+       x = "Year", y = "GDP in Billions of USD") +
+  theme_minimal() +
+  scale_color_manual(values = c("Air Transportation GDP" = "blue"))  # Add color customization here
+ggplotly(sector_plot_air)
+
+```
+
+
+## Row 2
+2 - Rail Transportation GDP Over Time
+
+```{r}
+## Rail Transportation GDP Over Time
+
+sector_plot_rail <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = rail_transportation_5, color = "Rail Transportation GDP")) +
+  labs(title = "Rail Transportation GDP Over Time",
+       x = "Year", y = "GDP in Billions of USD") +
+  theme_minimal() +
+  scale_color_manual(values = c("Rail Transportation GDP" = "green"))  # Add color customization here
+ggplotly(sector_plot_rail)
+```
+
+
+
+## Row 3
+Water Transportation GDP Over Time
+```{r}
+## Water Transportation GDP Over Time
+
+sector_plot_water <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = water_transportation_6, color = "Water Transportation GDP")) +
+  labs(title = "Water Transportation GDP Over Time",
+       x = "Year", y = "GDP in Billions of USD") +
+  theme_minimal() +
+  scale_color_manual(values = c("Water Transportation GDP" = "pink"))  # Optional color customization
+ggplotly(sector_plot_water)
+```
+## Row 4
+Truck Transportation GDP Over Time
+```{r}
+## Truck Transportation GDP Over Time
+
+sector_plot_truck <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = truck_transportation_7, color = "Truck Transportation GDP")) +
+  labs(title = "Truck Transportation GDP Over Time",
+       x = "Year", y = "GDP in Billions of USD") +
+  theme_minimal() +
+  scale_color_manual(values = c("Truck Transportation GDP" = "orange"))  # Optional color customization
+ggplotly(sector_plot_truck)
+
+```
+
+
+# Page 3
+
+## Row 1
+list of sectors
+
+```{r}
+# Define a list of sectors and their respective column names
+sectors <- list(
+  "Transit and Ground Passenger GDP" = "transit_and_ground_passenger_transportation_8",
+  "Pipeline Transportation GDP" = "pipeline_transportation_9",
+  "Other Transportation Support GDP" = "other_transportation_and_support_activities_10",
+  "Warehousing and Storage GDP" = "warehousing_and_storage_11"
+)
+
+# Generate a plot for each sector
+for (sector in names(sectors)) {
+  column_name <- sectors[[sector]]
+  
+  plot <- ggplot(data, aes(x = year)) +
+    geom_line(aes_string(y = column_name, color = shQuote(sector))) +
+    labs(title = paste(sector, "Over Time"),
+         x = "Year", y = "GDP in Billions of USD") +
+    theme_minimal()
+  
+  print(ggplotly(plot))
+}
+```
+
+
+## Row 2- Annotated GDP Growth Chart
+
+```{r}
+## GDP Growth Over Time with Policy Annotations
+
+
+# Example policy impact data
+policy_impacts <- data.frame(
+  Year = c(1990, 2001, 2008),  # Replace these with the actual policy years
+  Policy = c("Policy A", "Policy B", "Policy C")
+)
+
+# Create the plot
+gdp_plot <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = total_u_s_gdp, color = "Total U.S. GDP")) +
+  geom_line(aes(y = for_hire_transportation_services_gdp_total, color = "For-Hire Transportation GDP")) +
+  geom_text(data = policy_impacts, aes(x = Year, y = max(data$total_u_s_gdp), label = Policy),
+            vjust = -1, color = "black", angle = 45) +
+  labs(title = "GDP Contribution Over Time with Policy Annotations",
+       x = "Year", y = "GDP in Billions of USD") +
+  theme_minimal()
+
+# Convert to an interactive plot
+ggplotly(gdp_plot)
+
+
+`````
+
+
+
+# Page  4.
+## Row 1
+Additional Sections for Different Sectors
+
+To visualize GDP contributions by different transportation sectors
+
+```{r}
+## GDP by Transportation Sector
+# Example for plotting Air Transportation GDP over time
+sector_plot <- ggplot(data, aes(x = year)) +
+  geom_line(aes(y = air_transportation_4, color = "Air Transportation GDP")) +
+  labs(title = "Air Transportation GDP Over Time",
+       x = "Year", y = "GDP in Billions of USD") +
+  theme_minimal()
+
+# Convert to interactive plot
+ggplotly(sector_plot)
+`````
+
+
+
+# Page 5 
+## Create the Chart Section
+
+Add a new section to visualize **Total U.S. GDP with Policy Impacts**.
+
+```{r}
+# Total U.S. GDP with Policy Impacts
+# Example of policy impact data for annotations
+policy_impacts <- data.frame(
+  year = c(1990, 2001, 2008),  # Replace with actual years of policy impacts
+  Policy = c("Policy A", "Policy B", "Policy C")
+)
+
+ #Create the U.S. GDP plot with annotations for policy impacts
+gdp_plot <- ggplot(data, aes(x = year, y = total_u_s_gdp)) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(data = policy_impacts, aes(x = year, y = max(data$total_u_s_gdp)), 
+             color = "red", size = 3) +
+  geom_text(data = policy_impacts, aes(x = year, y = max(data$total_u_s_gdp), label = Policy),
+            vjust = -1, color = "black", angle = 45, size = 3) +
+  labs(title = "Total U.S. GDP with Policy Impacts",
+       x = "Year",
+       y = "GDP in Billions of USD") +
+  theme_minimal()
+
+# Convert the plot to an interactive plot
+ggplotly(gdp_plot)
+
+````
+
+
+
+
+
+
+
+
+
