@@ -319,6 +319,7 @@ To interact with the Shiny app and explore trends, click the link below:
 [Launch the Shiny App](https://derrick-baruga.shinyapps.io/App-final/)
 
 ```{r eval=TRUE}
+
 library(shiny)
 library(bslib)
 library(tidyverse)
@@ -487,4 +488,6 @@ server <- function(input, output) {
 }
 
 shinyApp(ui, server)
-````
+
+                    
+```
